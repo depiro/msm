@@ -1200,3 +1200,4 @@
 [17-May-2025 22:31:22 UTC] PHP Warning:  Undefined array key "title" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/plugins/elementor/includes/template-library/sources/local.php on line 1491
 [17-May-2025 22:31:22 UTC] PHP Warning:  Undefined array key "type" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/plugins/elementor/includes/template-library/sources/local.php on line 1492
 [17-May-2025 23:53:50 UTC] PHP Warning:  Attempt to read property "title" on null in /Users/milfuegos/Sites/msm-dev/app/public/wp-includes/class-wp-customize-widgets.php on line 926
+[18-May-2025 00:11:38 UTC] PHP Warning:  Attempt to read property "title" on null in /Users/milfuegos/Sites/msm-dev/app/public/wp-includes/class-wp-customize-widgets.php on line 926

@@ -32,7 +32,14 @@
     --msm-text-xl: clamp(1.8rem, calc(1.34rem + 2.3vw), 3.13rem);
     --msm-text-2xl: clamp(2.16rem, calc(1.55rem + 3.04vw), 3.91rem);
     --msm-text-3xl: clamp(2.59rem, calc(1.79rem + 3.98vw), 4.88rem);
-    --msm-text-4xl: clamp(3.11rem, calc(2.07rem + 5.21vw), 6.1rem);
+    --msm-text-4xl: clamp(3.11rem, calc(2.07rem + 5.21vw), 6.1rem);  
+}
+
+html {
+    /* overflow: hidden; */
+    overflow-x: hidden;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 body {
@@ -50,12 +57,51 @@ body {
     letter-spacing: 0.5px;
 }
 
-html {
-    /* overflow: hidden; */
-    overflow-x: hidden;
-    box-sizing: border-box;
-    margin: 0;
-}
+
+
+
+/* ---------- LINK STATES ---------- */
+
+/* Enlace normal (no visitado) */
+a:link {
+    color: #0066cc;          /* azul institucional */
+    text-decoration: none;   /* sin subrayado por defecto */
+    transition: color 0.15s ease-in-out, text-decoration-color 0.15s; /* suavidad */
+  }
+  
+  /* Enlace visitado */
+  a:visited {
+    color: #4b0082;          /* púrpura para distinguir, cámbialo si no lo quieres */
+  }
+  
+  /* Hover (ratón encima) */
+  a:hover {
+    color: #003d80;          /* un azul más oscuro */
+    text-decoration: underline;
+    text-decoration-color: currentColor; /* subrayado del mismo color */
+  }
+  
+  /* Enfocado (teclado / accesibilidad) */
+  a:focus {
+    outline: 3px solid #ffbf00; /* anillo de foco accesible amarillo */
+    outline-offset: 2px;
+    text-decoration: underline;
+  }
+  
+  /* Activo (mientras haces clic) */
+  a:active {
+    color: #e60023;          /* rojo para feedback inmediato */
+    text-decoration: underline;
+  }
+  
+  /* Deshabilitado (si usas enlaces con aria-disabled=true, por ejemplo) */
+  a[aria-disabled="true"],
+  a.disabled {
+    color: #888;
+    pointer-events: none;
+    text-decoration: line-through;
+  }
+  
 
 header {
     /* background-color: #f5f5f3; */
@@ -304,20 +350,23 @@ p {
 .home-link {
     height: 100%;
     min-height: 120px;
+    aspect-ratio: 1 / 1;
     gap: 10px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    /* padding-top: 15px;
+    padding-bottom: 15px; */
     display: flex;
     justify-content: center;
     cursor: pointer;
     opacity: 0.8;
     transition: opacity 0.6s ease, box-shadow 0.3s ease;
+    color: gray;
 }
 
 .home-link:hover {
     opacity: 1;
     box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
     /* background: #a4ca37 !important; */
+    background-color:#00A8E0 !important;
 }
 
 .home-link span {

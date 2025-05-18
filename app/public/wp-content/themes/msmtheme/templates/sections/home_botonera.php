@@ -22,7 +22,7 @@ if ($query->have_posts()) :
 				?>
 				<?php if($button['text']): ?>
 					<div class="col-6 col-md-4 col-lg-2 p-2">
-						<a href="<?php echo esc_html($url); ?>" class="align-items-center text-decoration-none home-link p-3 rounded rounded-4 text-white justify-content-center d-flex flex-column" style="background-color: <?php echo esc_attr($button['color']); ?>">
+						<a href="<?php echo esc_html($url); ?>" class="align-items-center text-decoration-none home-link p-4 rounded-2 text-white justify-content-center d-flex flex-column bg-white">
 							<img style="width: 70px !important;height: auto !important;" src="<?php echo esc_url($button['icon']); ?>" height="50">
 							<span class="text-center fz-12"><?php echo esc_html($button['text']); ?></span>
 						</a>
