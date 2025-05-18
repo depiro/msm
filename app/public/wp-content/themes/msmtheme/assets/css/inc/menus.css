@@ -187,13 +187,14 @@
 
 
 .msm-menu-link {
-    background-color: transparent;
-    color: #575756;
+    /* background-color: transparent; */
+    /* color: #575756; */
+    color: white;
     font-weight: 500;
-    padding-left: 10px;
-    padding-right: 10px;
-    border: none;
-    font-size: 16px !important;
+    /* padding-left: 10px;
+    padding-right: 10px; */
+    /* border: none; */
+    /* font-size: 16px !important; */
     cursor: pointer;
     text-decoration: none;
 }

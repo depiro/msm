@@ -3,7 +3,7 @@
 @import url('inc/styles.css');
 @import url('inc/menus.css');
 
-:root {
+/* :root {
     --msm-blue: #3dbfee;
     --msm-blue-v2: #1a85ac;
     --msm-blue-v3: #5d6988;
@@ -33,7 +33,7 @@
     --msm-text-2xl: clamp(2.16rem, calc(1.55rem + 3.04vw), 3.91rem);
     --msm-text-3xl: clamp(2.59rem, calc(1.79rem + 3.98vw), 4.88rem);
     --msm-text-4xl: clamp(3.11rem, calc(2.07rem + 5.21vw), 6.1rem);  
-}
+} */
 
 html {
     /* overflow: hidden; */
@@ -102,6 +102,7 @@ a:link {
     text-decoration: line-through;
   }
   
+
 
 header {
     /* background-color: #f5f5f3; */
@@ -351,27 +352,39 @@ p {
     height: 100%;
     min-height: 120px;
     aspect-ratio: 1 / 1;
-    gap: 10px;
-    /* padding-top: 15px;
-    padding-bottom: 15px; */
+    /* gap: 10px; */
     display: flex;
     justify-content: center;
     cursor: pointer;
     opacity: 0.8;
     transition: opacity 0.6s ease, box-shadow 0.3s ease;
     color: gray;
+    filter: drop-shadow(6px 8px 6px rgba(0, 0, 0, 0.25));
 }
 
 .home-link:hover {
     opacity: 1;
-    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
-    /* background: #a4ca37 !important; */
-    background-color:#00A8E0 !important;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
+    background-color:#00A8E0!important;
+    color: white;
+    font-size: 1.5rem;
 }
 
 .home-link span {
-    font-size: 16px;
+    color: black;
+    color: #353534;
+text-align: center;
+/* font-family: Roboto; */
+font-size: 1.5rem;
+font-style: normal;
+font-weight: 700;
+/* line-height: 1.5625rem;  *//* 100% */
+/* letter-spacing: 0.01563rem; */
+text-transform: uppercase;
 }
+
+
+
 
 /* Eliminamos el breadcrumb anterior ( de interior del content ) */
 .breadcrumb {

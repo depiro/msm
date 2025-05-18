@@ -52,7 +52,7 @@ $query = new WP_Query($args);
 
 <div id="main-content" class="row d-flex w-100 justify-content-center container m-auto">
     <!-- BOTONERA INICIO -->
-    <div class="row justify-content-center d-flex border">
+    <div class="row justify-content-between d-flex">
         <?php get_template_part(THEME_BOTONERA); ?>
     </div>
     <!-- BOTONERA FIN -->

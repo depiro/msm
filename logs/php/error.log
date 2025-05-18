@@ -1201,3 +1201,8 @@
 [17-May-2025 22:31:22 UTC] PHP Warning:  Undefined array key "type" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/plugins/elementor/includes/template-library/sources/local.php on line 1492
 [17-May-2025 23:53:50 UTC] PHP Warning:  Attempt to read property "title" on null in /Users/milfuegos/Sites/msm-dev/app/public/wp-includes/class-wp-customize-widgets.php on line 926
 [18-May-2025 00:11:38 UTC] PHP Warning:  Attempt to read property "title" on null in /Users/milfuegos/Sites/msm-dev/app/public/wp-includes/class-wp-customize-widgets.php on line 926
+[18-May-2025 01:09:13 UTC] Page slug: sem-2
+[18-May-2025 01:09:13 UTC] Final slug: web.com/sem-2.php
+[18-May-2025 01:09:13 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msmtheme//templates/special//sem/landing.php
+[18-May-2025 01:15:01 UTC] PHP Warning:  Attempt to read property "title" on null in /Users/milfuegos/Sites/msm-dev/app/public/wp-includes/class-wp-customize-widgets.php on line 926
+[18-May-2025 14:57:28 UTC] PHP Warning:  Attempt to read property "title" on null in /Users/milfuegos/Sites/msm-dev/app/public/wp-includes/class-wp-customize-widgets.php on line 926

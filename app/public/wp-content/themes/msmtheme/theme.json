@@ -1,0 +1,124 @@
+{
+  "version": 2,
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "name": "Azul institucional",
+          "slug": "azul-institucional",
+          "color": "#0057A0"
+        },
+        {
+          "name": "Azul claro",
+          "slug": "azul-claro",
+          "color": "#2D8EDC"
+        },
+        {
+          "name": "Gris claro",
+          "slug": "gris-claro",
+          "color": "#F1F1F1"
+        },
+        {
+          "name": "Gris oscuro",
+          "slug": "gris-oscuro",
+          "color": "#333333"
+        },
+        {
+          "name": "Blanco",
+          "slug": "blanco",
+          "color": "#FFFFFF"
+        }
+      ],
+      "custom": false
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "'Roboto', 'Helvetica Neue', Arial, 'Noto Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+          "name": "System UI",
+          "slug": "system-ui"
+        }
+      ],
+      "fontSizes": [
+        {
+          "name": "Peque\u00f1o",
+          "slug": "small",
+          "size": "14px"
+        },
+        {
+          "name": "Base",
+          "slug": "base",
+          "size": "16px"
+        },
+        {
+          "name": "Grande",
+          "slug": "large",
+          "size": "32px"
+        },
+        {
+          "name": "Gigante",
+          "slug": "huge",
+          "size": "48px"
+        }
+      ]
+    },
+    "spacing": {
+      "units": [
+        "px",
+        "em",
+        "rem",
+        "%"
+      ],
+      "spacingScale": {
+        "steps": 7,
+        "mediumStep": 8
+      }
+    },
+    "layout": {
+      "contentSize": "800px",
+      "wideSize": "1200px"
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "#FFFFFF",
+      "text": "#333333"
+    },
+    "elements": {
+      "link": {
+        "color": {
+          "text": "#0057A0"
+        }
+      },
+      "button": {
+        "color": {
+          "background": "#0057A0",
+          "text": "#FFFFFF"
+        },
+        "typography": {
+          "fontWeight": "600"
+        },
+        "spacing": {
+          "padding": {
+            "top": "0.5rem",
+            "right": "1rem",
+            "bottom": "0.5rem",
+            "left": "1rem"
+          }
+        }
+      }
+    }
+  },
+  "supports": {
+    "spacing": true,
+    "color": {
+      "customDuotone": false,
+      "customGradient": false
+    },
+    "typography": {
+      "fontStyle": true,
+      "fontWeight": true,
+      "dropCap": false
+    }
+  }
+}

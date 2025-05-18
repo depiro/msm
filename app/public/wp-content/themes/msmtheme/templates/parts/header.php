@@ -49,6 +49,9 @@
                     title="<?php echo get_bloginfo('name'); ?> | Provincia de Buenos Aires. Argentina "">
                 <img class=" msm-header-logo" src=" <?php echo THEME_URI; ?>/assets/images/msmlogo-circulo.svg" alt="">
                 </a>
+                
+                <img class="px-2" id="icon-search" src="<?php echo THEME_URI; ?>/assets/images/msm-logotipo.svg"></img>
+
                 <button class="navbar-toggler menu-container-toggle d-block d-md-none" type="button"
                     data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -57,17 +60,17 @@
                 <!-- Links header -->
                 <div class="d-none d-md-flex justify-content-center align-items-center menu-container">
 
-                    <a id="collapse-tramites" class="msm-menu-link" data-bs-toggle="collapse" href="#menu-tramites"
+                    <!-- <a id="collapse-tramites" class="msm-menu-link" data-bs-toggle="collapse" href="#menu-tramites"
                         role="button" aria-expanded="false" aria-controls="menu-tramites">Trámites</a>
                     <a id="collapse-areas-gob" class="msm-menu-link" data-bs-toggle="collapse" href="#menu-areas-gob"
-                        role="button" aria-expanded="false" aria-controls="menu-areas-gob">Áreas de Gobierno</a>
-                    <a id="collapse-municipio" class="msm-menu-link" data-bs-toggle="collapse" href="#menu-municipio"
+                        role="button" aria-expanded="false" aria-controls="menu-areas-gob">Áreas de Gobierno</a> -->
+                    <a id="collapse-municipio" class="msm-menu-link btn" data-bs-toggle="collapse" href="#menu-municipio"
                         role="button" aria-expanded="false" aria-controls="menu-municipio">Gobierno Abierto</a>
-                    <a class="msm-menu-link" href="https://online.fliphtml5.com/hxrqr/mdra/" role="button"
-                        aria-expanded="false" aria-controls="menu-areas-gob" target="_blank">San Miguel en imágenes</a>
+              <!--       <a class="msm-menu-link" href="https://online.fliphtml5.com/hxrqr/mdra/" role="button"
+                        aria-expanded="false" aria-controls="menu-areas-gob" target="_blank">San Miguel en imágenes</a> -->
 
 
-                    <form action="<?php echo get_bloginfo('url') ?>" id="form-busqueda"
+                    <!-- <form action="<?php echo get_bloginfo('url') ?>" id="form-busqueda"
                         class="form-busqueda-desktop menu-search-container px-2" style="display:none;">
                         <input type="text" value="<?php echo get_search_query(); ?>" name="s" id="s"
                             class="menu-search-input" placeholder="Buscar..." />
@@ -75,7 +78,7 @@
 
 
                     <img class="menu-search-icon px-2" id="icon-search" style="height:20px !important;"
-                        src="<?php echo THEME_URI; ?>/assets/images/search-icon.svg"></img>
+                        src="<?php echo THEME_URI; ?>/assets/images/search-icon.svg"></img> -->
                 </div>
             </div>
         </div>
