@@ -1,5 +1,9 @@
+<!-- Encuesta de utilidad -->
+<?php get_template_part('templates/parts/encuesta_utilidad'); ?>
+
+
 <footer class="p-0 d-flex justify-content-center flex-column h-auto" style="background-color:#E5E5E5">
-    <div class="py-3 d-flex align-items-center msm-bg-black justify-content-center">
+    <div class="py-3 d-flex align-items-center justify-content-center contacto">
         <div class="container text-white text-center row justify-content-center align-items-center py-3">
             <div class="col-12 col-md-4 d-flex align-items-center">
                 <div class="d-flex flex-column align-items-start p-3 text-white">
@@ -8,14 +12,14 @@
                 </div>
             </div>
 
-            <a class="col-12 col-md-4 navbar-brand d-none d-md-block" href="<?php echo HOME_URI; ?>" title="<?php bloginfo('name') ?> | Provincia de Buenos Aires. Argentina "">
-				<img src=" <?php echo THEME_URI; ?>/assets/images/msmlogo-circulo.svg" alt="" width="120">
+            <a class="col-12 col-md-4 logo-footer d-none d-md-block " href="<?php echo HOME_URI; ?>" title="<?php bloginfo('name') ?> | Provincia de Buenos Aires. Argentina "">
+				<img src=" <?php echo THEME_URI; ?>/assets/images/_msmlogo-circulo.svg" alt="logo MSM" width="160">
             </a>
 
             <div class="col-12 col-md-4 d-flex gap-4 flex-column">
                 <div class="d-flex flex-column justify-content-start">
                     <span class="fz-16"><a class="text-white text-decoration-none" href="<?php echo HOME_URI; ?>/terminos-y-condiciones/">Términos y condiciones</a></span>
-                    <span class="fz-16 d-flex align-items-center justify-content-center">Suscripción vía RSS <a href="<?php bloginfo('url'); ?>/feed" target="_blank" class="rss"><img src="<?php echo THEME_URI; ?>/assets/images/icon-rss.svg" height="20"></a></span>
+                    <span class="fz-16 d-flex align-items-center justify-content-center"><a href="<?php bloginfo('url'); ?>/feed" target="_blank" class="rss">Suscripción vía RSS </a></span>
                 </div>
                 <div class="d-flex justify-content-center gap-3">
                     <a href="https://www.instagram.com/munisanmiguel/?hl=es-la" target="_blank">

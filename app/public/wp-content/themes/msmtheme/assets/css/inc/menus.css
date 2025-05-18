@@ -189,7 +189,7 @@
 .msm-menu-link {
     /* background-color: transparent; */
     /* color: #575756; */
-    color: white;
+    color: white !important;
     font-weight: 500;
     /* padding-left: 10px;
     padding-right: 10px; */

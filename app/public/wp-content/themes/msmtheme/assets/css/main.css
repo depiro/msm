@@ -2,6 +2,8 @@
 @import url('inc/banner.css');
 @import url('inc/styles.css');
 @import url('inc/menus.css');
+@import url('inc/buscador.css');
+@import url('inc/encuesta.css');
 
 /* :root {
     --msm-blue: #3dbfee;
@@ -45,16 +47,17 @@ html {
 body {
     -webkit-text-size-adjust: 100%;
     background-color: #ffffff;
-    font-family: "Roboto Condensed", sans-serif !important;
-    font-size: 13px;
+    /* font-family: "Roboto Condensed", sans-serif !important;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 1.4;
+    line-height: 1.4; 
+    letter-spacing: 0.5px;*/
     overflow-x: hidden !important;
     margin: 0;
     color: #575756;
     min-width: 320px;
     min-height: 100vh;
-    letter-spacing: 0.5px;
+
 }
 
 
@@ -347,8 +350,11 @@ p {
 
 
 
+.wrap-botonera {
+    margin-top: -2.6rem;
+}
 
-.home-link {
+.wrap-botonera a {
     height: 100%;
     min-height: 120px;
     aspect-ratio: 1 / 1;
@@ -356,33 +362,31 @@ p {
     display: flex;
     justify-content: center;
     cursor: pointer;
-    opacity: 0.8;
     transition: opacity 0.6s ease, box-shadow 0.3s ease;
     color: gray;
     filter: drop-shadow(6px 8px 6px rgba(0, 0, 0, 0.25));
+    font-size: 1.4rem;
 }
 
-.home-link:hover {
+.wrap-botonera h4 {
+    font-size: 1rem;
+    /* font-family: Roboto; */
+    color: #353534;
+    font-style: bold;
+    font-weight: 700;
+    line-height: 1.1rem;
+    letter-spacing: -1%;
+    text-transform: uppercase;
+    margin-top: 8px;
+}
+
+.wrap-botonera a:hover {
     opacity: 1;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
     background-color:#00A8E0!important;
-    color: white;
+    color: white!important;
     font-size: 1.5rem;
 }
-
-.home-link span {
-    color: black;
-    color: #353534;
-text-align: center;
-/* font-family: Roboto; */
-font-size: 1.5rem;
-font-style: normal;
-font-weight: 700;
-/* line-height: 1.5625rem;  *//* 100% */
-/* letter-spacing: 0.01563rem; */
-text-transform: uppercase;
-}
-
 
 
 
@@ -1170,4 +1174,13 @@ span.post-title {
 	.msm-alert-bar{
 		font-size:0.85rem;
 	}
+}
+
+/* Footer sección contacto */
+.contacto {
+    background-color: #575756;
+}
+
+.logo-footer {
+margin-top: -65px;
 }

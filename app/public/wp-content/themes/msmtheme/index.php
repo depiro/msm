@@ -3,6 +3,9 @@
 <!-- Topbar avisos -->
 <?php msm_render_home_alert(); ?>
 
+<!-- Buscador -->
+<?php get_template_part('templates/parts/buscador'); ?>
+
 
 <!-- HOME SLIDE INICIO -->
 <?php

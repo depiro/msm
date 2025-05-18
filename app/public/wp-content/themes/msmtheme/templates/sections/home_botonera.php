@@ -21,10 +21,10 @@ if ($query->have_posts()) :
 				}
 				?>
 				<?php if($button['text']): ?>
-					<div class="col-6 col-md-4 col-lg-2 p-2">
+					<div class="col-6 col-md-4 col-lg-2 p-2 wrap-botonera">
 						<a href="<?php echo esc_html($url); ?>" class="align-items-center text-decoration-none home-link p-4 rounded-2 text-white justify-content-center d-flex flex-column bg-white">
-							<img style="width: 70px !important;height: auto !important;" src="<?php echo esc_url($button['icon']); ?>" height="50">
-							<span class="text-center fz-12"><?php echo esc_html($button['text']); ?></span>
+							<img style="width: 70px !important; height: auto !important;" src="<?php echo esc_url($button['icon']); ?>" height="50">
+							<h4 class="text-center"><?php echo esc_html($button['text']); ?></h4>
 						</a>
 					</div>
 				<?endif;?>
