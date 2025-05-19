@@ -9,8 +9,8 @@
   <div class="container d-flex align-items-center justify-content-start gap-2 text-start">
     <p class="encuesta-texto">¿Te fue útil esta información?</p>
     <div class="encuesta-botones">
-      <button class="encuesta-btn encuesta-si btn-primary">Sí, me fue útil</button>
-      <button class="encuesta-btn encuesta-no">No me sirvió</button>
+      <button class="encuesta-btn encuesta-si btn btn-primary">Sí, me fue útil</button>
+      <button class="encuesta-btn encuesta-no btn btn-outline-primary">No me sirvió</button>
     </div>
   </div>
 </section>

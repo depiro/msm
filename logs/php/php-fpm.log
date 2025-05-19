@@ -19,3 +19,8 @@
 [17-May-2025 19:22:20] NOTICE: ready to handle connections
 [17-May-2025 19:22:38] WARNING: [pool www] child 38690 exited on signal 4 (SIGILL) after 18.719515 seconds from start
 [17-May-2025 19:22:38] NOTICE: [pool www] child 38722 started
+[19-May-2025 11:24:34] NOTICE: Terminating ...
+[19-May-2025 11:24:34] NOTICE: Terminating ...
+[19-May-2025 11:24:34] NOTICE: exiting, bye-bye!
+[19-May-2025 12:21:51] NOTICE: fpm is running, pid 2048
+[19-May-2025 12:21:51] NOTICE: ready to handle connections

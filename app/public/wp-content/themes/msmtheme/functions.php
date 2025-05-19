@@ -31,6 +31,21 @@ function msm_theme_setup()
 {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
+// Habilitar estilos del editor y conectar theme.json
+add_action('after_setup_theme', function () {
+    add_theme_support('editor-styles');
+    add_editor_style('style.css'); // Refleja tu :root en Gutenberg
+});
+
+// Encolar la hoja de estilo del theme en frontend
+add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_style(
+        'msm-theme-style',
+        get_stylesheet_uri(),
+        [],
+        wp_get_theme()->get('Version')
+    );
+});
 }
 add_action('after_setup_theme', 'msm_theme_setup');
 
@@ -432,3 +447,4 @@ function msm_render_home_alert() {
 	</div>
 	<?php
 }
+

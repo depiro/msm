@@ -66,7 +66,7 @@
                         role="button" aria-expanded="false" aria-controls="menu-areas-gob">Áreas de Gobierno</a> -->
                     <a id="collapse-municipio" class="msm-menu-link btn btn-sm btn-outline-light" data-bs-toggle="collapse" href="#menu-municipio"
                         role="button" aria-expanded="false" aria-controls="menu-municipio">
-                        <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                        <!-- <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg> -->
                         Gobierno Abierto</a>
               <!--       <a class="msm-menu-link" href="https://online.fliphtml5.com/hxrqr/mdra/" role="button"
                         aria-expanded="false" aria-controls="menu-areas-gob" target="_blank">San Miguel en imágenes</a> -->

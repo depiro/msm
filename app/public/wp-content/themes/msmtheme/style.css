@@ -1,15 +1,16 @@
 /*
-    Theme Name: MSM Theme Official
-    Theme URI: http://ejemplo.com
-    Author: Tu Nombre
-    Author URI: http://ejemplo.com
-    Description: Una descripción corta de tu tema.
-    Version: 1.0
-    License: Licencia del tema
-    License URI: URL de la licencia
-    Text Domain: msmtheme
+Theme Name:     MSM Theme
+Theme URI:      https://msm.gov.ar
+Author:         Municipalidad de San Miguel
+Author URI:     https://msm.gov.ar
+Description:    Tema personalizado con diseño responsivo y escalable.
+Version:        1.0
+License:        GPLv2 or later
+License URI:    https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:    msm-theme
+Tags:           responsive, block-based, accesible, moderno
 */
 
 body {
-    background-color: #f0f0f0;
+    background-color: #FFFFFF;
 }
