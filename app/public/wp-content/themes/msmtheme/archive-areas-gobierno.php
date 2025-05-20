@@ -48,7 +48,7 @@ get_template_part(THEME_HEADER); ?>
 								<!-- Contenido -->
 								<div class="acceso-content p-4">
 									<h5 class="mb-1"><?php echo esc_html($term->name); ?></h5>
-									<p class="acceso-description text-secondary mb-0 fz-16 areas-gobierno-desc"><?php echo esc_html($term->description); ?></p>
+									<p class="acceso-description text-secondary mb-0 fz-16"><?php echo esc_html($term->description); ?></p>
 									<!-- <a href="#" class="text-primary text-decoration-underline">Ver más</a> -->
 								</div>
 							</div>

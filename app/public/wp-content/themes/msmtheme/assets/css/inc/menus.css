@@ -109,6 +109,10 @@
 
 
 /* Menú submenues.php */
+/* .menuCul {
+    border:1px solid orange;
+} */
+
 .menuCul ul li:not(.cat-item) a {
     color: var(--msm-gray);
     text-decoration: none !important;
