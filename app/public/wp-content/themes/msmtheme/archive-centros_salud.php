@@ -13,44 +13,25 @@ function procesar_meta_value($meta_value)
 ?>
 
 <div id="main-content" class="container mb-5">
+	<div class="msm-breadcrumb d-block d-sm-row pt-2">
+		<a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home</a>/
+		<a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>/areas-gobierno">Áreas de
+			Gobierno</a>/
+		<a class="msm-breadcrumb-item"
+			href="<?php echo HOME_URI; ?>/areas-gobierno/secretaria-de-salud">Secretaría de Salud</a>/
+		<span class="msm-breadcrumb msm-breadcrumb-item-last">Centros de Salud</span>
+	</div>
+	
 	<div class="row my-3 my-md-5 px-3 justify-content-center">
-		<div class="col-12 col-md-3 order-2 order-md-1">
-			<div class="menuCul">
-				<h5 class="py-2">Secretaría de Salud</h5>
-				<ul class="msm-submenu">
-					<li class="cat-item">
-						<a href="https://www-dev.msm.gov.ar/calendario-de-vacunacion/" style="font-size: 16px;">
-							Calendario de Vacunación</a>
-					</li>
-					<li class="cat-item">
-						<a href="https://www-dev.msm.gov.ar/direccion-de-discapacidad/" style="font-size: 16px;">
-							Dirección de Discapacidad </a>
-					</li>
-					<li class="cat-item">
-						<a href="https://www-dev.msm.gov.ar/vacunatorios/" style="font-size: 16px;">
-							Vacunatorios </a>
-					</li>
-				</ul>
-			</div>
+		<div class="col-12 py-5">
+			<h2 class="msm-font-xl mb-1">Centros de Salud</h2>
+			<p class="fz-18">El Centro de Salud es el primer contacto que toman las personas con el sistema de salud público y
+					donde se efectúan las primeras acciones de asistencia sanitaria. Sus servicios están adaptados a las
+					necesidades de la comunidad de cada barrio en particular.</p>
 		</div>
-		<div class="col-12 col-md-9 order-1 order-md-2">
-			<div class="msm-breadcrumb d-block d-sm-row px-0">
-				<a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home</a>/
-				<a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>/areas-gobierno">Áreas de
-					Gobierno</a>/
-				<a class="msm-breadcrumb-item"
-					href="<?php echo HOME_URI; ?>/areas-gobierno/secretaria-de-salud">Secretaría de Salud</a>/
-				<span class="msm-breadcrumb msm-breadcrumb-item-last">Centros de Salud</span>
-			</div>
+		<div class="col-12 col-md-9">
 
 			<div class="page-content fz-16 fw-400 msm-text-gray text-left row">
-				<h2 class="msm-text-600">Centros de Salud</h2>
-				<p>
-					El Centro de Salud es el primer contacto que toman las personas con el sistema de salud público y
-					donde se efectúan las primeras acciones de asistencia sanitaria. Sus servicios están adaptados a las
-					necesidades de la comunidad de cada barrio en particular.
-				</p>
-
 				<iframe height="600px" title="Web MSM - Mapa de Centros de Salud"
 					src="https://mapas.msm.gov.ar/portal/apps/Embed/index.html?webmap=602f0882447f4a43b0f6c58976d3ec87&amp;extent=-58.7244,-34.5526,-58.6927,-34.5373&amp;home=true&amp;zoom=true&amp;scale=false&amp;search=true&amp;searchextent=false&amp;disable_scroll=false&amp;theme=dark&amp;"
 					height="300" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
@@ -154,6 +135,26 @@ function procesar_meta_value($meta_value)
 
 			</div>
 		</div>
+	<div class="col-12 col-md-3">
+			<div class="menuCul">
+				<h5 class="py-2">Secretaría de Salud</h5>
+				<ul class="msm-submenu">
+					<li class="cat-item">
+						<a href="https://www-dev.msm.gov.ar/calendario-de-vacunacion/" style="font-size: 16px;">
+							Calendario de Vacunación</a>
+					</li>
+					<li class="cat-item">
+						<a href="https://www-dev.msm.gov.ar/direccion-de-discapacidad/" style="font-size: 16px;">
+							Dirección de Discapacidad </a>
+					</li>
+					<li class="cat-item">
+						<a href="https://www-dev.msm.gov.ar/vacunatorios/" style="font-size: 16px;">
+							Vacunatorios </a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
 	</div>
 </div>
 <?php get_template_part(THEME_FOOTER); ?>

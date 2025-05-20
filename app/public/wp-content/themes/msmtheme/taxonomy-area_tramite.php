@@ -5,41 +5,25 @@ $current_term = get_queried_object();
 ?>
 
 <div id="main-content" class="container mb-5">
-	<div class="row my-3 my-md-5 px-3 justify-content-center">
-		<div class="msm-breadcrumb d-block d-sm-row">
-			<a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a><a class="msm-breadcrumb-item" href="<?php echo HOME_URI; ?>/guia-tramites"> Guía de Trámites /</a><span class="msm-breadcrumb msm-breadcrumb-item-last"><?php echo esc_html($current_term->name); ?></span>
-		</div>
-		<div class="col-12 col-md-3 order-2 order-md-1">
-			<h5 class="py-2 msm-text-b-dark">Áreas de trámites</h5>
-			<?php
-
-			$terms = get_terms(array(
-				'taxonomy' => 'area_tramite',
-				'hide_empty' => false,
-			));
-			?>
-			<ul class="msm-submenu ps-0">
-				<?php
-				if (!empty($terms) && !is_wp_error($terms)) :
-					foreach ($terms as $term) :
-				?>
-						<li class="cat-item"><a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_attr($term->name); ?></a></li>
-				<?php endforeach;
-				endif;
-				?>
-			</ul>
-		</div>
-		<div class="order-1 order-md-2 col-12 col-md-9">
+	<div class="msm-breadcrumb d-block d-sm-row pt-2">
+		<a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a><a class="msm-breadcrumb-item" href="<?php echo HOME_URI; ?>/guia-tramites"> Guía de Trámites /</a><span class="msm-breadcrumb msm-breadcrumb-item-last"><?php echo esc_html($current_term->name); ?></span>
+	</div>
+	
+	<div class="row justify-content-center">
+		<div class="col-12 py-5">
 			<div class="page-header mb-5 mt-4">
 				<?php if ($current_term) : ?>
-					<h2 style="font-size: 24px;font-weight: 500;color: #939393;">Trámites</h2>
-					<h1 class="page-title"><?php echo esc_html($current_term->name); ?></h1>
-					<div class="taxonomy-description fz-16 msm-text-black mt-3" style="text-align:justify"><?php echo wp_kses_post($current_term->description); ?></div>
+					<h4>Trámites</h4>
+					<h2 class="page-title msm-font-xl mb-1"><?php echo esc_html($current_term->name); ?></h2>
+					<div class="taxonomy-description">
+						<p class="fz-18"><?php echo wp_kses_post($current_term->description); ?></p>
+					</div>
 				<?php endif; ?>
 			</div>
+		</div>
 
+		<div class="col-12 col-md-9">
 			<?php
-
 			$args = array(
 				'post_type' => 'tramite',
 				'tax_query' => array(
@@ -76,6 +60,26 @@ $current_term = get_queried_object();
 			<?php endif; ?>
 
 			<?php wp_reset_postdata();?>
+		</div>
+		<div class="col-12 col-md-3">
+			<h5 class="py-2 msm-text-b-dark">Áreas de trámites</h5>
+			<?php
+
+			$terms = get_terms(array(
+				'taxonomy' => 'area_tramite',
+				'hide_empty' => false,
+			));
+			?>
+			<ul class="msm-submenu ps-0">
+				<?php
+				if (!empty($terms) && !is_wp_error($terms)) :
+					foreach ($terms as $term) :
+				?>
+						<li class="cat-item"><a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_attr($term->name); ?></a></li>
+				<?php endforeach;
+				endif;
+				?>
+			</ul>
 		</div>
 	</div>
 </div>

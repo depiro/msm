@@ -5,53 +5,7 @@ get_template_part(THEME_HEADER); ?>
 
 <div id="main-content" class="container mb-5">
 	<div class="row my-3 my-md-5 px-3 justify-content-center">
-		<div class="col-12 col-md-3 order-2 order-md-1">
-			<?php
-			// Obtener el término de taxonomía asociado con el post actual
-			$terms = get_the_terms(get_the_ID(), 'area_gobierno');
-			if ($terms && !is_wp_error($terms)) {
-				$term = $terms[0]; // Suponiendo que hay al menos un término
-				// $term_slug = $term->slug;
-			
-				// Consulta para obtener otras páginas en la misma área
-				$args = array(
-					'post_type' => 'page',
-					'posts_per_page' => 10, // Número de posts a mostrar
-					'tax_query' => array(
-						array(
-							'taxonomy' => 'area_gobierno',
-							'field' => 'slug',
-							'terms' => 'secretaria-de-gobierno',
-						),
-					),
-					'orderby' => 'title',
-					'order' => 'ASC',
-				);
-
-				$related_query = new WP_Query($args);
-
-				if ($related_query->have_posts()): ?>
-					<div class="menuCul">
-						<h5 class="py-2"><?php echo esc_html('Secretaria de Gobierno'); ?></h5>
-						<ul class="msm-submenu">
-							<?php while ($related_query->have_posts()):
-								$related_query->the_post(); ?>
-								<li class="cat-item">
-									<a href="<?php the_permalink() ?>" style="font-size: 16px;">
-										<?php the_title(); ?>
-									</a>
-								</li>
-							<?php endwhile; ?>
-						</ul>
-					</div>
-				<?php endif;
-
-				// Restablecer post data
-				wp_reset_postdata();
-			}
-			?>
-		</div>
-		<div class="col-12 col-md-9 order-1 order-md-2">
+	<div class="col-12 col-md-9">
 			<div class="msm-breadcrumb d-block d-sm-row">
 				<a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a>
 				<a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>/areas-gobierno">Áreas de Gobierno</a>/
@@ -190,6 +144,53 @@ get_template_part(THEME_HEADER); ?>
 				</div>
 			</div>
 		</div>
+	<div class="col-12 col-md-3">
+			<?php
+			// Obtener el término de taxonomía asociado con el post actual
+			$terms = get_the_terms(get_the_ID(), 'area_gobierno');
+			if ($terms && !is_wp_error($terms)) {
+				$term = $terms[0]; // Suponiendo que hay al menos un término
+				// $term_slug = $term->slug;
+			
+				// Consulta para obtener otras páginas en la misma área
+				$args = array(
+					'post_type' => 'page',
+					'posts_per_page' => 10, // Número de posts a mostrar
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'area_gobierno',
+							'field' => 'slug',
+							'terms' => 'secretaria-de-gobierno',
+						),
+					),
+					'orderby' => 'title',
+					'order' => 'ASC',
+				);
+
+				$related_query = new WP_Query($args);
+
+				if ($related_query->have_posts()): ?>
+					<div class="menuCul">
+						<h5 class="py-2"><?php echo esc_html('Secretaria de Gobierno'); ?></h5>
+						<ul class="msm-submenu">
+							<?php while ($related_query->have_posts()):
+								$related_query->the_post(); ?>
+								<li class="cat-item">
+									<a href="<?php the_permalink() ?>" style="font-size: 16px;">
+										<?php the_title(); ?>
+									</a>
+								</li>
+							<?php endwhile; ?>
+						</ul>
+					</div>
+				<?php endif;
+
+				// Restablecer post data
+				wp_reset_postdata();
+			}
+			?>
+		</div>
+
 	</div>
 </div>
 
