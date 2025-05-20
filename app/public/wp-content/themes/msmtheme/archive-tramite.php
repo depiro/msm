@@ -21,13 +21,13 @@
 				<div class="col-6 col-xs-6 col-md-3 col-lg-3 p-2 mb-2">
 					<a class="tramites-item d-flex justify-content-center text-decoration-none msm-text-black fw-600 border" href="<?php echo esc_url(get_term_link($term)); ?>">
 						
-						<div class="card d-flex flex-row align-items-center shadow-sm rounded overflow-hidden" style="max-width: 600px;">
+						<div class="card d-flex flex-row align-items-center shadow-sm rounded overflow-hidden">
 							<!-- Ícono -->
 							<div class="bg-info d-flex align-items-center justify-content-center" style="width: 80px; 	height: 100%; flex-shrink: 0;">
 								<?php if ($imagen_url) : ?>
-									<img src="<?php echo esc_url($imagen_url); ?>" alt="<?php echo esc_attr($term->name); ?>" width="100">
+									<img src="<?php echo esc_url($imagen_url); ?>" alt="<?php echo esc_attr($term->name); ?>" width="70">
 									<?php else : ?>
-										<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/multas.svg'); ?>" alt="<?php echo esc_attr($term->name); ?>" width="70">
+										<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/multas.svg'); ?>" alt="<?php echo esc_attr($term->name); ?>" width="60">
 								<?php endif; ?>
 							</div>
 

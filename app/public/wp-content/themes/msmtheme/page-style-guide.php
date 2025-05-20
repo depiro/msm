@@ -26,46 +26,49 @@
         <div class="msm-breadcrumb d-block d-sm-row">
             <a class="msm-breadcrumb-item-first" href="http://msm-dev.local">Home /</a><a class="msm-breadcrumb-item" href="http://msm-dev.local/prensa"> Prensa /</a><span class="msm-breadcrumb msm-breadcrumb-item-last">Ojos en Alerta llegó a un nuevo municipio de Córdoba</span>
         </div>
-        
+    </section>
+
+    <section>
+    <h2 class="section-title">Encabezados de contenidos 'Noticias'</h2>
         <h1 class="post-title">Ojos en Alerta llegó a un nuevo municipio de Córdoba</h1>
 
         <h5 class="post-resume">
             <p>Ya hay 44 distritos en 9 provincias del país adheridos a esta herramienta de seguridad originada en San Miguel. El intendente de San Miguel, Jaime Méndez, firmó ayer un convenio con el jefe comunal de Sampacho (Córdoba), Franco Suárez, para implementar Ojos en Alerta en su distrito. Se trata de un programa originado en San […]</p>
         </h5>
         <div class="post-content">
-            <p>Este es un párrafo de texto normal. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p>Este es otro párrafo de texto. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Una mujer de 52 años con un tumor benigno en el estómago se realizó una importante cirugía con intervenciones mínimas en el Hospital Larcade de San Miguel. A través de esta operación, realizada por un abordaje mixto laparoscópico-endoscópico, se resecó por completo el tumor, evitando una gastrectomía total (resección completa del estómago). Gracias a este procedimiento, se logró evitar complicaciones luego de la cirugía, disminuir el dolor post-operatorio y tener una recuperación mucho más rápida. La paciente tuvo una internación de 24 horas.</p>
+            <p>Es la primera intervención de este tipo realizada en el Hospital Larcade. La misma estuvo a cargo del cirujano especialista en cirugía esofogástrica Ignacio Fuente, asistido por los médicos Florencia Ramos, Pilar García Carrillo y Camilo Gómez.</p>
         </div>
-    </section>
+    </section> 
 
     <!-- Botones -->
     <section>
         <h2 class="section-title">Botones</h2>
         
-        <div class="button-group">
+        <!-- <div class="button-group">
             <h3>Botones 'msm-button'</h3>
             <button class="msm-button">Botón Primario</button>
             <button class="msm-button" disabled>Botón Deshabilitado</button>
-        </div>
+        </div> -->
         
-        <div class="button-group">
+        <!-- <div class="button-group">
             <h3>Botones de Acción msm</h3>
             <button class="btn-licencias">Botón de Acción</button>
             <button class="btn-capacitate-download">Botón de Descarga</button>
-        </div>
+        </div> -->
         <div class="button-group">
             <h3>Bootstrap buttons</h3>
             <button type="button" class="btn btn-primary">Primary</button>
-            <button type="button" class="btn btn-secondary">Secondary</button>
             <button class="btn btn-outline-primary">Outlined</button>
+            <button type="button" class="btn btn-secondary">Secondary</button>
             <button class="btn btn-outlimed-primary" disabled>Outlined Deshabilitado</button>
         </div>
 
-        <div class="button-group">
+        <div class="button-group mt-4">
             <h4>Bootstrap buttons 'sm'</h4>
             <button type="button" class="btn btn-primary btn-sm">Primary</button>
-            <button type="button" class="btn btn-secondary btn-sm">Secondary</button>
             <button class="btn btn-outline-primary btn-sm">Outlined</button>
+            <button type="button" class="btn btn-secondary btn-sm">Secondary</button>
             <button class="btn btn-outlimed-primary btn-sm" disabled>Deshabilitado</button>
         </div>
 

@@ -1192,7 +1192,13 @@ a.phone-item-number {
     font-size: 1rem;
   }
   
-
   .tramites-item {
-    filter: drop-shadow(12px 10px 21.3px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(6px 5px 11px rgba(0, 0, 0, 0.35));    
+    transition-timing-function: ease-in;
+  }
+  .tramites-item:hover {
+    transform: translateY(-10px);
+
+    filter: drop-shadow(12px 10px 20px rgba(0, 0, 0, 0.25));
+    transition-timing-function: ease-in;
   }
