@@ -35,21 +35,25 @@
     <div class="container d-flex justify-content-center">
         <div class="phone-container row w-100 justify-content-around">
             <div class="col-4 col-md-auto col-md-auto p-3 justify-content-center d-flex flex-column">
-                <span class="phone-item-name text-left fz-16 msm-text-black">Atención al vecino</span>
-                <a class="phone-item-number text-left fz-42 fw-600 msm-text-black" href="tel:147">147</a>
-            </div>
-            <div class="col-4 col-md-auto col-md-auto p-3 justify-content-center d-flex flex-column">
-                <span class="phone-item-name text-left fz-16 msm-text-black">SAME</span>
-                <a class="phone-item-number text-left fz-42 fw-600 msm-text-black" href="tel:107">107</a>
-            </div>
-            <div class="col-4 col-md-auto col-md-auto p-3 justify-content-center d-flex flex-column">
-                <span class="phone-item-name text-left fz-16 msm-text-black">COM</span>
-                <a class="phone-item-number text-left fz-42 fw-600 msm-text-black" href="tel:109">109</a>
+                <span class="phone-item-name text-left msm-text-black">SAME</span>
+                <a class="phone-item-number text-left fw-400 msm-text-black" href="tel:107">107</a>
             </div>
             <div class="col-12 col-md-auto col-md-auto p-3 justify-content-center d-flex flex-column">
-                <span class="phone-item-name text-left fz-16 msm-text-black">Bomberos</span>
-                <a class="phone-item-number text-left fz-42 fw-600 msm-text-black" href="tel:(011) 4664-2222">(011) 4664-2222</a>
+                <span class="phone-item-name text-left msm-text-black">Bomberos</span>
+                <a class="phone-item-number text-leftfw-400 msm-text-black" href="tel:(011) 4664-2222">(011) 4664-2222</a>
+            </div>            
+            <div class="col-4 col-md-auto col-md-auto p-3 justify-content-center d-flex flex-column">
+                <span class="phone-item-name text-left msm-text-black">COM</span>
+                <a class="phone-item-number text-left fw-400 msm-text-black" href="tel:109">109</a>
             </div>
+            <div class="col-12 col-md-auto col-md-auto p-3 justify-content-center d-flex flex-column">
+                <span class="phone-item-name text-left msm-text-black">Comisaría de la mujer</span>
+                <a class="phone-item-number text-leftfw-400 msm-text-black" href="tel:(011) 4455-0371">(011) 4455-0371</a>
+            </div>
+            <div class="col-4 col-md-auto col-md-auto p-3 justify-content-center d-flex flex-column">
+                <span class="phone-item-name text-left msm-text-black mb-0">Atención al vecino</span>
+                <a class="phone-item-number text-left msm-text-black" href="tel:147">147</a>
+            </div>            
         </div>
     </div>
 </footer>

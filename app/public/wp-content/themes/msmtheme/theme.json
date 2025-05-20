@@ -34,33 +34,59 @@
     "typography": {
       "fontFamilies": [
         {
-          "fontFamily": "'Roboto', 'Helvetica Neue', Arial, 'Noto Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-          "name": "System UI",
-          "slug": "system-ui"
-        }w
-      ],
-      "fontSizes": [
-        {
-          "name": "Peque\u00f1o",
-          "slug": "small",
-          "size": "14px"
-        },
-        {
-          "name": "Base",
-          "slug": "base",
-          "size": "16px"
-        },
-        {
-          "name": "Grande",
-          "slug": "large",
-          "size": "32px"
-        },
-        {
-          "name": "Gigante",
-          "slug": "huge",
-          "size": "48px"
+          "name": "Roboto",
+          "slug": "roboto",
+          "fontFamily": "Roboto, sans-serif"
         }
-      ]
+      ],
+      "typography": {
+        "fontSizes": [
+          {
+            "name": "XXS",
+            "slug": "text-xxs",
+            "size": "var(--msm-text-xxs)"
+          },
+          {
+            "name": "XS",
+            "slug": "text-xs",
+            "size": "var(--msm-text-xs)"
+          },
+          {
+            "name": "SM",
+            "slug": "text-sm",
+            "size": "var(--msm-text-sm)"
+          },
+          {
+            "name": "MD",
+            "slug": "text-md",
+            "size": "var(--msm-text-md)"
+          },
+          {
+            "name": "LG",
+            "slug": "text-lg",
+            "size": "var(--msm-text-lg)"
+          },
+          {
+            "name": "XL",
+            "slug": "text-xl",
+            "size": "var(--msm-text-xl)"
+          },
+          {
+            "name": "2XL",
+            "slug": "text-2xl",
+            "size": "var(--msm-text-2xl)"
+          },
+          {
+            "name": "3XL",
+            "slug": "text-3xl",
+            "size": "var(--msm-text-3xl)"
+          },
+          {
+            "name": "4XL",
+            "slug": "text-4xl",
+            "size": "var(--msm-text-4xl)"
+          }
+        ],
     },
     "spacing": {
       "units": [

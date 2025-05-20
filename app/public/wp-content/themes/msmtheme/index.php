@@ -60,6 +60,13 @@ $query = new WP_Query($args);
     </div>
     <!-- BOTONERA FIN -->
 
+    <!-- ACCESOS DIRECTOS -->
+    <div class="row d-flex justify-content-center">
+        <h3 class="text-enter">¡Conocé todos los programas y servicios que tenemos para vos!</h3>
+        <?php get_template_part('templates/parts/accesos-programas'); ?>
+    </div>
+    <!-- ACCESOS DIRECTOS FIN -->
+
 
     <!-- NOTICIAS INICIO -->
     <div class="row d-flex justify-content-center">

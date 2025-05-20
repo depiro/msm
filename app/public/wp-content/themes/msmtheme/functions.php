@@ -45,6 +45,16 @@ add_action('wp_enqueue_scripts', function () {
         [],
         wp_get_theme()->get('Version')
     );
+
+    // Cargar estilos de la guía de estilos solo en la página correspondiente
+    if (is_page_template('page-style-guide.php')) {
+        wp_enqueue_style(
+            'msm-style-guide',
+            get_template_directory_uri() . '/assets/css/style-guide.css',
+            [],
+            wp_get_theme()->get('Version')
+        );
+    }
 });
 }
 add_action('after_setup_theme', 'msm_theme_setup');
@@ -383,7 +393,7 @@ add_action('pre_get_posts', 'ordenar_posts_alfabeticamente');
 
 
 /**
- * Crea un ajuste en el Personalizador → “Aviso emergente”
+ * Crea un ajuste en el Personalizador → "Aviso emergente"
  */
 function msm_register_alert_customizer( $wp_customizer ) {
 

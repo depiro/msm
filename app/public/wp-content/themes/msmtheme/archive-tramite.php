@@ -1,22 +1,13 @@
 <?php get_template_part(THEME_HEADER); ?>
-<section class="msm-banner" style="background: url(<?php bloginfo('template_directory'); ?>/assets/images/banner-tramites.jpg) center 53% no-repeat #0089bc">
-	<div class="container">
-		<div class="msm-banner-title">
-			<h1>GUÍA DE TRÁMITES</h1>
-		</div>
-	</div>
-</section>
 <div id="main-content" class="container mb-5">
-	<div class="row my-3 my-md-5 px-3 justify-content-center">
+	<div class="row my-2  justify-content-center">
 		<div class="msm-breadcrumb d-block d-sm-row">
 			<a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a><span class="msm-breadcrumb-item-last"> Guía de Trámites</span>
 		</div>
 
-		<div class="col-12 mb-3">
-			<div class="d-flex justify-content-end mt-3 mb-3">
-				<a class="btn-tramites" href="https://ventanillaunica.msm.gov.ar/PortalTramites/Account/Login">Portal de trámites</a>	
-			</div>
-		</div>
+		<h1 class="post-title">Trámites</h1>
+		<h3 class="post-resume">Conocé cada una de las áreas que conforman la Municipalidad de San Miguel.</h3>
+		
 		<?php
 		$terms = get_terms(array(
 			'taxonomy' => 'area_tramite',
@@ -28,14 +19,23 @@
 				$imagen_url = wp_get_attachment_url($imagen_id);
 		?>
 				<div class="col-6 col-xs-6 col-md-3 col-lg-3 p-2 mb-2">
-					<a class="tramites-item d-flex justify-content-center text-decoration-none msm-text-black fw-600" href="<?php echo esc_url(get_term_link($term)); ?>">
-						<div class="d-flex flex-column justify-content-center align-items-center gap-2 tramites-content">
-							<?php if ($imagen_url) : ?>
-								<img src="<?php echo esc_url($imagen_url); ?>" alt="<?php echo esc_attr($term->name); ?>" width="100">
-							<?php else : ?>
-								<img src="<?php echo esc_url(get_template_directory_uri() . '/images/default-image.jpg'); ?>" alt="<?php echo esc_attr($term->name); ?>" width="100">
-							<?php endif; ?>
-							<span class="text-center fz-16"><?php echo esc_html($term->name); ?></span>
+					<a class="tramites-item d-flex justify-content-center text-decoration-none msm-text-black fw-600 border" href="<?php echo esc_url(get_term_link($term)); ?>">
+						
+						<div class="card d-flex flex-row align-items-center shadow-sm rounded overflow-hidden" style="max-width: 600px;">
+							<!-- Ícono -->
+							<div class="bg-info d-flex align-items-center justify-content-center" style="width: 80px; 	height: 100%; flex-shrink: 0;">
+								<?php if ($imagen_url) : ?>
+									<img src="<?php echo esc_url($imagen_url); ?>" alt="<?php echo esc_attr($term->name); ?>" width="100">
+									<?php else : ?>
+										<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/multas.svg'); ?>" alt="<?php echo esc_attr($term->name); ?>" width="70">
+								<?php endif; ?>
+							</div>
+
+							<!-- Contenido -->
+							<div class="p-3">
+								<h5 class="fw-bold text-dark"><?php echo esc_html($term->name); ?></h5>
+								<p class="mb-0 text-secondary">Descubrí talleres, eventos y actividades.</p>
+							</div>
 						</div>
 					</a>
 				</div>

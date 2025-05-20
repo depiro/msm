@@ -1,0 +1,60 @@
+.color-card {
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.color-card p {
+margin-top: 0;
+margin-bottom: 0;
+
+}
+
+.color-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.color-card.light-text {
+    color: #333;
+}
+
+.color-text {
+    margin: 0;
+    font-weight: bold;
+}
+
+p.color-hex {
+    margin: 0;
+    opacity: 0.8;
+    font-size: 0.9rem;
+    margin-top: 0;
+margin-bottom: 0;
+}
+
+
+p.color-var {
+    margin: 0;
+    font-size: 0.8rem;
+    font-family: monospace;
+    margin-top: 0;
+margin-bottom: 0;
+}
+
+.section-title {
+    margin: 4rem 0 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--bs-secondary);
+    color: var(--bs-secondary);
+}
+
+/* .section-title:first-of-type {
+    margin-top: 0;
+} */

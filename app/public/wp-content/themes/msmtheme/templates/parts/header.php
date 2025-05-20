@@ -27,7 +27,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="<?php echo THEME_URI ?>/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="<?php echo THEME_URI ?>/assets/css/main.css" rel="stylesheet" />
-    <link href="<?php echo THEME_URI ?>/assets/css/fonts.css" rel="stylesheet" />
+    <!-- <link href="<?php echo THEME_URI ?>/assets/css/fonts.css" rel="stylesheet" / -->
     <link href="<?php echo THEME_URI ?>/assets/css/responsive.css" rel="stylesheet" />
     <?php wp_head(); ?>
 </head>
