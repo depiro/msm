@@ -11,54 +11,20 @@ if ($banner_image_id) {
 }
 ?>
 <?php if(isset($banner_url)) : ?>
-<!-- <section class="msm-banner" style="background: url(<?php echo $banner_url?>) center 53% no-repeat #0089bc">
+<section class="msm-banner" style="background: url(<?php echo $banner_url?>) center 53% no-repeat #0089bc">
 	<div class="container">
 		<div class="msm-banner-title">
 			<h1><?php the_title(); ?></h1>
 		</div>
 	</div>
-</section> -->
+</section>
 <? endif?>
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-        <div id="main-content" class="container mb-5">
+        <div id="main-content" class="container mb-5 border">
             <div class="row my-3 my-md-5 px-3 justify-content-center">
-                <div class="col-12 col-md-9 order-1 order-md-2">
-                    <div class="msm-breadcrumb d-block d-sm-row">
-                        <a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home</a>/
-                        <a class="msm-breadcrumb-item" href="<?php echo HOME_URI; ?>/areas-gobierno">Áreas de gobierno</a>/
-                        <?php
-                      
-                        $terms = get_the_terms(get_the_ID(), 'area_gobierno');
-                        if ($terms && !is_wp_error($terms)) :
-                            $term = array_shift($terms);
-                        ?>
-                            <a class="msm-breadcrumb-item" href="<?php echo get_term_link($term); ?>">
-                                <?php echo esc_html($term->name); ?>
-                            </a>/
-                        <?php endif; ?>
-                        <span class="msm-breadcrumb msm-breadcrumb-item-last"><?php the_title(); ?></span>
-                    </div>
-                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                        <div class="d-flex justify-content-between">
-                            <span class="post-title"><?php the_title(); ?></span>
-
-                        </div>
-                        <div class="my-3">
-                            <?php
-                            if (has_post_thumbnail()) {
-                                $thumbnail = get_the_post_thumbnail(get_the_ID(), 'full');
-                                echo $thumbnail;
-                            }
-                            ?>
-                        </div>
-                        <div class="post-content" style="text-align:justify !important;">
-                            <?php the_content(); ?>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-md-3 order-2 order-md-1">
+            <div class="col-12 col-md-3 order-2 order-md-1">
                     <?php
                     // Obtener el término de taxonomía asociado con el post actual
                     $terms = get_the_terms(get_the_ID(), 'area_gobierno');
@@ -106,6 +72,42 @@ if ($banner_image_id) {
                     }
                     ?>
                 </div>
+            <div class="col-12 col-md-9 order-1 order-md-2">
+                <div class="msm-breadcrumb d-block d-sm-row">
+                    <a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home</a>/
+                    <a class="msm-breadcrumb-item" href="<?php echo HOME_URI; ?>/areas-gobierno">Áreas de gobierno</a>/
+                    <?php
+                    
+                    $terms = get_the_terms(get_the_ID(), 'area_gobierno');
+                    if ($terms && !is_wp_error($terms)) :
+                        $term = array_shift($terms);
+                    ?>
+                        <a class="msm-breadcrumb-item" href="<?php echo get_term_link($term); ?>">
+                            <?php echo esc_html($term->name); ?>
+                        </a>/
+                    <?php endif; ?>
+                    <span class="msm-breadcrumb msm-breadcrumb-item-last"><?php the_title(); ?></span>
+                </div>
+
+                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                        <div class="d-flex justify-content-between">
+                            <span class="post-title"><?php the_title(); ?></span>
+
+                        </div>
+                        <div class="my-3">
+                            <?php
+                            if (has_post_thumbnail()) {
+                                $thumbnail = get_the_post_thumbnail(get_the_ID(), 'full');
+                                echo $thumbnail;
+                            }
+                            ?>
+                        </div>
+                        <div class="post-content" style="text-align:justify !important;">
+                            <?php the_content(); ?>
+                        </div>
+                    </article>
+                </div>
+
             </div>
         </div>
     <?php endwhile;

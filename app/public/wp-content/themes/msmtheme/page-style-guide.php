@@ -5,14 +5,22 @@
 
  get_template_part(THEME_HEADER);  ?>
 
-
-
-<div class="container py-5 style-guide">
-    <h1>Guía de Estilos</h1>
+<div class="container style-guide">
+    <div class="row my-2  justify-content-center">
+		<div class="msm-breadcrumb d-block d-sm-row">
+			<a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a><span class="msm-breadcrumb-item-last"> Guía de Estilos</span>
+		</div>
+    </div>
+    <!-- <h1>Guía de Estilos</h1> -->
+    <div class="col-12 py-5">
+			<h2 class="msm-font-xl mb-1">Guía de Estilos</h2>
+			<p class="fz-18">Guía UI y de componentes para tema de Wordpress 'Msmtheme' </p>
+		</div>    
 
     <!-- Tipografía -->
     <section>
-        <h2 class="section-title">Tipografía Encabezados</h2>
+        <h2 class="section-title">Tipografía</h2>
+        <p>Escala tipográfica 'Minor third'.</p>
         
         <div class="mb-4">
             <h1>Encabezado H1</h1>
@@ -21,8 +29,14 @@
             <h4>Encabezado H4</h4>
             <h5>Encabezado H5</h5>
             <h6>Encabezado H6</h6>
+            <p>Párrafo p</p>
+            <p class=text-muted>Párrafo p - muted</p>
+            <caption>Texto de caption</caption>
         </div>
+    </section>
 
+    <section>
+        <h2 class="section-title">Breadcrumb</h2>
         <div class="msm-breadcrumb d-block d-sm-row">
             <a class="msm-breadcrumb-item-first" href="http://msm-dev.local">Home /</a><a class="msm-breadcrumb-item" href="http://msm-dev.local/prensa"> Prensa /</a><span class="msm-breadcrumb msm-breadcrumb-item-last">Ojos en Alerta llegó a un nuevo municipio de Córdoba</span>
         </div>
@@ -41,21 +55,17 @@
         </div>
     </section> 
 
+    <h2 class="section-title">Encabezados de Páginas</h2>
+        <div class="col-12 py-5">
+			<h2 class="msm-font-xl mb-1">Áreas de gobierno</h2>
+			<p class="fz-18">Conocé cada una de las áreas que conforman la Municipalidad de San Miguel</p>
+		</div>
+
+
     <!-- Botones -->
     <section>
         <h2 class="section-title">Botones</h2>
         
-        <!-- <div class="button-group">
-            <h3>Botones 'msm-button'</h3>
-            <button class="msm-button">Botón Primario</button>
-            <button class="msm-button" disabled>Botón Deshabilitado</button>
-        </div> -->
-        
-        <!-- <div class="button-group">
-            <h3>Botones de Acción msm</h3>
-            <button class="btn-licencias">Botón de Acción</button>
-            <button class="btn-capacitate-download">Botón de Descarga</button>
-        </div> -->
         <div class="button-group">
             <h3>Bootstrap buttons</h3>
             <button type="button" class="btn btn-primary">Primary</button>
@@ -71,9 +81,47 @@
             <button type="button" class="btn btn-secondary btn-sm">Secondary</button>
             <button class="btn btn-outlimed-primary btn-sm" disabled>Deshabilitado</button>
         </div>
-
-
     </section>
+
+    <section>
+        <h2 class="section-title">Cards</h2>
+
+        <a href="#" class="text-decoration-none areas-gobierno-item py-3">
+            <div class="card acceso-card d-flex flex-row shadow-sm rounded overflow-hidden align-items-stretch">
+                <!-- Franja celeste lateral -->
+                <div class="acceso-barra d-flex align-items-center justify-content-center"></div>
+
+                <!-- Contenido -->
+                <div class="acceso-content p-4">
+                    <h5 class="acceso-title  mb-1">Jefatura de Gabinete</h5>
+                    <p class="acceso-description text-secondary mb-0"> La Jefatura de Gabinete se encarga de coordinar el gobierno municipal, promoviendo la comunicación entre áreas.</p>
+                    <span class="text-primary text-decoration-underline">Ver más</span>
+                </div>
+            </div>
+        </a>
+
+
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+            <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                <!-- Franja celeste con ícono centrado -->
+                <div class="card-icon d-flex align-items-center justify-content-center">
+                    <svg class="acceso-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2C9.243 2 7 4.243 7 7v2c0 4.971 4.029 9 9 9s9-4.029 9-9V7c0-2.757-2.243-5-5-5h-8zm6 9.5c0 .276-.224.5-.5.5h-2c-.276 0-.5-.224-.5-.5V9h3v2.5zm-5.5-.5c0 .276-.224.5-.5.5H10c-.276 0-.5-.224-.5-.5V9h3v2z"/>
+                    </svg>
+                </div>
+
+                <!-- Contenido -->
+                <div class="acceso-content p-4">
+                    <h5 class="acceso-title mb-1">CULTURA</h5>
+                    <p class="acceso-description text-secondary mb-0">Descubrí talleres, eventos y actividades.</p>
+                </div>
+            </div>
+        </a>
+
+
+
+
+    </section> 
 
     <!-- Colores -->
     <section>
