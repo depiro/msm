@@ -1257,3 +1257,22 @@ a.phone-item-number {
     color: #fff;
   }
   
+
+  /* Sidebar */
+  .sidebar-card {
+    background-color: var(--msm-black, #575756);
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* .text-sm {
+    font-size: var(--msm-text-sm, 1rem);
+  } */
+  
+  .text-acento {
+    color: var(--msm-blue, #3dbfee);
+  }
+  
+  .text-white {
+    color: #ffffff;
+  }
+  
