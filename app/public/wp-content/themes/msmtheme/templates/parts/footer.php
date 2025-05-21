@@ -16,18 +16,19 @@
 				<img src=" <?php echo THEME_URI; ?>/assets/images/_msmlogo-circulo.svg" alt="logo MSM" width="160">
             </a>
 
-            <div class="col-12 col-md-4 d-flex gap-4 flex-column">
+            <div class="col-12 col-md-4">
                 <div class="d-flex flex-column justify-content-start">
-                    <span class="fz-16"><a class="text-white text-decoration-none" href="<?php echo HOME_URI; ?>/terminos-y-condiciones/">Términos y condiciones</a></span>
-                    <span class="fz-16 d-flex align-items-center justify-content-center"><a href="<?php bloginfo('url'); ?>/feed" target="_blank" class="rss">Suscripción vía RSS </a></span>
-                </div>
-                <div class="d-flex justify-content-center gap-3">
-                    <a href="https://www.instagram.com/munisanmiguel/?hl=es-la" target="_blank">
-                        <img class="icon-footer-redes" src="<?php echo THEME_URI; ?>/assets/images/icon-instagram.svg" height="55">
-                    </a>
-                    <a href="https://www.facebook.com/MuniSanMiguelBA/" target="_blank">
-                        <img class="icon-footer-redes" src="<?php echo THEME_URI; ?>/assets/images/icon-facebook.svg" height="55">
-                    </a>
+                    <p class="fz-16 d-flex align-items-center justify-content-start mb-1"><a class="text-white text-decoration-none" href="<?php echo HOME_URI; ?>/terminos-y-condiciones/">Términos y Condiciones</a> <span class="mx-1">|</span>
+                    <a href="<?php bloginfo('url'); ?>/feed" target="_blank" class="rss">Suscripción vía RSS </a></p>
+
+                    <div class="d-flex justify-content-start gap-2">
+                        <a href="https://www.facebook.com/MuniSanMiguelBA/" target="_blank">
+                            <img class="icon-footer-redes" src="<?php echo THEME_URI; ?>/assets/images/social/face-icon.svg" height="24">
+                        </a>
+                        <a href="https://www.instagram.com/munisanmiguel/?hl=es-la" target="_blank">
+                            <img class="icon-footer-redes" src="<?php echo THEME_URI; ?>/assets/images/social/insta-icon.svg" height="24">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
