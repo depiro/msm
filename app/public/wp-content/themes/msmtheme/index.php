@@ -62,7 +62,7 @@ $query = new WP_Query($args);
 
     <!-- ACCESOS DIRECTOS -->
     <div class="row d-flex justify-content-center">
-        <h3 class="text-enter">¡Conocé todos los programas y servicios que tenemos para vos!</h3>
+        <h3 class="text-center mt-3">¡Conocé todos los programas y servicios que tenemos para vos!</h3>
         <?php get_template_part('templates/parts/accesos-programas'); ?>
     </div>
     <!-- ACCESOS DIRECTOS FIN -->

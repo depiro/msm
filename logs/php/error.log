@@ -2527,3 +2527,27 @@ Stack trace:
 [20-May-2025 23:15:16 UTC] Page slug: licencias-2
 [20-May-2025 23:15:16 UTC] Final slug: web.com/licencias-2.php
 [20-May-2025 23:15:16 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msmtheme//templates/special//licencias/landing.php
+[21-May-2025 11:56:26 UTC] Page slug: areas-gobierno
+[21-May-2025 11:56:26 UTC] Final slug: web.com/areas-gobierno.php
+[21-May-2025 11:56:26 UTC] Page slug not in template map: areas-gobierno
+[21-May-2025 15:57:49 UTC] Page slug: licencias-2
+[21-May-2025 15:57:49 UTC] Final slug: web.com/licencias-2.php
+[21-May-2025 15:57:49 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msmtheme//templates/special//licencias/landing.php
+[21-May-2025 15:57:52 UTC] Page slug: areas-gobierno
+[21-May-2025 15:57:52 UTC] Final slug: web.com/areas-gobierno.php
+[21-May-2025 15:57:52 UTC] Page slug not in template map: areas-gobierno
+[21-May-2025 15:57:58 UTC] Page slug: boletin-oficial
+[21-May-2025 15:57:58 UTC] Final slug: web.com/boletin-oficial.php
+[21-May-2025 15:57:58 UTC] Page slug not in template map: boletin-oficial
+[21-May-2025 15:58:00 UTC] Page slug: asesoramiento-documental
+[21-May-2025 15:58:00 UTC] Final slug: web.com/asesoramiento-documental.php
+[21-May-2025 15:58:00 UTC] Page slug not in template map: asesoramiento-documental
+[21-May-2025 15:58:04 UTC] Page slug: guia-de-estilos
+[21-May-2025 15:58:04 UTC] Final slug: web.com/guia-de-estilos.php
+[21-May-2025 15:58:04 UTC] Page slug not in template map: guia-de-estilos
+[21-May-2025 15:58:54 UTC] Page slug: licencias-2
+[21-May-2025 15:58:54 UTC] Final slug: web.com/licencias-2.php
+[21-May-2025 15:58:54 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msmtheme//templates/special//licencias/landing.php
+[21-May-2025 15:58:56 UTC] Page slug: areas-gobierno
+[21-May-2025 15:58:56 UTC] Final slug: web.com/areas-gobierno.php
+[21-May-2025 15:58:56 UTC] Page slug not in template map: areas-gobierno
