@@ -61,6 +61,67 @@
 			<p class="fz-18">Conocé cada una de las áreas que conforman la Municipalidad de San Miguel</p>
 		</div>
 
+    <!-- Banners -->
+    <section>
+        <h2 class="section-title">Banners</h2>
+
+        <?php
+        set_query_var('banner_consultas', [
+        'title' => 'Iniciá tus pedidos o consultas',
+        'button_text' => 'Iniciar consultas',
+        'button_url' => '/consultas',
+        'image' => get_template_directory_uri() . '/assets/images/consultas-ilustracion.svg'
+        ]);
+        get_template_part('templates/parts/banner-grande');
+        ?>
+
+
+<div class="row d-flex justify-content-center px-3  mb-4">
+    <h3 class="text-center mb-0">¡Sumate!</h3>
+    
+    <div class="row gy-3">
+        <!-- Banner 1: Débito automático -->
+        <div class="col-12 col-md-6">
+            <a href="#" class="d-flex align-items-center justify-content-between py-5 px-4 rounded-3 shadow text-decoration-none banner-card bg-white">
+            <div class="d-flex align-items-center gap-5">
+                <!-- Ícono SVG inline -->
+                <div class="icon-svg">
+                    <!-- SVG de ejemplo: documento con dólar -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 3h7a2 2 0 0 1 2 2v2h-2V5H8v14h7v-2h2v2a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm8.293 9.707L18 12l-1.293-1.293a1 1 0 0 0-1.414 1.414L16.586 12l-1.293 1.293a1 1 0 0 0 1.414 1.414z"/>
+                    </svg>
+                </div>
+            <!-- Contenido -->
+            <div>
+            <div class="fw-bold text-dark">¡Adherite al débito automático!</div>
+            <div class="text-secondary small">y ganá tranquilidad todos los meses</div>
+            </div>
+            </div>
+            </a>
+        </div>
+
+        <!-- Banner 2: Vacunas -->
+        <div class="col-12 col-md-6">
+            <a href="#" class="d-flex align-items-center justify-content-between py-5 px-4 rounded-3 banner-card shadow text-decoration-none">
+            <div class="d-flex align-items-center gap-3">
+                <!-- Ícono SVG inline -->
+                <div class="icon-svg">
+                <!-- SVG de ejemplo: jeringa -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19.778 4.222a1 1 0 0 0-1.414 0l-2.585 2.585-.586-.585-1.414 1.414.586.586-5.379 5.379a3 3 0 0 0-.683 3.168l-3.471 3.471a1 1 0 1 0 1.414 1.414l3.471-3.471a3 3 0 0 0 3.168-.683l5.379-5.379.586.586 1.414-1.414-.586-.586 2.585-2.585a1 1 0 0 0 0-1.414l-1-1z"/>
+                </svg>
+                </div>
+                <!-- Contenido -->
+                <div>
+                <div class="fw-bold text-dark">Poné las <span class="fw-bolder">VACUNAS AL DÍA</span></div>
+                <div class="text-secondary small">completá el calendario de vacunación</div>
+                </div>
+            </div>
+            </a>
+        </div>
+    </div>
+</div>
+</section>
 
     <!-- Botones -->
     <section>
@@ -320,6 +381,8 @@
         </div>
     </section>
 
+
+    
     <!-- Enlaces -->
     <section>
         <h2 class="section-title">Links</h2>
@@ -329,6 +392,26 @@
             <a href="#" style="color: var(--msm-gray);">Link Gris</a>
         </div>
     </section>
+
+    <section>
+        <h2 class="section-title">Info institucional - pre footer</h2>
+    <?php
+set_query_var('info_institucional', [
+  'titulo' => 'Información institucional',
+  'nombre' => 'Joaquín Miguel Estrada',
+  'cargo' => 'Secretario de Educación y Trabajo',
+  'telefono' => '03525 - 443776 / 7',
+  'email' => 'sme@sanmiguel.gob.ar',
+  'foto' => get_template_directory_uri() . '/assets/images/estrada.jpg',
+  'mapa_embed' => '<iframe src="https://www.google.com/maps/embed?..."
+                   width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
+]);
+get_template_part('templates/parts/info-institucional');
+?>
+        </div>
+        </section>
+
+
 </div>
 
-<?php get_footer(); ?> 
+<?php get_template_part(THEME_FOOTER); ?>

@@ -61,11 +61,33 @@ $query = new WP_Query($args);
     <!-- BOTONERA FIN -->
 
     <!-- ACCESOS DIRECTOS -->
-    <div class="row d-flex justify-content-center mb-4">
+    <div class="row d-flex justify-content-center mb-4 mt-5">
         <h3 class="text-center mt-3">¡Conocé todos los programas y servicios que tenemos para vos!</h3>
         <?php get_template_part('templates/parts/accesos-programas'); ?>
     </div>
     <!-- ACCESOS DIRECTOS FIN -->
+
+
+    <?php
+set_query_var('banners_home', [
+  [
+    'url' => '/debito-automatico',
+    'icon' => 'debito.svg',
+    'title' => '¡Adherite al débito automático!',
+    'text'  => 'y ganá tranquilidad todos los meses',
+    'style' => 'bg-white shadow-sm'
+  ],
+  [
+    'url' => '/vacunacion',
+    'icon' => 'vacunas.svg',
+    'title' => 'Poné las <strong>VACUNAS AL DÍA</strong>',
+    'text'  => 'completá el calendario de vacunación',
+    'style' => 'border border-primary'
+  ]
+]);
+get_template_part('templates/parts/banners-home');
+?>
+
 
 <!-- BANNERS INFORMATIVOS -->
 <div class="row d-flex justify-content-center px-3  mb-4">
@@ -77,10 +99,10 @@ $query = new WP_Query($args);
         <div class="d-flex align-items-center gap-5">
             <!-- Ícono SVG inline -->
             <div class="icon-svg">
-            <!-- SVG de ejemplo: documento con dólar -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 3h7a2 2 0 0 1 2 2v2h-2V5H8v14h7v-2h2v2a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm8.293 9.707L18 12l-1.293-1.293a1 1 0 0 0-1.414 1.414L16.586 12l-1.293 1.293a1 1 0 0 0 1.414 1.414z"/>
-            </svg>
+                <!-- SVG de ejemplo: documento con dólar -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 3h7a2 2 0 0 1 2 2v2h-2V5H8v14h7v-2h2v2a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm8.293 9.707L18 12l-1.293-1.293a1 1 0 0 0-1.414 1.414L16.586 12l-1.293 1.293a1 1 0 0 0 1.414 1.414z"/>
+                </svg>
             </div>
             <!-- Contenido -->
             <div>
@@ -92,6 +114,7 @@ $query = new WP_Query($args);
     </div>
 
     <!-- Banner 2: Vacunas -->
+
     <div class="col-12 col-md-6">
         <a href="#" class="d-flex align-items-center justify-content-between py-5 px-4 rounded-3 banner-card shadow text-decoration-none">
         <div class="d-flex align-items-center gap-3">
@@ -116,7 +139,7 @@ $query = new WP_Query($args);
 
     <!-- AREAS DE GOBIERNO -->
     <div class="row d-flex justify-content-center">
-        <h3 class="text-center mt-3">Áreas de gobierno</h3>
+        <h3 class="text-center mt-3 mb-4">Áreas de gobierno</h3>
         <div class="page-content row">
             <?php
             set_query_var('mostrar_descripcion', false);
@@ -137,7 +160,7 @@ $query = new WP_Query($args);
 
     <div class="d-flex justify-content-center mb-5">
         <!-- <a href="<?php echo HOME_URI; ?>/prensa" class="msm-bg-black btn msm-opacity border-0 text-white mt-3 mb-3 fz-18" style="border-radius: 11px !important">MÁS NOTICIAS</a> -->
-        <a href="<?php echo HOME_URI; ?>/prensa" class="btn btn-primary btn-lg text-decoration-none text-white mt-3 mb-4">Más noticias</a>
+        <a href="<?php echo HOME_URI; ?>/prensa" class="btn btn-secondary btn-lg text-decoration-none text-white mt-3 mb-4">Más noticias</a>
     </div>
 </div>
 
