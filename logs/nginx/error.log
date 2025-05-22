@@ -1,0 +1,1 @@
+2025/05/22 01:27:43 [error] 63826#0: *2 directory index of "/Users/milfuegos/Sites/msm-dev/app/public/" is forbidden, client: 127.0.0.1, server: , request: "GET / HTTP/1.1", host: "msm-dev.local"
