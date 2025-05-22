@@ -287,8 +287,16 @@ header {
 .wrap-botonera .icon-svg svg,
 .wrap-botonera .home-link svg,
 .wrap-botonera .home-link .icon-svg svg {
-    width: 70px;
+    width: 140px;
     color: #3dbfee!important;
+    fill: #3dbfee;
+}
+.wrap-botonera .icon-svg svg:hover,
+.wrap-botonera .home-link svg:hover,
+.wrap-botonera .home-link .icon-svg svg:hover {
+    width: 180px;
+    color: #FFFFFF!important;
+    fill: #FFFFFF;
 }
 
 .wrap-botonera .home-link {

@@ -25,7 +25,7 @@ get_template_part(THEME_HEADER); ?>
 		</div>
 	</div>
 
-	<div class="col-12 col-md-9 border">
+	<div class="col-12 col-md-9">
 		<div class="row">
 			<div class="p-2">
 				<div class="landing-alert">
