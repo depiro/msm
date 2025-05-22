@@ -1,2 +1,2 @@
-Welcome!
-"MSM Theme" es a great WP theme!
+# Welcome!
+ "MSM Theme is a great WordPress theme!"
