@@ -58,7 +58,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <!-- Links header -->
-                <div class="d-none d-md-flex justify-content-center align-items-center menu-container">
+                <div class="d-none d-md-flex justify-content-center align-items-center menu-container gap-3">
 
                     <!-- <a id="collapse-tramites" class="msm-menu-link" data-bs-toggle="collapse" href="#menu-tramites"
                         role="button" aria-expanded="false" aria-controls="menu-tramites">Trámites</a>
@@ -68,8 +68,8 @@
                         role="button" aria-expanded="false" aria-controls="menu-municipio">
                         <!-- <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg> -->
                         Gobierno Abierto</a>
-              <!--       <a class="msm-menu-link" href="https://online.fliphtml5.com/hxrqr/mdra/" role="button"
-                        aria-expanded="false" aria-controls="menu-areas-gob" target="_blank">San Miguel en imágenes</a> -->
+                        <a class="msm-menu-link" href="https://online.fliphtml5.com/hxrqr/mdra/" role="button"
+                        aria-expanded="false" aria-controls="menu-areas-gob" target="_blank">San Miguel en imágenes</a>
 
 
                     <!-- <form action="<?php echo get_bloginfo('url') ?>" id="form-busqueda"

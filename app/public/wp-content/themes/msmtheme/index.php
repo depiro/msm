@@ -61,21 +61,83 @@ $query = new WP_Query($args);
     <!-- BOTONERA FIN -->
 
     <!-- ACCESOS DIRECTOS -->
-    <div class="row d-flex justify-content-center">
+    <div class="row d-flex justify-content-center mb-4">
         <h3 class="text-center mt-3">¡Conocé todos los programas y servicios que tenemos para vos!</h3>
         <?php get_template_part('templates/parts/accesos-programas'); ?>
     </div>
     <!-- ACCESOS DIRECTOS FIN -->
 
+<!-- BANNERS INFORMATIVOS -->
+<div class="row d-flex justify-content-center px-3  mb-4">
+<h3 class="text-center mb-0">¡Sumate!</h3>
+    <div class="row gy-3">
+    <!-- Banner 1: Débito automático -->
+    <div class="col-12 col-md-6">
+        <a href="#" class="d-flex align-items-center justify-content-between py-5 px-4 rounded-3 shadow text-decoration-none banner-card bg-white">
+        <div class="d-flex align-items-center gap-5">
+            <!-- Ícono SVG inline -->
+            <div class="icon-svg">
+            <!-- SVG de ejemplo: documento con dólar -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 3h7a2 2 0 0 1 2 2v2h-2V5H8v14h7v-2h2v2a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm8.293 9.707L18 12l-1.293-1.293a1 1 0 0 0-1.414 1.414L16.586 12l-1.293 1.293a1 1 0 0 0 1.414 1.414z"/>
+            </svg>
+            </div>
+            <!-- Contenido -->
+            <div>
+            <div class="fw-bold text-dark">¡Adherite al débito automático!</div>
+            <div class="text-secondary small">y ganá tranquilidad todos los meses</div>
+            </div>
+        </div>
+        </a>
+    </div>
+
+    <!-- Banner 2: Vacunas -->
+    <div class="col-12 col-md-6">
+        <a href="#" class="d-flex align-items-center justify-content-between py-5 px-4 rounded-3 banner-card shadow text-decoration-none">
+        <div class="d-flex align-items-center gap-3">
+            <!-- Ícono SVG inline -->
+            <div class="icon-svg">
+            <!-- SVG de ejemplo: jeringa -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19.778 4.222a1 1 0 0 0-1.414 0l-2.585 2.585-.586-.585-1.414 1.414.586.586-5.379 5.379a3 3 0 0 0-.683 3.168l-3.471 3.471a1 1 0 1 0 1.414 1.414l3.471-3.471a3 3 0 0 0 3.168-.683l5.379-5.379.586.586 1.414-1.414-.586-.586 2.585-2.585a1 1 0 0 0 0-1.414l-1-1z"/>
+            </svg>
+            </div>
+            <!-- Contenido -->
+            <div>
+            <div class="fw-bold text-dark">Poné las <span class="fw-bolder">VACUNAS AL DÍA</span></div>
+            <div class="text-secondary small">completá el calendario de vacunación</div>
+            </div>
+        </div>
+        </a>
+    </div>
+    </div>
+</div>
+<!-- BANNERS INFORMATIVOS FIN  -->
+
+    <!-- AREAS DE GOBIERNO -->
+    <div class="row d-flex justify-content-center">
+        <h3 class="text-center mt-3">Áreas de gobierno</h3>
+        <div class="page-content row">
+            <?php
+            set_query_var('mostrar_descripcion', false);
+            get_template_part('templates/parts/areas-cards');
+            ?>
+		</div>
+    </div>
+    <!-- AREAS DE GOBIERNO FIN -->
 
     <!-- NOTICIAS INICIO -->
     <div class="row d-flex justify-content-center">
-        <?php get_template_part(THEME_NEWS); ?>
+        <h3 class="text-center mt-3">Últimas novedades</h3>
+        <div class="page-content row">
+            <?php get_template_part(THEME_NEWS); ?>
+        </div>
     </div>
     <!-- NOTICIAS FIN -->
 
     <div class="d-flex justify-content-center mb-5">
-        <a href="<?php echo HOME_URI; ?>/prensa" class="msm-bg-black btn msm-opacity border-0 text-white mt-3 mb-3 fz-18" style="border-radius: 11px !important">MÁS NOTICIAS</a>
+        <!-- <a href="<?php echo HOME_URI; ?>/prensa" class="msm-bg-black btn msm-opacity border-0 text-white mt-3 mb-3 fz-18" style="border-radius: 11px !important">MÁS NOTICIAS</a> -->
+        <a href="<?php echo HOME_URI; ?>/prensa" class="btn btn-primary btn-lg text-decoration-none text-white mt-3 mb-4">Más noticias</a>
     </div>
 </div>
 

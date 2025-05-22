@@ -22,18 +22,19 @@ if ($query->have_posts()) :
 				?>
 				<?php if($button['text']): ?>
 					<div class="col-6 col-md-4 col-lg-2 p-2 wrap-botonera">
-						<a href="<?php echo esc_html($url); ?>" class="align-items-center text-decoration-none home-link p-4 rounded-2 justify-content-center d-flex flex-column bg-white">
+						<a href="<?php echo esc_html($url); ?>" class="align-items-center text-decoration-none home-link p-2 rounded-2 justify-content-center d-flex flex-column bg-white">
+
 						<div class="icon-svg">
-    <?php
-    if (!empty($button['icon'])) {
-      $icon_slug = basename($button['icon']); // Evita rutas externas
-      $svg_path = get_theme_file_path('/assets/images/icons/' . $icon_slug);
-      if (file_exists($svg_path)) {
-        readfile($svg_path);
-      }
-    }
-    ?>
-  </div>
+							<?php
+							if (!empty($button['icon'])) {
+							$icon_slug = basename($button['icon']); // Evita rutas externas
+							$svg_path = get_theme_file_path('/assets/images/icons/' . $icon_slug);
+							if (file_exists($svg_path)) {
+								readfile($svg_path);
+							}
+							}
+							?>
+						</div>
 
 							<h4 class="text-center"><?php echo esc_html($button['text']); ?></h4>
 						</a>
