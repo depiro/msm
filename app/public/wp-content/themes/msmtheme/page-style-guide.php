@@ -182,6 +182,19 @@
 
 
 
+            <!-- AREAS DE GOBIERNO -->
+    <div class="row d-flex justify-content-center">
+        <h3 class="text-center mt-1 mb-2">Áreas de gobierno</h3>
+        <div class="page-content row">
+            <?php
+            set_query_var('mostrar_descripcion', false);
+            get_template_part('templates/parts/areas-cards');
+            ?>
+		</div>
+    </div>
+    <!-- AREAS DE GOBIERNO FIN -->
+
+
     </section> 
 
     <!-- Colores -->
@@ -395,23 +408,20 @@
 
     <section>
         <h2 class="section-title">Info institucional - pre footer</h2>
-    <?php
-set_query_var('info_institucional', [
-  'titulo' => 'Información institucional',
-  'nombre' => 'Joaquín Miguel Estrada',
-  'cargo' => 'Secretario de Educación y Trabajo',
-  'telefono' => '03525 - 443776 / 7',
-  'email' => 'sme@sanmiguel.gob.ar',
-  'foto' => get_template_directory_uri() . '/assets/images/estrada.jpg',
-  'mapa_embed' => '<iframe src="https://www.google.com/maps/embed?..."
-                   width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
-]);
-get_template_part('templates/parts/info-institucional');
-?>
-        </div>
-        </section>
-
-
+                <?php
+            set_query_var('info_institucional', [
+            'titulo' => 'Información institucional',
+            'nombre' => 'Joaquín Miguel Estrada',
+            'cargo' => 'Secretario de Educación y Trabajo',
+            'telefono' => '03525 - 443776 / 7',
+            'email' => 'sme@sanmiguel.gob.ar',
+            'foto' => get_template_directory_uri() . '/assets/images/estrada.jpg',
+            'mapa_embed' => '<iframe src="https://www.google.com/maps/embed?..."
+                            width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
+            ]);
+            get_template_part('templates/parts/info-institucional');
+            ?>
+    </section>
 </div>
 
 <?php get_template_part(THEME_FOOTER); ?>
