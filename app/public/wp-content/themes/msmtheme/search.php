@@ -1,24 +1,13 @@
 <?php get_template_part(THEME_HEADER); ?>
 
-<!-- <section class="msm-banner" style="background: url(<?php bloginfo('template_directory'); ?>/assets/images/banner-tramites.jpg) center 53% no-repeat #0089bc">
-    <div class="container">
-        <div class="msm-banner-title">
-            <h1>BUSCADOR</h1>
+<div id="main-content" class="container mb-5">
+    <div class="col-12 pt-2">
+        <div class="msm-breadcrumb d-block d-sm-row col-12 col-md-10 col-lg-8">
+                <a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a><span class="msm-breadcrumb-item-last"> Buscador</span>
         </div>
     </div>
-</section> -->
 
-<div id="main-content" class="container mb-5">
-<div class="col-12 pt-2">
-    <div class="msm-breadcrumb d-block d-sm-row col-12 col-md-10 col-lg-8">
-            <a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a><span class="msm-breadcrumb-item-last"> Buscador</span>
-    </div>
-</div>
     <div class="row my-3 my-md-5 px-3 justify-content-center">
-
-        <!-- <div class="col-12 col-md-10 col-lg-8">
-            <h4 style='font-weight:bold;color:#000'>Resultados para : <?php echo get_query_var('s') ?></h4>
-        </div> -->
         <div class="col-12 py-5">
             <h2 class="msm-font-xl mb-1">Resultados para:</h2>			
             <p class="fz-24"><?php echo get_query_var('s') ?></p>

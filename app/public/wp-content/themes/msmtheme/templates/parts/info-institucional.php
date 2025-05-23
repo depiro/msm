@@ -28,7 +28,7 @@ $mapa = $props['mapa_embed'] ?? '';
 
 <div class="info-institucional row align-items-start py-5">
   <div class="col-md-6">
-    <?php if ($titulo): ?><h4 class="fw-bold mb-4"><?php echo esc_html($titulo); ?></h4><?php endif; ?>
+    <?php if ($titulo): ?><h3 class="fw-bold mb-4"><?php echo esc_html($titulo); ?></h3><?php endif; ?>
     <div class="d-flex align-items-start mb-3">
       <?php if ($foto): ?>
         <img src="<?php echo esc_url($foto); ?>" alt="Foto" class="me-3 rounded-circle" style="width:60px; height:60px; object-fit: cover;">

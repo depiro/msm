@@ -5,15 +5,7 @@ $current_term = get_queried_object();
 $term_id = get_queried_object()->term_id;
 $image_url = get_term_meta($term_id, 'banner_image', true);
 ?>
-<?php if (isset($image_url) && $image_url != ''): ?>
-	<section class="msm-banner" style="background: url(<?php echo $image_url ?>) center 53% no-repeat #0089bc">
-		<div class="container">
-			<div class="msm-banner-title">
-				<h1 class="roboto-bold"><?php echo esc_html($current_term->name); ?></h1>
-			</div>
-		</div>
-	</section>
-<? endif ?>
+
 
 <div id="main-content" class="container mb-5">
 	<div class="d-flex flex-column flex-md-row msm-breadcrumb pt-2">

@@ -1342,3 +1342,37 @@ a.phone-item-number {
     transition: fill 0.3s ease;
 }
  
+
+
+
+
+.acceso-box {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .acceso-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  }
+  
+  .acceso-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 0.5rem 0 0 0.5rem;
+    color: #fff;
+  }
+  
+  .acceso-icon svg {
+    width: 32px;
+    height: 32px;
+    fill: currentColor;
+  }
+  
+  .acceso-titulo {
+    font-size: 1rem;
+  }
+  
