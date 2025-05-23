@@ -35,6 +35,31 @@
         </div>
     </section>
 
+<section>
+<section class="styleguide-section my-5">
+  <h2 class="mb-4">Vista previa de íconos SVG</h2>
+
+  <div class="icon-grid d-grid gap-3" style="grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));">
+    <?php
+    $icon_dir = get_theme_file_path('/assets/images/icons/');
+    $icon_files = glob($icon_dir . '*.svg');
+
+    foreach ($icon_files as $path):
+      $name = basename($path, '.svg');
+      $content = file_get_contents($path);
+    ?>
+      <div class="icon-box border rounded p-3 text-center bg-white shadow-sm">
+        <div class="icon-preview mb-2" style="color: var(--msm-blue); width: 48px; height: 48px; margin: 0 auto;">
+          <?php echo $content; ?>
+        </div>
+        <div class="icon-name small text-muted"><?php echo esc_html($name); ?></div>
+      </div>
+    <?php endforeach; ?>
+  </div>
+</section>
+
+</section>
+
     <section>
         <h2 class="section-title">Breadcrumb</h2>
         <div class="msm-breadcrumb d-block d-sm-row">
@@ -66,13 +91,23 @@
         <h2 class="section-title">Banners</h2>
 
         <?php
-        set_query_var('banner_consultas', [
-        'title' => 'Iniciá tus pedidos o consultas',
-        'button_text' => 'Iniciar consultas',
-        'button_url' => '/consultas',
-        'image' => get_template_directory_uri() . '/assets/images/consultas-ilustracion.svg'
-        ]);
-        get_template_part('templates/parts/banner-grande');
+            set_query_var('banner_consultas', [
+            'title' => 'Iniciá tus pedidos o consultas',
+            'button_text' => 'Iniciar consultas',
+            'button_url' => '/consultas',
+            'image' => get_template_directory_uri() . '/assets/images/banner_2_blanca.png'
+            ]);
+            get_template_part('templates/parts/banner-grande');
+        ?>
+
+        <?php
+            set_query_var('banner_consultas', [
+            'title' => 'Iniciá tus pedidos o consultas',
+            'button_text' => 'Iniciar consultas',
+            'button_url' => '/consultas',
+            'image' => get_template_directory_uri() . '/assets/images/banner_2_celeste.png'
+            ]);
+            get_template_part('templates/parts/banner-grande');
         ?>
 
 
@@ -80,45 +115,25 @@
     <h3 class="text-center mb-0">¡Sumate!</h3>
     
     <div class="row gy-3">
-        <!-- Banner 1: Débito automático -->
-        <div class="col-12 col-md-6">
-            <a href="#" class="d-flex align-items-center justify-content-between py-5 px-4 rounded-3 shadow text-decoration-none banner-card bg-white">
-            <div class="d-flex align-items-center gap-5">
-                <!-- Ícono SVG inline -->
-                <div class="icon-svg">
-                    <!-- SVG de ejemplo: documento con dólar -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 3h7a2 2 0 0 1 2 2v2h-2V5H8v14h7v-2h2v2a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm8.293 9.707L18 12l-1.293-1.293a1 1 0 0 0-1.414 1.414L16.586 12l-1.293 1.293a1 1 0 0 0 1.414 1.414z"/>
-                    </svg>
-                </div>
-            <!-- Contenido -->
-            <div>
-            <div class="fw-bold text-dark">¡Adherite al débito automático!</div>
-            <div class="text-secondary small">y ganá tranquilidad todos los meses</div>
-            </div>
-            </div>
-            </a>
-        </div>
-
-        <!-- Banner 2: Vacunas -->
-        <div class="col-12 col-md-6">
-            <a href="#" class="d-flex align-items-center justify-content-between py-5 px-4 rounded-3 banner-card shadow text-decoration-none">
-            <div class="d-flex align-items-center gap-3">
-                <!-- Ícono SVG inline -->
-                <div class="icon-svg">
-                <!-- SVG de ejemplo: jeringa -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M19.778 4.222a1 1 0 0 0-1.414 0l-2.585 2.585-.586-.585-1.414 1.414.586.586-5.379 5.379a3 3 0 0 0-.683 3.168l-3.471 3.471a1 1 0 1 0 1.414 1.414l3.471-3.471a3 3 0 0 0 3.168-.683l5.379-5.379.586.586 1.414-1.414-.586-.586 2.585-2.585a1 1 0 0 0 0-1.414l-1-1z"/>
-                </svg>
-                </div>
-                <!-- Contenido -->
-                <div>
-                <div class="fw-bold text-dark">Poné las <span class="fw-bolder">VACUNAS AL DÍA</span></div>
-                <div class="text-secondary small">completá el calendario de vacunación</div>
-                </div>
-            </div>
-            </a>
-        </div>
+    <?php
+            set_query_var('banners_home', [
+            [
+                'url' => '/debito-automatico',
+                'icon' => 'facturas.svg',
+                'title' => '¡Adherite al débito automático!',
+                'text'  => 'y ganá tranquilidad todos los meses',
+                'style' => 'shadow-sm'
+            ],
+            [
+                'url' => '/vacunacion',
+                'icon' => 'vacunas.svg',
+                'title' => 'Poné las <strong>VACUNAS AL DÍA</strong>',
+                'text'  => 'completá el calendario de vacunación',
+                'style' => 'shadow-sm'
+            ]
+            ]);
+            get_template_part('templates/parts/banners-home');
+        ?>
     </div>
 </div>
 </section>
@@ -144,11 +159,11 @@
         </div>
     </section>
 
-    <section>
+    <section class="mb-5">
         <h2 class="section-title">Cards</h2>
 
         <a href="#" class="text-decoration-none areas-gobierno-item py-3">
-            <div class="card acceso-card d-flex flex-row shadow-sm rounded overflow-hidden align-items-stretch">
+            <div class="card acceso-card d-flex flex-row shadow-sm rounded overflow-hidden align-items-stretch mb-5">
                 <!-- Franja celeste lateral -->
                 <div class="acceso-barra d-flex align-items-center justify-content-center"></div>
 
@@ -156,7 +171,7 @@
                 <div class="acceso-content p-4">
                     <h5 class="acceso-title  mb-1">Jefatura de Gabinete</h5>
                     <p class="acceso-description text-secondary mb-0"> La Jefatura de Gabinete se encarga de coordinar el gobierno municipal, promoviendo la comunicación entre áreas.</p>
-                    <span class="text-primary text-decoration-underline">Ver más</span>
+                    <!-- <span class="text-primary text-decoration-underline">Ver más</span> -->
                 </div>
             </div>
         </a>
@@ -166,9 +181,7 @@
             <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
                 <!-- Franja celeste con ícono centrado -->
                 <div class="card-icon d-flex align-items-center justify-content-center">
-                    <svg class="acceso-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M12 2C9.243 2 7 4.243 7 7v2c0 4.971 4.029 9 9 9s9-4.029 9-9V7c0-2.757-2.243-5-5-5h-8zm6 9.5c0 .276-.224.5-.5.5h-2c-.276 0-.5-.224-.5-.5V9h3v2.5zm-5.5-.5c0 .276-.224.5-.5.5H10c-.276 0-.5-.224-.5-.5V9h3v2z"/>
-                    </svg>
+                    <?php inline_svg('images'); ?>
                 </div>
 
                 <!-- Contenido -->
@@ -178,24 +191,368 @@
                 </div>
             </div>
         </a>
+    </section> 
 
 
-
-
-            <!-- AREAS DE GOBIERNO -->
-    <div class="row d-flex justify-content-center">
-        <h3 class="text-center mt-1 mb-2">Áreas de gobierno</h3>
-        <div class="page-content row">
-            <?php
-            set_query_var('mostrar_descripcion', false);
-            get_template_part('templates/parts/areas-cards');
-            ?>
-		</div>
-    </div>
+    <section>
+        <!-- AREAS DE GOBIERNO -->
+        <div class="row d-flex justify-content-center">
+            <h3 class="text-center mt-1 mb-4">Áreas de gobierno</h3>
+            <div class="page-content row">
+                <?php
+                set_query_var('mostrar_descripcion', false);
+                get_template_part('templates/parts/areas-cards');
+                ?>
+            </div>
+        </div>
+    </section>
     <!-- AREAS DE GOBIERNO FIN -->
 
+    <section>
+        <h3 class="text-center mt-3">Cards progrmas y servicios (taxonomias)</h3>
+        <?php get_template_part('inc/programas-servicios'); ?>    
+    <section/>
 
-    </section> 
+
+
+<section>
+<section class="accesos-programas container py-5">
+  <h2 class="text-center mb-4">¡Conocé todos los programas y servicios que tenemos para vos!</h2>
+  <div class="row g-3">    
+    <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #00B4EC;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">ATENCIÓN AL VECINO</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    
+    <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+            <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                <!-- Franja celeste con ícono centrado -->
+                <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #F7921E;">
+                    <?php inline_svg('images'); ?>
+                </div>
+
+                <!-- Contenido -->
+                <div class="acceso-content p-4">
+                    <h5 class="acceso-title mb-1">CULTURA</h5>
+                </div>
+            </div>
+        </a>
+    </div>
+      
+    <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #F7921E;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">SALUD</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #E96674;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">EMPRENDEDORES</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+    <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #949494;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">DEPORTES</h5>
+                    </div>
+                </div>
+            </a>
+        </div>        
+        
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #E6D74F;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">ZOONOSIS</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #62ACDF;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">SALUD</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #1C78FF;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">TECNOLOGÍA</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #EC672F;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">ADULTOS MAYORES</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #B864A3;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">INFANCIA Y FAMILIA</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #3D5762;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">EDUCACION</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #BF7564;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">DISCAPACIDAD</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #3DB6AD;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">ADICCIONES</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #E0B670;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">TIERRA Y VIVIENDAS</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #43B183;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">RECICLAJE</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #775F57;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">AMBIENTE</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #3072A4;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">EMPLEO</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #FFB800;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">INDUSTRIA Y COMERCIO</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #C2717A;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">HABILITACIONES</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #F6A340;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">CULTURA</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+
+
+    <!-- Agregá más accesos... -->
+
+  </div>
+</section>
+
+<section/>
+
 
     <!-- Colores -->
     <section>
@@ -415,7 +772,7 @@
             'cargo' => 'Secretario de Educación y Trabajo',
             'telefono' => '03525 - 443776 / 7',
             'email' => 'sme@sanmiguel.gob.ar',
-            'foto' => get_template_directory_uri() . '/assets/images/estrada.jpg',
+            'foto' => get_template_directory_uri() . '/assets/images/profile-pic.png',
             'mapa_embed' => '<iframe src="https://www.google.com/maps/embed?..."
                             width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
             ]);

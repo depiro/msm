@@ -26,7 +26,7 @@ $foto = $props['foto'] ?? '';
 $mapa = $props['mapa_embed'] ?? '';
 ?>
 
-<div class="info-institucional row align-items-start py-5 border-top">
+<div class="info-institucional row align-items-start py-5">
   <div class="col-md-6">
     <?php if ($titulo): ?><h4 class="fw-bold mb-4"><?php echo esc_html($titulo); ?></h4><?php endif; ?>
     <div class="d-flex align-items-start mb-3">
@@ -34,10 +34,10 @@ $mapa = $props['mapa_embed'] ?? '';
         <img src="<?php echo esc_url($foto); ?>" alt="Foto" class="me-3 rounded-circle" style="width:60px; height:60px; object-fit: cover;">
       <?php endif; ?>
       <div>
-        <div class="fw-bold mb-1"><?php echo esc_html($nombre); ?></div>
-        <div class="text-muted mb-2"><?php echo esc_html($cargo); ?></div>
-        <div><strong>Teléfono:</strong> <?php echo esc_html($telefono); ?></div>
-        <div><strong>Correo:</strong> <a href="mailto:<?php echo esc_attr($email); ?>"><?php echo esc_html($email); ?></a></div>
+        <h5 class="mb-0"><?php echo esc_html($nombre); ?></h5>
+        <p class=" mb-3"><?php echo esc_html($cargo); ?></p>
+        <p class="mb-0"><strong>Teléfono:</strong> <?php echo esc_html($telefono); ?></p>
+        <p><strong>Correo:</strong> <a href="mailto:<?php echo esc_attr($email); ?>"><?php echo esc_html($email); ?></a></p>
       </div>
     </div>
   </div>

@@ -59,28 +59,16 @@
                 </button>
                 <!-- Links header -->
                 <div class="d-none d-md-flex justify-content-center align-items-center menu-container gap-3">
-
-                    <!-- <a id="collapse-tramites" class="msm-menu-link" data-bs-toggle="collapse" href="#menu-tramites"
-                        role="button" aria-expanded="false" aria-controls="menu-tramites">Trámites</a>
-                    <a id="collapse-areas-gob" class="msm-menu-link" data-bs-toggle="collapse" href="#menu-areas-gob"
-                        role="button" aria-expanded="false" aria-controls="menu-areas-gob">Áreas de Gobierno</a> -->
-                    <a id="collapse-municipio" class="msm-menu-link btn btn-sm btn-outline-light" data-bs-toggle="collapse" href="#menu-municipio"
-                        role="button" aria-expanded="false" aria-controls="menu-municipio">
-                        <!-- <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg> -->
-                        Gobierno Abierto</a>
-                        <a class="msm-menu-link" href="https://online.fliphtml5.com/hxrqr/mdra/" role="button"
-                        aria-expanded="false" aria-controls="menu-areas-gob" target="_blank">San Miguel en imágenes</a>
-
-
-                    <!-- <form action="<?php echo get_bloginfo('url') ?>" id="form-busqueda"
-                        class="form-busqueda-desktop menu-search-container px-2" style="display:none;">
-                        <input type="text" value="<?php echo get_search_query(); ?>" name="s" id="s"
-                            class="menu-search-input" placeholder="Buscar..." />
-                    </form>
-
-
-                    <img class="menu-search-icon px-2" id="icon-search" style="height:20px !important;"
-                        src="<?php echo THEME_URI; ?>/assets/images/search-icon.svg"></img> -->
+                    <a id="collapse-municipio" class="msm-menu-link btn btn-outline-light text-white text-decoration-none" data-bs-toggle="collapse" href="#menu-municipio"
+                role="button" aria-expanded="false" aria-controls="menu-municipio">
+                        Gobierno Abierto
+                        <?php inline_svg('account_balance'); ?>
+                    </a>
+                    
+                    <a class="msm-menu-link btn btn-outline-light text-white text-decoration-none" href="https://online.fliphtml5.com/hxrqr/mdra/" role="button" aria-expanded="false" aria-controls="menu-areas-gob" target="_blank">
+                        San Miguel en imágenes
+                        <?php inline_svg('images'); ?>
+                    </a>
                 </div>
             </div>
         </div>

@@ -58,6 +58,8 @@
     --msm-text-2xl:     clamp(2.16rem, calc(1.55rem + 3.04vw), 3.91rem);
     --msm-text-3xl:     clamp(2.59rem, calc(1.79rem + 3.98vw), 4.88rem);
     --msm-text-4xl:     clamp(3.11rem, calc(2.07rem + 5.21vw), 6.1rem);  
+
+    --msm-banners: #f7f8f4;
 }
 
 

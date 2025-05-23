@@ -1,5 +1,6 @@
 <?php
 
+require_once get_theme_file_path('/inc/helpers/inline-svg-helper.php');
 require get_template_directory() . '/inc/tramites.php';
 require get_template_directory() . '/inc/botonera.php';
 require get_template_directory() . '/inc/slide.php';
@@ -446,15 +447,38 @@ function msm_render_home_alert() {
 	?>
 	<div class="msm-alert-bar justify-content-center">
 		<span class="msm-alert-icon" aria-hidden="true">
-			<?php // SVG — megáfono simple ?>
-			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-				<path d="M2 9v6h4l5 5V4L6 9H2z"></path>
-				<path d="M15 9.5a5 5 0 0 0 0 5"></path>
-				<path d="M19 8a9 9 0 0 0 0 8"></path>
-			</svg>
+            <?php inline_svg('megafono'); ?>
 		</span>
 		<span class="msm-alert-text"><?php echo wp_kses_post( $alert_text ); ?></span>
 	</div>
 	<?php
 }
 
+function msm_register_programa_servicio_taxonomy() {
+    register_taxonomy(
+      'programa_servicio',
+      'page', // O 'post' u otro CPT si preferís`
+      array(
+        'labels' => array(
+          'name' => 'Programas y Servicios',
+          'singular_name' => 'Programa o Servicio',
+          'menu_name' => 'Programas y Servicios',
+          'all_items' => 'Todos los Programas',
+          'edit_item' => 'Editar Programa',
+          'view_item' => 'Ver Programa',
+          'update_item' => 'Actualizar Programa',
+          'add_new_item' => 'Agregar nuevo Programa',
+          'new_item_name' => 'Nuevo nombre',
+          'search_items' => 'Buscar Programas',
+        ),
+        'hierarchical' => true, // true = como categorías, false = como tags
+        'public' => true,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'show_in_rest' => true, // para soporte en editor Gutenberg
+        'rewrite' => array('slug' => 'programas'),
+      )
+    );
+  }
+  add_action('init', 'msm_register_programa_servicio_taxonomy');
+  

@@ -63,79 +63,372 @@ $query = new WP_Query($args);
     <!-- ACCESOS DIRECTOS -->
     <div class="row d-flex justify-content-center mb-4 mt-5">
         <h3 class="text-center mt-3">¡Conocé todos los programas y servicios que tenemos para vos!</h3>
-        <?php get_template_part('templates/parts/accesos-programas'); ?>
+
+        <div class="row g-3">    
+    <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #00B4EC;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">ATENCIÓN AL VECINO</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    
+    <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+            <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                <!-- Franja celeste con ícono centrado -->
+                <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #F7921E;">
+                    <?php inline_svg('images'); ?>
+                </div>
+
+                <!-- Contenido -->
+                <div class="acceso-content p-4">
+                    <h5 class="acceso-title mb-1">CULTURA</h5>
+                </div>
+            </div>
+        </a>
+    </div>
+      
+    <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #F7921E;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">SALUD</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #E96674;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">EMPRENDEDORES</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+    <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #949494;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">DEPORTES</h5>
+                    </div>
+                </div>
+            </a>
+        </div>        
+        
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #E6D74F;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">ZOONOSIS</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #62ACDF;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">SALUD</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #1C78FF;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">TECNOLOGÍA</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #EC672F;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">ADULTOS MAYORES</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #B864A3;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">INFANCIA Y FAMILIA</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #3D5762;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">EDUCACION</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #BF7564;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">DISCAPACIDAD</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #3DB6AD;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">ADICCIONES</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #E0B670;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">TIERRA Y VIVIENDAS</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #43B183;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">RECICLAJE</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #775F57;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">AMBIENTE</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #3072A4;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">EMPLEO</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #FFB800;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">INDUSTRIA Y COMERCIO</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #C2717A;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">HABILITACIONES</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+        <a href="#" class="text-decoration-none areas-gobierno-item">
+                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+                    <!-- Franja celeste con ícono centrado -->
+                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #F6A340;">
+                        <?php inline_svg('images'); ?>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="acceso-content p-4">
+                        <h5 class="acceso-title mb-1">CULTURA</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+
+
+    <!-- Agregá más accesos... -->
+
+  </div>        
+
+
     </div>
     <!-- ACCESOS DIRECTOS FIN -->
 
 
-    <?php
-set_query_var('banners_home', [
-  [
-    'url' => '/debito-automatico',
-    'icon' => 'debito.svg',
-    'title' => '¡Adherite al débito automático!',
-    'text'  => 'y ganá tranquilidad todos los meses',
-    'style' => 'bg-white shadow-sm'
-  ],
-  [
-    'url' => '/vacunacion',
-    'icon' => 'vacunas.svg',
-    'title' => 'Poné las <strong>VACUNAS AL DÍA</strong>',
-    'text'  => 'completá el calendario de vacunación',
-    'style' => 'border border-primary'
-  ]
-]);
-get_template_part('templates/parts/banners-home');
-?>
 
-
-<!-- BANNERS INFORMATIVOS -->
-<div class="row d-flex justify-content-center px-3  mb-4">
-<h3 class="text-center mb-0">¡Sumate!</h3>
-    <div class="row gy-3">
-    <!-- Banner 1: Débito automático -->
-    <div class="col-12 col-md-6">
-        <a href="#" class="d-flex align-items-center justify-content-between py-5 px-4 rounded-3 shadow text-decoration-none banner-card bg-white">
-        <div class="d-flex align-items-center gap-5">
-            <!-- Ícono SVG inline -->
-            <div class="icon-svg">
-                <!-- SVG de ejemplo: documento con dólar -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 3h7a2 2 0 0 1 2 2v2h-2V5H8v14h7v-2h2v2a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm8.293 9.707L18 12l-1.293-1.293a1 1 0 0 0-1.414 1.414L16.586 12l-1.293 1.293a1 1 0 0 0 1.414 1.414z"/>
-                </svg>
-            </div>
-            <!-- Contenido -->
-            <div>
-            <div class="fw-bold text-dark">¡Adherite al débito automático!</div>
-            <div class="text-secondary small">y ganá tranquilidad todos los meses</div>
-            </div>
+    <!-- BANNERS INFORMATIVOS -->
+    <div class="row d-flex justify-content-center px-3 mb-4">
+        <h3 class="text-center mb-0">¡Sumate!</h3>
+        
+        <div class="row gy-3">
+            <?php
+                set_query_var('banners_home', [
+                [
+                    'url' => '/debito-automatico',
+                    'icon' => 'facturas.svg',
+                    'title' => '¡Adherite al débito automático!',
+                    'text'  => 'y ganá tranquilidad todos los meses',
+                    'style' => 'shadow-sm'
+                ],
+                [
+                    'url' => '/vacunacion',
+                    'icon' => 'vacunas.svg',
+                    'title' => 'Poné las <strong>VACUNAS AL DÍA</strong>',
+                    'text'  => 'completá el calendario de vacunación',
+                    'style' => 'shadow-sm'
+                ]
+                ]);
+                get_template_part('templates/parts/banners-home');
+            ?>
         </div>
-        </a>
     </div>
-
-    <!-- Banner 2: Vacunas -->
-
-    <div class="col-12 col-md-6">
-        <a href="#" class="d-flex align-items-center justify-content-between py-5 px-4 rounded-3 banner-card shadow text-decoration-none">
-        <div class="d-flex align-items-center gap-3">
-            <!-- Ícono SVG inline -->
-            <div class="icon-svg">
-            <!-- SVG de ejemplo: jeringa -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19.778 4.222a1 1 0 0 0-1.414 0l-2.585 2.585-.586-.585-1.414 1.414.586.586-5.379 5.379a3 3 0 0 0-.683 3.168l-3.471 3.471a1 1 0 1 0 1.414 1.414l3.471-3.471a3 3 0 0 0 3.168-.683l5.379-5.379.586.586 1.414-1.414-.586-.586 2.585-2.585a1 1 0 0 0 0-1.414l-1-1z"/>
-            </svg>
-            </div>
-            <!-- Contenido -->
-            <div>
-            <div class="fw-bold text-dark">Poné las <span class="fw-bolder">VACUNAS AL DÍA</span></div>
-            <div class="text-secondary small">completá el calendario de vacunación</div>
-            </div>
-        </div>
-        </a>
-    </div>
-    </div>
-</div>
-<!-- BANNERS INFORMATIVOS FIN  -->
+    <!-- BANNERS INFORMATIVOS FIN  -->
 
     <!-- AREAS DE GOBIERNO -->
     <div class="row d-flex justify-content-center">

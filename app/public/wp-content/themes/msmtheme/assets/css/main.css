@@ -312,7 +312,7 @@ header {
     cursor: pointer;
     background-color: #ffffff;
     color: #353534;
-    filter: drop-shadow(6px 8px 6px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(6px 8px 6px rgba(0, 0, 0, 0.15));
     /* transition: 
         transform 0.3s ease, 
         background-color 0.3s ease, 
@@ -1132,6 +1132,7 @@ span.post-title {
 
 .msm-alert-icon svg{
 	display:block;
+    width: 44px;
 }
 
 @media (max-width:768px){
@@ -1263,7 +1264,7 @@ a.phone-item-number {
   }
  
 .acceso-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-6px);
     filter: drop-shadow(12px 10px 20px rgba(0, 0, 0, 0.25));
     transition-timing-function: ease-in;
 }
@@ -1289,10 +1290,7 @@ a.phone-item-number {
     background-color: var(--msm-black, #575756);
     box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
   }
-  
-  /* .text-sm {
-    font-size: var(--msm-text-sm, 1rem);
-  } */
+
   
   .text-acento {
     color: var(--msm-blue, #3dbfee);
@@ -1302,17 +1300,45 @@ a.phone-item-number {
     color: #ffffff;
   }
   
-
-
+/* Banners */
 .banner-card {
-    transition: all 0.3s ease;
-}
-
+    background-color: #ffffff;
+    transform: translateY(0);
+    box-shadow: none;
+    filter: drop-shadow(6px 8px 6px rgba(0, 0, 0, 0.15));
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+                background-color 0.3s ease,
+                box-shadow 0.3s ease,
+                filter 0.3s ease;
+  }
+  
 .banner-card svg {
     fill: currentColor;
+    height: 85px;
   }
 
-.banner-card  svg &:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.15));
-  }
+.banner-card:hover {
+    transform: translateY(-8px);
+    background-color: var(--msm-banners);
+    opacity: 1;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);    
+}
+.banner-card h4 {
+    color: var(--msm-black);
+}
+.banner-card:hover h4 {
+    color: var(--blue-msm-500);
+}
+
+
+.banner-consultas {
+    background-color: var(--msm-banners);
+}
+
+.icon-box svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+    transition: fill 0.3s ease;
+}
+ 

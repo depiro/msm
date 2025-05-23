@@ -41,7 +41,10 @@
     cursor: pointer;
     color: #444;
   }
-  
+  .buscador__button svg {
+    width: 24px;
+  }
+
   .buscador__button:hover {
     color: #007bff;
   }

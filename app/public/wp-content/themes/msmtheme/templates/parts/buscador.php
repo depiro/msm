@@ -20,7 +20,7 @@
         value="<?php echo get_search_query(); ?>"
       />
       <button type="submit" class="buscador__button" aria-label="<?php esc_attr_e('Buscar', 'tu-textdomain'); ?>">
-        🔍
+        <?php inline_svg('search'); ?>
       </button>
     </form>
   </div>

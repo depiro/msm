@@ -1,7 +1,7 @@
 <?php
 /**
  * Componente: Accesos a Programas y Servicios
- * Ubicación: /template-parts/components/accesos-programas.php
+ * Ubicación: /template/parts/accesos-programas
  */
 
 // Obtener todas las páginas marcadas como "destacadas" para accesos
@@ -44,3 +44,5 @@ if ($accesos->have_posts()) : ?>
 </section>
 
 <?php wp_reset_postdata(); endif; ?>
+<?php echo '<!-- componente accesos-programas-servicios cargado -->'; ?>
+

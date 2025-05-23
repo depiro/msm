@@ -189,24 +189,23 @@
     align-items: center;
 }
 
-
 .msm-menu-link {
-    /* background-color: transparent; */
-    /* color: #575756; */
-    color: white !important;
-    font-weight: 500;
-    /* padding-left: 10px;
-    padding-right: 10px; */
-    /* border: none; */
-    /* font-size: 16px !important; */
     cursor: pointer;
-    text-decoration: none;
+    transition: all 0.25s ease;
+    transform: translateY(0);
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .msm-menu-link:hover {
-    font-weight: 500;
-    color: #343433;
+    transform: translateY(-2px);
+    color: white;
 }
+
+.msm-menu-link:hover,
+.msm-menu-link:hover svg {
+    background-color: var(--blue-msm-400);
+    border-color: var(--blue-msm-400);
+} 
 
 .msm-menu-content {
     max-height: 500px;

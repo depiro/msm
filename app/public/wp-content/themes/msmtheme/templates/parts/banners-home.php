@@ -26,26 +26,24 @@
 $banners = get_query_var('banners_home', []);
 
 if (!empty($banners)) : ?>
-  <div class="row g-3">
+  <div class="row gy-3">
     <?php foreach ($banners as $banner) :
       $icon_slug = basename($banner['icon'] ?? '');
       $svg_path = get_theme_file_path('/assets/images/icons/' . $icon_slug);
       ?>
       <div class="col-12 col-md-6">
         <a href="<?php echo esc_url($banner['url']); ?>"
-           class="d-flex align-items-center justify-content-between p-4 rounded-3 banner-card text-decoration-none <?php echo esc_attr($banner['style'] ?? ''); ?>">
+           class="d-flex align-items-center justify-content-between p-4 rounded-3 text-decoration-none banner-card <?php echo esc_attr($banner['style'] ?? ''); ?>">
           <div class="d-flex align-items-center gap-3">
             <div class="icon-svg">
-              <?php if (file_exists($svg_path)) {
-                readfile($svg_path);
-              } ?>
+              <?php if (file_exists($svg_path)) { readfile($svg_path); } ?>
             </div>
             <div>
               <div class="fw-bold text-dark">
-                <?php echo $banner['title']; ?>
+                <h4 class="mb-0"><?php echo $banner['title']; ?></h4>
               </div>
               <div class="text-secondary small">
-                <?php echo $banner['text']; ?>
+                <p><?php echo $banner['text']; ?></p>
               </div>
             </div>
           </div>
