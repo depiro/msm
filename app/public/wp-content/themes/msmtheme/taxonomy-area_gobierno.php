@@ -86,7 +86,6 @@ $image_url = get_term_meta($term_id, 'banner_image', true);
 				?>
 			</ul>
 		</div>
-
 	</div>
 </div>
 <?php get_template_part(THEME_FOOTER); ?>

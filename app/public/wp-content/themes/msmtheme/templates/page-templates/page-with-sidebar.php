@@ -40,78 +40,63 @@
                     </div>
                 </article>
             </div>
-            <div class="col-12 col-md-3 gap-3">
-                <?php
-                // Obtener el término de taxonomía asociado con el post actual
-                $terms = get_the_terms(get_the_ID(), 'area_gobierno');
-                if ($terms && !is_wp_error($terms)) {
-                    $term = $terms[0]; // Suponiendo que hay al menos un término
-                    $term_slug = $term->slug;
 
-                    // Consulta para obtener otras páginas en la misma área
-                    $args = array(
-                        'post_type' => 'page',
-                        'posts_per_page' => 10, // Número de posts a mostrar
-                        'post__not_in' => array(get_the_ID()), // Excluir el post actual
-                        'tax_query' => array(
-                            array(
-                                'taxonomy' => 'area_gobierno',
-                                'field'    => 'slug',
-                                'terms'    => $term_slug,
-                            ),
-                        ),
-                        'orderby' => 'title',
-                        'order'   => 'ASC',
-                    );
+            <!-- BANNER -->
+            <?php
+            set_query_var('banner_consultas', [
+            'title' => 'Iniciá tus pedidos o consultas',
+            'button_text' => 'Iniciar consultas',
+            'button_url' => '/consultas',
+            'image' => get_template_directory_uri() . '/assets/images/banner_2_blanca.png'
+            ]);
+            get_template_part('templates/parts/banner-grande');
+            ?>
+            <!-- BANNER FIN -->
 
-                    $related_query = new WP_Query($args);
+            <!-- NOTICIAS INICIO -->
+            <div class="row d-flex justify-content-center">
+                <h3 class="text-center mt-3">Últimas novedades</h3>
+                <div class="page-content row">
+                    <?php get_template_part(THEME_NEWS); ?>
+                </div>
+            </div>
+            <!-- NOTICIAS FIN -->
 
-                    if ($related_query->have_posts()) : ?>
-                    
-                        <div class="menuCul">
-                            <h5 class="py-2"><?php echo esc_html($term->name); ?></h5>
-                            <ul class="msm-submenu">
-                                <?php while ($related_query->have_posts()) : $related_query->the_post(); ?>
-                                <?php if(get_the_title() == 'Reclamos') continue; ?>
-                                    <li class="cat-item">
-                                        <a href="<?php the_permalink() ?>" style="font-size: 16px;">
-                                            <?php the_title(); ?>
-                                        </a>
-                                    </li>
-                                <?php endwhile; ?>
-                            </ul>
-                        </div>
-                <?php endif;
-
-                    // Restablecer post data
-                    wp_reset_postdata();
-                }
-                ?>
+            <!-- CALL TO ACTION DE 'NOTICIAS' -->
+            <div class="d-flex justify-content-center mb-5">
+                <!-- <a href="<?php echo HOME_URI; ?>/prensa" class="msm-bg-black btn msm-opacity border-0 text-white mt-3 mb-3 fz-18" style="border-radius: 11px !important">MÁS NOTICIAS</a> -->
+                <a href="<?php echo HOME_URI; ?>/prensa" class="btn btn-secondary btn-lg text-decoration-none text-white mt-3 mb-4">Más noticias</a>
+            </div>
+            <!-- CALL TO ACTION DE 'NOTICIAS' FIN -->
         </div>
+
     </div>
-            
+    <?php endwhile; else : ?>
+        <div id="main-content" class="container mb-5">
+            <div class="empty-info"><?php _e('No se encontró la publicación.', 'mi-tema'); ?></div>
+        </div>
+    <?php endif; ?>
+
+
+
+
+    <!-- INFORMACION INSTIUCIONAL FOOTER -->
+    <div id="main-content" class="container mb-0">
+        <?php
+            set_query_var('info_institucional', [
+            'titulo' => 'Información institucional',
+            'nombre' => 'Joaquín Miguel Estrada',
+            'cargo' => 'Secretario de Educación y Trabajo',
+            'telefono' => '03525 - 443776 / 7',
+            'email' => 'sme@sanmiguel.gob.ar',
+            'foto' => get_template_directory_uri() . '/assets/images/profile-pic.png',
+            'mapa_embed' => '<iframe src="https://www.google.com/maps/embed?..."
+                            width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
+            ]);
+            get_template_part('templates/parts/info-institucional');
+        ?>
     </div>
-    <?php endwhile;
-else : ?>
-    <div id="main-content" class="container mb-5">
-        <div class="empty-info"><?php _e('No se encontró la publicación.', 'mi-tema'); ?></div>
-    </div>
-<?php endif; ?>
-<div id="main-content" class="container mb-0">
-<?php
-    set_query_var('info_institucional', [
-    'titulo' => 'Información institucional',
-    'nombre' => 'Joaquín Miguel Estrada',
-    'cargo' => 'Secretario de Educación y Trabajo',
-    'telefono' => '03525 - 443776 / 7',
-    'email' => 'sme@sanmiguel.gob.ar',
-    'foto' => get_template_directory_uri() . '/assets/images/profile-pic.png',
-    'mapa_embed' => '<iframe src="https://www.google.com/maps/embed?..."
-                    width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
-    ]);
-    get_template_part('templates/parts/info-institucional');
-?>
-</div>
+    <!-- INFORMACION INSTIUCIONAL FOOTER FIN -->
 
 <!-- template page sidebar -->
 <?php get_template_part(THEME_FOOTER); ?>

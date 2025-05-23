@@ -100,15 +100,16 @@
             get_template_part('templates/parts/banner-grande');
         ?>
 
-        <?php
+        <!-- <?php
             set_query_var('banner_consultas', [
             'title' => 'Iniciá tus pedidos o consultas',
             'button_text' => 'Iniciar consultas',
             'button_url' => '/consultas',
+            'style' => 'shadow-sm rounded',
             'image' => get_template_directory_uri() . '/assets/images/banner_2_celeste.png'
             ]);
             get_template_part('templates/parts/banner-grande');
-        ?>
+        ?> -->
 
 
 <div class="row d-flex justify-content-center px-3  mb-4">
