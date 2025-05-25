@@ -8,6 +8,7 @@
 @import url('inc/buscador.css');
 @import url('inc/encuesta.css');
 @import url('inc/style-guide.css');
+@import url('inc/card-base.css');
 @import url('base/links.css');
 @import url('utilities/utilities.css');
 
@@ -1173,13 +1174,13 @@ a.phone-item-number {
 
 
 
-.card {
+/* .card {
     color:var(--msm-black);
-}
+} */
 
-.card a {
+/* .card a {
     color:var(--msm-black);
-}
+} */
 
 .acceso-box {
     display: flex;

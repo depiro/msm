@@ -1,58 +1,50 @@
 <?php get_template_part(THEME_HEADER); ?>
 <div id="main-content" class="container mb-5">
-	<div class="row my-2  justify-content-center">
-		<div class="msm-breadcrumb d-block d-sm-row">
-			<a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a><span class="msm-breadcrumb-item-last"> Guía de Trámites</span>
-		</div>
+  <div class="msm-breadcrumb d-block d-sm-row pt-1 small">
+    <a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a><span class="msm-breadcrumb-item-last"> Guía de Trámites</span>
+  </div>
 
-		<div class="col-12 py-5">
-			<h2 class="msm-font-xl mb-1">Trámites</h2>
-			<p class="fz-18">Conocé cada una de las áreas que conforman la Municipalidad de San Miguel.</p>
-		</div>
-		
-		<div class="row">
-			<?php
-			$terms = get_terms(array(
-				'taxonomy' => 'area_tramite',
-				'hide_empty' => false, // Muestra términos incluso si no tienen posts
-			));
-			if (!empty($terms) && !is_wp_error($terms)) :
-				foreach ($terms as $term) :
-					$imagen_id = get_term_meta($term->term_id, 'imagen_id', true);
-					$imagen_url = wp_get_attachment_url($imagen_id);
-			?>
-			
-			<div class="col-6 col-md-4 mb-2">
-				<a class="tramites-item d-flex justify-content-center text-decoration-none" href="<?php echo esc_url(get_term_link($term)); ?>">
-						
-					<div class="card d-flex flex-row align-items-center shadow-sm w-100">
-						<!-- Ícono -->
-						<div class="acceso-icon d-flex align-items-center justify-content-center m-0" style="width: 80px; height: 100%; flex-shrink: 0;">
-							<?php if ($imagen_url) : ?>
-								<img src="<?php echo esc_url($imagen_url); ?>" alt="<?php echo esc_attr($term->name); ?>" width="70">
-								<?php else : ?>
-									<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/icons/multas.svg'); ?>" alt="<?php echo esc_attr($term->name); ?>" width="60">
-							<?php endif; ?>
-						</div>
+  <div class="row my-2 justify-content-center">
+    <div class="col-12 py-5">
+      <h2 class="msm-font-xl mb-1">Trámites</h2>
+      <p class="fz-18">Conocé cada una de las áreas que conforman la Municipalidad de San Miguel.</p>
+    </div>
 
-						<!-- Contenido -->
-						<div class="ps-3 pe-1 py-3">
-							<h5 class="mb-0"><?php echo esc_html($term->name); ?></h5>
-							<p class="areas-description smb-0 fz-14 mb-0">Descubrí talleres, eventos y actividades.</p>
-						</div>
-					</div>
-				</a>
-			</div>
-			
-			<?php endforeach;
+    <div class="row">
+      <?php
+      $terms = get_terms(array(
+        'taxonomy' => 'area_tramite',
+        'hide_empty' => false,
+      ));
 
-			else: ?>
-			<span class="fz-24 empty-info mt-3">
-				Actualmente no hay áreas de trámites disponibles en esta sección. Por favor, revisa más tarde o contacta con nuestra oficina para obtener información adicional sobre los trámites disponibles.
-			</span>
-			<?php endif; ?>
-		</div>
-	</div>
+      if (!empty($terms) && !is_wp_error($terms)) :
+        foreach ($terms as $term) :
+          $imagen_id = get_term_meta($term->term_id, 'imagen_id', true);
+          $imagen_url = wp_get_attachment_url($imagen_id);
+
+          $title = esc_html($term->name);
+          $desc = !empty($term->description) ? wp_trim_words($term->description, 20, '...') : '';
+
+          $link = get_term_link($term);
+          $icon = '';
+
+          if ($imagen_url) {
+            $icon = '<img src="' . esc_url($imagen_url) . '" alt="' . esc_attr($term->name) . '" width="60">';
+          } else {
+            $icon = '<img src="' . esc_url(get_template_directory_uri() . '/assets/images/icons/multas.svg') . '" alt="' . esc_attr($term->name) . '" width="60">';
+          }
+
+          $variant = 3;
+          $height = '220px';
+
+          include get_template_directory() . '/templates/parts/card-base.php';
+        endforeach;
+      else: ?>
+        <span class="fz-24 empty-info mt-3">
+          Actualmente no hay áreas de trámites disponibles en esta sección. Por favor, revisa más tarde o contacta con nuestra oficina para obtener información adicional sobre los trámites disponibles.
+        </span>
+      <?php endif; ?>
+    </div>
+  </div>
 </div>
 <?php get_template_part(THEME_FOOTER); ?>
-<!-- archive tramite -->

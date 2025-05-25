@@ -318,348 +318,136 @@
 
     <section>
         <h3 class="text-center mt-3">Cards programas y servicios (taxonomias)</h3>
+        <h2 class="text-center mb-4">¡Conocé todos los programas y servicios que tenemos para vos!</h2>
         <?php get_template_part('inc/programas-servicios'); ?>
     <section/>
 
 
 
-<section>
-<section class="accesos-programas container py-5">
-  <h2 class="text-center mb-4">¡Conocé todos los programas y servicios que tenemos para vos!</h2>
-  <div class="row g-3">    
-    <div class="col-6 col-md-4">
-        <a href="#" class="text-decoration-none areas-gobierno-item">
-                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
-                    <!-- Franja celeste con ícono centrado -->
-                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #00B4EC;">
-                        <?php inline_svg('images'); ?>
-                    </div>
 
-                    <!-- Contenido -->
-                    <div class="acceso-content p-4">
-                        <h5 class="acceso-title mb-1">ATENCIÓN AL VECINO</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-    
-    <div class="col-6 col-md-4">
-        <a href="#" class="text-decoration-none areas-gobierno-item">
-            <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
-                <!-- Franja celeste con ícono centrado -->
-                <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #F7921E;">
-                    <?php inline_svg('images'); ?>
-                </div>
 
-                <!-- Contenido -->
-                <div class="acceso-content p-4">
-                    <h5 class="acceso-title mb-1">CULTURA</h5>
-                </div>
-            </div>
-        </a>
-    </div>
+    <section class="container my-5">
+  <h2 class="mb-4">🧱 Variantes de Cards</h2>
+  <div class="row g-4">
+    <?php
+    $cards = [
+      ['variant' => 1, 'title' => 'Card V1: Solo título'],
       
-    <div class="col-6 col-md-4">
-        <a href="#" class="text-decoration-none areas-gobierno-item">
-                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
-                    <!-- Franja celeste con ícono centrado -->
-                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #F7921E;">
-                        <?php inline_svg('images'); ?>
-                    </div>
+      ['variant' => 2, 'title' => 'Card V2: Título + Descripción + Link', 'desc' => 'Este es un ejemplo de descripción con algunas palabras clave.'],
+      
+      ['variant' => 3, 'title' => 'Card V3: Título + Descripción + Icono', 'desc' => 'Talleres, eventos y actividades culturales.', 'icon' => file_get_contents(get_template_directory() . '/assets/images/icons/ojos-alerta.svg')],
+      
+      ['variant' => 4, 'title' => 'Card V4: Título + Icono + Color', 'color' => '#25669B', 'icon' => file_get_contents(get_template_directory() . '/assets/images/icons/ojos-alerta.svg')],
+    ];
 
-                    <!-- Contenido -->
-                    <div class="acceso-content p-4">
-                        <h5 class="acceso-title mb-1">SALUD</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
+    foreach ($cards as $card) {
+      $title = $card['title'] ?? '';
+      $desc = $card['desc'] ?? '';
+      $icon = $card['icon'] ?? '';
+      $color = $card['color'] ?? '';
+      $variant = $card['variant'];
 
-    <div class="col-6 col-md-4">
-        <a href="#" class="text-decoration-none areas-gobierno-item">
-                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
-                    <!-- Franja celeste con ícono centrado -->
-                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #E96674;">
-                        <?php inline_svg('images'); ?>
-                    </div>
-
-                    <!-- Contenido -->
-                    <div class="acceso-content p-4">
-                        <h5 class="acceso-title mb-1">EMPRENDEDORES</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-
-    <div class="col-6 col-md-4">
-        <a href="#" class="text-decoration-none areas-gobierno-item">
-                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
-                    <!-- Franja celeste con ícono centrado -->
-                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #949494;">
-                        <?php inline_svg('images'); ?>
-                    </div>
-
-                    <!-- Contenido -->
-                    <div class="acceso-content p-4">
-                        <h5 class="acceso-title mb-1">DEPORTES</h5>
-                    </div>
-                </div>
-            </a>
-        </div>        
-        
-        <div class="col-6 col-md-4">
-        <a href="#" class="text-decoration-none areas-gobierno-item">
-                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
-                    <!-- Franja celeste con ícono centrado -->
-                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #E6D74F;">
-                        <?php inline_svg('images'); ?>
-                    </div>
-
-                    <!-- Contenido -->
-                    <div class="acceso-content p-4">
-                        <h5 class="acceso-title mb-1">ZOONOSIS</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col-6 col-md-4">
-        <a href="#" class="text-decoration-none areas-gobierno-item">
-                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
-                    <!-- Franja celeste con ícono centrado -->
-                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #62ACDF;">
-                        <?php inline_svg('images'); ?>
-                    </div>
-
-                    <!-- Contenido -->
-                    <div class="acceso-content p-4">
-                        <h5 class="acceso-title mb-1">SALUD</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col-6 col-md-4">
-        <a href="#" class="text-decoration-none areas-gobierno-item">
-                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
-                    <!-- Franja celeste con ícono centrado -->
-                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #1C78FF;">
-                        <?php inline_svg('images'); ?>
-                    </div>
-
-                    <!-- Contenido -->
-                    <div class="acceso-content p-4">
-                        <h5 class="acceso-title mb-1">TECNOLOGÍA</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-        
-        
-        <div class="col-6 col-md-4">
-        <a href="#" class="text-decoration-none areas-gobierno-item">
-                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
-                    <!-- Franja celeste con ícono centrado -->
-                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #EC672F;">
-                        <?php inline_svg('images'); ?>
-                    </div>
-
-                    <!-- Contenido -->
-                    <div class="acceso-content p-4">
-                        <h5 class="acceso-title mb-1">ADULTOS MAYORES</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col-6 col-md-4">
-        <a href="#" class="text-decoration-none areas-gobierno-item">
-                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
-                    <!-- Franja celeste con ícono centrado -->
-                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #B864A3;">
-                        <?php inline_svg('images'); ?>
-                    </div>
-
-                    <!-- Contenido -->
-                    <div class="acceso-content p-4">
-                        <h5 class="acceso-title mb-1">INFANCIA Y FAMILIA</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col-6 col-md-4">
-        <a href="#" class="text-decoration-none areas-gobierno-item">
-                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
-                    <!-- Franja celeste con ícono centrado -->
-                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #3D5762;">
-                        <?php inline_svg('images'); ?>
-                    </div>
-
-                    <!-- Contenido -->
-                    <div class="acceso-content p-4">
-                        <h5 class="acceso-title mb-1">EDUCACION</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-        
-        <div class="col-6 col-md-4">
-        <a href="#" class="text-decoration-none areas-gobierno-item">
-                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
-                    <!-- Franja celeste con ícono centrado -->
-                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #BF7564;">
-                        <?php inline_svg('images'); ?>
-                    </div>
-
-                    <!-- Contenido -->
-                    <div class="acceso-content p-4">
-                        <h5 class="acceso-title mb-1">DISCAPACIDAD</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col-6 col-md-4">
-        <a href="#" class="text-decoration-none areas-gobierno-item">
-                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
-                    <!-- Franja celeste con ícono centrado -->
-                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #3DB6AD;">
-                        <?php inline_svg('images'); ?>
-                    </div>
-
-                    <!-- Contenido -->
-                    <div class="acceso-content p-4">
-                        <h5 class="acceso-title mb-1">ADICCIONES</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col-6 col-md-4">
-        <a href="#" class="text-decoration-none areas-gobierno-item">
-                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
-                    <!-- Franja celeste con ícono centrado -->
-                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #E0B670;">
-                        <?php inline_svg('images'); ?>
-                    </div>
-
-                    <!-- Contenido -->
-                    <div class="acceso-content p-4">
-                        <h5 class="acceso-title mb-1">TIERRA Y VIVIENDAS</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-
-        <div class="col-6 col-md-4">
-        <a href="#" class="text-decoration-none areas-gobierno-item">
-                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
-                    <!-- Franja celeste con ícono centrado -->
-                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #43B183;">
-                        <?php inline_svg('images'); ?>
-                    </div>
-
-                    <!-- Contenido -->
-                    <div class="acceso-content p-4">
-                        <h5 class="acceso-title mb-1">RECICLAJE</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col-6 col-md-4">
-        <a href="#" class="text-decoration-none areas-gobierno-item">
-                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
-                    <!-- Franja celeste con ícono centrado -->
-                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #775F57;">
-                        <?php inline_svg('images'); ?>
-                    </div>
-
-                    <!-- Contenido -->
-                    <div class="acceso-content p-4">
-                        <h5 class="acceso-title mb-1">AMBIENTE</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col-6 col-md-4">
-        <a href="#" class="text-decoration-none areas-gobierno-item">
-                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
-                    <!-- Franja celeste con ícono centrado -->
-                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #3072A4;">
-                        <?php inline_svg('images'); ?>
-                    </div>
-
-                    <!-- Contenido -->
-                    <div class="acceso-content p-4">
-                        <h5 class="acceso-title mb-1">EMPLEO</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-
-        <div class="col-6 col-md-4">
-        <a href="#" class="text-decoration-none areas-gobierno-item">
-                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
-                    <!-- Franja celeste con ícono centrado -->
-                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #FFB800;">
-                        <?php inline_svg('images'); ?>
-                    </div>
-
-                    <!-- Contenido -->
-                    <div class="acceso-content p-4">
-                        <h5 class="acceso-title mb-1">INDUSTRIA Y COMERCIO</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col-6 col-md-4">
-        <a href="#" class="text-decoration-none areas-gobierno-item">
-                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
-                    <!-- Franja celeste con ícono centrado -->
-                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #C2717A;">
-                        <?php inline_svg('images'); ?>
-                    </div>
-
-                    <!-- Contenido -->
-                    <div class="acceso-content p-4">
-                        <h5 class="acceso-title mb-1">HABILITACIONES</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col-6 col-md-4">
-        <a href="#" class="text-decoration-none areas-gobierno-item">
-                <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
-                    <!-- Franja celeste con ícono centrado -->
-                    <div class="card-icon d-flex align-items-center justify-content-center" style="background-color: #F6A340;">
-                        <?php inline_svg('images'); ?>
-                    </div>
-
-                    <!-- Contenido -->
-                    <div class="acceso-content p-4">
-                        <h5 class="acceso-title mb-1">CULTURA</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-
-
-
-    <!-- Agregá más accesos... -->
-
+      include get_template_directory() . '/templates/parts/card-base.php';
+    }
+    ?>
   </div>
 </section>
 
-<section/>
+
+<section class="container my-5">
+  <h2 class="mb-4">Card 1</h2>
+  <div class="row g-4">
+    <?php
+    $cards = [
+      ['variant' => 1, 'title' => 'Card V1: Solo título'],
+    ];
+
+    foreach ($cards as $card) {
+      $title = $card['title'] ?? '';
+      $variant = 1;
+      $height = '90px';
+      include get_template_directory() . '/templates/parts/card-base.php';
+    }
+    ?>
+  </div>
+</section>
+
+<section class="container my-5">
+  <h2 class="mb-4">Card 2</h2>
+  <div class="row g-4">
+    <?php
+    $cards = [
+      ['variant' => 2, 'title' => 'Card V2: Título, descripción y ver mas'],
+    ];
+
+    foreach ($cards as $card) {
+      $title = $card['title'] ?? '';
+      $variant = 2;
+      $desc = 'Cuando se quiera ejecutar una obra nueva con destino vivienda unifamiliar, debe efectuarse este trámite previo a iniciar cualquier tipo de actividad constructiva.';
+      $height = '220px';
+      include get_template_directory() . '/templates/parts/card-base.php';
+    }
+    ?>
+  </div>
+</section>
+
+
+<section class="container my-5">
+  <h2 class="mb-4">Card 3</h2>
+  <div class="row g-4">
+    <?php
+    $cards = [
+      ['variant' => 3, 'title' => 'Card V3: Título + barra ancha celeste + icono'],
+    ];
+
+    foreach ($cards as $card) {
+      $title = $card['title'] ?? '';
+      $variant = 3;
+      $height = '240px';
+      $desc = 'Cuando se quiera ejecutar una obra nueva con destino vivienda unifamiliar, debe efectuarse este trámite previo a iniciar cualquier tipo de actividad constructiva.';
+      include get_template_directory() . '/templates/parts/card-base.php';
+    }
+    ?>
+  </div>
+</section>
+
+<section class="container my-5">
+  <h2 class="mb-4">Card 4</h2>
+  <div class="row g-4">
+    <?php
+    $cards = [
+      ['variant' => 4, 'title' => 'Card V4: Título + barra ancha de color + icono'],
+    ];
+
+    foreach ($cards as $card) {
+      $title = $card['title'] ?? '';
+      $variant = 4;
+      $height = '90px';
+      include get_template_directory() . '/templates/parts/card-base.php';
+    }
+    ?>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<hr/>
+
+
+
+
+
+
+
 
 
     <!-- Colores -->

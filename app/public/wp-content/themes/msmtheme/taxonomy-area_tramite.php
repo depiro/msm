@@ -5,7 +5,7 @@ $current_term = get_queried_object();
 ?>
 
 <div id="main-content" class="container mb-5">
-	<div class="msm-breadcrumb d-block d-sm-row pt-2">
+	<div class="msm-breadcrumb d-block d-sm-row pt-1 small">
 		<a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a><a class="msm-breadcrumb-item" href="<?php echo HOME_URI; ?>/guia-tramites"> Guía de Trámites /</a><span class="msm-breadcrumb msm-breadcrumb-item-last"><?php echo esc_html($current_term->name); ?></span>
 	</div>
 	
@@ -62,7 +62,7 @@ $current_term = get_queried_object();
 			<?php wp_reset_postdata();?>
 		</div>
 		<div class="col-12 col-md-3">
-			<h5 class="py-2 msm-text-b-dark">Áreas de trámites</h5>
+			<h5 class="py-2 msm-text-b-dark border">Áreas de trámites</h5>
 			<?php
 
 			$terms = get_terms(array(

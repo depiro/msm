@@ -432,10 +432,23 @@ $query = new WP_Query($args);
     <div class="row d-flex justify-content-center">
         <h3 class="text-center mt-3 mb-4">Áreas de gobierno</h3>
         <div class="page-content row">
+            
             <?php
             set_query_var('mostrar_descripcion', false);
             get_template_part('templates/parts/areas-cards');
             ?>
+
+
+<?php while (have_posts()): the_post(); ?>
+						<?php
+							$height = '90px';
+							$variant = 1;
+							$title = get_the_title();
+
+							include get_template_directory() . '/templates/parts/card-base.php';
+						?>
+					<?php endwhile; ?>
+
 		</div>
     </div>
     <!-- AREAS DE GOBIERNO FIN -->

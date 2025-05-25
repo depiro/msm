@@ -547,4 +547,3 @@ add_action('save_post', 'msm_subtitulo_save');
 
 
 
-/* subtitulo post */
