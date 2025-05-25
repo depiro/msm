@@ -24,7 +24,7 @@ if ($accesos->have_posts()) : ?>
     <?php while ($accesos->have_posts()) : $accesos->the_post();
       $titulo = get_the_title();
       $link = get_permalink();
-      $icono = get_field('icono_svg'); // SVG inline desde ACF (campo tipo "imagen" o texto)
+      $icono = get_field('icono_svg'); 
       $color = get_field('color_acceso'); // color de fondo del ícono
     ?>
 
