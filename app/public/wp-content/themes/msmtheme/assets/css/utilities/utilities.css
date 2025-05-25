@@ -79,3 +79,27 @@
     transform: translateY(-8px);
   }
   
+
+
+/* === Radius Utilities (en rem) === */
+.radius-xs   { border-radius: 0.25rem; }  /* 4px */
+.radius-sm   { border-radius: 0.3125rem; }/* 5px */
+.radius-md   { border-radius: 0.5rem; }   /* 8px */
+.radius-lg   { border-radius: 0.6875rem; }/* 11px */
+.radius-xl   { border-radius: 0.875rem; } /* 14px */
+.radius-2xl  { border-radius: 1rem; }     /* 16px */
+.radius-full { border-radius: 9999px; }   /* pill o círculo */
+
+
+/* === Shadow Utilities === */
+.shadow-none { box-shadow: none !important; }
+
+.shadow-xs { box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15); }
+.shadow-sm { box-shadow: 1px 1px 10px #d2d2d2; }
+.shadow-md { box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3); }
+.shadow-lg { box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2); }
+.shadow-xl { box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12); }
+
+/* === Drop shadow variante */
+.shadow-drop { filter: drop-shadow(6px 8px 6px rgba(0, 0, 0, 0.15)); }
+

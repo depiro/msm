@@ -391,7 +391,6 @@ $query = new WP_Query($args);
 
 
 
-
     <!-- Agregá más accesos... -->
 
     </div>        
@@ -399,7 +398,6 @@ $query = new WP_Query($args);
 
     </div>
     <!-- ACCESOS DIRECTOS FIN -->
-
 
 
     <!-- BANNERS INFORMATIVOS -->
@@ -444,8 +442,8 @@ $query = new WP_Query($args);
 
     <!-- NOTICIAS INICIO -->
     <div class="row d-flex justify-content-center">
-        <h3 class="text-center mt-3">Últimas novedades</h3>
-        <div class="page-content row">
+        <h3 class="text-center mt-3 mb-3">Últimas novedades</h3>
+        <div class="row">
             <?php get_template_part(THEME_NEWS); ?>
         </div>
     </div>
@@ -454,7 +452,7 @@ $query = new WP_Query($args);
     <!-- CALL TO ACTION DE 'NOTICIAS' -->
     <div class="d-flex justify-content-center mb-5">
         <!-- <a href="<?php echo HOME_URI; ?>/prensa" class="msm-bg-black btn msm-opacity border-0 text-white mt-3 mb-3 fz-18" style="border-radius: 11px !important">MÁS NOTICIAS</a> -->
-        <a href="<?php echo HOME_URI; ?>/prensa" class="btn btn-secondary btn-lg text-decoration-none text-white mt-3 mb-4">Más noticias</a>
+        <a href="<?php echo HOME_URI; ?>/prensa" class="btn btn-secondary btn-lg text-decoration-none text-white mt-3 mb-4">VER TODAS LAS NOVEDADES</a>
     </div>
     <!-- CALL TO ACTION DE 'NOTICIAS' FIN -->
 </div>

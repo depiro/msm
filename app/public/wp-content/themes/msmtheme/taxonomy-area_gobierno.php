@@ -8,13 +8,13 @@ $image_url = get_term_meta($term_id, 'banner_image', true);
 
 
 <div id="main-content" class="container mb-5">
-	<div class="d-flex flex-column flex-md-row msm-breadcrumb pt-2">
+	<div class="d-flex flex-column flex-md-row msm-breadcrumb pt-1 small">
 		<a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a><a class="msm-breadcrumb-item"
 			href="<?php echo HOME_URI; ?>/areas-gobierno">Áreas de Gobierno /</a><span
 			class="msm-breadcrumb msm-breadcrumb-item-last"><?php echo esc_html($current_term->name); ?></span>
 	</div>
 
-	<div class="row my-3 my-md-5 px-3 justify-content-center">
+	<div class="row my-3 my-md-5 px-3">
 		<div class="col-12 py-5">
 			<?php if ($current_term): ?>
 			<h2 class="msm-font-xl mb-1"><?php echo esc_html($current_term->name); ?></h2>
@@ -22,30 +22,35 @@ $image_url = get_term_meta($term_id, 'banner_image', true);
 			<?php endif; ?>
 		</div>
 
-		<div class=" col-12 col-md-9">
-			<!-- <div class="page-header mb-5">
-				<?php if ($current_term): ?>
-					<h2 class="page-title"><?php echo esc_html($current_term->name); ?></h2>
-					<div class="taxonomy-description fz-16 msm-text-black">
-						<?php echo wp_kses_post($current_term->description); ?>
-					</div>
-					<?php
-				endif;
-				?>
-			</div> -->
+		<div class="row  border">
+		<div class="col-12">
 
 			<?php if (have_posts()): ?>
 
-				<div class="page-content fz-16 fw-400 msm-text-gray text-left row">
-					<?php while (have_posts()):
-						the_post(); ?>
-						<a href="<?php the_permalink() ?>" class="d-flex flex-column text-decoration-none mt-4">
-							<span class="fz-16 fw-600 msm-text-600"><?php the_title(); ?></span>
+				<div class="row">
+				<?php while (have_posts()): the_post(); ?>
+					<div class="col-12 col-md-4">
+						
+							<a href="<?php the_permalink() ?>" class="text-decoration-none areas-gobierno-item py-5">
+								<div class="card areas-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch mb-3">
+								<div class="areas-barra d-flex align-items-center justify-content-center"></div>
+								
+								<div class="areas-content ps-3 pe-2 py-5">
+									<h5 class="mb-2"><?php the_title(); ?></h5>
+									
+									<p class="areas-description smb-0 fz-14"><?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?></p>
+								</div>
+							</div>
 						</a>
-						<span class="fz-14 msm-text-gray page-content-excerpt"><?php the_excerpt(); ?></span>
-
+						
+					</div>
 					<?php endwhile; ?>
 				</div>
+
+
+
+
+
 
 				<div style="display:flex;justify-content:end;">
 					<?php
@@ -62,30 +67,9 @@ $image_url = get_term_meta($term_id, 'banner_image', true);
 
 			<?php endif; ?>
 		</div>
-		<div class="col-12 col-md-3">
-			<h5 class="py-2 msm-text-b-dark">Áreas de Gobierno</h5>
-			<?php
-			// Obtener términos de la taxonomía `area_tramite`
-			$terms = get_terms(array(
-				'taxonomy' => 'area_gobierno',
-				'hide_empty' => false,
-			));
-			?>
-			<ul class="msm-submenu ps-0">
-				<?php
-				if (!empty($terms) && !is_wp_error($terms)):
-					foreach ($terms as $term):
-						if ($term->name == 'Gobierno Abierto')
-							continue;
-						?>
-						<li class="cat-item">
-							<a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_attr($term->name); ?></a>
-						</li>
-					<?php endforeach;
-				endif;
-				?>
-			</ul>
 		</div>
+
+
 	</div>
 </div>
 <?php get_template_part(THEME_FOOTER); ?>

@@ -13,15 +13,15 @@ if (!empty($terms) && !is_wp_error($terms)) :
 
     if ($term->name === 'Gobierno Abierto') continue;
     ?>
-    <div class="col-12 col-md-4 mb-1">
+    <div class="col-12 col-md-4 mb-1 py-3">
       <a href="<?php echo esc_url(get_term_link($term)); ?>" class="text-decoration-none areas-gobierno-item py-3">
-        <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch mb-3">
-          <div class="acceso-barra d-flex align-items-center justify-content-center"></div>
-          <div class="acceso-content p-3">
+        <div class="card areas-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch mb-3">
+          <div class="areas-barra d-flex align-items-center justify-content-center"></div>
+          <div class="areas-content p-4">
             <p class="mb-0 text-uppercase fz-16 fw-semibold"><?php echo esc_html($term->name); ?></p>
 
             <?php if ($mostrar_descripcion): ?>
-              <p class="acceso-description text-secondary mb-0 fz-16">
+              <p class="areas-description text-secondary mb-0 fz-16">
                 <?php echo esc_html($term->description); ?>
               </p>
             <?php endif; ?>

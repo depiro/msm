@@ -6,6 +6,7 @@
  get_template_part(THEME_HEADER);  ?>
 
 <div class="container style-guide">
+
     <div class="row my-2  justify-content-center">
 		<div class="msm-breadcrumb d-block d-sm-row">
 			<a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a><span class="msm-breadcrumb-item-last"> Guía de Estilos</span>
@@ -20,7 +21,7 @@
     <!-- Tipografía -->
     <section>
         <h2 class="section-title">Tipografía</h2>
-        <p>Escala tipográfica 'Minor third'.</p>
+        <p>Escala tipográfica usada 'Minor third'con la fuente 'Roboto' de Google.</p>
         
         <div class="mb-4">
             <h1>Encabezado H1</h1>
@@ -32,8 +33,114 @@
             <p>Párrafo p</p>
             <p class=text-muted>Párrafo p - muted</p>
             <caption>Texto de caption</caption>
+
+            <ul>
+                <li>Lista item 1</li>
+                <li>Lista item 2</li>
+                <li>Lista item 3</li>
+            </ul>
+            
+            <ol>
+                <li>Lista item 1</li>
+                <li>Lista item 2</li>
+                <li>Lista item 3</li>
+            </ol>
+
+            <section class="container py-5">
+                <h2 class="fw-bold mb-4">Trámites gestionados</h2>
+                <div class="row text-start">
+                    
+                    <!-- Columna 1 -->
+                    <div class="col-md-4 mb-4">
+                        <h6 class="mb-2">Permisos de obra</h6>
+                        <ul class="ps-3">
+                            <li>Obra nueva.</li>
+                            <li>Ampliación.</li>
+                            <li>Demolición.</li>
+                            <li>Trabajos mínimos <small class="text-muted">(Aviso de obra).</small></li>
+                        </ul>
+                    </div>
+
+                    <!-- Columna 2 -->
+                    <div class="col-md-4 mb-4">
+                        <h6 class="mb-2">Informes e inspecciones:</h6>
+                        <ul class="ps-3">
+                            <li>Informe de avance e inspección.</li>
+                            <li>Final de obra.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Columna 3 -->
+                    <div class="col-md-4 mb-4">
+                        <h6 class="mb-2">Regularización</h6>
+                        <ul class="ps-3">
+                            <li>Obras existentes.</li>
+                            <li>Cambio de destino.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="container my-5">
+                <h1 style="font-size: var(--msm-text-xl); font-weight: 700; line-height: 1.1;">
+                    Encabezado H1 - var(--msm-text-xl); font-weight: 700; line-height: 1.1;
+                </h1>
+                <h2 style="font-size: var(--msm-text-lg); font-weight: 700; line-height: 1.2;">
+                    Encabezado H2 - font-size: var(--msm-text-lg); font-weight: 700; line-height: 1.2;
+                </h2>
+                <h3 style="font-size: var(--msm-text-md); font-weight: 600; line-height: 1.3;">
+                    Encabezado H3 - font-size: var(--msm-text-md); font-weight: 600; line-height: 1.3;
+                </h3>
+                <h4 style="font-size: var(--msm-text-sm); font-weight: 600; line-height: 1.4;">
+                    Encabezado H4 - font-size: var(--msm-text-sm); font-weight: 600; line-height: 1.4;
+                </h4>
+                <h5 style="font-size: var(--msm-text-xs); font-weight: 500; line-height: 1.3;">
+                    Encabezado H5 - font-size: var(--msm-text-xs); font-weight: 500; line-height: 1.3;
+                </h5>
+                <h6 style="font-size: var(--msm-text-xxs); font-weight: 500; line-height: 1.5;">
+                    Encabezado H6 - font-size: var(--msm-text-xxs); font-weight: 500; line-height: 1.5;
+                </h6>
+
+                <p style="font-size: var(--msm-text-xxs); font-weight: 400; line-height: 1.55;">
+                    Párrafo font-size: var(--msm-text-xxs); font-weight: 400; line-height: 1.55;
+                </p>
+
+                <p>
+                En el corazón del barrio, donde las veredas conocen cada paso y el aroma del pan recién horneado cruza de casa en casa, la convivencia no es solo un ideal: es una práctica diaria. Lorem ipsum portón abierto sit amet, mate compartido adipiscing elit. Tocar timbre y esperar, saludar con una sonrisa, ceder el paso en la esquina: pequeñas acciones que construyen comunidad.
+                </p>
+
+                <p class="text-muted" style="font-size: var(--msm-text-xxs); font-weight: 400; line-height: 1.55;"> Párrafo p - muted: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
+
+                <caption style="display: block; font-size: 0.75rem; font-weight: 400; line-height: 1.5;">
+                    Texto de caption
+                </caption>
+
+                <ul style="font-size: var(--msm-text-xxs); line-height: 1.6;">
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ul>
+
+                <ol style="font-size: var(--msm-text-xxs); line-height: 1.6;">
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ol>
+            </section>
         </div>
     </section>
+
+    <!-- Enlaces -->
+    <section>
+        <h2 class="section-title">Links</h2>
+        <div class="link-group">
+            <a href="#">Link Normal</a>
+            <a href="#" style="color: var(--blue-msm-400);">Link Azul</a>
+            <a href="#" style="color: var(--msm-gray);">Link Gris</a>
+        </div>
+    </section>
+    <!-- Enlaces fin -->
 
 <section>
 <section class="styleguide-section my-5">
@@ -164,14 +271,14 @@
         <h2 class="section-title">Cards</h2>
 
         <a href="#" class="text-decoration-none areas-gobierno-item py-3">
-            <div class="card acceso-card d-flex flex-row shadow-sm rounded overflow-hidden align-items-stretch mb-5">
+            <div class="card areas-card d-flex flex-row shadow-sm rounded overflow-hidden align-items-stretch mb-5">
                 <!-- Franja celeste lateral -->
-                <div class="acceso-barra d-flex align-items-center justify-content-center"></div>
+                <div class="areas-barra d-flex align-items-center justify-content-center"></div>
 
                 <!-- Contenido -->
                 <div class="acceso-content p-4">
-                    <h5 class="acceso-title  mb-1">Jefatura de Gabinete</h5>
-                    <p class="acceso-description text-secondary mb-0"> La Jefatura de Gabinete se encarga de coordinar el gobierno municipal, promoviendo la comunicación entre áreas.</p>
+                    <h5 class="areas-title  mb-1">Jefatura de Gabinete</h5>
+                    <p class="areas-description text-secondary mb-0"> La Jefatura de Gabinete se encarga de coordinar el gobierno municipal, promoviendo la comunicación entre áreas.</p>
                     <!-- <span class="text-primary text-decoration-underline">Ver más</span> -->
                 </div>
             </div>
@@ -179,16 +286,16 @@
 
 
         <a href="#" class="text-decoration-none areas-gobierno-item">
-            <div class="card acceso-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
+            <div class="card areas-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
                 <!-- Franja celeste con ícono centrado -->
                 <div class="card-icon d-flex align-items-center justify-content-center">
                     <?php inline_svg('images'); ?>
                 </div>
 
                 <!-- Contenido -->
-                <div class="acceso-content p-4">
-                    <h5 class="acceso-title mb-1">CULTURA</h5>
-                    <p class="acceso-description text-secondary mb-0">Descubrí talleres, eventos y actividades.</p>
+                <div class="areas-content p-4">
+                    <h5 class="areas-title mb-1">CULTURA</h5>
+                    <p class="areas-description text-secondary mb-0">Descubrí talleres, eventos y actividades.</p>
                 </div>
             </div>
         </a>
@@ -210,8 +317,8 @@
     <!-- AREAS DE GOBIERNO FIN -->
 
     <section>
-        <h3 class="text-center mt-3">Cards progrmas y servicios (taxonomias)</h3>
-        <?php get_template_part('inc/programas-servicios'); ?>    
+        <h3 class="text-center mt-3">Cards programas y servicios (taxonomias)</h3>
+        <?php get_template_part('inc/programas-servicios'); ?>
     <section/>
 
 
@@ -752,18 +859,6 @@
         </div>
     </section>
 
-
-    
-    <!-- Enlaces -->
-    <section>
-        <h2 class="section-title">Links</h2>
-        <div class="link-group">
-            <a href="#">Link Normal</a>
-            <a href="#" style="color: var(--blue-msm-400);">Link Azul</a>
-            <a href="#" style="color: var(--msm-gray);">Link Gris</a>
-        </div>
-    </section>
-
     <section>
         <h2 class="section-title">Info institucional - pre footer</h2>
                 <?php
@@ -779,6 +874,26 @@
             ]);
             get_template_part('templates/parts/info-institucional');
             ?>
+    </section>
+
+    <section>
+        <h2 class="section-title">Sección de Noticias</h2>
+            <!-- NOTICIAS INICIO -->
+            <div class="row d-flex justify-content-center">
+                <h3 class="text-center mt-3">Últimas novedades</h3>
+                <div class="page-content row">
+                    <?php get_template_part(THEME_NEWS); ?>
+                </div>
+            </div>
+            <!-- NOTICIAS FIN -->
+
+            <!-- CALL TO ACTION DE 'NOTICIAS' -->
+            <div class="d-flex justify-content-center mb-5">
+                <!-- <a href="<?php echo HOME_URI; ?>/prensa" class="msm-bg-black btn msm-opacity border-0 text-white mt-3 mb-3 fz-18" style="border-radius: 11px !important">MÁS NOTICIAS</a> -->
+                <a href="<?php echo HOME_URI; ?>/prensa" class="btn btn-secondary btn-lg text-decoration-none text-white mt-3 mb-4">VER TODAS LAS NOVEDADES</a>
+            </div>
+            <!-- CALL TO ACTION DE 'NOTICIAS' FIN -->
+        </div>    
     </section>
 </div>
 

@@ -5,6 +5,7 @@ $args = array(
 	'showposts' => 3,
 	'orderby'   => 'date',
 	'order'     => 'DESC',
+	'category_name' => 'gobierno', // ← Acá definís la categoría puntual
 );
 
 $query = new WP_Query($args);
@@ -33,19 +34,10 @@ if ($query->have_posts()) $fecha = date_formated($post);
 							<img src="<?php echo $thumbnail_url ?>" class="card-img-top" alt="...">
 						</div>
 						<div class="card-body p-4">
-							<div class="d-flex justify-content-between">
-								<p class="pill px-2 py-1 rounded small">OBRAS</p>
-							</div>
-							
 							<h5 class="card-title mb-1"><?php the_title(); ?></h5>
 
 							<div class="text-container border">
 								<p class="card-text"> <?php short_description();  ?></p>
-							</div>
-							<div class="d-flex justify-content-end p-2 border w-100">
-								<a href="<?php the_permalink(); ?>" class="w-100 d-flex justify-content-end">
-									<img src="<?php echo THEME_URI; ?>/assets/images/right-arrow.svg" alt="...">
-								</a>
 							</div>
 						</div>
 					</div>
@@ -88,19 +80,10 @@ if ($query->have_posts()) $fecha = date_formated($post);
 						<img src="<?php echo $thumbnail_url ?>" alt="...">
 					</div>
 					<div class="card-body p-4">
-						<div class="d-flex justify-content-between mb-3">
-							<p class="pill xsmall px-2 py-1 rounded mb-0">OBRAS</p>
-						</div>
-
 						<h5 class="card-title mb-2"><?php the_title(); ?></h5>
 
 						<div class="text-container ">
 							<p> <?php short_description();  ?></p>
-						</div>
-						<div class="d-flex justify-content-end p-2 w-100">
-							<a href="<?php the_permalink(); ?>" class="w-100 d-flex justify-content-end pt-2">
-								<img src="<?php echo THEME_URI; ?>/assets/images/right-arrow.svg" alt="..." class="arrow-post">
-							</a>
 						</div>
 					</div>
 				</div>

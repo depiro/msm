@@ -20,7 +20,7 @@
 				$imagen_id = get_term_meta($term->term_id, 'imagen_id', true);
 				$imagen_url = wp_get_attachment_url($imagen_id);
 		?>
-				<div class="col-6 col-xs-6 col-md-3 col-lg-3 p-2 mb-2">
+				<div class="col-6 col-xs-6 col-md-4 col-lg-4 p-2 mb-2">
 					<a class="tramites-item d-flex justify-content-center text-decoration-none msm-text-black" href="<?php echo esc_url(get_term_link($term)); ?>">
 						
 						<div class="card d-flex flex-row align-items-center shadow-sm rounded overflow-hidden">

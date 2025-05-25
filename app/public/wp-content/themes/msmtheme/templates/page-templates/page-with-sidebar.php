@@ -3,14 +3,13 @@
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
     <div id="main-content" class="container mb-5">
-        <div class="msm-breadcrumb d-block d-sm-row pt-2">
+        <div class="msm-breadcrumb d-block d-sm-row pt-1 small">
             <a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home</a>/
             <a class="msm-breadcrumb-item" href="<?php echo HOME_URI; ?>/areas-gobierno">Áreas de gobierno</a>/
             <?php
-            
-            $terms = get_the_terms(get_the_ID(), 'area_gobierno');
-            if ($terms && !is_wp_error($terms)) :
-                $term = array_shift($terms);
+                $terms = get_the_terms(get_the_ID(), 'area_gobierno');
+                if ($terms && !is_wp_error($terms)) :
+                    $term = array_shift($terms);
             ?>
                 <a class="msm-breadcrumb-item" href="<?php echo get_term_link($term); ?>">
                     <?php echo esc_html($term->name); ?>
@@ -20,12 +19,21 @@
         </div>
 
         <div class="col-12 pt-5 pb-4">
-            <h2 class="msm-font-xl mb-1 post-title"><?php the_title(); ?></h2>
+            <h2 post-title"><?php the_title(); ?></h2>
+            
+            <?php
+            $subtitulo = get_post_meta(get_the_ID(), '_msm_subtitulo', true);
+            if (!empty($subtitulo)) : ?>
+            <p class="msm-subtitle text-muted">
+                <?php echo apply_filters('the_content', $subtitulo); ?>
+            </p>
+            <?php endif; ?>
         </div>
 
-        <div class="row my-3 my-md-5 px-3 justify-content-center">
-            <div class="col-12 col-md-9 gap-3">
-                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>
+        <!-- <div class="row my-3 my-md-5 px-3 gap-3"> -->
+        <div class="row">
+            <div class="col-12 col-md-9">
+                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
                     <div class="my-3">
                         <?php
@@ -35,68 +43,67 @@
                         }
                         ?>
                     </div>
-                    <div class="post-content" style="text-align:justify !important;">
+                    <div class="post-content">
                         <?php the_content(); ?>
                     </div>
                 </article>
             </div>
 
-            <!-- BANNER -->
-            <?php
-            set_query_var('banner_consultas', [
-            'title' => 'Iniciá tus pedidos o consultas',
-            'button_text' => 'Iniciar consultas',
-            'button_url' => '/consultas',
-            'image' => get_template_directory_uri() . '/assets/images/banner_2_blanca.png'
-            ]);
-            get_template_part('templates/parts/banner-grande');
-            ?>
-            <!-- BANNER FIN -->
-
-            <!-- NOTICIAS INICIO -->
-            <div class="row d-flex justify-content-center">
-                <h3 class="text-center mt-3">Últimas novedades</h3>
-                <div class="page-content row">
-                    <?php get_template_part(THEME_NEWS); ?>
-                </div>
-            </div>
-            <!-- NOTICIAS FIN -->
-
-            <!-- CALL TO ACTION DE 'NOTICIAS' -->
-            <div class="d-flex justify-content-center mb-5">
-                <!-- <a href="<?php echo HOME_URI; ?>/prensa" class="msm-bg-black btn msm-opacity border-0 text-white mt-3 mb-3 fz-18" style="border-radius: 11px !important">MÁS NOTICIAS</a> -->
-                <a href="<?php echo HOME_URI; ?>/prensa" class="btn btn-secondary btn-lg text-decoration-none text-white mt-3 mb-4">Más noticias</a>
-            </div>
-            <!-- CALL TO ACTION DE 'NOTICIAS' FIN -->
+            <div class="col-12 col-md-3">
+                <aside class="sidebar-card rounded shadow-sms">
+                        <?php
+                            $sidebar_info = get_post_meta(get_the_ID(), '_msm_sidebar_info', true);
+                            if (!empty($sidebar_info)) : ?>
+                            <aside class="sidebar p-3">
+                                <?php echo apply_filters('the_content', $sidebar_info); ?>
+                            </aside>
+                        <?php endif; ?>
+                </aside>
+            </div> 
         </div>
+        
+        <div class="row">
+            <div class="col-12 pt-5 pb-4">
+                <!-- BANNER -->
+                <?php
+                    set_query_var('banner_consultas', [
+                    'title' => 'Iniciá tus pedidos o consultas',
+                    'button_text' => 'Iniciar consultas',
+                    'button_url' => '/consultas',
+                    'image' => get_template_directory_uri() . '/assets/images/banner_2_blanca.png'
+                    ]);
+                    get_template_part('templates/parts/banner-grande');
+                ?>
+                <!-- BANNER FIN -->
 
+
+                <?php get_template_part('templates/sections/home_news_category'); ?>
+
+                
+                <!-- NOTICIAS INICIO -->
+                <div class="row d-flex justify-content-center">
+                    <h3 class="text-center mt-3">Últimas novedades</h3>
+                    <div class="page-content row">
+                        <?php get_template_part(THEME_NEWS); ?>
+                    </div>
+                </div>
+                <!-- NOTICIAS FIN -->
+
+                <!-- CALL TO ACTION DE 'NOTICIAS' -->
+                <div class="d-flex justify-content-center mb-5">
+                    <!-- <a href="<?php echo HOME_URI; ?>/prensa" class="msm-bg-black btn msm-opacity border-0 text-white mt-3 mb-3 fz-18" style="border-radius: 11px !important">MÁS NOTICIAS</a> -->
+                    <a href="<?php echo HOME_URI; ?>/prensa" class="btn btn-secondary btn-lg text-decoration-none text-white mt-3 mb-4">VER TODAS LAS NOVEDADES</a>
+                </div>
+                <!-- CALL TO ACTION DE 'NOTICIAS' FIN -->
+            </div>
+        </div>
     </div>
-    <?php endwhile; else : ?>
+  
+            <?php endwhile; else : ?>
         <div id="main-content" class="container mb-5">
             <div class="empty-info"><?php _e('No se encontró la publicación.', 'mi-tema'); ?></div>
         </div>
     <?php endif; ?>
-
-
-
-
-    <!-- INFORMACION INSTIUCIONAL FOOTER -->
-    <div id="main-content" class="container mb-0">
-        <?php
-            set_query_var('info_institucional', [
-            'titulo' => 'Información institucional',
-            'nombre' => 'Joaquín Miguel Estrada',
-            'cargo' => 'Secretario de Educación y Trabajo',
-            'telefono' => '03525 - 443776 / 7',
-            'email' => 'sme@sanmiguel.gob.ar',
-            'foto' => get_template_directory_uri() . '/assets/images/profile-pic.png',
-            'mapa_embed' => '<iframe src="https://www.google.com/maps/embed?..."
-                            width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
-            ]);
-            get_template_part('templates/parts/info-institucional');
-        ?>
-    </div>
-    <!-- INFORMACION INSTIUCIONAL FOOTER FIN -->
 
 <!-- template page sidebar -->
 <?php get_template_part(THEME_FOOTER); ?>

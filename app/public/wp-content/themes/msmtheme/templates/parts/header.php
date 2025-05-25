@@ -44,13 +44,14 @@
     <!-- Sección Header -->
     <header class="navbar navbar-expand-lg navbar-light msm-header-v1 d-flex flex-column">
         <div class="container px-0">
-            <div class=" w-100 d-flex justify-content-between px-2">
-                <a class="navbar-brand" href="<?php echo HOME_URI; ?>"
-                    title="<?php echo get_bloginfo('name'); ?> | Provincia de Buenos Aires. Argentina "">
-                <img class=" msm-header-logo" src=" <?php echo THEME_URI; ?>/assets/images/msmlogo-circulo.svg" alt="">
+            <div class="w-100 d-flex justify-content-between px-2 border">
+                <a class="navbar-brand border" href="<?php echo HOME_URI; ?>" title="<?php echo get_bloginfo('name'); ?> | Provincia de Buenos Aires. Argentina "">
+                    <img class=" msm-header-logo" src=" <?php echo THEME_URI; ?>/assets/images/msmlogo-circulo.svg" alt="">
+                    <!-- <img class="px-2" id="icon-search" src="<?php echo THEME_URI; ?>/assets/images/msm-logotipo.svg"></img> -->
                 </a>
-                
-                <img class="px-2" id="icon-search" src="<?php echo THEME_URI; ?>/assets/images/msm-logotipo.svg"></img>
+                <div class="position-absolute top-50 start-50 translate-middle">
+                    <img class="px-2 border msm-header-logotipo" id="icon-search" src="<?php echo THEME_URI; ?>/assets/images/msm-logotipo.svg"></img>
+                </div>
 
                 <button class="navbar-toggler menu-container-toggle d-block d-md-none" type="button"
                     data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
@@ -58,14 +59,13 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <!-- Links header -->
-                <div class="d-none d-md-flex justify-content-center align-items-center menu-container gap-3">
-                    <a id="collapse-municipio" class="msm-menu-link btn btn-outline-light text-white text-decoration-none" data-bs-toggle="collapse" href="#menu-municipio"
-                role="button" aria-expanded="false" aria-controls="menu-municipio">
+                <div class="d-none d-md-flex justify-content-end align-items-center menu-container gap-3 border">
+                    <a id="collapse-municipio" class="msm-menu-link btn btn-outline-light btn-sm text-white text-decoration-none" data-bs-toggle="collapse" href="#menu-municipio" role="button" aria-expanded="false" aria-controls="menu-municipio">
                         Gobierno Abierto
                         <?php inline_svg('account_balance'); ?>
                     </a>
                     
-                    <a class="msm-menu-link btn btn-outline-light text-white text-decoration-none" href="https://online.fliphtml5.com/hxrqr/mdra/" role="button" aria-expanded="false" aria-controls="menu-areas-gob" target="_blank">
+                    <a class="msm-menu-link btn btn-outline-light text-white text-decoration-none btn-sm" href="https://online.fliphtml5.com/hxrqr/mdra/" role="button" aria-expanded="false" aria-controls="menu-areas-gob" target="_blank">
                         San Miguel en imágenes
                         <?php inline_svg('images'); ?>
                     </a>

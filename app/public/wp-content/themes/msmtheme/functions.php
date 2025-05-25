@@ -232,7 +232,7 @@ function string_limit_words($string, $word_limit)
 function short_description()
 {
     $excerpt = get_the_excerpt();
-    $excerpt = substr(strip_tags($excerpt), 0, 150);
+    $excerpt = substr(strip_tags($excerpt), 0, 255);
     echo $excerpt;
 }
 
@@ -482,3 +482,69 @@ function msm_register_programa_servicio_taxonomy() {
   }
   add_action('init', 'msm_register_programa_servicio_taxonomy');
   
+
+  /* Campo personalizado para sidebar de post */
+  function msm_sidebar_metabox() {
+    add_meta_box(
+      'msm_sidebar_info',
+      'Contenido del Sidebar',
+      'msm_sidebar_info_callback',
+      ['post', 'page'], // tipos de contenido
+      'side'
+    );
+  }
+  add_action('add_meta_boxes', 'msm_sidebar_metabox');
+  
+  function msm_sidebar_info_callback($post) {
+    $value = get_post_meta($post->ID, '_msm_sidebar_info', true);
+    wp_editor($value, '_msm_sidebar_info', array(
+      'textarea_name' => '_msm_sidebar_info',
+      'textarea_rows' => 10,
+      'media_buttons' => false,
+    ));
+  }
+  
+  function msm_sidebar_info_save($post_id) {
+    if (array_key_exists('_msm_sidebar_info', $_POST)) {
+      update_post_meta($post_id, '_msm_sidebar_info', $_POST['_msm_sidebar_info']);
+    }
+  }
+  add_action('save_post', 'msm_sidebar_info_save');
+  
+
+
+  // REGISTRAR el metabox de subtítulo
+function msm_subtitulo_metabox() {
+  add_meta_box(
+    'msm_subtitulo',
+    'Subtítulo del contenido',
+    'msm_subtitulo_callback',
+    ['post', 'page'], // Podés agregar otros tipos si querés
+    'normal',
+    'high'
+  );
+}
+add_action('add_meta_boxes', 'msm_subtitulo_metabox');
+
+// CALLBACK del editor WYSIWYG para el subtítulo
+function msm_subtitulo_callback($post) {
+  $value = get_post_meta($post->ID, '_msm_subtitulo', true);
+  wp_editor($value, '_msm_subtitulo', array(
+    'textarea_name' => '_msm_subtitulo',
+    'textarea_rows' => 4,
+    'media_buttons' => false,
+  ));
+}
+
+// GUARDAR el valor del subtítulo
+function msm_subtitulo_save($post_id) {
+  if (array_key_exists('_msm_subtitulo', $_POST)) {
+    update_post_meta($post_id, '_msm_subtitulo', $_POST['_msm_subtitulo']);
+  }
+}
+add_action('save_post', 'msm_subtitulo_save');
+
+
+
+
+/* subtitulo post */

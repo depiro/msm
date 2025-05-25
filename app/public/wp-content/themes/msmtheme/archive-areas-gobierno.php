@@ -18,9 +18,7 @@ get_template_part(THEME_HEADER); ?>
 		</div>
 
 		<div class="page-content row">
-			<?php
-            get_template_part('templates/parts/areas-cards');
-            ?>
+			<?php get_template_part('templates/parts/areas-cards'); ?>
 		</div>
 	</div>
 </div>
