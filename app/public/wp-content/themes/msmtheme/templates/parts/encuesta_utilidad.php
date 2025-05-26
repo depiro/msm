@@ -10,7 +10,7 @@
     <p class="encuesta-texto text-uppercase">¿Te fue útil esta información?</p>
     <div class="encuesta-botones">
       <button class="encuesta-btn encuesta-si btn btn-primary">Sí, me fue útil</button>
-      <button class="encuesta-btn encuesta-no btn btn-outline-primary">No me sirvió</button>
+      <button class="encuesta-btn encuesta-no btn btn-outline-dark">No me sirvió</button>
     </div>
   </div>
 </section>

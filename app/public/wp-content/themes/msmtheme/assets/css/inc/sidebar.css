@@ -1,0 +1,15 @@
+  /* Sidebar */
+  .sidebar-card {
+    background-color: var(--msm-black, #575756);
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+aside.sidebar-card ul li{
+    color: white;
+}
+
+aside.sidebar-card ul{
+    color: white;
+    padding: inherit;
+    padding-top: 0;
+}

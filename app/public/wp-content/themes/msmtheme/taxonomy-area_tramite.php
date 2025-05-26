@@ -22,7 +22,7 @@ $current_term = get_queried_object();
 			</div>
 		</div>
 
-		<div class="col-12 col-md-9">
+		<div class="col-12">
 			<?php
 			$args = array(
 				'post_type' => 'tramite',
@@ -41,45 +41,26 @@ $current_term = get_queried_object();
 			$query = new WP_Query($args);
 			?>
 
-			<?php if ($query->have_posts()) : ?>
-				<div class="page-content fz-16 fw-400 msm-text-gray text-left row">
-					<?php while ($query->have_posts()) : $query->the_post(); ?>
-						<a href="<?php the_permalink() ?>" class="d-flex flex-column text-decoration-none mt-4">
-							<span class="fz-16 fw-600 msm-text-600"><?php the_title(); ?></span>
-						</a>
-						<?php $excerpt = get_the_excerpt();
-						if (trim($excerpt) != ''): ?>
-							<span class="fz-14 msm-text-gray" style="text-align:justify"><?php echo $excerpt; ?></span>
-						<?php else: ?>
-							<span class="fz-14 msm-text-gray">No hay resumen disponible.</span>
-						<?php endif; ?>
-					<?php endwhile; ?>
-				</div>
-			<?php else : ?>
-				<div class="empty-info"><?php _e('No hay publicaciones disponibles.', 'textdomain'); ?></div>
-			<?php endif; ?>
+<?php if ($query->have_posts()) : ?>
+  <div class="row">
+    <?php while ($query->have_posts()) : $query->the_post(); ?>
+      <?php
+        $title = get_the_title();
+        $desc = wp_trim_words(get_the_excerpt(), 20, '...');
+        $link = get_permalink();
+        $variant = 2;
+        $height = '160px';
+
+        include get_template_directory() . '/templates/parts/card-base.php';
+      ?>
+    <?php endwhile; ?>
+  </div>
+<?php else : ?>
+  <div class="empty-info"><?php _e('No hay publicaciones disponibles.', 'textdomain'); ?></div>
+<?php endif; ?>
+
 
 			<?php wp_reset_postdata();?>
-		</div>
-		<div class="col-12 col-md-3">
-			<h5 class="py-2 msm-text-b-dark border">Áreas de trámites</h5>
-			<?php
-
-			$terms = get_terms(array(
-				'taxonomy' => 'area_tramite',
-				'hide_empty' => false,
-			));
-			?>
-			<ul class="msm-submenu ps-0">
-				<?php
-				if (!empty($terms) && !is_wp_error($terms)) :
-					foreach ($terms as $term) :
-				?>
-						<li class="cat-item"><a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_attr($term->name); ?></a></li>
-				<?php endforeach;
-				endif;
-				?>
-			</ul>
 		</div>
 	</div>
 </div>

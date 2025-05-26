@@ -45,3 +45,23 @@ a:link {
     pointer-events: none;
     text-decoration: line-through;
   }
+
+/* links navbar header  */
+.btn, 
+.msm-menu-link {
+  cursor: pointer;
+  transition: all 0.25s ease;
+  transform: translateY(0);
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.btn:hover,
+.msm-menu-link:hover {
+    transform: translateY(-2px);
+    color: white;
+}
+
+.msm-menu-link:hover,
+.msm-menu-link:hover svg {
+    background-color: var(--blue-msm-400);
+    border-color: var(--blue-msm-400);
+}

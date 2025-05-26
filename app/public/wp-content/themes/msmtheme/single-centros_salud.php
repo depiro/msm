@@ -2,13 +2,13 @@
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 		<div id="main-content" class="container mb-5">
+			<div class="msm-breadcrumb d-block d-sm-row px-0 pt-1 small">
+				<a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home</a>/
+				<a class="msm-breadcrumb-item" href="<?php echo HOME_URI; ?>/centros-salud">Centros Salud</a>/
+				<span class="msm-breadcrumb msm-breadcrumb-item-last"><?php the_title(); ?></span>
+			</div>			
 			<div class="row my-3 my-md-5 px-3 justify-content-center px-0">
 				<div class="col-12 col-md-10 col-lg-8">
-					<div class="msm-breadcrumb d-block d-sm-row px-0">
-						<a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home</a>/
-						<a class="msm-breadcrumb-item" href="<?php echo HOME_URI; ?>/centros-salud">Centros Salud</a>/
-						<span class="msm-breadcrumb msm-breadcrumb-item-last"><?php the_title(); ?></span>
-					</div>
 					<div class="col-12 mb-4">
 						<div class="row page-title mb-3">
 							<span class="fw-600 msm-text-600 fz-24"><?php the_title(); ?></span>

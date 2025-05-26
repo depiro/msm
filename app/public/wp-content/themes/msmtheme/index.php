@@ -1,4 +1,11 @@
-<?php get_template_part(THEME_HEADER); ?>
+<?php
+if (is_front_page()) {
+  get_template_part('templates/parts/header_home');
+} else {
+  get_template_part('templates/parts/header');
+}
+?>
+
 
 <!-- Topbar avisos -->
 <?php msm_render_home_alert(); ?>
@@ -53,16 +60,17 @@ $query = new WP_Query($args);
 </div>
 <!-- HOME SLIDE FIN -->
 
-<div id="main-content" class="row d-flex w-100 justify-content-center container m-auto">
+<div id="main-content" class="row d-flex w-100 justify-content-center container m-auto home-content">
     <!-- BOTONERA INICIO -->
     <div class="row justify-content-between d-flex">
         <?php get_template_part(THEME_BOTONERA); ?>
     </div>
     <!-- BOTONERA FIN -->
 
-    <!-- ACCESOS DIRECTOS -->
-    <div class="row d-flex justify-content-center mb-4 mt-5">
-        <h3 class="text-center mt-3">¡Conocé todos los programas y servicios que tenemos para vos!</h3>
+
+    <!-- PROGRAMAS Y SERVICIOS -->
+    <section class="home-programas row d-flex justify-content-center">
+        <h3 class="text-center">¡Conocé todos los programas y servicios que tenemos para vos!</h3>
 
         <?php
             $terms = get_terms(array(
@@ -90,15 +98,15 @@ $query = new WP_Query($args);
             echo '<p class="text-muted">Actualmente no hay programas disponibles.</p>';
             endif;
         ?>
-    </div>
-    <!-- ACCESOS DIRECTOS FIN -->
+    </section>
+    <!-- PROGRAMAS Y SERVICIOS FIN -->
 
 
     <!-- BANNERS INFORMATIVOS -->
-    <div class="row d-flex justify-content-center px-3 mb-4">
-        <h3 class="text-center mb-0">¡Sumate!</h3>
+    <section class="home-banners row d-flex justify-content-center">
+        <h3 class="text-center">¡Sumate!</h3>
         
-        <div class="row gy-3">
+        <div class="row gy-3 p-0">
             <?php
                 set_query_var('banners_home', [
                 [
@@ -119,67 +127,49 @@ $query = new WP_Query($args);
                 get_template_part('templates/parts/banners-home');
             ?>
         </div>
-    </div>
+    </section>
     <!-- BANNERS INFORMATIVOS FIN  -->
 
+
     <!-- AREAS DE GOBIERNO -->
-    <div class="row d-flex justify-content-center">
-        <h3 class="text-center mt-3 mb-4">Áreas de gobierno</h3>
-        <div class="page-content row">
-            <!-- <?php
-            set_query_var('mostrar_descripcion', false);
-
-            
-            get_template_part('templates/parts/areas-cards');
-            ?> -->
-
-
-            <!-- <?php while (have_posts()): the_post(); ?>
-                <?php
-                    $height = '90px';
-                    $variant = 1;
-                    $title = get_the_title();
-
-                    include get_template_directory() . '/templates/parts/card-base.php';
-                ?>
-			<?php endwhile; ?> -->
-
+    <section class="home-areas row d-flex justify-content-center ">
+        <h3 class="text-center">Áreas de gobierno</h3>
+        
+        <div class="row">
             <?php
-$terms = get_terms(array(
-    'taxonomy'   => 'area_gobierno',
-    'hide_empty' => false,
-));
+                $terms = get_terms(array(
+                    'taxonomy'   => 'area_gobierno',
+                    'hide_empty' => false,
+                ));
 
-if (!empty($terms) && !is_wp_error($terms)) :
-    foreach ($terms as $term) :
-        $variant = 1;
-        $title   = $term->name;
-        $link    = get_term_link($term);
-        $height  = '90px';
+                if (!empty($terms) && !is_wp_error($terms)) :
+                    foreach ($terms as $term) :
+                        $variant = 1;
+                        $title   = $term->name;
+                        $link    = get_term_link($term);
+                        $height  = '90px';
 
-        include get_template_directory() . '/templates/parts/card-base.php';
-    endforeach;
-endif;
-?>
-
+                        include get_template_directory() . '/templates/parts/card-base.php';
+            endforeach; endif; ?>
 		</div>
-    </div>
+    </section>
     <!-- AREAS DE GOBIERNO FIN -->
 
+
     <!-- NOTICIAS INICIO -->
-    <div class="row d-flex justify-content-center">
-        <h3 class="text-center mt-3 mb-3">Últimas novedades</h3>
+    <section class="home-noticias row d-flex justify-content-center">
+        <h3 class="text-center">Últimas novedades</h3>
         <div class="row">
             <?php get_template_part(THEME_NEWS); ?>
         </div>
-    </div>
+    </section>
     <!-- NOTICIAS FIN -->
 
+
     <!-- CALL TO ACTION DE 'NOTICIAS' -->
-    <div class="d-flex justify-content-center mb-5">
-        <!-- <a href="<?php echo HOME_URI; ?>/prensa" class="msm-bg-black btn msm-opacity border-0 text-white mt-3 mb-3 fz-18" style="border-radius: 11px !important">MÁS NOTICIAS</a> -->
+    <section class="d-flex justify-content-center mb-5">
         <a href="<?php echo HOME_URI; ?>/prensa" class="btn btn-secondary btn-lg text-decoration-none text-white mt-3 mb-4">VER TODAS LAS NOVEDADES</a>
-    </div>
+    </section>
     <!-- CALL TO ACTION DE 'NOTICIAS' FIN -->
 </div>
 

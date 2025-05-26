@@ -62,7 +62,8 @@
     --blue-msm-950:     #0a1d2c;
   
     /* Opcional: color banners u otros tokens */
-    --msm-banners:      #f7f8f4;
+    /* --msm-banners:      #f7f8f4; */
+    --msm-banners:      #F5F3F3;
 
     /* Escala tipográfica */
     --msm-text-xxs:     clamp(0.67rem, calc(0.62rem + 0.62vw), 1.125rem);

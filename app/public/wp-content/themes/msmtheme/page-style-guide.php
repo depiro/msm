@@ -265,210 +265,105 @@
         </div>
     </section>
 
-    <section class="mb-5">
-        <h2 class="section-title">Cards</h2>
-
-        <a href="#" class="text-decoration-none areas-gobierno-item py-3">
-            <div class="card areas-card d-flex flex-row shadow-sm rounded overflow-hidden align-items-stretch mb-5">
-                <!-- Franja celeste lateral -->
-                <div class="areas-barra d-flex align-items-center justify-content-center"></div>
-
-                <!-- Contenido -->
-                <div class="acceso-content p-4">
-                    <h5 class="areas-title  mb-1">Jefatura de Gabinete</h5>
-                    <p class="areas-description text-secondary mb-0"> La Jefatura de Gabinete se encarga de coordinar el gobierno municipal, promoviendo la comunicación entre áreas.</p>
-                    <!-- <span class="text-primary text-decoration-underline">Ver más</span> -->
-                </div>
-            </div>
-        </a>
-
-
-        <a href="#" class="text-decoration-none areas-gobierno-item">
-            <div class="card areas-card d-flex flex-row shadow-sm overflow-hidden align-items-stretch">
-                <!-- Franja celeste con ícono centrado -->
-                <div class="card-icon d-flex align-items-center justify-content-center">
-                    <?php inline_svg('images'); ?>
-                </div>
-
-                <!-- Contenido -->
-                <div class="areas-content p-4">
-                    <h5 class="areas-title mb-1">CULTURA</h5>
-                    <p class="areas-description text-secondary mb-0">Descubrí talleres, eventos y actividades.</p>
-                </div>
-            </div>
-        </a>
-    </section> 
-
-
 
 
 
     <section>
         <!-- AREAS DE GOBIERNO -->
         <div class="row d-flex justify-content-center">
-            <h3 class="text-center mt-1 mb-4">Áreas de gobierno</h3>
-            <div class="page-content row">
+            <h2 class="section-title">Cards</h2>
+            <h3 class="text-center mt-1 mb-4">Cards - Variante 1</h3>
+            
+            <div class="row">
                 <?php
-                set_query_var('mostrar_descripcion', false);
-                get_template_part('templates/parts/areas-cards');
-                ?>
-            </div>
-        </div>
+                $terms = get_terms(array(
+                    'taxonomy'   => 'area_gobierno',
+                    'hide_empty' => false,
+                ));
+
+                if (!empty($terms) && !is_wp_error($terms)) :
+                    foreach ($terms as $term) :
+                        $variant = 1;
+                        $title   = $term->name;
+                        $link    = get_term_link($term);
+                        $height  = '90px';
+
+                        include get_template_directory() . '/templates/parts/card-base.php';
+                endforeach; endif; ?>
+		    </div>
     </section>
     <!-- AREAS DE GOBIERNO FIN -->
 
     <section>
-        <h3 class="text-center mt-3">Cards programas y servicios (taxonomias)</h3>
-        <h2 class="text-center mb-4">¡Conocé todos los programas y servicios que tenemos para vos!</h2>
-        <h3 class="text-center mt-1 mb-4">Test Cards</h3>
-    <?php
-$terms = get_terms(array(
-  'taxonomy' => 'area_programa',
-  'hide_empty' => false,
-));
+        <h3 class="text-center mt-3">Cards - Variante 4</h3>
+        <?php
+            $terms = get_terms(array(
+            'taxonomy' => 'area_programa',
+            'hide_empty' => false,
+            ));
 
-if (!empty($terms) && !is_wp_error($terms)) :
-  echo '<div class="row g-3">';
+            if (!empty($terms) && !is_wp_error($terms)) :
+            echo '<div class="row g-3">';
 
-  foreach ($terms as $term) :
-    $title = esc_html($term->name);
-    $link = esc_url(get_term_link($term));
-    $icono = get_term_meta($term->term_id, 'icono_svg', true);
-    $color = get_term_meta($term->term_id, 'color_hex', true);
-    $variant = 4;
-    $height = '80px'; // podés ajustar este valor
+            foreach ($terms as $term) :
+                $title = esc_html($term->name);
+                $link = esc_url(get_term_link($term));
+                $icono = get_term_meta($term->term_id, 'icono_svg', true);
+                $color = get_term_meta($term->term_id, 'color_hex', true);
+                $variant = 4;
+                $height = '80px'; // podés ajustar este valor
 
-    include get_template_directory() . '/templates/parts/card-base.php';
+                include get_template_directory() . '/templates/parts/card-base.php';
 
-  endforeach;
+            endforeach;
 
-  echo '</div>';
-else :
-  echo '<p class="text-muted">Actualmente no hay programas disponibles.</p>';
-endif;
-?>
+            echo '</div>';
+            else :
+            echo '<p class="text-muted">Actualmente no hay programas disponibles.</p>';
+            endif;
+        ?>
+    </section>
 
-    <section/>
-
-
-
-
-
-    <section class="container my-5">
-  <h2 class="mb-4">🧱 Variantes de Cards</h2>
-  <div class="row g-4">
-    <?php
-    $cards = [
-      ['variant' => 1, 'title' => 'Card V1: Solo título'],
-      
-      ['variant' => 2, 'title' => 'Card V2: Título + Descripción + Link', 'desc' => 'Este es un ejemplo de descripción con algunas palabras clave.'],
-      
-      ['variant' => 3, 'title' => 'Card V3: Título + Descripción + Icono', 'desc' => 'Talleres, eventos y actividades culturales.', 'icon' => file_get_contents(get_template_directory() . '/assets/images/icons/ojos-alerta.svg')],
-      
-      ['variant' => 4, 'title' => 'Card V4: Título + Icono + Color', 'color' => '#25669B', 'icon' => file_get_contents(get_template_directory() . '/assets/images/icons/ojos-alerta.svg')],
-    ];
-
-    foreach ($cards as $card) {
-      $title = $card['title'] ?? '';
-      $desc = $card['desc'] ?? '';
-      $icon = $card['icon'] ?? '';
-      $color = $card['color'] ?? '';
-      $variant = $card['variant'];
-
-      include get_template_directory() . '/templates/parts/card-base.php';
-    }
-    ?>
-  </div>
-</section>
+<section>
+<h3 class="text-center mt-3">Cards - Variante 2</h3>
+<div class="col-12">
+		
 
 
-<section class="container my-5">
-  <h2 class="mb-4">Card 1</h2>
-  <div class="row g-4">
-    <?php
-    $cards = [
-      ['variant' => 1, 'title' => 'Card V1: Solo título'],
-    ];
-
-    foreach ($cards as $card) {
-      $title = $card['title'] ?? '';
-      $variant = 1;
-      $height = '90px';
-      include get_template_directory() . '/templates/parts/card-base.php';
-    }
-    ?>
-  </div>
-</section>
-
-<section class="container my-5">
-  <h2 class="mb-4">Card 2</h2>
-  <div class="row g-4">
-    <?php
-    $cards = [
-      ['variant' => 2, 'title' => 'Card V2: Título, descripción y ver mas'],
-    ];
-
-    foreach ($cards as $card) {
-      $title = $card['title'] ?? '';
-      $variant = 2;
-      $desc = 'Cuando se quiera ejecutar una obra nueva con destino vivienda unifamiliar, debe efectuarse este trámite previo a iniciar cualquier tipo de actividad constructiva.';
-      $height = '220px';
-      include get_template_directory() . '/templates/parts/card-base.php';
-    }
-    ?>
-  </div>
-</section>
 
 
-<section class="container my-5">
-  <h2 class="mb-4">Card 3</h2>
-  <div class="row g-4">
-    <?php
-    $cards = [
-      ['variant' => 3, 'title' => 'Card V3: Título + barra ancha celeste + icono'],
-    ];
-
-    foreach ($cards as $card) {
-      $title = $card['title'] ?? '';
-      $variant = 3;
-      $height = '240px';
-      $desc = 'Cuando se quiera ejecutar una obra nueva con destino vivienda unifamiliar, debe efectuarse este trámite previo a iniciar cualquier tipo de actividad constructiva.';
-      include get_template_directory() . '/templates/parts/card-base.php';
-    }
-    ?>
-  </div>
-</section>
-
-<section class="container my-5">
-  <h2 class="mb-4">Card 4</h2>
-  <div class="row g-4">
-    <?php
-    $cards = [
-      ['variant' => 4, 'title' => 'Card V4: Título + barra ancha de color + icono'],
-    ];
-
-    foreach ($cards as $card) {
-      $title = $card['title'] ?? '';
-      $variant = 4;
-      $height = '90px';
-      include get_template_directory() . '/templates/parts/card-base.php';
-    }
-    ?>
   </div>
 </section>
 
 
 
+ <!--    <section class="container my-5">
+        <h2 class="mb-4">🧱 Variantes de Cards</h2>
+        
+        <div class="row">
+            <?php
+            $cards = [
+            ['variant' => 1, 'title' => 'Card V1: Solo título'],
+            
+            ['variant' => 2, 'title' => 'Card V2: Título + Descripción + Link', 'desc' => 'Este es un ejemplo de descripción con algunas palabras clave.'],
+            
+            ['variant' => 3, 'title' => 'Card V3: Título + Descripción + Icono', 'desc' => 'Talleres, eventos y actividades culturales.', 'icon' => file_get_contents(get_template_directory() . '/assets/images/icons/ojos-alerta.svg')],
+            
+            ['variant' => 4, 'title' => 'Card V4: Título + Icono + Color', 'color' => '#25669B', 'icon' => file_get_contents(get_template_directory() . '/assets/images/icons/ojos-alerta.svg')],
+            ];
 
+            foreach ($cards as $card) {
+            $title = $card['title'] ?? '';
+            $desc = $card['desc'] ?? '';
+            $icon = $card['icon'] ?? '';
+            $color = $card['color'] ?? '';
+            $variant = $card['variant'];
 
-
-
-
-
-
-
-
-<hr/>
+            include get_template_directory() . '/templates/parts/card-base.php';
+            }
+            ?>
+        </div>
+    </section> -->
 
 
 

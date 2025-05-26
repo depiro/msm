@@ -32,8 +32,8 @@ if (isset($term) && $term instanceof WP_Term) {
 }
 ?>
 
-<div class="col-12 col-md-4 mb-3">
-  <a href="<?php echo esc_url($link); ?>" class="text-decoration-none card-v<?= esc_attr($variant); ?>">
+<div class="col-12 col-md-4">
+  <a href="<?php echo esc_url($link); ?>" class="text-decoration-none  card-v<?= esc_attr($variant); ?>">
 
     <div class="card d-flex overflow-hidden flex-row align-items-stretch <?php echo in_array($variant, [3, 4]) ? 'flex-row' : ''; ?>"
      style="<?php echo isset($height) ? 'min-height:' . esc_attr($height) . ';' : ''; ?>">
@@ -47,7 +47,7 @@ if (isset($term) && $term instanceof WP_Term) {
       <?php endif; ?>
 
       <div class="card-body p-3 d-flex flex-column justify-content-center text-dark">
-        <h5 class="card-title mb-2"><?= esc_html($title); ?></h5>
+        <h6 class="card-title"><?= esc_html($title); ?></h6>
 
         <?php if (in_array($variant, [2, 3])) : ?>
           <p class="card-text fz-14 mb-0"><?= esc_html($desc); ?></p>

@@ -47,8 +47,11 @@
             <div class="w-100 d-flex justify-content-between px-2">
                 <a class="navbar-brand" href="<?php echo HOME_URI; ?>" title="<?php echo get_bloginfo('name'); ?> | Provincia de Buenos Aires. Argentina "">
                     <img class=" msm-header-logo" src=" <?php echo THEME_URI; ?>/assets/images/msmlogo-circulo.svg" alt="">
-                    <img class="px-2 msm-header-logotipo" id="icon-search" src="<?php echo THEME_URI; ?>/assets/images/msm-logotipo.svg"></img>
+                    <!-- <img class="px-2" id="icon-search" src="<?php echo THEME_URI; ?>/assets/images/msm-logotipo.svg"></img> -->
                 </a>
+                <div class="position-absolute top-50 start-50 translate-middle">
+                    <img class="px-2 msm-header-logotipo" id="icon-search" src="<?php echo THEME_URI; ?>/assets/images/msm-logotipo.svg"></img>
+                </div>
 
                 <button class="navbar-toggler menu-container-toggle d-block d-md-none" type="button"
                     data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
@@ -117,7 +120,7 @@
 
                                 <div class="dropdown px-0">
                                     <button
-                                        class="fz-14 msm-content-item msm-text-black fw-600 bg-white border-top-0 border-left-0 border-right-0 d-flex justify-content-between align-items-center border-0 rounded-0 dropdown-toggle w-100 px-3 py-2"
+                                        class="fz-14 msm-content-item msm-text-black fw-600 bg-white border border-top-0 border-left-0 border-right-0 d-flex justify-content-between align-items-center border-0 rounded-0 dropdown-toggle w-100 px-3 py-2"
                                         type="button" id="collapse1" data-bs-toggle="dropdown" aria-expanded="false">
                                         <?php echo esc_attr($term->name); ?>
                                     </button>

@@ -21,7 +21,7 @@ if ($query->have_posts()) :
 				}
 				?>
 				<?php if($button['text']): ?>
-					<div class="col-6 col-md-4 col-lg-2 p-2 wrap-botonera">
+					<div class="col-6 col-md-4 col-lg-2 p-3 wrap-botonera flex-fill">
 						<a href="<?php echo esc_html($url); ?>" class="align-items-center text-decoration-none home-link p-2 rounded-2 justify-content-center d-flex flex-column bg-white">
 
 						<div class="icon-svg">
@@ -35,7 +35,6 @@ if ($query->have_posts()) :
 							}
 							?>
 						</div>
-
 							<h4 class="text-center"><?php echo esc_html($button['text']); ?></h4>
 						</a>
 					</div>

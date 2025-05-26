@@ -2,27 +2,32 @@
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 		<div id="main-content" class="container mb-5">
-			<div class="row my-3 my-md-5 px-3 justify-content-center px-0">
-				<div class="msm-breadcrumb d-block d-sm-row px-0">
-					<a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home</a>/
-					<a class="msm-breadcrumb-item" href="<?php echo HOME_URI; ?>/guia-tramites">Guía de Trámites</a>/
-					<?php
-					// Obtener el área del trámite
-					$terms = get_the_terms(get_the_ID(), 'area_tramite');
-					if ($terms && !is_wp_error($terms)) :
-						$term = array_shift($terms); // Tomar el primer término si hay varios
-					?>
-						<a class="msm-breadcrumb-item" href="<?php echo get_term_link($term); ?>">
-							<?php echo esc_html($term->name); ?>
-						</a>/
-					<?php endif; ?>
-					<span class="msm-breadcrumb msm-breadcrumb-item-last"><?php the_title(); ?></span>
-				</div>
+			<div class="msm-breadcrumb d-block d-sm-row px-0 pt-1 small">
+				<a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home</a>/
+				<a class="msm-breadcrumb-item" href="<?php echo HOME_URI; ?>/guia-tramites">Guía de Trámites</a>/
+				<?php
+				// Obtener el área del trámite
+				$terms = get_the_terms(get_the_ID(), 'area_tramite');
+				if ($terms && !is_wp_error($terms)) :
+					$term = array_shift($terms); // Tomar el primer término si hay varios
+				?>
+					<a class="msm-breadcrumb-item" href="<?php echo get_term_link($term); ?>">
+						<?php echo esc_html($term->name); ?>
+					</a>/
+				<?php endif; ?>
+				<span class="msm-breadcrumb msm-breadcrumb-item-last"><?php the_title(); ?></span>
+			</div>
 
-				
-				<div class="col-12 col-md-8 mb-4">
+			<div class="row my-3 my-md-5 px-3 justify-content-center px-0">
+
+			<div class="col-12 mb-4">
 					<div class="row page-title mb-3 px-0">
 						<span class="fw-600 msm-text-600 fz-24 px-0"><?php the_title(); ?></span>
+					</div>
+			</div>
+				<div class="col-12 col-md-8 mb-4">
+					<div class="row page-title mb-3 px-0">
+						<!-- <span class="fw-600 msm-text-600 fz-24 px-0"><?php the_title(); ?></span> -->
 					</div>
 					<div class="page-content fz-16 fw-400 msm-text-gray row px-0 pe-md-4">
 						<?php if (get_post_meta(get_the_ID(), '_presentacion_del_tramite', true)) { ?>

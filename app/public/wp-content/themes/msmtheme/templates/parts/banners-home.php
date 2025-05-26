@@ -26,12 +26,12 @@
 $banners = get_query_var('banners_home', []);
 
 if (!empty($banners)) : ?>
-  <div class="row gy-3">
+  <div class="row gy-3 p-0">
     <?php foreach ($banners as $banner) :
       $icon_slug = basename($banner['icon'] ?? '');
       $svg_path = get_theme_file_path('/assets/images/icons/' . $icon_slug);
       ?>
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-6 m-0">
         <a href="<?php echo esc_url($banner['url']); ?>"
            class="d-flex align-items-center justify-content-between p-4 rounded-3 text-decoration-none banner-card <?php echo esc_attr($banner['style'] ?? ''); ?>">
           <div class="d-flex align-items-center gap-3">
