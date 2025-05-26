@@ -22,7 +22,7 @@ if ($query->have_posts()) :
 				?>
 				<?php if($button['text']): ?>
 					<div class="col-6 col-md-4 col-lg-2 p-3 wrap-botonera flex-fill">
-						<a href="<?php echo esc_html($url); ?>" class="align-items-center text-decoration-none home-link p-2 rounded-2 justify-content-center d-flex flex-column bg-white">
+						<a href="<?php echo esc_html($url); ?>" class="align-items-center text-decoration-none home-link p-2 rounded-2 justify-content-center d-flex flex-column">
 
 						<div class="icon-svg">
 							<?php
