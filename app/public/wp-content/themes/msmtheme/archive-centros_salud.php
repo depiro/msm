@@ -13,7 +13,7 @@ function procesar_meta_value($meta_value)
 ?>
 
 <div id="main-content" class="container mb-5">
-	<div class="msm-breadcrumb d-block d-sm-row pt-2">
+	<div class="msm-breadcrumb d-block d-sm-row pt-1 small">
 		<a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home</a>/
 		<a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>/areas-gobierno">Áreas de
 			Gobierno</a>/

@@ -9,6 +9,8 @@ require get_template_directory() . '/inc/pages.php';
 require get_template_directory() . '/inc/prensa.php';
 require get_template_directory() . '/inc/centros-salud.php';
 require get_template_directory() . '/inc/cronogramas.php';
+require get_template_directory() . '/inc/programas-servicios.php';
+
 
 require get_template_directory() . '/inc/funciones.php';
 // require get_template_directory() . '/inc/funciones_mapsengine.php';
@@ -32,6 +34,9 @@ function msm_theme_setup()
 {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
+}
+add_action('after_setup_theme', 'msm_theme_setup');
+
 // Habilitar estilos del editor y conectar theme.json
 add_action('after_setup_theme', function () {
     add_theme_support('editor-styles');
@@ -57,8 +62,6 @@ add_action('wp_enqueue_scripts', function () {
         );
     }
 });
-}
-add_action('after_setup_theme', 'msm_theme_setup');
 
 function _get_sidebar()
 {

@@ -2023,3 +2023,91 @@ Stack trace:
 [25-May-2025 22:57:52 UTC] Page slug: guia-de-estilos
 [25-May-2025 22:57:52 UTC] Final slug: web.com/guia-de-estilos.php
 [25-May-2025 22:57:52 UTC] Page slug not in template map: guia-de-estilos
+[25-May-2025 23:05:33 UTC] Page slug: obras-particulares-y-desarrollo-urbano
+[25-May-2025 23:05:33 UTC] Final slug: web.com/obras-particulares-y-desarrollo-urbano.php
+[25-May-2025 23:05:33 UTC] Page slug not in template map: obras-particulares-y-desarrollo-urbano
+[25-May-2025 23:17:47 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msmtheme/functions.php on line 548
+[25-May-2025 23:17:48 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msmtheme/functions.php on line 548
+[25-May-2025 23:17:49 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msmtheme/functions.php on line 548
+[25-May-2025 23:17:50 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msmtheme/functions.php on line 548
+[25-May-2025 23:17:50 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msmtheme/functions.php on line 548
+[25-May-2025 23:18:20 UTC] PHP Fatal error:  Cannot redeclare msm_register_programa_servicio_taxonomy() (previously declared in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msmtheme/functions.php:457) in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msmtheme/functions.php on line 555
+[25-May-2025 23:18:21 UTC] PHP Fatal error:  Cannot redeclare msm_register_programa_servicio_taxonomy() (previously declared in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msmtheme/functions.php:457) in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msmtheme/functions.php on line 555
+[25-May-2025 23:31:15 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msmtheme/functions.php on line 550
+[25-May-2025 23:31:16 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msmtheme/functions.php on line 550
+[25-May-2025 23:31:16 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msmtheme/functions.php on line 550
+[26-May-2025 00:02:18 UTC] Page slug: guia-de-estilos
+[26-May-2025 00:02:18 UTC] Final slug: web.com/guia-de-estilos.php
+[26-May-2025 00:02:18 UTC] Page slug not in template map: guia-de-estilos
+[26-May-2025 00:02:19 UTC] PHP Fatal error:  Cannot redeclare register_programa_post_type() (previously declared in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msmtheme/inc/programas-servicios.php:6) in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msmtheme/inc/programas-servicios.php on line 6
+[26-May-2025 00:03:11 UTC] Page slug: guia-de-estilos
+[26-May-2025 00:03:11 UTC] Final slug: web.com/guia-de-estilos.php
+[26-May-2025 00:03:11 UTC] Page slug not in template map: guia-de-estilos
+[26-May-2025 00:03:11 UTC] PHP Fatal error:  Cannot redeclare register_programa_post_type() (previously declared in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msmtheme/inc/programas-servicios.php:6) in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msmtheme/inc/programas-servicios.php on line 6
+[26-May-2025 00:03:30 UTC] Page slug: guia-de-estilos
+[26-May-2025 00:03:30 UTC] Final slug: web.com/guia-de-estilos.php
+[26-May-2025 00:03:30 UTC] Page slug not in template map: guia-de-estilos
+[26-May-2025 00:03:31 UTC] PHP Fatal error:  Cannot redeclare register_programa_post_type() (previously declared in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msmtheme/inc/programas-servicios.php:6) in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msmtheme/inc/programas-servicios.php on line 6
+[26-May-2025 00:03:43 UTC] Page slug: guia-de-estilos
+[26-May-2025 00:03:43 UTC] Final slug: web.com/guia-de-estilos.php
+[26-May-2025 00:03:43 UTC] Page slug not in template map: guia-de-estilos
+[26-May-2025 00:06:05 UTC] Page slug: guia-de-estilos
+[26-May-2025 00:06:05 UTC] Final slug: web.com/guia-de-estilos.php
+[26-May-2025 00:06:05 UTC] Page slug not in template map: guia-de-estilos
+[26-May-2025 00:09:44 UTC] Page slug: guia-de-estilos
+[26-May-2025 00:09:45 UTC] Final slug: web.com/guia-de-estilos.php
+[26-May-2025 00:09:45 UTC] Page slug not in template map: guia-de-estilos
+[26-May-2025 00:13:06 UTC] Page slug: guia-de-estilos
+[26-May-2025 00:13:06 UTC] Final slug: web.com/guia-de-estilos.php
+[26-May-2025 00:13:06 UTC] Page slug not in template map: guia-de-estilos
+[26-May-2025 00:13:24 UTC] Page slug: guia-de-estilos
+[26-May-2025 00:13:24 UTC] Final slug: web.com/guia-de-estilos.php
+[26-May-2025 00:13:24 UTC] Page slug not in template map: guia-de-estilos
+[26-May-2025 00:13:31 UTC] Page slug: guia-de-estilos
+[26-May-2025 00:13:31 UTC] Final slug: web.com/guia-de-estilos.php
+[26-May-2025 00:13:31 UTC] Page slug not in template map: guia-de-estilos
+[26-May-2025 00:13:38 UTC] Page slug: guia-de-estilos
+[26-May-2025 00:13:38 UTC] Final slug: web.com/guia-de-estilos.php
+[26-May-2025 00:13:38 UTC] Page slug not in template map: guia-de-estilos
+[26-May-2025 00:19:30 UTC] Page slug: areas-gobierno
+[26-May-2025 00:19:30 UTC] Final slug: web.com/areas-gobierno.php
+[26-May-2025 00:19:30 UTC] Page slug not in template map: areas-gobierno
+[26-May-2025 00:19:53 UTC] Page slug: areas-gobierno
+[26-May-2025 00:19:53 UTC] Final slug: web.com/areas-gobierno.php
+[26-May-2025 00:19:53 UTC] Page slug not in template map: areas-gobierno
+[26-May-2025 01:01:09 UTC] Page slug: guia-de-estilos
+[26-May-2025 01:01:09 UTC] Final slug: web.com/guia-de-estilos.php
+[26-May-2025 01:01:09 UTC] Page slug not in template map: guia-de-estilos
+[26-May-2025 01:05:46 UTC] Page slug: guia-de-estilos
+[26-May-2025 01:05:46 UTC] Final slug: web.com/guia-de-estilos.php
+[26-May-2025 01:05:46 UTC] Page slug not in template map: guia-de-estilos
+[26-May-2025 01:07:16 UTC] Page slug: guia-de-estilos
+[26-May-2025 01:07:16 UTC] Final slug: web.com/guia-de-estilos.php
+[26-May-2025 01:07:16 UTC] Page slug not in template map: guia-de-estilos
+[26-May-2025 01:07:16 UTC] Page slug: guia-de-estilos
+[26-May-2025 01:07:16 UTC] Final slug: web.com/guia-de-estilos.php
+[26-May-2025 01:07:16 UTC] Page slug not in template map: guia-de-estilos
+[26-May-2025 01:15:23 UTC] Page slug: guia-de-estilos
+[26-May-2025 01:15:23 UTC] Final slug: web.com/guia-de-estilos.php
+[26-May-2025 01:15:23 UTC] Page slug not in template map: guia-de-estilos
+[26-May-2025 01:15:33 UTC] Page slug: guia-de-estilos
+[26-May-2025 01:15:33 UTC] Final slug: web.com/guia-de-estilos.php
+[26-May-2025 01:15:33 UTC] Page slug not in template map: guia-de-estilos
+[26-May-2025 01:22:41 UTC] Page slug: guia-de-estilos
+[26-May-2025 01:22:41 UTC] Final slug: web.com/guia-de-estilos.php
+[26-May-2025 01:22:41 UTC] Page slug not in template map: guia-de-estilos
+[26-May-2025 01:22:50 UTC] Page slug: guia-de-estilos
+[26-May-2025 01:22:50 UTC] Final slug: web.com/guia-de-estilos.php
+[26-May-2025 01:22:50 UTC] Page slug not in template map: guia-de-estilos
+[26-May-2025 01:23:37 UTC] Page slug: guia-de-estilos
+[26-May-2025 01:23:37 UTC] Final slug: web.com/guia-de-estilos.php
+[26-May-2025 01:23:37 UTC] Page slug not in template map: guia-de-estilos
+[26-May-2025 01:28:41 UTC] Page slug: areas-gobierno
+[26-May-2025 01:28:41 UTC] Final slug: web.com/areas-gobierno.php
+[26-May-2025 01:28:41 UTC] Page slug not in template map: areas-gobierno
+[26-May-2025 12:46:01 UTC] Page slug: guia-de-estilos
+[26-May-2025 12:46:01 UTC] Final slug: web.com/guia-de-estilos.php
+[26-May-2025 12:46:01 UTC] Page slug not in template map: guia-de-estilos
+[26-May-2025 12:46:07 UTC] Page slug: areas-gobierno
+[26-May-2025 12:46:07 UTC] Final slug: web.com/areas-gobierno.php
+[26-May-2025 12:46:07 UTC] Page slug not in template map: areas-gobierno

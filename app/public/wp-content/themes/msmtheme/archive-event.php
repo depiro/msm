@@ -33,10 +33,11 @@ if ($event_query->have_posts()) {
 
 
 <div id="main-content" class="container mb-5">
+	<div class="msm-breadcrumb d-block d-sm-row pt-1 small">
+		<a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a><span class="msm-breadcrumb-item-last">Eventos</span>
+	</div>
 	<div class="row my-3 my-md-5 gap-4 px-0">
-		<div class="msm-breadcrumb d-block d-sm-row">
-			<a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a><span class="msm-breadcrumb-item-last">Eventos</span>
-		</div>
+		
 
 		<div id='calendar'></div>
 

@@ -6,12 +6,10 @@
  get_template_part(THEME_HEADER);  ?>
 
 <div class="container style-guide">
-
-    <div class="row my-2  justify-content-center">
-		<div class="msm-breadcrumb d-block d-sm-row">
-			<a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a><span class="msm-breadcrumb-item-last"> Guía de Estilos</span>
-		</div>
+    <div class="msm-breadcrumb d-block d-sm-row pt-1 small">
+        <a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a><span class="msm-breadcrumb-item-last"> Guía de Estilos</span>
     </div>
+
     <!-- <h1>Guía de Estilos</h1> -->
     <div class="col-12 py-5">
 			<h2 class="msm-font-xl mb-1">Guía de Estilos</h2>
@@ -169,7 +167,7 @@
 
     <section>
         <h2 class="section-title">Breadcrumb</h2>
-        <div class="msm-breadcrumb d-block d-sm-row">
+        <div class="msm-breadcrumb d-block d-sm-row pt-1 small">
             <a class="msm-breadcrumb-item-first" href="http://msm-dev.local">Home /</a><a class="msm-breadcrumb-item" href="http://msm-dev.local/prensa"> Prensa /</a><span class="msm-breadcrumb msm-breadcrumb-item-last">Ojos en Alerta llegó a un nuevo municipio de Córdoba</span>
         </div>
     </section>
@@ -302,6 +300,9 @@
     </section> 
 
 
+
+
+
     <section>
         <!-- AREAS DE GOBIERNO -->
         <div class="row d-flex justify-content-center">
@@ -319,7 +320,34 @@
     <section>
         <h3 class="text-center mt-3">Cards programas y servicios (taxonomias)</h3>
         <h2 class="text-center mb-4">¡Conocé todos los programas y servicios que tenemos para vos!</h2>
-        <?php get_template_part('inc/programas-servicios'); ?>
+        <h3 class="text-center mt-1 mb-4">Test Cards</h3>
+    <?php
+$terms = get_terms(array(
+  'taxonomy' => 'area_programa',
+  'hide_empty' => false,
+));
+
+if (!empty($terms) && !is_wp_error($terms)) :
+  echo '<div class="row g-3">';
+
+  foreach ($terms as $term) :
+    $title = esc_html($term->name);
+    $link = esc_url(get_term_link($term));
+    $icono = get_term_meta($term->term_id, 'icono_svg', true);
+    $color = get_term_meta($term->term_id, 'color_hex', true);
+    $variant = 4;
+    $height = '80px'; // podés ajustar este valor
+
+    include get_template_directory() . '/templates/parts/card-base.php';
+
+  endforeach;
+
+  echo '</div>';
+else :
+  echo '<p class="text-muted">Actualmente no hay programas disponibles.</p>';
+endif;
+?>
+
     <section/>
 
 

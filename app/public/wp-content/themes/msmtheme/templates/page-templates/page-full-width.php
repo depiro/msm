@@ -2,7 +2,7 @@
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
         <div id="main-content" class="container mb-5">
-            <div class="msm-breadcrumb d-block d-sm-row">
+            <div class="msm-breadcrumb d-block d-sm-row pt-1 small">
                 <a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home</a><span>/</span>
                 <a class="msm-breadcrumb-item" href="<?php echo HOME_URI; ?>/areas-gobierno"> Áreas de gobierno</a><span>/</span>
                 <?php

@@ -1,46 +1,184 @@
 <?php
+
 /**
- * Componente: Accesos a Programas y Servicios
- * Este componente muestra tarjetas enlazadas con íconos SVG y colores personalizados.
- * Basado en taxonomías personalizadas (ej: 'programa_servicio').
+ * Registro del Custom Post Type: Programa
  */
+function register_programa_post_type() {
+    register_post_type('programa', array(
+        'labels' => array(
+            'name' => __('Programas'),
+            'singular_name' => __('Programa'),
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'programas/%area_programa%'),
+        'supports' => array('title', 'editor', 'excerpt', 'thumbnail'),
+        'taxonomies' => array('area_programa'),
+        'show_in_rest' => true,
+    ));
+}
+add_action('init', 'register_programa_post_type');
 
-$terms = get_terms(array(
-  'taxonomy' => 'programa_servicio',
-  'hide_empty' => false,
-));
+/**
+ * Taxonomía personalizada: Área Programa
+ */
+function crear_taxonomia_area_programa() {
+    register_taxonomy(
+        'area_programa',
+        'programa',
+        array(
+            'labels' => array(
+                'name' => __('Áreas de Programa'),
+                'singular_name' => __('Área de Programa'),
+            ),
+            'hierarchical' => true,
+            'public' => true,
+            'show_ui' => true,
+            'show_admin_column' => true,
+            'query_var' => true,
+            'rewrite' => array('slug' => 'programas'),
+            'show_in_rest' => true,
+        )
+    );
+}
+add_action('init', 'crear_taxonomia_area_programa');
 
-if (!empty($terms) && !is_wp_error($terms)) :
-  echo '<div class="row">';
-
-  foreach ($terms as $term) :
-    $icono = get_term_meta($term->term_id, 'icono_svg', true); // nombre del archivo SVG sin .svg
-    $color = get_term_meta($term->term_id, 'color_hex', true); // color en formato #RRGGBB o variable CSS
-    $link = get_term_link($term);
+/**
+ * Campos personalizados: ícono SVG + color de fondo + imagen
+ */
+function agregar_campos_area_programa($taxonomy) {
+    $icono_svg = is_object($taxonomy) ? get_term_meta($taxonomy->term_id, 'icono_svg', true) : '';
+    $color_hex = is_object($taxonomy) ? get_term_meta($taxonomy->term_id, 'color_hex', true) : '';
+    $imagen_id = is_object($taxonomy) ? get_term_meta($taxonomy->term_id, 'imagen_id', true) : '';
+    $imagen_url = wp_get_attachment_url($imagen_id);
     ?>
-
-    <div class="col-6 col-md-4 col-lg-3 p-2">
-      <a href="<?php echo esc_url($link); ?>" class="text-decoration-none d-flex align-items-stretch h-100">
-        <div class="card shadow-sm d-flex flex-row overflow-hidden w-100">
-
-          <!-- Barra lateral con ícono -->
-          <div class="d-flex align-items-center justify-content-center px-3" style="background-color: <?php echo esc_attr($color ?: '#0095da'); ?>;">
-            <div class="icon-svg" style="width: 40px; height: 40px; color: #fff;">
-              <?php if (!empty($icono)) inline_svg($icono); ?>
+    <tr class="form-field term-icono-wrap">
+        <th><label for="icono_svg">Ícono SVG</label></th>
+        <td>
+            <input type="text" name="icono_svg" id="icono_svg" value="<?php echo esc_attr($icono_svg); ?>" placeholder="ej: salud" />
+            <p class="description">Nombre del archivo SVG sin la extensión ".svg".</p>
+        </td>
+    </tr>
+    <tr class="form-field term-color-wrap">
+        <th><label for="color_hex">Color de fondo</label></th>
+        <td>
+            <input type="text" name="color_hex" id="color_hex" value="<?php echo esc_attr($color_hex); ?>" placeholder="#0095da o var(--msm-blue)" />
+            <p class="description">Color para el fondo del ícono.</p>
+        </td>
+    </tr>
+    <tr class="form-field term-imagen-wrap">
+        <th><label for="imagen_upload">Imagen</label></th>
+        <td>
+            <input type="hidden" id="imagen_id" name="imagen_id" value="<?php echo esc_attr($imagen_id); ?>" />
+            <input type="button" id="upload_image_button" class="button" value="Seleccionar Imagen" />
+            <div id="preview_image" style="margin-top: 10px;">
+                <?php if ($imagen_url) : ?>
+                    <img src="<?php echo esc_url($imagen_url); ?>" style="max-width: 50px; height: auto;" />
+                <?php endif; ?>
             </div>
-          </div>
+            <p class="description">Sube una imagen para este término.</p>
+        </td>
+    </tr>
+    <?php
+}
+add_action('area_programa_edit_form_fields', 'agregar_campos_area_programa');
+add_action('area_programa_add_form_fields', 'agregar_campos_area_programa');
 
-          <!-- Contenido textual -->
-          <div class="p-3 d-flex align-items-center">
-            <p class="mb-0 fw-semibold text-dark text-uppercase fz-16">
-              <?php echo esc_html($term->name); ?>
-            </p>
-          </div>
+function guardar_campos_area_programa($term_id) {
+    if (isset($_POST['icono_svg'])) {
+        update_term_meta($term_id, 'icono_svg', sanitize_text_field($_POST['icono_svg']));
+    }
+    if (isset($_POST['color_hex'])) {
+        update_term_meta($term_id, 'color_hex', sanitize_text_field($_POST['color_hex']));
+    }
+    if (isset($_POST['imagen_id'])) {
+        update_term_meta($term_id, 'imagen_id', intval($_POST['imagen_id']));
+    }
+}
+add_action('created_area_programa', 'guardar_campos_area_programa');
+add_action('edited_area_programa', 'guardar_campos_area_programa');
 
-        </div>
-      </a>
-    </div>
+/**
+ * Script para botón de subida de imagen
+ */
+function area_programa_admin_footer_script() {
+    ?>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            let mediaUploader;
+            $('#upload_image_button').click(function (e) {
+                e.preventDefault();
+                if (mediaUploader) {
+                    mediaUploader.open();
+                    return;
+                }
+                mediaUploader = wp.media({
+                    title: 'Seleccionar Imagen',
+                    button: {
+                        text: 'Seleccionar Imagen'
+                    },
+                    multiple: false
+                });
+                mediaUploader.on('select', function () {
+                    const attachment = mediaUploader.state().get('selection').first().toJSON();
+                    $('#imagen_id').val(attachment.id);
+                    $('#preview_image').html('<img src="' + attachment.url + '" style="max-width: 150px; height: auto;" />');
+                });
+                mediaUploader.open();
+            });
+        });
+    </script>
+    <?php
+}
+add_action('admin_footer', 'area_programa_admin_footer_script');
 
-  <?php endforeach;
-  echo '</div>';
-endif; ?>
+/**
+ * Mostrar ícono en la tabla del dashboard
+ */
+function columnas_area_programa($columns) {
+    $columns['icono'] = __('Ícono');
+    return $columns;
+}
+add_filter('manage_edit-area_programa_columns', 'columnas_area_programa');
+
+function contenido_columna_area_programa($content, $column_name, $term_id) {
+    if ($column_name === 'icono') {
+        $icono = get_term_meta($term_id, 'icono_svg', true);
+        if ($icono) {
+            return '<code>' . esc_html($icono) . '</code>';
+        }
+    }
+    return $content;
+}
+add_filter('manage_area_programa_custom_column', 'contenido_columna_area_programa', 10, 3);
+
+/**
+ * Reescritura de URLs para programas
+ */
+function rewrite_programas_urls() {
+    add_rewrite_rule(
+        '^programas/([^/]+)/([^/]+)/?$',
+        'index.php?post_type=programa&area_programa=$matches[1]&name=$matches[2]',
+        'top'
+    );
+    add_rewrite_rule(
+        '^programas/?$',
+        'index.php?post_type=programa',
+        'top'
+    );
+}
+add_action('init', 'rewrite_programas_urls');
+
+/**
+ * Enlazar taxonomía en la URL del CPT
+ */
+function programa_link_personalizado($post_link, $post) {
+    if ($post->post_type === 'programa') {
+        $terms = wp_get_post_terms($post->ID, 'area_programa');
+        if (!empty($terms) && !is_wp_error($terms)) {
+            return str_replace('%area_programa%', $terms[0]->slug, $post_link);
+        }
+    }
+    return $post_link;
+}
+add_filter('post_type_link', 'programa_link_personalizado', 10, 2);
