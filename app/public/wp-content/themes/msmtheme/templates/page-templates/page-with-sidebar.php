@@ -32,7 +32,7 @@
 
         <!-- <div class="row my-3 my-md-5 px-3 gap-3"> -->
         <div class="row">
-            <div class="col-12 col-md-9">
+            <div class="col-12 col-md-8">
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
                     <div class="my-3">
@@ -49,7 +49,7 @@
                 </article>
             </div>
 
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-4">
                 <aside class="sidebar-card rounded shadow-sms">
                         <?php
                             $sidebar_info = get_post_meta(get_the_ID(), '_msm_sidebar_info', true);

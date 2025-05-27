@@ -35,7 +35,7 @@
           }
 
           $variant = 3;
-          $height = '220px';
+          $height = '140px';
 
           include get_template_directory() . '/templates/parts/card-base.php';
         endforeach;

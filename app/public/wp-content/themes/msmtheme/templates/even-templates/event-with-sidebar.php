@@ -5,7 +5,7 @@ Template Post Type: event
 Description: Esta plantilla muestra una página con una barra lateral.
 */
 ?>
-<div class="col-12 col-md-9 col-lg-8 order-1 order-md-2">
+<div class="col-12 col-md-8 col-lg-8 order-1 order-md-2">
     <div class="msm-breadcrumb d-block d-sm-row">
         <a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a><a class="msm-breadcrumb-item" href="<?php echo HOME_URI; ?>/eventos">Eventos /</a><span class="msm-breadcrumb msm-breadcrumb-item-last"><?php the_title(); ?></span>
     </div>
@@ -45,7 +45,7 @@ Description: Esta plantilla muestra una página con una barra lateral.
         </div>
     </article>
 </div>
-<div class="col-12 col-md-3 col-lg-4 order-2 order-md-1">
+<div class="col-12 col-md-4 col-lg-4 order-2 order-md-1">
     <?php // get_sidebar();
     ?>
     <div class="menuCul">

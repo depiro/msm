@@ -28,7 +28,7 @@ get_template_part(THEME_HEADER); ?>
 			<h2 class="msm-font-xl mb-1">Boletín Oficial</h2>
 			<!-- <p class="fz-18">Conocé cada una de las áreas que conforman la Municipalidad de San Miguel</p> -->
 		</div>
-		<div class="col-12 col-md-9">
+		<div class="col-12 col-md-8">
 
 			<div class="page-content fz-16 fw-400 msm-text-gray text-left row">
 				<!-- <div class="d-flex flex-column justify-content-center">
@@ -138,7 +138,7 @@ get_template_part(THEME_HEADER); ?>
 		</div>		
 		
 		<!-- Sidebar -->
-		<div class="col-12 col-md-3">
+		<div class="col-12 col-md-4">
 			<?php
 			$terms = get_the_terms(get_the_ID(), 'area_gobierno');
 			if ($terms && !is_wp_error($terms)) {

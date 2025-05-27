@@ -1,4 +1,4 @@
-.areas-card,
+/* .areas-card, */
 .card {
     transition-timing-function: ease-in;
     /* box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15); */
@@ -28,6 +28,9 @@
     color: #fff;
 }
  
+.home-content .card-v1 .card {
+    filter: none;
+}
 
 .card-v1 .card-barra,
 .card-v2 .card-barra {
@@ -71,8 +74,6 @@
     display: block;
 }
 
-.card-v3 {}
-
 .card-v4 .card {
     background-color: var(--msm-banners);
     /* background-color: #F5F3F3; */
@@ -85,3 +86,9 @@
     margin-bottom: 0;
 }
 
+.card-v1 .card,
+.card-v2 .card,
+.card-v3 .card,
+.card-v4 .card  {
+    margin-bottom: 1rem;
+}

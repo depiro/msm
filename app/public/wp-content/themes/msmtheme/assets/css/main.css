@@ -1231,15 +1231,7 @@ a.phone-item-number {
     width: 24px;
 }
 
-
-.areas-home {
-    /* border: 1px solid crimson; */
-    margin-bottom: 8rem;
-    display: block; 
-    background-color: lightskyblue;
-}
-
-
+/* Secciones de Home */
 .home-programas {
     margin-bottom: 6rem; 
  /*    border:1px solid orange; */

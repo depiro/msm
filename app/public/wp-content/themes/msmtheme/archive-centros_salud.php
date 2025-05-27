@@ -29,7 +29,7 @@ function procesar_meta_value($meta_value)
 					donde se efectúan las primeras acciones de asistencia sanitaria. Sus servicios están adaptados a las
 					necesidades de la comunidad de cada barrio en particular.</p>
 		</div>
-		<div class="col-12 col-md-9">
+		<div class="col-12 col-md-8">
 
 			<div class="page-content fz-16 fw-400 msm-text-gray text-left row">
 				<iframe height="600px" title="Web MSM - Mapa de Centros de Salud"
@@ -135,7 +135,7 @@ function procesar_meta_value($meta_value)
 
 			</div>
 		</div>
-	<div class="col-12 col-md-3">
+	<div class="col-12 col-md-4">
 			<div class="menuCul">
 				<h5 class="py-2">Secretaría de Salud</h5>
 				<ul class="msm-submenu">

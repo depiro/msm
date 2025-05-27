@@ -18,10 +18,9 @@ if (isset($term) && $term instanceof WP_Term) {
   $icon_id = get_term_meta($term->term_id, 'imagen_id', true);
   $icon_url = wp_get_attachment_url($icon_id);
 
-  /* $icon = $icon ?? ($icon_url ? '<img src="' . esc_url($icon_url) . '" alt="' . esc_attr($title) . '" width="40" height="40" style="object-fit: contain;" />' : ''); */
   
   $icon = ($icon_url) 
-  ? '<img src="' . esc_url($icon_url) . '" alt="' . esc_attr($title) . '" width="40" height="40" style="object-fit: contain;" />'
+  ? '<img src="' . esc_url($icon_url) . '" alt="' . esc_attr($title) . '" width="80" height="80" style="object-fit: contain;" />'
   : '';
 
 } else {
@@ -46,7 +45,7 @@ if (isset($term) && $term instanceof WP_Term) {
         <div class="card-barra"></div>
       <?php endif; ?>
 
-      <div class="card-body p-3 d-flex flex-column justify-content-center text-dark">
+      <div class="card-body p-3 d-flex flex-column justify-content-center">
         <h6 class="card-title"><?= esc_html($title); ?></h6>
 
         <?php if (in_array($variant, [2, 3])) : ?>

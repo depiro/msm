@@ -22,7 +22,7 @@ $image_url = get_term_meta($term_id, 'banner_image', true);
 			<?php endif; ?>
 		</div>
 
-		<div class="row border">
+		<div class="row">
 			<div class="col-12">
 
 			<?php if (have_posts()): ?>
@@ -30,7 +30,7 @@ $image_url = get_term_meta($term_id, 'banner_image', true);
 				<div class="row">
 					<?php while (have_posts()): the_post(); ?>
 						<?php
-							$height = '200px';
+							$height = '180px';
 							$variant = 2;
 							$title = get_the_title();
 							$desc = wp_trim_words(get_the_excerpt(), 20, '...');
