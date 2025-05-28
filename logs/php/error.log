@@ -3434,3 +3434,42 @@ Stack trace:
 #4 /Users/milfuegos/Sites/msm-dev/app/public/index.php(17): require('/Users/milfuego...')
 #5 {main}
   thrown in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msmtheme/functions.php on line 3
+[28-May-2025 13:08:22 UTC] PHP Warning:  Attempt to read property "title" on null in /Users/milfuegos/Sites/msm-dev/app/public/wp-includes/class-wp-customize-widgets.php on line 926
+[28-May-2025 18:05:54 UTC] Page slug: atencion-al-vecino-atv
+[28-May-2025 18:05:54 UTC] Final slug: web.com/atencion-al-vecino-atv.php
+[28-May-2025 18:05:54 UTC] Page slug not in template map: atencion-al-vecino-atv
+[28-May-2025 18:20:52 UTC] Page slug: areas-gobierno
+[28-May-2025 18:20:52 UTC] Final slug: web.com/areas-gobierno.php
+[28-May-2025 18:20:52 UTC] Page slug not in template map: areas-gobierno
+[28-May-2025 18:20:53 UTC] Page slug: cultura-2
+[28-May-2025 18:20:53 UTC] Final slug: web.com/cultura-2.php
+[28-May-2025 18:20:53 UTC] Page slug not in template map: cultura-2
+[28-May-2025 18:22:03 UTC] PHP Warning:  Attempt to read property "title" on null in /Users/milfuegos/Sites/msm-dev/app/public/wp-includes/class-wp-customize-widgets.php on line 926
+[28-May-2025 18:23:19 UTC] PHP Warning:  Attempt to read property "title" on null in /Users/milfuegos/Sites/msm-dev/app/public/wp-includes/class-wp-customize-widgets.php on line 926
+[28-May-2025 18:48:59 UTC] Page slug: licencias-2
+[28-May-2025 18:48:59 UTC] Final slug: web.com/licencias-2.php
+[28-May-2025 18:48:59 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//licencias/landing.php
+[28-May-2025 18:50:29 UTC] Page slug: sem-2
+[28-May-2025 18:50:29 UTC] Final slug: web.com/sem-2.php
+[28-May-2025 18:50:29 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//sem/landing.php
+[28-May-2025 18:50:59 UTC] Page slug: licencias-2
+[28-May-2025 18:50:59 UTC] Final slug: web.com/licencias-2.php
+[28-May-2025 18:50:59 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//licencias/landing.php
+[28-May-2025 18:52:04 UTC] Page slug: boletin-oficial
+[28-May-2025 18:52:04 UTC] Final slug: web.com/boletin-oficial.php
+[28-May-2025 18:52:04 UTC] Page slug not in template map: boletin-oficial
+[28-May-2025 18:52:45 UTC] Page slug: boletin-oficial
+[28-May-2025 18:52:45 UTC] Final slug: web.com/boletin-oficial.php
+[28-May-2025 18:52:45 UTC] Page slug not in template map: boletin-oficial
+[28-May-2025 18:54:05 UTC] Page slug: boletin-oficial
+[28-May-2025 18:54:05 UTC] Final slug: web.com/boletin-oficial.php
+[28-May-2025 18:54:05 UTC] Page slug not in template map: boletin-oficial
+[28-May-2025 18:56:27 UTC] Page slug: organigrama-municipal
+[28-May-2025 18:56:27 UTC] Final slug: web.com/organigrama-municipal.php
+[28-May-2025 18:56:27 UTC] Page slug not in template map: organigrama-municipal
+[28-May-2025 18:57:35 UTC] Page slug: boletin-oficial
+[28-May-2025 18:57:35 UTC] Final slug: web.com/boletin-oficial.php
+[28-May-2025 18:57:35 UTC] Page slug not in template map: boletin-oficial
+[28-May-2025 18:57:56 UTC] Page slug: boletin-oficial
+[28-May-2025 18:57:56 UTC] Final slug: web.com/boletin-oficial.php
+[28-May-2025 18:57:56 UTC] Page slug not in template map: boletin-oficial

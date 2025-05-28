@@ -1,6 +1,4 @@
 <!-- Encuesta de utilidad -->
-<?php get_template_part('templates/parts/encuesta_utilidad'); ?>
-
 
 <footer class="p-0 d-flex justify-content-center flex-column h-auto" style="background-color:#E5E5E5">
     <div class="py-3 d-flex align-items-center justify-content-center contacto">

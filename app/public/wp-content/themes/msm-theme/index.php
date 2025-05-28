@@ -1,11 +1,4 @@
-<?php
-if (is_front_page()) {
-  get_template_part('templates/parts/header_home');
-} else {
-  get_template_part('templates/parts/header');
-}
-?>
-
+<?php get_template_part(THEME_HEADER);  ?>
 
 <!-- Topbar avisos -->
 <?php msm_render_home_alert(); ?>
@@ -113,14 +106,14 @@ $query = new WP_Query($args);
             'url' => '/debito-automatico',
             'icon' => 'facturas.svg',
             'title' => '¡Adherite al débito automático!',
-            'text' => 'y ganá tranquilidad todos los meses',
+            'text' => 'Y ganá tranquilidad todos los meses',
             'style' => 'bg-white'
             ],
             [
             'url' => '/vacunacion',
             'icon' => 'vacunas.svg',
             'title' => 'Poné las <strong>VACUNAS AL DÍA</strong>',
-            'text' => 'completá el calendario de vacunación',
+            'text' => 'Completá el calendario de vacunación',
             'style' => 'bg-white',
             'icon_right' => true
             ],

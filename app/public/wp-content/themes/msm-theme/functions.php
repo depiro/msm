@@ -16,7 +16,7 @@ require get_template_directory() . '/inc/funciones.php';
 // require get_template_directory() . '/inc/funciones_mapsengine.php';
 // ------------------- add constant 10/9 -------------------
 define('HOME_URI', home_url());
-define('THEME_URI', home_url() . '/wp-content/themes/msmtheme');
+define('THEME_URI', home_url() . '/wp-content/themes/msm-theme');
 define('THEME_IMAGES', THEME_URI . '/images');
 define('THEME_CSS', THEME_URI . '/assets/css');
 define('THEME_JS', THEME_URI . '/assets/js');

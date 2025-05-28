@@ -139,50 +139,10 @@ get_template_part(THEME_HEADER); ?>
 		
 		<!-- Sidebar -->
 		<div class="col-12 col-md-4">
-			<?php
-			$terms = get_the_terms(get_the_ID(), 'area_gobierno');
-			if ($terms && !is_wp_error($terms)) {
-				$term = $terms[0];
-				$term_slug = $term->slug;
-
-				$args = array(
-					'post_type' => 'page',
-					'posts_per_page' => 10,
-					'post__not_in' => array(get_the_ID()),
-					'tax_query' => array(
-						array(
-							'taxonomy' => 'area_gobierno',
-							'field' => 'slug',
-							'terms' => $term_slug,
-						),
-					),
-					'orderby' => 'title',
-					'order' => 'ASC',
-				);
-
-				$related_query = new WP_Query($args);
-
-				if ($related_query->have_posts()): ?>
-					<div class="menuCul">
-						<h5 class="py-2"><?php echo esc_html($term->name); ?></h5>
-						<ul class="msm-submenu">
-							<?php while ($related_query->have_posts()):
-								$related_query->the_post(); ?>
-								<li class="cat-item">
-									<a href="<?php the_permalink(); ?>" style="font-size: 16px;">
-										<?php the_title(); ?>
-									</a>
-								</li>
-							<?php endwhile; ?>
-						</ul>
-					</div>
-				<?php endif;
-				wp_reset_postdata();
-			}
-			?>
 		</div>
 
 	</div>
 </div>
+<?php get_template_part('templates/parts/encuesta_utilidad'); ?>
 <?php get_template_part(THEME_FOOTER); ?>
 <!-- archive boletin oficial -->

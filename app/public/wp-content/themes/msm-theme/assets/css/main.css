@@ -149,7 +149,7 @@ header {
 }
 
 .page-content > div.d-flex.flex-column{
-    border:3px solid black;
+    /* border:3px solid black; */
 }
 .page-content img:has(.size-full) {
     width: -webkit-fill-available;
