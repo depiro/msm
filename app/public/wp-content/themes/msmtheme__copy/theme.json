@@ -1,0 +1,129 @@
+{
+  "version": 2,
+  "settings": {
+    "color": {
+      "palette": [
+        { "name": "Negro",        "slug": "black",         "color": "#000000" },
+        { "name": "Texto oscuro", "slug": "gray-900",      "color": "#3A3A3A" },
+        { "name": "Texto medio",  "slug": "gray-700",      "color": "#4F4F4F" },
+        { "name": "Texto claro",  "slug": "gray-500",      "color": "#8A8A88" },
+        { "name": "Deshabilitado","slug": "gray-300",      "color": "#D1D1D1" },
+        { "name": "Azul link",    "slug": "link-blue",     "color": "#0007D7" },
+
+        { "name": "Primario 100", "slug": "primary-100",   "color": "#36B7E8" },
+        { "name": "Primario 80",  "slug": "primary-80",    "color": "#5CC3EB" },
+        { "name": "Primario 60",  "slug": "primary-60",    "color": "#86D4F1" },
+        { "name": "Primario 40",  "slug": "primary-40",    "color": "#AFE2F6" },
+        { "name": "Primario 20",  "slug": "primary-20",    "color": "#D7F1FA" },
+
+        { "name": "Secundario",   "slug": "secondary",     "color": "#25669B" },
+        
+        { "name": "Auxiliar",     "slug": "auxiliar",      "color": "#f7f8f4" },
+
+        { "name": "MSM Blue",     "slug": "msm-blue",      "color": "#3dbfee" },
+        { "name": "MSM Blue v2",  "slug": "msm-blue-v2",   "color": "#1a85ac" },
+        { "name": "MSM Blue v3",  "slug": "msm-blue-v3",   "color": "#5d6988" },
+        { "name": "MSM Blue v4",  "slug": "msm-blue-v4",   "color": "#364262" },
+        { "name": "MSM Light",    "slug": "msm-blue-light","color": "#6fcbed" },
+        { "name": "MSM Gray",     "slug": "msm-gray",      "color": "#717075" },
+        { "name": "MSM Black",    "slug": "msm-black",     "color": "#575756" },
+
+        { "name": "Blue 50",      "slug": "blue-50",       "color": "#e2f3fc" },
+        { "name": "Blue 100",     "slug": "blue-100",      "color": "#bfe6f8" },
+        { "name": "Blue 200",     "slug": "blue-200",      "color": "#86d4f3" },
+        { "name": "Blue 300",     "slug": "blue-300",      "color": "#35b7e8" },
+        { "name": "Blue 400",     "slug": "blue-400",      "color": "#1ea5d9" },
+        { "name": "Blue 500",     "slug": "blue-500",      "color": "#1085b9" },
+        { "name": "Blue 600",     "slug": "blue-600",      "color": "#0f6a95" },
+        { "name": "Blue 700",     "slug": "blue-700",      "color": "#105a7c" },
+        { "name": "Blue 800",     "slug": "blue-800",      "color": "#134b67" },
+        { "name": "Blue 900",     "slug": "blue-900",      "color": "#0d3044" },
+        { "name": "Blue 950",     "slug": "blue-950",      "color": "#0a1d2c" }
+      ],
+      "custom": false
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "name": "Roboto",
+          "slug": "roboto",
+          "fontFamily": "\"Roboto\", sans-serif"
+        }
+      ],
+      "fontSizes": [
+        { "slug": "xxs",   "size": "clamp(0.67rem, calc(0.62rem + 0.62vw), 1.125rem)", "name": "Texto XXS" },
+        { "slug": "xs",    "size": "clamp(0.87rem, calc(0.72rem + 0.72vw), 1.28rem)",  "name": "Texto XS" },
+        { "slug": "sm",    "size": "clamp(1.04rem, calc(0.85rem + 0.97vw), 1.6rem)",   "name": "Texto SM" },
+        { "slug": "md",    "size": "clamp(1.25rem, calc(0.99rem + 1.3vw), 2rem)",      "name": "Texto MD" },
+        { "slug": "lg",    "size": "clamp(1.5rem, calc(1.15rem + 1.74vw), 2.5rem)",    "name": "Texto LG" },
+        { "slug": "xl",    "size": "clamp(1.8rem, calc(1.34rem + 2.3vw), 3.13rem)",    "name": "Texto XL" },
+        { "slug": "2xl",   "size": "clamp(2.16rem, calc(1.55rem + 3.04vw), 3.91rem)",  "name": "Texto 2XL" },
+        { "slug": "3xl",   "size": "clamp(2.59rem, calc(1.79rem + 3.98vw), 4.88rem)",  "name": "Texto 3XL" },
+        { "slug": "4xl",   "size": "clamp(3.11rem, calc(2.07rem + 5.21vw), 6.1rem)",   "name": "Texto 4XL" },
+        { "slug": "base",  "size": "1rem",                                             "name": "Base (16px)" },
+        { "slug": "small", "size": "0.875rem",                                         "name": "Small (14px)" },
+        { "slug": "xsmall","size": "0.75rem",                                          "name": "XSmall (12px)" }
+      ],
+      "lineHeight": [
+        { "slug": "tight",     "name": "Cerrado",     "lineHeight": "1.1" },
+        { "slug": "normal",    "name": "Normal",      "lineHeight": "1.4" },
+        { "slug": "relaxed",   "name": "Relajado",    "lineHeight": "1.55" },
+        { "slug": "loose",     "name": "Amplio",      "lineHeight": "1.6" }
+      ],
+      "textTransform": true,
+      "fontStyle": true,
+      "fontWeight": true,
+      "dropCap": false
+    },
+    "custom": {
+      "typography": {
+        "bodyFontFamily": "var(--wp--preset--font-family--roboto)"
+      }
+    }
+  },
+  "styles": {
+      "typography": {
+        "fontFamily": "var(--wp--preset--font-family--roboto)"
+      },
+    "color": {
+      "background": "#FFFFFF",
+      "text": "#333333"
+    },
+    "elements": {
+      "link": {
+        "color": {
+          "text": "#0057A0"
+        }
+      },
+      "button": {
+        "color": {
+          "background": "#0057A0",
+          "text": "#FFFFFF"
+        },
+        "typography": {
+          "fontWeight": "600"
+        },
+        "spacing": {
+          "padding": {
+            "top": "0.5rem",
+            "right": "1rem",
+            "bottom": "0.5rem",
+            "left": "1rem"
+          }
+        }
+      }
+    }
+  },
+  "supports": {
+    "spacing": true,
+    "color": {
+      "customDuotone": false,
+      "customGradient": false
+    },
+    "typography": {
+      "fontStyle": true,
+      "fontWeight": true,
+      "dropCap": false
+    }
+  }
+}

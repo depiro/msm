@@ -1,0 +1,79 @@
+:root {
+    /* === Overrides de Bootstrap === */
+    --bs-primary:           #36B7E8;
+    --bs-secondary:         #25669B;
+    --bs-success:           #49a97c;
+    --bs-info:              #2db4cf;
+    --bs-warning:           #ecb51f;
+    --bs-danger:            #cb4855;
+    --bs-light:             #f8f9fa;
+    --bs-dark:              #212529;
+  
+    --bs-body-color:        #4F4F4F;
+    --bs-body-bg:           #ffffff;
+  
+    --bs-link-color:        var(--bs-primary);
+    --bs-link-hover-color:  var(--bs-secondary);
+  
+    --bs-btn-color:                 #ffffff;
+    --bs-btn-bg:                   var(--bs-primary);
+    --bs-btn-border-color:         var(--bs-primary);
+    --bs-btn-hover-bg:             var(--bs-secondary);
+    --bs-btn-hover-border-color:   var(--bs-secondary);
+    --bs-btn-active-bg:            var(--bs-secondary);
+    --bs-btn-active-border-color:  var(--bs-secondary);
+  
+  
+    /* === Colores personalizados (paleta MSM) === */
+    --color-primary-100:    var(--bs-primary); /* usa el valor de override */
+    --color-primary-80:     #5CC3EB;
+    --color-primary-60:     #86D4F1;
+    --color-primary-40:     #AFE2F6;
+    --color-primary-20:     #D7F1FA;
+  
+    --color-secondary:      var(--bs-secondary);
+    --color-link:           #0a10d4;
+  
+    --color-text-main:      #000000;
+    --color-text-subtitle:  #3A3A3A;
+    --color-text-body:      #4F4F4F;
+    --color-text-muted:     #8A8A88;
+    --color-text-disabled:  #D1D1D1;
+  
+    /* === Institucional MSM === */
+    --msm-blue:         #3dbfee;
+    --msm-blue-v2:      #1a85ac;
+    --msm-blue-v3:      #5d6988;
+    --msm-blue-v4:      #364262;
+    --msm-blue-light:   #6fcbed;
+    --msm-gray:         #717075;
+    --msm-black:        #575756;
+  
+    --blue-msm-50:      #e2f3fc;
+    --blue-msm-100:     #bfe6f8;
+    --blue-msm-200:     #86d4f3;
+    --blue-msm-300:     #35b7e8;
+    --blue-msm-400:     #1ea5d9;
+    --blue-msm-500:     #1085b9;
+    --blue-msm-600:     #0f6a95;
+    --blue-msm-700:     #105a7c;
+    --blue-msm-800:     #134b67;
+    --blue-msm-900:     #0d3044;
+    --blue-msm-950:     #0a1d2c;
+  
+    /* Opcional: color banners u otros tokens */
+    /* --msm-banners:      #f7f8f4; */
+    --msm-banners:      #F5F3F3;
+
+    /* Escala tipográfica */
+    --msm-text-xxs:     clamp(0.67rem, calc(0.62rem + 0.62vw), 1.125rem);
+    --msm-text-xs:      clamp(0.87rem, calc(0.72rem + 0.72vw), 1.28rem);
+    --msm-text-sm:      clamp(1.04rem, calc(0.85rem + 0.97vw), 1.6rem);
+    --msm-text-md:      clamp(1.25rem, calc(0.99rem + 1.3vw), 2rem);
+    --msm-text-lg:      clamp(1.5rem, calc(1.15rem + 1.74vw), 2.5rem);
+    --msm-text-xl:      clamp(1.8rem, calc(1.34rem + 2.3vw), 3.13rem);
+    --msm-text-2xl:     clamp(2.16rem, calc(1.55rem + 3.04vw), 3.91rem);
+    --msm-text-3xl:     clamp(2.59rem, calc(1.79rem + 3.98vw), 4.88rem);
+    --msm-text-4xl:     clamp(3.11rem, calc(2.07rem + 5.21vw), 6.1rem);
+  }
+  

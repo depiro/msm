@@ -1,0 +1,49 @@
+/* Footer sección contacto */
+.contacto {
+    background-color: var(--msm-black);
+}
+
+.contact-numbers {
+    background-color: var(--bs-body-bg);
+}
+
+.logo-footer {
+    margin-top: -65px;
+}
+
+a.phone-item-number {
+    font-size: 30px;
+    color: var(--msm-gray);
+    /* letter-spacing: 0.05rem; */
+    line-height: 32px;
+}
+.phone-item-name {
+    font-size: .8rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--msm-black);
+}
+
+/* Separadores verticales entre columnas en desktop */
+.separator {
+    width: 2px;
+    height: 50%;
+    background-color: #999;
+    margin: 0 16px;
+  }
+  
+  /* Separadores horizontales en mobile (tipo líneas entre bloques) */
+  @media (max-width: 767.98px) {
+    .phone-block {
+      border-bottom: 1px solid #ccc;
+    }
+  
+    .phone-block:last-of-type {
+      border-bottom: none;
+    }
+  
+    .separator {
+      display: none !important;
+    }
+  }
+  

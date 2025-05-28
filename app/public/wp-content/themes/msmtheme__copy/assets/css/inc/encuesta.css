@@ -1,0 +1,33 @@
+.encuesta-utilidad {
+    background-color: #d9d9d9;
+    padding: 1rem;
+  }
+  
+  .encuesta-utilidad .container {
+    margin: 0 auto;
+  }
+  
+  .encuesta-texto {
+    margin: 0 1rem 0 0;
+  }
+  
+  .encuesta-botones {
+   /*  display: flex;
+    justify-content: center; */
+    gap: 2rem;
+  }
+  
+  .encuesta-btn {
+    /* padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    background-color: #e0e0e0; */
+  }
+  
+  /* .encuesta-btn:hover {
+    background-color: #d5d5d5;
+  } */
+  

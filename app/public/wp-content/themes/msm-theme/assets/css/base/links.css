@@ -1,0 +1,67 @@
+/* ---------- LINK STATES ---------- */
+
+/* Enlace normal (no visitado) */
+a:link {
+    /* color: #0066cc; */          /* azul institucional */
+    color: var(--msm-blue);
+    text-decoration: none;   /* sin subrayado por defecto */
+    transition: color 0.15s ease-in-out, text-decoration-color 0.15s; /* suavidad */
+  }
+  
+  /* Enlace visitado */
+  a:visited {
+    /* color: #4b0082; */          /* púrpura para distinguir, cámbialo si no lo quieres */
+    color: var(--msm-blue-);
+  }
+  
+  /* Hover (ratón encima) */
+  a:hover {
+    /* color: #003d80; */          /* un azul más oscuro */
+    color: var(--msm-blue-600);
+    text-decoration: underline;
+    text-decoration-color: currentColor; /* subrayado del mismo color */
+  }
+  
+  /* Enfocado (teclado / accesibilidad) */
+  a:focus {
+    /* outline: 3px solid #ffbf00; */ /* anillo de foco accesible amarillo */
+    outline: 3px solid var( --blue-msm-200);
+    outline-offset: 2px;
+    text-decoration: underline;
+  }
+  
+  /* Activo (mientras haces clic) */
+  a:active {
+    /* color: #e60023; */          /* rojo para feedback inmediato */
+    color: var(--blue-msm-600);
+    text-decoration: underline;
+  }
+  
+  /* Deshabilitado (si usas enlaces con aria-disabled=true, por ejemplo) */
+  a[aria-disabled="true"],
+  a.disabled {
+    /* color: #888; */
+    color: var(--msm-gray);
+    pointer-events: none;
+    text-decoration: line-through;
+  }
+
+/* links navbar header  */
+.btn, 
+.msm-menu-link {
+  cursor: pointer;
+  transition: all 0.25s ease;
+  transform: translateY(0);
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.btn:hover,
+.msm-menu-link:hover {
+    transform: translateY(-2px);
+    color: white;
+}
+
+.msm-menu-link:hover,
+.msm-menu-link:hover svg {
+    background-color: var(--blue-msm-400);
+    border-color: var(--blue-msm-400);
+}
