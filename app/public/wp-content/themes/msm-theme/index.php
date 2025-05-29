@@ -66,31 +66,42 @@ $query = new WP_Query($args);
         <h3 class="text-center">¡Conocé todos los programas y servicios que tenemos para vos!</h3>
 
         <?php
-            $terms = get_terms(array(
-            'taxonomy' => 'area_programa',
-            'hide_empty' => false,
-            ));
+$terms = get_terms(array(
+    'taxonomy' => 'area_programa',
+    'hide_empty' => false,
+));
 
-            if (!empty($terms) && !is_wp_error($terms)) :
-            echo '<div class="row g-3">';
+if (!empty($terms) && !is_wp_error($terms)) {
 
-            foreach ($terms as $term) :
-                $title = esc_html($term->name);
-                $link = esc_url(get_term_link($term));
-                $icono = get_term_meta($term->term_id, 'icono_svg', true);
-                $color = get_term_meta($term->term_id, 'color_hex', true);
-                $variant = 4;
-                $height = '80px'; // podés ajustar este valor
+    // Ordenar los términos por el campo 'prioridad'
+    usort($terms, function($a, $b) {
+        $prioridad_a = intval(get_term_meta($a->term_id, 'prioridad', true) ?: 999);
+        $prioridad_b = intval(get_term_meta($b->term_id, 'prioridad', true) ?: 999);
+        return $prioridad_a - $prioridad_b; // menor número va antes
+    });
 
-                include get_template_directory() . '/templates/parts/card-base.php';
+    echo '<div class="row g-3">';
 
-            endforeach;
+    foreach ($terms as $term) :
+        $title = esc_html($term->name);
+        $link = esc_url(get_term_link($term));
+        $icono = get_term_meta($term->term_id, 'icono_svg', true);
+        $color = get_term_meta($term->term_id, 'color_hex', true);
+        $variant = 4;
+        $height = '80px';
 
-            echo '</div>';
-            else :
-            echo '<p class="text-muted">Actualmente no hay programas disponibles.</p>';
-            endif;
-        ?>
+        include get_template_directory() . '/templates/parts/card-base.php';
+
+    endforeach;
+
+    echo '</div>';
+
+} else {
+    echo '<p class="text-muted">Actualmente no hay programas disponibles.</p>';
+}
+?>
+
+     
     </section>
     <!-- PROGRAMAS Y SERVICIOS FIN -->
 
@@ -131,21 +142,31 @@ $query = new WP_Query($args);
         <h3 class="text-center">Áreas de gobierno</h3>
         
         <div class="row">
-            <?php
-                $terms = get_terms(array(
-                    'taxonomy'   => 'area_gobierno',
-                    'hide_empty' => false,
-                ));
+        <?php
+$terms = get_terms(array(
+    'taxonomy'   => 'area_gobierno',
+    'hide_empty' => false,
+));
 
-                if (!empty($terms) && !is_wp_error($terms)) :
-                    foreach ($terms as $term) :
-                        $variant = 1;
-                        $title   = $term->name;
-                        $link    = get_term_link($term);
-                        $height  = '90px';
+if (!empty($terms) && !is_wp_error($terms)) :
+    // Ordenar por campo 'order'
+    usort($terms, function ($a, $b) {
+        $order_a = (int) get_term_meta($a->term_id, 'order', true);
+        $order_b = (int) get_term_meta($b->term_id, 'order', true);
+        return $order_a <=> $order_b;
+    });
 
-                        include get_template_directory() . '/templates/parts/card-base.php';
-            endforeach; endif; ?>
+    foreach ($terms as $term) :
+        $variant = 1;
+        $title   = $term->name;
+        $link    = get_term_link($term);
+        $height  = '90px';
+
+        include get_template_directory() . '/templates/parts/card-base.php';
+    endforeach;
+endif;
+?>
+
 		</div>
     </section>
     <!-- AREAS DE GOBIERNO FIN -->
@@ -160,12 +181,6 @@ $query = new WP_Query($args);
     </section>
     <!-- NOTICIAS FIN -->
 
-
-    <!-- CALL TO ACTION DE 'NOTICIAS' -->
-    <section class="d-flex justify-content-center mb-5">
-        <a href="<?php echo HOME_URI; ?>/prensa" class="btn btn-news text-decoration-none text-white mt-3 mb-4">VER TODAS LAS NOVEDADES</a>
-    </section>
-    <!-- CALL TO ACTION DE 'NOTICIAS' FIN -->
 </div>
 
 <?php get_template_part(THEME_FOOTER); ?>

@@ -3473,3 +3473,303 @@ Stack trace:
 [28-May-2025 18:57:56 UTC] Page slug: boletin-oficial
 [28-May-2025 18:57:56 UTC] Final slug: web.com/boletin-oficial.php
 [28-May-2025 18:57:56 UTC] Page slug not in template map: boletin-oficial
+[28-May-2025 18:58:56 UTC] Page slug: boletin-oficial
+[28-May-2025 18:58:56 UTC] Final slug: web.com/boletin-oficial.php
+[28-May-2025 18:58:56 UTC] Page slug not in template map: boletin-oficial
+[28-May-2025 19:01:04 UTC] Page slug: licencias-2
+[28-May-2025 19:01:04 UTC] Final slug: web.com/licencias-2.php
+[28-May-2025 19:01:04 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//licencias/landing.php
+[28-May-2025 19:01:36 UTC] Page slug: sem-2
+[28-May-2025 19:01:36 UTC] Final slug: web.com/sem-2.php
+[28-May-2025 19:01:36 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//sem/landing.php
+[28-May-2025 19:04:28 UTC] Page slug: licencias-2
+[28-May-2025 19:04:28 UTC] Final slug: web.com/licencias-2.php
+[28-May-2025 19:04:28 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//licencias/landing.php
+[28-May-2025 19:04:44 UTC] Page slug: areas-gobierno
+[28-May-2025 19:04:44 UTC] Final slug: web.com/areas-gobierno.php
+[28-May-2025 19:04:44 UTC] Page slug not in template map: areas-gobierno
+[28-May-2025 19:05:11 UTC] Page slug: guia-de-estilos
+[28-May-2025 19:05:11 UTC] Final slug: web.com/guia-de-estilos.php
+[28-May-2025 19:05:11 UTC] Page slug not in template map: guia-de-estilos
+[28-May-2025 19:06:49 UTC] Page slug: licencias-2
+[28-May-2025 19:06:49 UTC] Final slug: web.com/licencias-2.php
+[28-May-2025 19:06:49 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//licencias/landing.php
+[28-May-2025 19:06:59 UTC] Page slug: licencias-2
+[28-May-2025 19:06:59 UTC] Final slug: web.com/licencias-2.php
+[28-May-2025 19:06:59 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//licencias/landing.php
+[28-May-2025 19:08:06 UTC] Page slug: licencias-2
+[28-May-2025 19:08:06 UTC] Final slug: web.com/licencias-2.php
+[28-May-2025 19:08:06 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//licencias/landing.php
+[28-May-2025 19:09:36 UTC] Page slug: licencias-2
+[28-May-2025 19:09:36 UTC] Final slug: web.com/licencias-2.php
+[28-May-2025 19:09:36 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//licencias/landing.php
+[28-May-2025 19:15:39 UTC] Page slug: licencias-2
+[28-May-2025 19:15:39 UTC] Final slug: web.com/licencias-2.php
+[28-May-2025 19:15:39 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//licencias/landing.php
+[28-May-2025 19:19:06 UTC] Page slug: licencias-2
+[28-May-2025 19:19:06 UTC] Final slug: web.com/licencias-2.php
+[28-May-2025 19:19:06 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//licencias/landing.php
+[28-May-2025 19:19:17 UTC] Page slug: licencias-2
+[28-May-2025 19:19:17 UTC] Final slug: web.com/licencias-2.php
+[28-May-2025 19:19:17 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//licencias/landing.php
+[28-May-2025 19:20:26 UTC] Page slug: sem-2
+[28-May-2025 19:20:26 UTC] Final slug: web.com/sem-2.php
+[28-May-2025 19:20:26 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//sem/landing.php
+[28-May-2025 19:21:35 UTC] Page slug: sem-2
+[28-May-2025 19:21:35 UTC] Final slug: web.com/sem-2.php
+[28-May-2025 19:21:35 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//sem/landing.php
+[28-May-2025 19:22:07 UTC] Page slug: sem-2
+[28-May-2025 19:22:07 UTC] Final slug: web.com/sem-2.php
+[28-May-2025 19:22:07 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//sem/landing.php
+[28-May-2025 19:27:11 UTC] Page slug: sem-2
+[28-May-2025 19:27:11 UTC] Final slug: web.com/sem-2.php
+[28-May-2025 19:27:11 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//sem/landing.php
+[28-May-2025 19:27:15 UTC] Page slug: licencias-2
+[28-May-2025 19:27:15 UTC] Final slug: web.com/licencias-2.php
+[28-May-2025 19:27:15 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//licencias/landing.php
+[28-May-2025 19:37:31 UTC] Page slug: atencion-al-vecino-atv
+[28-May-2025 19:37:31 UTC] Final slug: web.com/atencion-al-vecino-atv.php
+[28-May-2025 19:37:31 UTC] Page slug not in template map: atencion-al-vecino-atv
+[28-May-2025 19:41:12 UTC] Page slug: atencion-al-vecino-atv
+[28-May-2025 19:41:12 UTC] Final slug: web.com/atencion-al-vecino-atv.php
+[28-May-2025 19:41:12 UTC] Page slug not in template map: atencion-al-vecino-atv
+[28-May-2025 19:41:33 UTC] Page slug: atencion-al-vecino-atv
+[28-May-2025 19:41:33 UTC] Final slug: web.com/atencion-al-vecino-atv.php
+[28-May-2025 19:41:33 UTC] Page slug not in template map: atencion-al-vecino-atv
+[28-May-2025 19:42:06 UTC] Page slug: atencion-al-vecino-atv
+[28-May-2025 19:42:06 UTC] Final slug: web.com/atencion-al-vecino-atv.php
+[28-May-2025 19:42:06 UTC] Page slug not in template map: atencion-al-vecino-atv
+[28-May-2025 19:43:04 UTC] Page slug: atencion-al-vecino-atv
+[28-May-2025 19:43:04 UTC] Final slug: web.com/atencion-al-vecino-atv.php
+[28-May-2025 19:43:04 UTC] Page slug not in template map: atencion-al-vecino-atv
+[28-May-2025 19:43:16 UTC] Page slug: atencion-al-vecino-atv
+[28-May-2025 19:43:16 UTC] Final slug: web.com/atencion-al-vecino-atv.php
+[28-May-2025 19:43:16 UTC] Page slug not in template map: atencion-al-vecino-atv
+[28-May-2025 19:45:29 UTC] Page slug: guia-de-estilos
+[28-May-2025 19:45:29 UTC] Final slug: web.com/guia-de-estilos.php
+[28-May-2025 19:45:29 UTC] Page slug not in template map: guia-de-estilos
+[28-May-2025 19:45:39 UTC] Page slug: prensa
+[28-May-2025 19:45:39 UTC] Final slug: web.com/prensa.php
+[28-May-2025 19:45:39 UTC] Page slug not in template map: prensa
+[28-May-2025 19:45:39 UTC] PHP Warning:  Undefined variable $thumbnail_url in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 43
+[28-May-2025 19:45:39 UTC] PHP Warning:  Undefined variable $thumbnail_url in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 43
+[28-May-2025 19:45:39 UTC] PHP Warning:  Undefined variable $thumbnail_url in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 43
+[28-May-2025 19:45:39 UTC] PHP Warning:  Undefined variable $thumbnail_url in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 43
+[28-May-2025 19:45:39 UTC] PHP Warning:  Undefined variable $thumbnail_url in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 43
+[28-May-2025 19:45:39 UTC] PHP Warning:  Undefined variable $thumbnail_url in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 43
+[28-May-2025 19:45:39 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 39
+[28-May-2025 19:45:39 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 39
+[28-May-2025 19:45:39 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 39
+[28-May-2025 19:45:39 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 39
+[28-May-2025 19:46:19 UTC] Page slug: atencion-al-vecino-atv
+[28-May-2025 19:46:19 UTC] Final slug: web.com/atencion-al-vecino-atv.php
+[28-May-2025 19:46:19 UTC] Page slug not in template map: atencion-al-vecino-atv
+[28-May-2025 19:46:56 UTC] Page slug: atencion-al-vecino-atv
+[28-May-2025 19:46:56 UTC] Final slug: web.com/atencion-al-vecino-atv.php
+[28-May-2025 19:46:56 UTC] Page slug not in template map: atencion-al-vecino-atv
+[28-May-2025 19:49:58 UTC] Page slug: cultura-2
+[28-May-2025 19:49:58 UTC] Final slug: web.com/cultura-2.php
+[28-May-2025 19:49:58 UTC] Page slug not in template map: cultura-2
+[28-May-2025 19:51:18 UTC] Page slug: educacion
+[28-May-2025 19:51:18 UTC] Final slug: web.com/educacion.php
+[28-May-2025 19:51:18 UTC] Page slug not in template map: educacion
+[28-May-2025 19:54:29 UTC] Page slug: educacion
+[28-May-2025 19:54:29 UTC] Final slug: web.com/educacion.php
+[28-May-2025 19:54:29 UTC] Page slug not in template map: educacion
+[28-May-2025 19:54:46 UTC] Page slug: guia-de-estilos
+[28-May-2025 19:54:46 UTC] Final slug: web.com/guia-de-estilos.php
+[28-May-2025 19:54:46 UTC] Page slug not in template map: guia-de-estilos
+[28-May-2025 19:55:03 UTC] Page slug: guia-de-estilos
+[28-May-2025 19:55:03 UTC] Final slug: web.com/guia-de-estilos.php
+[28-May-2025 19:55:03 UTC] Page slug not in template map: guia-de-estilos
+[28-May-2025 19:55:40 UTC] Page slug: guia-de-estilos
+[28-May-2025 19:55:40 UTC] Final slug: web.com/guia-de-estilos.php
+[28-May-2025 19:55:40 UTC] Page slug not in template map: guia-de-estilos
+[28-May-2025 20:07:24 UTC] Page slug: produccion-y-empleo
+[28-May-2025 20:07:24 UTC] Final slug: web.com/produccion-y-empleo.php
+[28-May-2025 20:07:24 UTC] Page slug not in template map: produccion-y-empleo
+[28-May-2025 20:10:31 UTC] Page slug: circuito-re
+[28-May-2025 20:10:31 UTC] Final slug: web.com/girsu-y-paseo-san-miguel/circuito-re.php
+[28-May-2025 20:10:31 UTC] Page slug not in template map: circuito-re
+[28-May-2025 20:11:57 UTC] Page slug: subsecretaria-de-espacio-publico
+[28-May-2025 20:11:57 UTC] Final slug: web.com/subsecretaria-de-espacio-publico.php
+[28-May-2025 20:11:57 UTC] Page slug not in template map: subsecretaria-de-espacio-publico
+[28-May-2025 20:12:25 UTC] Page slug: subsecretaria-de-obras-publicas
+[28-May-2025 20:12:25 UTC] Final slug: web.com/subsecretaria-de-obras-publicas.php
+[28-May-2025 20:12:25 UTC] Page slug not in template map: subsecretaria-de-obras-publicas
+[28-May-2025 20:12:31 UTC] Page slug: subsecretaria-de-servicios-concesionados
+[28-May-2025 20:12:31 UTC] Final slug: web.com/subsecretaria-de-servicios-concesionados.php
+[28-May-2025 20:12:31 UTC] Page slug not in template map: subsecretaria-de-servicios-concesionados
+[28-May-2025 20:13:38 UTC] Page slug: deportes-2
+[28-May-2025 20:13:38 UTC] Final slug: web.com/deportes-2.php
+[28-May-2025 20:13:38 UTC] Page slug not in template map: deportes-2
+[28-May-2025 20:13:58 UTC] Page slug: deportes-2
+[28-May-2025 20:13:58 UTC] Final slug: web.com/deportes-2.php
+[28-May-2025 20:13:58 UTC] Page slug not in template map: deportes-2
+[28-May-2025 20:14:26 UTC] Page slug: deportes-2
+[28-May-2025 20:14:26 UTC] Final slug: web.com/deportes-2.php
+[28-May-2025 20:14:26 UTC] Page slug not in template map: deportes-2
+[28-May-2025 20:14:38 UTC] Page slug: deportes-2
+[28-May-2025 20:14:38 UTC] Final slug: web.com/deportes-2.php
+[28-May-2025 20:14:38 UTC] Page slug not in template map: deportes-2
+[28-May-2025 20:14:49 UTC] Page slug: deportes-2
+[28-May-2025 20:14:49 UTC] Final slug: web.com/deportes-2.php
+[28-May-2025 20:14:49 UTC] Page slug not in template map: deportes-2
+[28-May-2025 21:38:22 UTC] Page slug: subsecretaria-de-espacio-publico
+[28-May-2025 21:38:22 UTC] Final slug: web.com/subsecretaria-de-espacio-publico.php
+[28-May-2025 21:38:22 UTC] Page slug not in template map: subsecretaria-de-espacio-publico
+[28-May-2025 21:41:01 UTC] Page slug: sem-2
+[28-May-2025 21:41:01 UTC] Final slug: web.com/sem-2.php
+[28-May-2025 21:41:01 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//sem/landing.php
+[28-May-2025 21:44:01 UTC] Page slug: prensa
+[28-May-2025 21:44:01 UTC] Final slug: web.com/prensa.php
+[28-May-2025 21:44:01 UTC] Page slug not in template map: prensa
+[28-May-2025 21:44:02 UTC] PHP Warning:  Undefined variable $thumbnail_url in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 43
+[28-May-2025 21:44:02 UTC] PHP Warning:  Undefined variable $thumbnail_url in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 43
+[28-May-2025 21:44:02 UTC] PHP Warning:  Undefined variable $thumbnail_url in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 43
+[28-May-2025 21:44:02 UTC] PHP Warning:  Undefined variable $thumbnail_url in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 43
+[28-May-2025 21:44:02 UTC] PHP Warning:  Undefined variable $thumbnail_url in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 43
+[28-May-2025 21:44:02 UTC] PHP Warning:  Undefined variable $thumbnail_url in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 43
+[28-May-2025 21:44:02 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 39
+[28-May-2025 21:44:02 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 39
+[28-May-2025 21:44:02 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 39
+[28-May-2025 21:44:02 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 39
+[28-May-2025 21:44:35 UTC] Page slug: prensa
+[28-May-2025 21:44:35 UTC] Final slug: web.com/prensa.php
+[28-May-2025 21:44:35 UTC] Page slug not in template map: prensa
+[28-May-2025 21:44:36 UTC] PHP Warning:  Undefined variable $thumbnail_url in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 43
+[28-May-2025 21:44:36 UTC] PHP Warning:  Undefined variable $thumbnail_url in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 43
+[28-May-2025 21:44:36 UTC] PHP Warning:  Undefined variable $thumbnail_url in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 43
+[28-May-2025 21:44:36 UTC] PHP Warning:  Undefined variable $thumbnail_url in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 43
+[28-May-2025 21:44:36 UTC] PHP Warning:  Undefined variable $thumbnail_url in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 43
+[28-May-2025 21:44:36 UTC] PHP Warning:  Undefined variable $thumbnail_url in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 43
+[28-May-2025 21:44:36 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 39
+[28-May-2025 21:44:36 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 39
+[28-May-2025 21:44:36 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 39
+[28-May-2025 21:44:36 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 39
+[28-May-2025 21:51:19 UTC] Page slug: prensa
+[28-May-2025 21:51:19 UTC] Final slug: web.com/prensa.php
+[28-May-2025 21:51:19 UTC] Page slug not in template map: prensa
+[28-May-2025 21:51:22 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 39
+[28-May-2025 21:51:22 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 39
+[28-May-2025 21:51:22 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 39
+[28-May-2025 21:51:22 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 39
+[28-May-2025 21:54:08 UTC] Page slug: prensa
+[28-May-2025 21:54:08 UTC] Final slug: web.com/prensa.php
+[28-May-2025 21:54:08 UTC] Page slug not in template map: prensa
+[28-May-2025 21:54:10 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 39
+[28-May-2025 21:54:10 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 39
+[28-May-2025 21:54:10 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 39
+[28-May-2025 21:54:10 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 39
+[28-May-2025 21:54:10 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 39
+[28-May-2025 21:54:10 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 39
+[28-May-2025 21:54:10 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 39
+[28-May-2025 21:54:10 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 39
+[28-May-2025 21:54:10 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 39
+[28-May-2025 21:54:10 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/archive-prensa.php on line 39
+[28-May-2025 21:57:03 UTC] Page slug: prensa
+[28-May-2025 21:57:03 UTC] Final slug: web.com/prensa.php
+[28-May-2025 21:57:03 UTC] Page slug not in template map: prensa
+[28-May-2025 21:57:08 UTC] Page slug: prensa
+[28-May-2025 21:57:08 UTC] Final slug: web.com/prensa.php
+[28-May-2025 21:57:08 UTC] Page slug not in template map: prensa
+[29-May-2025 00:22:54 UTC] Page slug: prensa
+[29-May-2025 00:22:54 UTC] Final slug: web.com/prensa.php
+[29-May-2025 00:22:54 UTC] Page slug not in template map: prensa
+[29-May-2025 00:29:08 UTC] Page slug: prensa
+[29-May-2025 00:29:08 UTC] Final slug: web.com/prensa.php
+[29-May-2025 00:29:08 UTC] Page slug not in template map: prensa
+[29-May-2025 00:29:15 UTC] Page slug: prensa
+[29-May-2025 00:29:15 UTC] Final slug: web.com/prensa.php
+[29-May-2025 00:29:15 UTC] Page slug not in template map: prensa
+[29-May-2025 01:24:19 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:24:21 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:26:20 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:26:22 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:27:32 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:27:33 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:28:21 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:28:23 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:30:22 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:30:24 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:32:23 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:32:25 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:34:24 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:34:26 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:36:25 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:36:27 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:38:26 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:38:28 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:40:27 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:40:29 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:42:28 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:42:30 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:44:29 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:44:31 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:46:30 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:46:32 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:48:31 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 01:48:33 UTC] PHP Parse error:  syntax error, unexpected double-quoted string "" in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/inc/botonera.php on line 201
+[29-May-2025 02:00:31 UTC] PHP Parse error:  Unmatched '}' in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/templates/sections/home_botonera.php on line 35
+[29-May-2025 02:00:32 UTC] PHP Parse error:  Unmatched '}' in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/templates/sections/home_botonera.php on line 35
+[29-May-2025 02:00:32 UTC] PHP Parse error:  Unmatched '}' in /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme/templates/sections/home_botonera.php on line 35
+[29-May-2025 03:12:11 UTC] Page slug: boletin-oficial
+[29-May-2025 03:12:11 UTC] Final slug: web.com/boletin-oficial.php
+[29-May-2025 03:12:11 UTC] Page slug not in template map: boletin-oficial
+[29-May-2025 03:24:09 UTC] Page slug: sem-2
+[29-May-2025 03:24:09 UTC] Final slug: web.com/sem-2.php
+[29-May-2025 03:24:09 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//sem/landing.php
+[29-May-2025 03:24:39 UTC] Page slug: sem-2
+[29-May-2025 03:24:39 UTC] Final slug: web.com/sem-2.php
+[29-May-2025 03:24:39 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//sem/landing.php
+[29-May-2025 03:24:55 UTC] Page slug: sem-2
+[29-May-2025 03:24:55 UTC] Final slug: web.com/sem-2.php
+[29-May-2025 03:24:55 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//sem/landing.php
+[29-May-2025 03:25:15 UTC] Page slug: sem-2
+[29-May-2025 03:25:15 UTC] Final slug: web.com/sem-2.php
+[29-May-2025 03:25:15 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//sem/landing.php
+[29-May-2025 03:25:21 UTC] Page slug: sem-2
+[29-May-2025 03:25:21 UTC] Final slug: web.com/sem-2.php
+[29-May-2025 03:25:21 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//sem/landing.php
+[29-May-2025 03:25:33 UTC] Page slug: sem-2
+[29-May-2025 03:25:33 UTC] Final slug: web.com/sem-2.php
+[29-May-2025 03:25:33 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//sem/landing.php
+[29-May-2025 03:26:02 UTC] Page slug: sem-2
+[29-May-2025 03:26:02 UTC] Final slug: web.com/sem-2.php
+[29-May-2025 03:26:02 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//sem/landing.php
+[29-May-2025 03:27:39 UTC] Page slug: sem-2
+[29-May-2025 03:27:39 UTC] Final slug: web.com/sem-2.php
+[29-May-2025 03:27:39 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//sem/landing.php
+[29-May-2025 03:28:15 UTC] Page slug: sem-2
+[29-May-2025 03:28:15 UTC] Final slug: web.com/sem-2.php
+[29-May-2025 03:28:15 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//sem/landing.php
+[29-May-2025 03:28:47 UTC] Page slug: sem-2
+[29-May-2025 03:28:47 UTC] Final slug: web.com/sem-2.php
+[29-May-2025 03:28:47 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//sem/landing.php
+[29-May-2025 03:30:26 UTC] Page slug: sem-2
+[29-May-2025 03:30:26 UTC] Final slug: web.com/sem-2.php
+[29-May-2025 03:30:26 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//sem/landing.php
+[29-May-2025 03:30:53 UTC] Page slug: sem-2
+[29-May-2025 03:30:53 UTC] Final slug: web.com/sem-2.php
+[29-May-2025 03:30:53 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//sem/landing.php
+[29-May-2025 03:31:31 UTC] Page slug: sem-2
+[29-May-2025 03:31:31 UTC] Final slug: web.com/sem-2.php
+[29-May-2025 03:31:31 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//sem/landing.php
+[29-May-2025 03:31:43 UTC] Page slug: sem-2
+[29-May-2025 03:31:43 UTC] Final slug: web.com/sem-2.php
+[29-May-2025 03:31:43 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//sem/landing.php
+[29-May-2025 03:32:31 UTC] Page slug: sem-2
+[29-May-2025 03:32:31 UTC] Final slug: web.com/sem-2.php
+[29-May-2025 03:32:31 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//sem/landing.php
+[29-May-2025 03:32:40 UTC] Page slug: sem-2
+[29-May-2025 03:32:40 UTC] Final slug: web.com/sem-2.php
+[29-May-2025 03:32:40 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//sem/landing.php
+[29-May-2025 03:32:50 UTC] Page slug: sem-2
+[29-May-2025 03:32:50 UTC] Final slug: web.com/sem-2.php
+[29-May-2025 03:32:50 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//sem/landing.php
+[29-May-2025 03:32:57 UTC] Page slug: sem-2
+[29-May-2025 03:32:57 UTC] Final slug: web.com/sem-2.php
+[29-May-2025 03:32:57 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//sem/landing.php
+[29-May-2025 03:33:14 UTC] Page slug: sem-2
+[29-May-2025 03:33:14 UTC] Final slug: web.com/sem-2.php
+[29-May-2025 03:33:14 UTC] Mapped template: /Users/milfuegos/Sites/msm-dev/app/public/wp-content/themes/msm-theme//templates/special//sem/landing.php

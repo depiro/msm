@@ -452,4 +452,26 @@ function guardar_banner_image($post_id) {
 }
 // add_action('save_post', 'guardar_banner_image');
 
+// Agregar la columna "Orden" antes de la columna "Count"
+add_filter('manage_edit-area_gobierno_columns', function ($columns) {
+    $new_columns = [];
 
+    foreach ($columns as $key => $value) {
+        if ($key === 'posts') {
+            // Antes de "posts" (Count), insertamos "order"
+            $new_columns['order'] = __('Orden');
+        }
+        $new_columns[$key] = $value;
+    }
+
+    return $new_columns;
+});
+
+// Mostrar el contenido de la columna "Orden"
+add_filter('manage_area_gobierno_custom_column', function ($out, $column_name, $term_id) {
+    if ($column_name === 'order') {
+        $order = get_term_meta($term_id, 'order', true);
+        return esc_html($order);
+    }
+    return $out;
+}, 10, 3);

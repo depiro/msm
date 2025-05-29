@@ -44,13 +44,14 @@ function crear_taxonomia_area_programa() {
 add_action('init', 'crear_taxonomia_area_programa');
 
 /**
- * Campos personalizados: ícono SVG + color de fondo + imagen + URL personalizada
+ * Campos personalizados: ícono SVG + color de fondo + imagen + URL personalizada + prioridad
  */
 function agregar_campos_area_programa($taxonomy) {
     $icono_svg = is_object($taxonomy) ? get_term_meta($taxonomy->term_id, 'icono_svg', true) : '';
     $color_hex = is_object($taxonomy) ? get_term_meta($taxonomy->term_id, 'color_hex', true) : '';
     $imagen_id = is_object($taxonomy) ? get_term_meta($taxonomy->term_id, 'imagen_id', true) : '';
     $url_personalizada = is_object($taxonomy) ? get_term_meta($taxonomy->term_id, 'url_personalizada', true) : '';
+    $prioridad = is_object($taxonomy) ? get_term_meta($taxonomy->term_id, 'prioridad', true) : '';
     $imagen_url = wp_get_attachment_url($imagen_id);
     ?>
     <tr class="form-field term-icono-wrap">
@@ -87,6 +88,13 @@ function agregar_campos_area_programa($taxonomy) {
             <p class="description">Esta URL reemplazará el enlace predeterminado del área de programa en la home u otros lugares.</p>
         </td>
     </tr>
+    <tr class="form-field term-prioridad-wrap">
+        <th><label for="prioridad">Prioridad</label></th>
+        <td>
+            <input type="number" name="prioridad" id="prioridad" value="<?php echo esc_attr($prioridad); ?>" min="0" style="width: 100px;" />
+            <p class="description">Número de prioridad. Menor número = más arriba en la home.</p>
+        </td>
+    </tr>
     <?php
 }
 add_action('area_programa_edit_form_fields', 'agregar_campos_area_programa');
@@ -104,6 +112,9 @@ function guardar_campos_area_programa($term_id) {
     }
     if (isset($_POST['url_personalizada'])) {
         update_term_meta($term_id, 'url_personalizada', esc_url_raw($_POST['url_personalizada']));
+    }
+    if (isset($_POST['prioridad'])) {
+        update_term_meta($term_id, 'prioridad', intval($_POST['prioridad']));
     }
 }
 add_action('created_area_programa', 'guardar_campos_area_programa');
@@ -144,10 +155,11 @@ function area_programa_admin_footer_script() {
 add_action('admin_footer', 'area_programa_admin_footer_script');
 
 /**
- * Mostrar ícono en la tabla del dashboard
+ * Mostrar ícono y prioridad en la tabla del dashboard
  */
 function columnas_area_programa($columns) {
     $columns['icono'] = __('Ícono');
+    $columns['prioridad'] = __('Prioridad');
     return $columns;
 }
 add_filter('manage_edit-area_programa_columns', 'columnas_area_programa');
@@ -158,6 +170,10 @@ function contenido_columna_area_programa($content, $column_name, $term_id) {
         if ($icono) {
             return '<code>' . esc_html($icono) . '</code>';
         }
+    }
+    if ($column_name === 'prioridad') {
+        $prioridad = get_term_meta($term_id, 'prioridad', true);
+        return esc_html($prioridad !== '' ? $prioridad : '—');
     }
     return $content;
 }

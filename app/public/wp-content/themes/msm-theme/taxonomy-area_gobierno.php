@@ -14,7 +14,7 @@ $image_url = get_term_meta($term_id, 'banner_image', true);
 			class="msm-breadcrumb msm-breadcrumb-item-last"><?php echo esc_html($current_term->name); ?></span>
 	</div>
 
-	<div class="row my-3 my-md-5 px-3">
+	<div class="row my-3 ">
 		<div class="col-12 py-5">
 			<?php if ($current_term): ?>
 			<h2 class="msm-font-xl mb-1"><?php echo esc_html($current_term->name); ?></h2>
@@ -59,16 +59,19 @@ $image_url = get_term_meta($term_id, 'banner_image', true);
 		</div>
 		</div>
 
-        <?php
-            set_query_var('banner_consultas', [
-            'title' => 'Iniciá tus pedidos o consultas',
-            'button_text' => 'Iniciar consultas',
-            'button_url' => '/consultas',
-            'image' => get_template_directory_uri() . '/assets/images/banner_2_blanca.png'
-            ]);
-            get_template_part('templates/parts/banner-grande');
-        ?>
-
+		<div class="row d-flex justify-content-center py-3">
+			<div class="col-12 py-5">
+				<?php
+					set_query_var('banner_consultas', [
+					'title' => 'Iniciá tus pedidos o consultas',
+					'button_text' => 'Iniciar consultas',
+					'button_url' => '/consultas',
+					'image' => get_template_directory_uri() . '/assets/images/banner_2_blanca.png'
+					]);
+					get_template_part('templates/parts/banner-grande');
+				?>
+			</div>
+		</div>
 
             <!-- NOTICIAS INICIO -->
             <div class="row d-flex justify-content-center">
@@ -78,13 +81,6 @@ $image_url = get_term_meta($term_id, 'banner_image', true);
                 </div>
             </div>
             <!-- NOTICIAS FIN -->
-
-            <!-- CALL TO ACTION DE 'NOTICIAS' -->
-            <div class="d-flex justify-content-center mb-5">
-                <!-- <a href="<?php echo HOME_URI; ?>/prensa" class="msm-bg-black btn msm-opacity border-0 text-white mt-3 mb-3 fz-18" style="border-radius: 11px !important">MÁS NOTICIAS</a> -->
-                <a href="<?php echo HOME_URI; ?>/prensa" class="btn btn-secondary btn-lg text-decoration-none text-white mt-3 mb-4">VER TODAS LAS NOVEDADES</a>
-            </div>
-            <!-- CALL TO ACTION DE 'NOTICIAS' FIN -->
 	</div>
 </div>
 

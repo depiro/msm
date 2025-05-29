@@ -22,7 +22,7 @@ $event_query = new WP_Query($args);
 ?>
 
 <div id="main-content" class="container mb-5">
-	<div class="msm-breadcrumb d-block d-sm-row pt-2">
+	<div class="msm-breadcrumb d-block d-sm-row pt-1 small">
 		<a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a>
 		<a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>/areas-gobierno">Áreas de
 			Gobierno</a>/
@@ -30,30 +30,28 @@ $event_query = new WP_Query($args);
 			href="<?php echo HOME_URI; ?>/areas-gobierno/secretaria-de-gobierno">Secretaría de Gobierno</a>/
 		<span class="msm-breadcrumb-item-last">Estacionamiento Medido</span>
 	</div>	
-	<div class="row my-3 my-md-5 px-3 justify-content-center">
-		
-		<div class="col-12 col-md-9">
-			<div class="col-12 py-5">
-				<h2 class="msm-font-xl mb-1 post-title">Estacionamiento Medido</h2>
-				<p class="fz-18">Conocé cada una de las áreas que conforman la Municipalidad de San Miguel</p>
-			</div>
 
+	<div class="row my-3 my-md-5 px-3 justify-content-center">		
+		<div class="col-12 py-5">
+			<h2 class="msm-font-xl mb-1 post-title">Estacionamiento Medido</h2>
+			<p class="fz-18">Conocé cada una de las áreas que conforman la Municipalidad de San Miguel</p>
+		</div>
+
+		<div class="col-12 col-md-8">
 			<div class="row p-0">
-				<span style="color:#1ab3ea;font-size:16px;margin-bottom:5px;margin-top:10px;">Registrate, comprá crédito
-					y estacioná presionando en:</span>
+				<p>Registrate, comprá crédito y estacioná presionando en:</p>
 				<div style="width:100%;display:flex;justify-content:start;margin-top:10px;">
-					<a href="https://sem.msm.gov.ar/#/login"
-						style="font-size:16px;text-decoration:none;background-color:#1ab3ea;color:white; padding-left:10px; padding-right:10px;padding-top:5px;padding-bottom:5px;border-radius:8px;">
+				<a class="btn btn-primary btn-lg" href="https://sem.msm.gov.ar/#/login">
 						Estacionamiento Medido
 					</a>
 				</div>
 			</div>
 
-			<div class="row rounded mb-3 mt-4" style="background-color: #93D33E">
-				<div class="col-12 text-white d-flex align-items-center items-center py-2 gap-2">
-					<!-- <h2 class="align-items-center items-center">ZONA</h2>
-					<h4>Estacionamiento</h4> -->
-					<!-- <h4>Medido</h4> -->
+			<div class="row rounded mb-3 mt-4">
+				<div class="col-12 text-white d-flex align-items-center items-center py-2 gap-2 bg-primary-subtle">
+					<h2 class="align-items-center items-center">ZONA</h2>
+					<h4>Estacionamiento</h4>
+					<h4>Medido</h4>
 				</div>
 				<div class="col-12- col-md-9 pb-2 h-auto d-flex justify-content-center">
 					<div class="row mb-4" id="map-container">
@@ -70,7 +68,7 @@ $event_query = new WP_Query($args);
 				</div>
 			</div>
 
-			<div class="row rounded" style="background-color: #7dcaff">
+			<div class="row rounded bg-primary-subtle">
 				<div class="col-12 text-white d-flex align-items-center items-center py-2 gap-2">
 					<h2 class="align-items-center items-center">Puntos de venta</h2>
 				</div>
@@ -106,8 +104,8 @@ $event_query = new WP_Query($args);
 				</div>
 			</div>
 
-			<div class="row p-2 mt-3">
-				<strong class="post-content" style="font-size:20px; color: #0095da; font-weight:bolder;">Preguntas Frecuentes</strong>
+			
+				<h3 class="mb-3">Preguntas Frecuentes</h3>
 				<div class="accordion" id="accordionQuestions">
 					<div class="accordion-item">
 						<h2 class="accordion-header">
@@ -228,49 +226,11 @@ $event_query = new WP_Query($args);
 						</div>
 					</div>
 				</div>
-			</div>
+			
 		</div>
-	<div class="col-12 col-md-3">
-			<?php
-			$terms = get_the_terms(get_the_ID(), 'area_gobierno');
-			if ($terms && !is_wp_error($terms)) {
-				$term = $terms[0];
-
-				$args = array(
-					'post_type' => 'page',
-					'posts_per_page' => 10,
-					'tax_query' => array(
-						array(
-							'taxonomy' => 'area_gobierno',
-							'field' => 'slug',
-							'terms' => 'secretaria-de-gobierno',
-						),
-					),
-					'orderby' => 'title',
-					'order' => 'ASC',
-				);
-
-				$related_query = new WP_Query($args);
-
-				if ($related_query->have_posts()): ?>
-					<div class="menuCul">
-						<h5 class="py-2"><?php echo esc_html('Secretaria de Gobierno'); ?></h5>
-						<ul class="msm-submenu">
-							<?php while ($related_query->have_posts()):
-								$related_query->the_post(); ?>
-								<li class="cat-item">
-									<a href="<?php the_permalink() ?>" style="font-size: 16px;">
-										<?php the_title(); ?>
-									</a>
-								</li>
-							<?php endwhile; ?>
-						</ul>
-					</div>
-				<?php endif;
-
-				wp_reset_postdata();
-			}
-			?>
+		
+		<div class="col-12 col-md-4">
+		
 		</div>
 
 	</div>

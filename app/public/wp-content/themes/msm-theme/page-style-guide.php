@@ -592,13 +592,7 @@
             </div>
             <!-- NOTICIAS FIN -->
 
-            <!-- CALL TO ACTION DE 'NOTICIAS' -->
-            <div class="d-flex justify-content-center mb-5">
-                <!-- <a href="<?php echo HOME_URI; ?>/prensa" class="msm-bg-black btn msm-opacity border-0 text-white mt-3 mb-3 fz-18" style="border-radius: 11px !important">MÁS NOTICIAS</a> -->
-                <a href="<?php echo HOME_URI; ?>/prensa" class="btn btn-secondary btn-lg text-decoration-none text-white mt-3 mb-4">VER TODAS LAS NOVEDADES</a>
-            </div>
-            <!-- CALL TO ACTION DE 'NOTICIAS' FIN -->
-        </div>    
+        </div>
     </section>
 </div>
 

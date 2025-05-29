@@ -21,13 +21,16 @@
 			<div class="row my-3 my-md-5 px-3 justify-content-center px-0">
 
 			<div class="col-12 mb-4">
-					<div class="row page-title mb-3 px-0">
-						<span class="fw-600 msm-text-600 fz-24 px-0"><?php the_title(); ?></span>
-					</div>
+				<div class="col-12 py-5">
+					<h2 class="msm-font-xl mb-1"><?php the_title(); ?></h2>
+					<?php if (has_excerpt()) : ?>
+						<p class="fz-18"><?php echo get_the_excerpt(); ?></p>
+					<?php endif; ?>
+				</div>
+			
 			</div>
 				<div class="col-12 col-md-8 mb-4">
 					<div class="row page-title mb-3 px-0">
-						<!-- <span class="fw-600 msm-text-600 fz-24 px-0"><?php the_title(); ?></span> -->
 					</div>
 					<div class="page-content fz-16 fw-400 msm-text-gray row px-0 pe-md-4">
 						<?php if (get_post_meta(get_the_ID(), '_presentacion_del_tramite', true)) { ?>
@@ -65,7 +68,7 @@
 					</div>
 				</div>
 				<div class="col-12 col-md-4">
-					<div class="d-flex flex-column">
+<!-- 					<div class="d-flex flex-column">
 						<div class="d-flex flex-column mb-4">
 							<span class="fw-600 msm-text-600 fz-16 mb-1">¿Dónde puedo realizarlo?</span>
 							<span class="fz-14 w-100 msm-text-gray"><?php echo wpautop(wp_kses_post(get_post_meta(get_the_ID(), '_lugar_de_atencion', true))); ?></span>
@@ -75,7 +78,7 @@
 							<span class="fw-600 msm-text-600 fz-16 mb-1">¿Cuáles son los horarios de atención?</span>
 							<span class="fz-14 w-100 msm-text-gray"><?php echo wpautop(wp_kses_post(get_post_meta(get_the_ID(), '_horarios_de_atencion', true))); ?></span>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>

@@ -54,4 +54,9 @@ $query = new WP_Query($args);
 		wp_reset_postdata();
 	endif;
 	?>
+	    <!-- CALL TO ACTION DE 'NOTICIAS' -->
+		<section class="d-flex justify-content-center mb-5">
+        <a href="<?php echo HOME_URI; ?>/prensa" class="btn btn-news text-decoration-none text-white mt-3 mb-4">VER TODAS LAS NOVEDADES</a>
+    </section>
+    <!-- CALL TO ACTION DE 'NOTICIAS' FIN -->
 </div>

@@ -18,19 +18,18 @@
             <span class="msm-breadcrumb msm-breadcrumb-item-last"><?php the_title(); ?></span>
         </div>
 
-        <div class="col-12 pt-5 pb-4">
-            <h2 post-title"><?php the_title(); ?></h2>
-            
+        <div class="col-12 py-5">
+            <h2 class="msm-font-xl mb-1"><?php the_title(); ?></h2>
+
             <?php
             $subtitulo = get_post_meta(get_the_ID(), '_msm_subtitulo', true);
             if (!empty($subtitulo)) : ?>
-            <p class="msm-subtitle text-muted">
+            <p class="fz-18"
                 <?php echo apply_filters('the_content', $subtitulo); ?>
             </p>
             <?php endif; ?>
         </div>
 
-        <!-- <div class="row my-3 my-md-5 px-3 gap-3"> -->
         <div class="row">
             <div class="col-12 col-md-8">
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -91,12 +90,6 @@
                 </div>
                 <!-- NOTICIAS FIN -->
 
-                <!-- CALL TO ACTION DE 'NOTICIAS' -->
-                <div class="d-flex justify-content-center mb-5">
-                    <!-- <a href="<?php echo HOME_URI; ?>/prensa" class="msm-bg-black btn msm-opacity border-0 text-white mt-3 mb-3 fz-18" style="border-radius: 11px !important">MÁS NOTICIAS</a> -->
-                    <a href="<?php echo HOME_URI; ?>/prensa" class="btn btn-secondary btn-lg text-decoration-none text-white mt-3 mb-4">VER TODAS LAS NOVEDADES</a>
-                </div>
-                <!-- CALL TO ACTION DE 'NOTICIAS' FIN -->
             </div>
         </div>
     </div>

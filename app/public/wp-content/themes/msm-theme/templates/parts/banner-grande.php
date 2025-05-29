@@ -20,7 +20,7 @@ $button_url = $props['button_url'] ?? '#';
 $image_url = $props['image'] ?? '';
 ?>
 
-<div class="banner-consultas d-flex align-items-center justify-content-between ps-5  rounded-3 mb-5">
+<div class="banner-consultas d-flex align-items-center justify-content-between ps-5 rounded-3 overflow-hidden">
   <div class="text-content">
     <h4 class="fw-bold mb-2"><?php echo esc_html($title); ?></h4>
     <a href="<?php echo esc_url($button_url); ?>" class="btn btn-sm btn-primary text-decoration-none text-white">

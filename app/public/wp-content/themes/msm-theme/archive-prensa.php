@@ -5,13 +5,12 @@ Template Name: Prensa
 */
 get_template_part(THEME_HEADER); ?>
 
-<!-- <img class="d-block w-100" src="<?php bloginfo('template_directory'); ?>/assets/images/banner-eventos.jpg" alt="Banner eventos" style="max-width: 100%;" /> -->
 <?php
 	$pagina = isset($_GET['pagina']) ? $_GET['pagina'] : 1; 
 	$args = array(
 		'post_type'      => 'post',
 		'posts_per_page' => 10,
-		'paged'           => $pagina
+		'paged'          => $pagina
 	);
 	$event_query = new WP_Query($args);
 ?>
@@ -29,83 +28,68 @@ get_template_part(THEME_HEADER); ?>
 					$event_date = get_post_meta(get_the_ID(), '_event_date', true);
 					$event_location = get_post_meta(get_the_ID(), '_event_location', true);
 					$event_time = get_post_meta(get_the_ID(), '_event_time', true);
-					?>
-					<div class="row g-0 d-flex justify-content-center justify-content-md-between">
-						<div class="col-md-3 d-flex justify-content-center">
-							<?php
+				?>
+				<div class="row g-0 d-flex justify-content-center justify-content-md-between">
+					<div class="col-md-3 d-flex justify-content-center">
+						<?php
+							// Imagen destacada o fallback
+							$thumbnail_url = THEME_URI . '/assets/images/placeholder.jpg';
+
 							if (has_post_thumbnail()) {
 								$thumbnail_id = get_post_thumbnail_id(get_the_ID());
-								$thumbnail_src = wp_get_attachment_image_src($thumbnail_id, 'full');
-								$thumbnail_url = $thumbnail_src[0];
-							}
-							?>
-							<div class="image-container">
-								<img src="<?php echo $thumbnail_url ?> " class="w-100 d-none d-md-block" alt="Prensa foto">
-							</div>
-						</div>
-						<div class="col-md-9 px-3 py-2 row">
-							<div class="col-12 px-2 mt-2">
-								<div class="d-flex flex-column align-items-end">
-									<span class="msm-text-gray text-end post-date fw-500">
-										<?php 
-											if($event_date){
-												echo dayPretty(esc_html($event_date));
-												echo datePretty(esc_html($event_date));
-												echo esc_html($event_time);
-											}else{
-												echo dayPretty(get_the_date('d-m-Y')); 
-												echo datePretty(get_the_date('d-m-Y'));
-												// echo esc_html(get_the_date('d-m-Y'));
-											}
+								$thumbnail_src = wp_get_attachment_image_src($thumbnail_id, 'medium_large');
 
-										?>
-									</span>
-								</div>
-								<h4 class="msm-text-black fw-600 mt-2"><?php the_title(); ?></h4>
+								if ($thumbnail_src && is_array($thumbnail_src)) {
+									$thumbnail_url = $thumbnail_src[0];
+								} else {
+									$fallback_full = wp_get_attachment_image_src($thumbnail_id, 'full');
+									if ($fallback_full && is_array($fallback_full)) {
+										$thumbnail_url = $fallback_full[0];
+									}
+								}
+							}
+
+							// Buscar imagen en el contenido si todo lo anterior falla
+							if (!$thumbnail_url || str_contains($thumbnail_url, 'placeholder.jpg')) {
+								$content = get_the_content();
+								preg_match('/<img.+src=[\'"](?P<src>.+?)[\'"].*>/i', $content, $image_match);
+								if (!empty($image_match['src'])) {
+									$thumbnail_url = $image_match['src'];
+								}
+							}
+						?>
+						<div class="image-container">
+							<img src="<?php echo esc_url($thumbnail_url); ?>" class="w-100 d-none d-md-block" alt="<?php the_title_attribute(); ?>">
+						</div>
+					</div>
+					<div class="col-md-9 px-3 py-2 row">
+						<div class="col-12 px-2 mt-2">
+							<div class="d-flex flex-column align-items-end">
+								<span class="msm-text-gray text-end post-date fw-500">
+									<?php 
+										if ($event_date) {
+											echo dayPretty(esc_html($event_date));
+											echo datePretty(esc_html($event_date));
+											echo esc_html($event_time);
+										} else {
+											echo dayPretty(get_the_date('d-m-Y')); 
+											echo datePretty(get_the_date('d-m-Y'));
+										}
+									?>
+								</span>
 							</div>
-							<div class="col-12 col-8 d-flex justify-content-start flex-column px-2 py-0">
-								<div class="list-post-content msm-text-gray py-0">
-									<p><?php the_excerpt(); ?></p>
-								</div>
+							<h4 class="msm-text-black fw-600 mt-2"><?php the_title(); ?></h4>
+						</div>
+						<div class="col-12 col-8 d-flex justify-content-start flex-column px-2 py-0">
+							<div class="list-post-content msm-text-gray py-0">
+								<p><?php the_excerpt(); ?></p>
 							</div>
 						</div>
 					</div>
-				</a>
+				</div>
+			</a>
 			<?php endwhile; ?>
 
-			<style>
-				.msm-paginator .page-numbers{
-					text-decoration:none;
-					padding:10px;
-					margin-right:3px;
-					margin-left:3px;
-					border:1px solid gray;
-					border-radius:8px;
-					color:gray;
-				}
-
-				.msm-paginator .page-numbers:hover{
-					opacity: 0.8;
-				}
-
-				.msm-paginator .prev{
-					background:#e9e9e9;
-					padding:10px;
-					border:1px solid gray;
-				}
-
-				.msm-paginator .next{
-					background:#e9e9e9;
-					padding:10px;
-					border:1px solid gray;
-				}
-
-				.msm-paginator .current{
-					padding:10px;
-					color:#1ab3ea;
-					border:1px solid #1ab3ea;
-				}
-			</style>
 			<div class="d-flex justify-content-center msm-paginator">
 				<?php
 					$pagination_args = array(
@@ -116,7 +100,6 @@ get_template_part(THEME_HEADER); ?>
 						'prev_text' => __('« Anterior', 'textdomain'),
 						'next_text' => __('Siguiente »', 'textdomain'),
 					);
-
 					echo paginate_links($pagination_args);
 				?>
 			</div>
@@ -124,9 +107,8 @@ get_template_part(THEME_HEADER); ?>
 		<?php else : ?>
 			<div class="empty-info"><?php _e('No hay eventos disponibles.', 'mi-tema'); ?></div>
 		<?php endif; ?>
-
-		<?php wp_reset_postdata();
-		?>
+		
+		<?php wp_reset_postdata(); ?>
 	</div>
 </div>
 

@@ -132,4 +132,5 @@ get_template_part(THEME_HEADER); ?>
 	</div>
 </div>
 
+<?php get_template_part('templates/parts/encuesta_utilidad'); ?>
 <?php get_template_part(THEME_FOOTER); ?>
