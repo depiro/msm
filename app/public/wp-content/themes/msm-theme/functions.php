@@ -44,15 +44,41 @@ add_action('after_setup_theme', function () {
 });
 
 // Encolar la hoja de estilo del theme en frontend
+// Encolar estilos en el frontend
 add_action('wp_enqueue_scripts', function () {
+    // Bootstrap
     wp_enqueue_style(
-        'msm-theme-style',
-        get_stylesheet_uri(),
+        'bootstrap',
+        get_template_directory_uri() . '/assets/css/bootstrap.min.css',
         [],
+        null
+    );
+
+    // Estilos principales del theme
+    wp_enqueue_style(
+        'main-css',
+        get_template_directory_uri() . '/assets/css/main.css',
+        ['bootstrap'],
         wp_get_theme()->get('Version')
     );
 
-    // Cargar estilos de la guía de estilos solo en la página correspondiente
+    // Estilos utilitarios
+    wp_enqueue_style(
+        'utilities-css',
+        get_template_directory_uri() . '/assets/css/utilities/utilities.css',
+        ['main-css'],
+        wp_get_theme()->get('Version')
+    );
+
+    // Estilo base del theme (style.css)
+    wp_enqueue_style(
+        'msm-theme-style',
+        get_stylesheet_uri(),
+        ['utilities-css'],
+        wp_get_theme()->get('Version')
+    );
+
+    // Cargar guía de estilos solo en su página
     if (is_page_template('page-style-guide.php')) {
         wp_enqueue_style(
             'msm-style-guide',
@@ -62,6 +88,7 @@ add_action('wp_enqueue_scripts', function () {
         );
     }
 });
+
 
 function _get_sidebar()
 {
@@ -550,3 +577,65 @@ add_action('save_post', 'msm_subtitulo_save');
 
 
 
+// Estilos del editor Gutenberg
+add_action('after_setup_theme', function () {
+    add_theme_support('editor-styles');
+    add_editor_style('assets/css/bootstrap.min.css');
+    add_editor_style('assets/css/main.css');
+    add_editor_style('assets/css/utilities/utilities.css');
+    add_editor_style('style.css');
+});
+
+
+
+// --------------------------------------------
+// SOPORTE COMPLETO PARA SVGs EN WORDPRESS
+// --------------------------------------------
+
+// 1. Permitir subir archivos SVG
+add_filter('upload_mimes', function ($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+});
+
+// 2. Asegurar que WordPress reconozca correctamente tipo y extensión
+add_filter('wp_check_filetype_and_ext', function ($data, $file, $filename, $mimes) {
+    if (false !== strpos($filename, '.svg')) {
+        $data['ext']  = 'svg';
+        $data['type'] = 'image/svg+xml';
+    }
+    return $data;
+}, 10, 4);
+
+// 3. Mostrar vista previa en la biblioteca de medios
+add_filter('wp_prepare_attachment_for_js', function ($response, $attachment, $meta) {
+    if ($response['mime'] === 'image/svg+xml' && empty($response['sizes'])) {
+        $response['sizes'] = array(
+            'full' => array(
+                'url' => $response['url'],
+                'width' => 0,
+                'height' => 0,
+                'orientation' => 'portrait',
+            ),
+        );
+    }
+    return $response;
+}, 10, 3);
+
+// 4. Función para renderizar SVG inline desde uploads (para <div class="icon-svg">)
+function render_inline_svg_from_url($url) {
+	$upload_dir = wp_upload_dir();
+	$baseurl = $upload_dir['baseurl'];
+	$basedir = $upload_dir['basedir'];
+
+	if (str_starts_with($url, $baseurl)) {
+		$relative_path = str_replace($baseurl, '', $url);
+		$svg_path = $basedir . $relative_path;
+
+		if (file_exists($svg_path) && is_readable($svg_path)) {
+			echo file_get_contents($svg_path);
+			return;
+		}
+	}
+	echo '<!-- ⚠️ SVG no encontrado o fuera de uploads -->';
+}

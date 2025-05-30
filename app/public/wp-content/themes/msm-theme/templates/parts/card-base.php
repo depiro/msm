@@ -20,7 +20,7 @@ if (isset($term) && $term instanceof WP_Term) {
 
   
   $icon = ($icon_url) 
-  ? '<img src="' . esc_url($icon_url) . '" alt="' . esc_attr($title) . '" width="80" height="80" style="object-fit: contain;" />'
+  ? '<img src="' . esc_url($icon_url) . '" alt="' . esc_attr($title) . '" width="57" height="57" style="object-fit: contain;" />'
   : '';
 
 } else {
@@ -45,7 +45,7 @@ if (isset($term) && $term instanceof WP_Term) {
         <div class="card-barra"></div>
       <?php endif; ?>
 
-      <div class="card-body p-3 d-flex flex-column justify-content-center">
+      <div class="card-body p-4 pe-2 d-flex flex-column justify-content-center">
         <h6 class="card-title"><?= esc_html($title); ?></h6>
 
         <?php if (in_array($variant, [2, 3])) : ?>

@@ -2,7 +2,8 @@
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
         <div id="main-content" class="container mb-5">
-            <div class="row my-3 my-md-5 px-3 justify-content-center">
+            <!-- <div class="row my-3 my-md-5 px-3 justify-content-center"> -->
+
                 <?php
 
                 // Obtenemos el post_meta donde meta_key es '_wp_page_template'
@@ -31,7 +32,7 @@
                 }
 
                 ?>
-            </div>
+            <!-- </div> -->
         </div>
     <?php endwhile;
 else : ?>

@@ -18,8 +18,7 @@ $image_url = get_term_meta($term_id, 'banner_image', true);
 		<div class="col-12 py-5">
 			<?php if ($current_term): ?>
 			<h2 class="msm-font-xl mb-1"><?php echo esc_html($current_term->name); ?></h2>
-			<!-- <p class="fz-18"><?php echo wp_kses_post($current_term->description); ?></p> -->
-			<p class="fz-18">Trabajamos en la transparencia, la participación y la colaboración con el objetivo de aumentar la eficiencia y la eficacia en la administración pública.</p>
+			<p class="fz-18"><?php echo wp_kses_post($current_term->description); ?></p>
 			<?php endif; ?>
 		</div>
 

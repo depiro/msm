@@ -13,7 +13,7 @@ get_template_part(THEME_HEADER); ?>
 	<div class="row justify-content-center pt-2">
 
 		<div class="col-12 py-5">
-			<h2 class="msm-font-xl mb-1">Áreas de gobierno</h2>
+			<h2 class="msm-font-xl mb-1">Áreas de Gobierno</h2>
 			<p class="fz-18">Conocé cada una de las áreas que conforman la Municipalidad de San Miguel</p>
 		</div>
 

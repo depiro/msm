@@ -85,11 +85,7 @@ header {
         height: auto;
     }
 
-    h4, h3 {
-        font-size: 1rem;
-    }
-
-    a {
+/*     a {
         color: var(--msm-blue-light);
         text-decoration: none;
         transition: var(--transition-base);
@@ -98,7 +94,7 @@ header {
             color: var(--msm-blue-dark);
             text-decoration: underline;
         }
-    }
+ */    }
 }
 
 /* Media Queries */
@@ -135,7 +131,7 @@ header {
 }
 
 /* page-menu */
-.page-title span {
+/* .page-title span {
     color: #016a90;
     font-size: 32px;
     font-weight: 600;
@@ -144,11 +140,12 @@ header {
 .page-content {
     font-size: 14px;
     line-height: 22px;
-}
+} */
 
-.page-content > div.d-flex.flex-column{
-    /* border:3px solid black; */
-}
+/* .page-content > div.d-flex.flex-column{
+    border:3px solid black;
+} */
+
 .page-content img:has(.size-full) {
     width: -webkit-fill-available;
 }
@@ -286,13 +283,13 @@ header {
     color: white !important;
 }
 
-.page-content h4 {
+/* .page-content h4 {
     font-size: 1rem !important;
 }
 
 .page-content h3 {
     font-size: 1rem !important;
-}
+} */
 
 /* Eliminamos el breadcrumb anterior ( de interior del content ) */
 .breadcrumb {
@@ -575,10 +572,7 @@ header {
 
 .page-content a{
     text-decoration: none;
-}
 
-.post-content {
-    font-size: 16px;
 }
 
 .post-content .wp-block-separator{
@@ -588,11 +582,9 @@ header {
 
 .post-content a{
     text-decoration: none;
+    color: #ffffff;
 }
-.post-content p{
-    font-weight: 500;
-    color:#5e6e79;
-} 
+
 .post-content li::marker{
     color:#0095da;
 }
@@ -603,7 +595,7 @@ header {
 
 .post-content strong{
     font-weight: 600;
-    color:#0095da;
+    /* color:#0095da; */
 }
 
 .text-container {
@@ -794,13 +786,11 @@ header {
 
 .landing-subtitle {
     font-size: 16px;
-    color: #5e6e79;
     text-align: justify;
 }
 
 .subtitle {
     font-size: 20px;
-    color: #5e6e79;
     text-align: justify;
 }
 
@@ -995,7 +985,8 @@ header {
 }
 
 span.post-title {
-    color: #0095da ;
+    /* color: #0095da ; */
+    
 }
 
 
@@ -1015,9 +1006,8 @@ span.post-title {
     opacity: 1;
 }
 
-
 .page-content-excerpt p {
- margin-top: 0.5rem !important;
+    margin-top: 0.5rem !important;
 }
 
 .tramites-observaciones strong{

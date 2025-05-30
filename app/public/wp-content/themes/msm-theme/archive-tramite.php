@@ -23,7 +23,10 @@
           $imagen_url = wp_get_attachment_url($imagen_id);
 
           $title = esc_html($term->name);
-          $desc = !empty($term->description) ? wp_trim_words($term->description, 20, '...') : '';
+          $desc = !empty($term->description) ? strtok($term->description, '.') . '.' : '';
+
+
+
 
           $link = get_term_link($term);
           $icon = '';

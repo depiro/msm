@@ -76,8 +76,12 @@
 
 .card-v4 .card {
     background-color: var(--msm-banners);
-    /* background-color: #F5F3F3; */
     border: none;
+}
+
+.card-v4 .card-icon svg,
+.card-v4 .card-icon img{
+    width: 52px;
 }
 
 .card-v4 .card h6 {

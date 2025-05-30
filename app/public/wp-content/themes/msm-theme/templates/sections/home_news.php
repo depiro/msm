@@ -36,10 +36,12 @@ $query = new WP_Query($args);
 						<img src="<?php echo esc_url($image_url); ?>" alt="<?php the_title_attribute(); ?>">
 					</div>
 					<div class="card-body p-4">
-						<h5 class="card-title mb-2"><?php the_title(); ?></h5>
+						<!-- <h6 class="card-title mb-3"><?php the_title(); ?></h6> -->
+						<h6 class="card-title mb-3"><?php echo wp_trim_words(get_the_title(), 10, '...'); ?></h6>
+
 						<div class="text-container">
 							<p><?php echo wp_trim_words(short_description(), 20, '...'); ?></p>
-							<!-- <p><?php echo mb_strimwidth(short_description(), 0, 120, '...'); ?></p> -->
+							<!-- <p><?php echo mb_strimwidth(short_description(), 0, 10, '...'); ?></p> -->
 						</div>
 						<div class="d-flex justify-content-end p-2 w-100">
 							<a href="<?php the_permalink(); ?>" class="w-100 d-flex justify-content-end pt-2">

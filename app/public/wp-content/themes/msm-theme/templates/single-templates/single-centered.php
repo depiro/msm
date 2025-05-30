@@ -5,20 +5,22 @@ Template Post Type: post
 Description: Esta plantilla muestra una entrada individual sin barra lateral y centrada.
 */
 ?>
-<div class="row justify-content-center border">
+<div class="row justify-content-center">
     <div class="msm-breadcrumb d-block d-sm-row pt-1 small">
         <a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a><a class="msm-breadcrumb-item" href="<?php echo HOME_URI; ?>/prensa"> Prensa /</a><span class="msm-breadcrumb msm-breadcrumb-item-last"><?php echo esc_html(the_title()); ?></span>
     </div>
 </div>
 
-<div class="row">
-    <!-- <div class="col-10">
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    
-        <h1 class="post-title"><?php the_title(); ?></h1>
-        <h5 class="post-resume"><?php the_excerpt(); ?></h5>
-    </div> -->
-</div>
+<div class="row my-3 my-md-5 px-3 justify-content-center">
+
+    <div class="row">
+        <!-- <div class="col-10">
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        
+            <h1 class="post-title"><?php the_title(); ?></h1>
+            <h5 class="post-resume"><?php the_excerpt(); ?></h5>
+        </div> -->
+    </div>
     
     <div class="row justify-content-center">
        
@@ -49,5 +51,6 @@ Description: Esta plantilla muestra una entrada individual sin barra lateral y c
                 </article>
             </div>
 
+</div>
 </div>
 <!--  template Single centered -->

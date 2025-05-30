@@ -137,9 +137,33 @@ if (!empty($terms) && !is_wp_error($terms)) {
     <!-- BANNERS INFORMATIVOS FIN  -->
 
 
+
+
+    <?php
+// Test de SVG inline desde uploads
+
+$svg_url_de_prueba = 'http://msm-dev.local/wp-content/uploads/2025/05/licencia-1.svg'; // reemplazá esta URL por una real que tengas cargada
+
+?>
+
+<div class="icon-svg-test" style="padding: 2rem; background: #f8f8f8; border: 1px solid #ccc;">
+    <h3>Test de SVG inline desde URL</h3>
+    <p><strong>Intentando renderizar:</strong> <?php echo esc_url($svg_url_de_prueba); ?></p>
+
+    <?php
+    if (function_exists('render_inline_svg_from_url')) {
+        render_inline_svg_from_url($svg_url_de_prueba);
+    } else {
+        echo '<p style="color:red;">⚠️ La función <code>render_inline_svg_from_url()</code> no está disponible.</p>';
+    }
+    ?>
+</div>
+
+
+    
     <!-- AREAS DE GOBIERNO -->
     <section class="home-areas row d-flex justify-content-center ">
-        <h3 class="text-center">Áreas de gobierno</h3>
+        <h3 class="text-center">Áreas de Gobierno</h3>
         
         <div class="row">
         <?php
