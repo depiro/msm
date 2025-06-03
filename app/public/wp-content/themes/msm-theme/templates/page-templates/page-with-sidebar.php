@@ -49,7 +49,7 @@
             </div>
 
             <div class="col-12 col-md-4">
-                <aside class="sidebar-card rounded shadow-sms">
+                <aside class="sidebar-card rounded shadow-sms text-white">
                         <?php
                             $sidebar_info = get_post_meta(get_the_ID(), '_msm_sidebar_info', true);
                             if (!empty($sidebar_info)) : ?>
@@ -64,7 +64,7 @@
         <div class="row">
             <div class="col-12 pt-5 pb-4">
                 <!-- BANNER -->
-                <?php
+              <!--   <?php
                     set_query_var('banner_consultas', [
                     'title' => 'Iniciá tus pedidos o consultas',
                     'button_text' => 'Iniciar consultas',
@@ -72,7 +72,7 @@
                     'image' => get_template_directory_uri() . '/assets/images/banner_2_blanca.png'
                     ]);
                     get_template_part('templates/parts/banner-grande');
-                ?>
+                ?> -->
                 <!-- BANNER FIN -->
                 
                 <div class="row d-flex justify-content-center">
@@ -80,15 +80,7 @@
                         <?php get_template_part('templates/sections/home_news_category'); ?>
                     </div>
                 </div>
-                
-                <!-- NOTICIAS INICIO -->
-                <div class="row d-flex justify-content-center">
-                    <h3 class="text-center mt-3">Últimas novedades</h3>
-                    <div class="page-content row">
-                        <?php get_template_part(THEME_NEWS); ?>
-                    </div>
-                </div>
-                <!-- NOTICIAS FIN -->
+
 
             </div>
         </div>
@@ -101,4 +93,6 @@
     <?php endif; ?>
 
 <!-- template page sidebar -->
+<?php get_template_part('templates/parts/encuesta_utilidad');  ?>
+
 <?php get_template_part(THEME_FOOTER); ?>

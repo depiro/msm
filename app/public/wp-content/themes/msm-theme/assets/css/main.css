@@ -156,7 +156,7 @@ header {
 }
 
 .page-content h6 a {
-    border:3px solid tomato;
+    /* border:3px solid tomato; */
     margin: 10px auto !important;
     padding: 8px 20px !important;
     display: inline-block;
@@ -512,11 +512,7 @@ header {
 }
 
 .msm-header-logo {
-    width: 100px;
-}
-
-.msm-header-logotipo {
-    width: 190px;
+    max-width: 280px;
 }
 
 .msm-report-card {
@@ -534,6 +530,7 @@ header {
     cursor: pointer;
     box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
 }
+
 
 .msm-report-card .card-text {
     font-size: 21px;
@@ -580,10 +577,10 @@ header {
     opacity: 1 !important;
 }
 
-.post-content a{
+/* .post-content a{
     text-decoration: none;
     color: #ffffff;
-}
+} */
 
 .post-content li::marker{
     color:#0095da;
@@ -690,7 +687,6 @@ header {
 
 .empty-info {
     padding: 20px;
-    color: #939393;
     background-color: #ededed;
 }
 
@@ -886,21 +882,21 @@ header {
 }
 
 .decreto-item {
-    background: #e1e1e1;
+    /* background: #e1e1e1;
     color: #828286;
     padding: 10px;
     border-radius: 11px;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 500; */
     width: fit-content;
-    transition: color 0.5s ease, background-color 0.5s ease;
+    /* transition: color 0.5s ease, background-color 0.5s ease; */
 }
 
-.decreto-item:hover {
+/* .decreto-item:hover {
     background-color: var(--blue-msm-400);
     color: white;
 }
-
+ */
 
 #formulario_consulta input[type="button"] {
     font-family: 'Roboto Condensed', sans-serif;
@@ -1004,6 +1000,10 @@ span.post-title {
 .posts-navigation .nav-previous a:hover,
 .posts-navigation .nav-next a:hover {
     opacity: 1;
+}
+
+.wp-block-heading {
+    margin-top: 2.5rem;
 }
 
 .page-content-excerpt p {
@@ -1294,3 +1294,4 @@ span.post-title {
     color: #1ab3ea;
     border: 1px solid #1ab3ea;
 }
+

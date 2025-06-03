@@ -31,46 +31,44 @@ $event_query = new WP_Query($args);
 		<span class="msm-breadcrumb-item-last">Estacionamiento Medido</span>
 	</div>	
 
-	<div class="row my-3 my-md-5 px-3 justify-content-center">		
+	<div class="row my-3 my-md-5 px-3 justify-content-center mb-5">		
 		<div class="col-12 py-5">
 			<h2 class="msm-font-xl mb-1 post-title">Estacionamiento Medido</h2>
 			<p class="fz-18">Conocé cada una de las áreas que conforman la Municipalidad de San Miguel</p>
 		</div>
 
 		<div class="col-12 col-md-8">
-			<div class="row p-0">
-				<p>Registrate, comprá crédito y estacioná presionando en:</p>
-				<div style="width:100%;display:flex;justify-content:start;margin-top:10px;">
-				<a class="btn btn-primary btn-lg" href="https://sem.msm.gov.ar/#/login">
-						Estacionamiento Medido
-					</a>
-				</div>
+			<div class="alert alert-info p-4 my-4">
+			<h4 class="mb-3 fz-22 fw-600">Registrate, comprá crédito y estacioná presionando en:</h4>
+			<a class="btn btn-primary btn-lg text-white text-decoration-none" href="https://sem.msm.gov.ar/#/login" target="_blank">
+				Estacionamiento Medido
+			</a>
 			</div>
 
-			<div class="row rounded mb-3 mt-4">
-				<div class="col-12 text-white d-flex align-items-center items-center py-2 gap-2 bg-primary-subtle">
-					<h2 class="align-items-center items-center">ZONA</h2>
-					<h4>Estacionamiento</h4>
-					<h4>Medido</h4>
+
+			<div class="row rounded mb-5 mt-4">
+				<div class="col-12 d-flex align-items-center py-2 gap-2 bg-primary-subtle">
+					<h3 class="mb-0">ZONA Estacionamiento Medido</h3>
 				</div>
-				<div class="col-12- col-md-9 pb-2 h-auto d-flex justify-content-center">
-					<div class="row mb-4" id="map-container">
-						<img id="map" class="rounded" src="<?php echo THEME_URI; ?>/assets/images/mapa_veredas_sem2.jpeg"
-							alt="Mapa">
+
+				<div class="col-12 col-md-9 pb-2 d-flex justify-content-center">
+					<div id="map-container" class="mb-4">
+						<img id="map" class="rounded" src="<?php echo THEME_URI; ?>/assets/images/mapa_veredas_sem2.jpeg" alt="Mapa">
 					</div>
 				</div>
-				<div
-					class="col-12- col-md-3 d-flex justify-content-start flex-column align-content-start text-white text-center">
-					<h2>HORARIO</h2>
-					<h4>Estacionamiento <br>Medido</h4>
-					<h4>Lunes a Viernes <br>8:00 a 20:00</h4>
-					<h4>Sábados <br>8:00 a 13:00</h4>
+
+				<div class="col-12 col-md-3 d-flex justify-content-start flex-column">
+					<h3>Horario</h3>
+					<h4 class="mb-2">Estacionamiento Medido</h4>
+					<p class="mb-2">Lunes a Viernes <br>8:00 a 20:00</p>
+					<p class="mb-0">Sábados <br>8:00 a 13:00</p>
 				</div>
 			</div>
 
-			<div class="row rounded bg-primary-subtle">
-				<div class="col-12 text-white d-flex align-items-center items-center py-2 gap-2">
-					<h2 class="align-items-center items-center">Puntos de venta</h2>
+
+			<div class="row rounded bg-primary-subtle mb-5">
+				<div class="col-12 d-flex align-items-center items-center py-2 gap-2">
+					<h3>Puntos de venta</h3>
 				</div>
 				<div class="col-12 pb-2 h-auto">
 					<style>
@@ -106,127 +104,48 @@ $event_query = new WP_Query($args);
 
 			
 				<h3 class="mb-3">Preguntas Frecuentes</h3>
-				<div class="accordion" id="accordionQuestions">
-					<div class="accordion-item">
-						<h2 class="accordion-header">
-							<button class="accordion-button accordion-sem" type="button" data-bs-toggle="collapse"
-								data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-								¿Cuál es el valor de la hora?
-							</button>
-						</h2>
-						<div id="collapse1" class="accordion-collapse collapse show"
-							data-bs-parent="#accordionQuestions">
-							<div class="accordion-body">
-								El valor es de $450.
-							</div>
-						</div>
-					</div>
-					<div class="accordion-item">
-						<h2 class="accordion-header">
-							<button class="accordion-button accordion-sem collapsed" type="button"
-								data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false"
-								aria-controls="collapse2">
-								¿Cuál es la carga mínima que puedo hacer y la máxima?
-							</button>
-						</h2>
-						<div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordionQuestions">
-							<div class="accordion-body">
-								Carga mínima $450 y máximo $10.000 (recarga virtual). En el punto de venta lo mínimo es
-								una hora (estacionamiento puntual).
-							</div>
-						</div>
-					</div>
-					<div class="accordion-item">
-						<h2 class="accordion-header">
-							<button class="accordion-button accordion-sem collapsed" type="button"
-								data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false"
-								aria-controls="collapse4">
-								¿Cuál es el horario de estacionamiento pago?
-							</button>
-						</h2>
-						<div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionQuestions">
-							<div class="accordion-body">
-								De lunes a viernes de 8 a 20hs y sábados de 8 a 13hs
-							</div>
-						</div>
-					</div>
-					<div class="accordion-item">
-						<h2 class="accordion-header">
-							<button class="accordion-button accordion-sem collapsed" type="button"
-								data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false"
-								aria-controls="collapse6">
-								¿Qué pasa si no tengo datos o wifi?
-							</button>
-						</h2>
-						<div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#accordionQuestions">
-							<div class="accordion-body">
-								Podrás cargar en los comercios adheridos a la carga puntual.
-								www.msm.gov.ar/estacionamiento-medido-puntos-de-venta
-							</div>
-						</div>
-					</div>
-					<div class="accordion-item">
-						<h2 class="accordion-header">
-							<button class="accordion-button accordion-sem collapsed" type="button"
-								data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false"
-								aria-controls="collapse7">
-								¿Qué pasa si inicié el estacionamiento y se hacen las 20 hs y no finalicé el
-								estacionamiento medido?
-							</button>
-						</h2>
-						<div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#accordionQuestions">
-							<div class="accordion-body">
-								Lo corta el sistema
-							</div>
-						</div>
-					</div>
-					<div class="accordion-item">
-						<h2 class="accordion-header">
-							<button class="accordion-button accordion-sem collapsed" type="button"
-								data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false"
-								aria-controls="collapse8">
-								¿A qué hora finaliza el estacionamiento medido?
-							</button>
-						</h2>
-						<div id="collapse8" class="accordion-collapse collapse" data-bs-parent="#accordionQuestions">
-							<div class="accordion-body">
-								A las 20:00 y los sábados a las 13:00
-							</div>
-						</div>
-					</div>
-					<div class="accordion-item">
-						<h2 class="accordion-header">
-							<button class="accordion-button accordion-sem collapsed" type="button"
-								data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false"
-								aria-controls="collapse9">
-								¿Qué pasa si iniciado el estacionamiento me quedo sin crédito?
-							</button>
-						</h2>
-						<div id="collapse9" class="accordion-collapse collapse" data-bs-parent="#accordionQuestions">
-							<div class="accordion-body">
-								Si ud. se queda sin crédito, tendrá un saldo negativo que se cubre con la próxima
-								recarga
-							</div>
-						</div>
-					</div>
-					<div class="accordion-item">
-						<h2 class="accordion-header">
-							<button class="accordion-button accordion-sem collapsed" type="button"
-								data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false"
-								aria-controls="collapse10">
-								¿No coloque el comprobante en el auto, me van a multar?
-							</button>
-						</h2>
-						<div id="collapse10" class="accordion-collapse collapse" data-bs-parent="#accordionQuestions">
-							<div class="accordion-body">
-								NO hace falta colocar el comprobante, ya que los fiscalizadores obtienen a través de su
-								teléfono celular la información necesaria para proceder, están online con el sistema de
-								estacionamiento
-							</div>
-						</div>
-					</div>
-				</div>
-			
+
+<details class="my-4">
+  <summary class="fz-22 fw-600 cursor-pointer">¿Cuál es el valor de la hora?</summary>
+  <p class="mt-3 mb-0">El valor es de $450.</p>
+</details>
+
+<details class="my-4">
+  <summary class="fz-22 fw-600 cursor-pointer">¿Cuál es la carga mínima que puedo hacer y la máxima?</summary>
+  <p class="mt-3 mb-0">Carga mínima $450 y máximo $10.000 (recarga virtual). En el punto de venta lo mínimo es una hora (estacionamiento puntual).</p>
+</details>
+
+<details class="my-4">
+  <summary class="fz-22 fw-600 cursor-pointer">¿Cuál es el horario de estacionamiento pago?</summary>
+  <p class="mt-3 mb-0">De lunes a viernes de 8 a 20 hs y sábados de 8 a 13 hs.</p>
+</details>
+
+<details class="my-4">
+  <summary class="fz-22 fw-600 cursor-pointer">¿Qué pasa si no tengo datos o wifi?</summary>
+  <p class="mt-3 mb-0">Podrás cargar en los comercios adheridos a la carga puntual.<br><a href="https://www.msm.gov.ar/estacionamiento-medido-puntos-de-venta" target="_blank">www.msm.gov.ar/estacionamiento-medido-puntos-de-venta</a></p>
+</details>
+
+<details class="my-4">
+  <summary class="fz-22 fw-600 cursor-pointer">¿Qué pasa si inicié el estacionamiento y se hacen las 20 hs y no finalicé el estacionamiento medido?</summary>
+  <p class="mt-3 mb-0">Lo corta el sistema.</p>
+</details>
+
+<details class="my-4">
+  <summary class="fz-22 fw-600 cursor-pointer">¿A qué hora finaliza el estacionamiento medido?</summary>
+  <p class="mt-3 mb-0">A las 20:00 y los sábados a las 13:00.</p>
+</details>
+
+<details class="my-4">
+  <summary class="fz-22 fw-600 cursor-pointer">¿Qué pasa si iniciado el estacionamiento me quedo sin crédito?</summary>
+  <p class="mt-3 mb-0">Si te quedás sin crédito, tendrás un saldo negativo que se cubre con la próxima recarga.</p>
+</details>
+
+<details class="my-4">
+  <summary class="fz-22 fw-600 cursor-pointer">¿No coloqué el comprobante en el auto, me van a multar?</summary>
+  <p class="mt-3 mb-0">No hace falta colocar el comprobante, ya que los fiscalizadores acceden online al sistema desde sus teléfonos.</p>
+</details>
+
+				
 		</div>
 		
 		<div class="col-12 col-md-4">

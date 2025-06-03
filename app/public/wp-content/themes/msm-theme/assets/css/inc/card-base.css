@@ -13,6 +13,18 @@
     /* border:2px dotted rebeccapurple; */
 }
 
+.card-v1:focus .card,
+.card-v2:focus .card,
+.card-v3:focus .card,
+.card-v4:focus .card {
+  transform: translateY(-6px);
+  outline: 3px solid var(--blue-msm-200);
+  outline-offset: 4px;
+  transition: transform 0.2s ease, outline 0.2s ease;
+}
+
+
+
 .card-icon {
     width: 80px;
     background-color: var(--msm-blue, #3dbfee);

@@ -26,7 +26,7 @@ get_template_part(THEME_HEADER); ?>
 	<div class="row my-3 my-md-5 px-3 justify-content-center">
 		<div class="col-12 py-5">
 			<h2 class="msm-font-xl mb-1">Boletín Oficial</h2>
-			<!-- <p class="fz-18">Conocé cada una de las áreas que conforman la Municipalidad de San Miguel</p> -->
+			<p class="fz-18">Publicación de actos y normativas del Gobierno Municipal para asegurar la transparencia y el acceso a la información.</p>
 		</div>
 		<div class="col-12 col-md-8">
 
@@ -37,9 +37,8 @@ get_template_part(THEME_HEADER); ?>
 
 				<!-- <div style="border-bottom:2px solid #1ab3ea;margin-top:20px;margin-bottom:20px; margin-top: 10px;"></div> -->
 
-				<h3 class="msm-text-700 fw-600">Decretos 2025</h3>
+				<h3 class="mb-5">Decretos 2025</h3>
 				<div class="decretos-list d-flex row gap-2">
-
 					<?php
 
 					$children = get_children(array(
@@ -63,9 +62,10 @@ get_template_part(THEME_HEADER); ?>
 					<?php endif; ?>
 
 				</div>
-				<div style="border-bottom:2px solid #1ab3ea;margin-top:20px;margin-bottom:20px"></div>
-				<h3 class="msm-text-700 fw-600">Decretos 2024</h3>
-				<div class="decretos-list d-flex row gap-2 mt-2">
+
+
+				<h3>Decretos 2024</h3>
+				<div class="decretos-list d-flex justify-content-start row gap-2 mt-2 mb-4">
 
 					<?php
 
@@ -80,7 +80,7 @@ get_template_part(THEME_HEADER); ?>
 					if ($children):
 						foreach ($children as $child):
 							if (strpos($child->post_title, '2024') !== false): ?>
-								<a class="fz-14 decreto-item" href="<?php echo get_permalink($child->ID); ?>">
+								<a class="decreto-item btn btn-primary text-decoration-none text-white btn-sm" role="button" href="<?php echo get_permalink($child->ID); ?>">
 									<?php echo esc_html($child->post_title); ?>
 								</a>
 							<?php endif;
@@ -92,47 +92,70 @@ get_template_part(THEME_HEADER); ?>
 				</div>
 
 
-				<div style="border-bottom:2px solid #1ab3ea;margin-top:20px;margin-bottom:20px;"></div>
-				<h3 class="msm-text-700 fw-600 mt-2">Ordenanzas</h3>
-				<div class="d-flex flex-column">
-					<a target="_blank"
-						href="<?php echo home_url('/wp-content/uploads/2025/02/ordenanza-fiscal-y-tarifaria-2025.pdf') ?>">Ordenanza
-						fiscal y tarifaria 2025</a>
-					<a target="_blank"
-						href="<?php echo home_url('/wp-content/uploads/2025/02/calendario-fiscal-TISH-2025.pdf') ?>">Calendario
-						fiscal TISH 2025</a>
-					<a target="_blank"
-						href="<?php echo home_url('/wp-content/uploads/2025/02/calendario-fiscal-TSM-2025.pdf') ?>">Calendario
-						fiscal TSM 2025</a>
-					<a target="_blank"
-						href="<?php echo home_url('/wp-content/uploads/2025/02/OM-15_2023-Carga-y-Descarga.pdf') ?>">Ordenanza
-						15-2023 Carga y descarga - Cajón azul</a>
+				
+				<h3>Ordenanzas</h3>
+				<div class="row d-flex align-content-start flex-wrap">
 
-					<a target="_blank"
-						href="<?php echo home_url('/wp-content/themes/msmtheme/assets/files/ORDENANZA-FISCAL-Y-TARIFARIA-2024.pdf') ?>">Ordenanza
-						fiscal y tarifaria 2024</a>
-					<a target="_blank"
-						href="<?php echo home_url('/wp-content/themes/msmtheme/assets/files/ORDENANZA-CONVENIOS-B.pdf') ?>">Ordenanza
-						convenios "B"</a>
-					<a target="_blank"
-						href="<?php echo home_url('/wp-content/themes/msmtheme/assets/files/ORDENANZA-5-2023.pdf') ?>">ORDENANZA
-						N°5 Cambio de circulación de la calle Rivera</a>
-					<a target="_blank"
-						href="<?php echo home_url('/wp-content/themes/msmtheme/assets/files/ORDENANZA-6-2023.pdf') ?>">ORDENANZA
-						N°6 Cambio de circulación de las calles Pasaje Indio, Pasaje San Miguel, Rosetti, Dorrego y José
-						M. Rosa</a>
-					<a target="_blank"
-						href="<?php echo home_url('/wp-content/themes/msmtheme/assets/files/ORDENANZA-7-2023.pdf') ?>">ORDENANZA
-						N°7 Incorporación obligatoria de estudios prenatales</a>
-					<a target="_blank"
-						href="<?php echo home_url('/wp-content/uploads/2025/02/ORDENANZA-39-2012-AVU-Biodiesel.pdf') ?>">ORDENANZA
-						39-2012 Aceite vegetal</a>
-					<a target="_blank"
-						href="<?php echo home_url('/wp-content/uploads/2025/02/Ordenanza-n°-595-82.pdf') ?>">Ordenanza
-						nº 595/82</a>
-					<a target="_blank"
-						href="<?php echo home_url('/wp-content/uploads/2025/05/FISCAL_Y_TARIFARIA_2024.pdf') ?>">Ordenanza
-						Fiscal y Tarifaria 2024</a>
+					<?php echo do_shortcode('[msm_card 
+					title="Ordenanza fiscal y tarifaria 2025"
+					link="/wp-content/uploads/2025/02/ordenanza-fiscal-y-tarifaria-2025.pdf" height="120px"
+					variant="1"]'); ?>
+
+					<?php echo do_shortcode('[msm_card 
+					title="Calendario fiscal TISH 2025"
+					link="/wp-content/uploads/2025/02/calendario-fiscal-TISH-2025.pdf" height="120px"
+					variant="1"]'); ?>
+
+					<?php echo do_shortcode('[msm_card 
+					title="Calendario fiscal TSM 2025"
+					link="/wp-content/uploads/2025/02/calendario-fiscal-TSM-2025.pdf" height="120px"
+					variant="1"]'); ?>
+
+					<?php echo do_shortcode('[msm_card 
+					title="Ordenanza 15-2023 Carga y descarga - Cajón azul"
+					link="/wp-content/uploads/2025/02/OM-15_2023-Carga-y-Descarga.pdf" height="120px"
+					variant="1"]'); ?>
+
+					<?php echo do_shortcode('[msm_card 
+					title="Ordenanza fiscal y tarifaria 2024"
+					link="/wp-content/themes/msmtheme/assets/files/ORDENANZA-FISCAL-Y-TARIFARIA-2024.pdf" height="120px"
+					variant="1"]'); ?>
+
+					<?php echo do_shortcode('[msm_card 
+					title="Ordenanza convenios \'B\'"
+					link="/wp-content/themes/msmtheme/assets/files/ORDENANZA-CONVENIOS-B.pdf" height="120px" 
+					variant="1"]'); ?>
+
+					<?php echo do_shortcode('[msm_card 
+					title="Ordenanza N°5 - Cambio de circulación de la calle Rivera"
+					link="/wp-content/themes/msmtheme/assets/files/ORDENANZA-5-2023.pdf" height="120px"
+					variant="1"]'); ?>
+
+					<?php echo do_shortcode('[msm_card 
+					title="Ordenanza N°6 - Cambio de circulación en varias calles"
+					link="/wp-content/themes/msmtheme/assets/files/ORDENANZA-6-2023.pdf" height="120px"
+					variant="1"]'); ?>
+
+					<?php echo do_shortcode('[msm_card 
+					title="Ordenanza N°7 - Incorporación obligatoria de estudios prenatales"
+					link="/wp-content/themes/msmtheme/assets/files/ORDENANZA-7-2023.pdf" height="120px"
+					variant="1"]'); ?>
+
+					<?php echo do_shortcode('[msm_card 
+					title="Ordenanza 39-2012 - Aceite vegetal"
+					link="/wp-content/uploads/2025/02/ORDENANZA-39-2012-AVU-Biodiesel.pdf" height="120px"
+					variant="1"]'); ?>
+
+					<?php echo do_shortcode('[msm_card 
+					title="Ordenanza N° 595/82"
+					link="/wp-content/uploads/2025/02/Ordenanza-n°-595-82.pdf" height="120px"
+					variant="1"]'); ?>
+
+					<?php echo do_shortcode('[msm_card 
+					title="Ordenanza fiscal y tarifaria 2024 (versión alternativa)"
+					link="/wp-content/uploads/2025/05/FISCAL_Y_TARIFARIA_2024.pdf" height="120px"
+					variant="1"]'); ?>
+					
 				</div>
 			</div>
 		</div>		

@@ -33,7 +33,7 @@ if (!empty($banners)) : ?>
       $svg_path = get_theme_file_path('/assets/images/icons/' . $icon_slug);
       $icon_right = !empty($banner['icon_right']);
       ?>
-      <div class="col-12 col-md-6 m-0">
+      <div class="col-12 col-md-6 mb-4 mb-md-0">
         <a href="<?php echo esc_url($banner['url']); ?>"
            class="d-flex align-items-center justify-content-between rounded-3 text-decoration-none banner-card py-3 <?php echo esc_attr($banner['style'] ?? ''); ?>">
            <div class="row w-100 align-items-center ps-5 <?php echo $icon_right ? 'flex-row-reverse pe-2' : ''; ?>">

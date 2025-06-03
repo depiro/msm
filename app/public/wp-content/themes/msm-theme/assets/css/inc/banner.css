@@ -129,7 +129,8 @@
 }
 
 .banner-card h4 {
-    color: var(--color-text-main);
+    /* color: var(--color-text-main); */
+    color:  var(--color-text-subtitle);
 }
 .banner-card:hover h4 {
     color: var(--blue-msm-500);

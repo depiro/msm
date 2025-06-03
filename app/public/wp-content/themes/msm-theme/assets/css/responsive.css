@@ -43,7 +43,7 @@
 
 @media only screen and (min-width: 993px) and (max-width: 1200px) {
     .menu-lugares-container #menu-lugares li {
-        width: 33%;
+        width: 33%; 
     }
 
     .msm-banner-title h1 {
@@ -68,3 +68,21 @@
         font-size: 5rem !important;
     }
 }
+
+
+  
+  /* Ajuste para tablets */
+  @media (max-width: 991.98px) {
+    .msm-header-logo {
+      max-width: 260px;
+    }
+  
+  }
+  
+  /* Ajuste para móviles */
+  @media (max-width: 575.98px) {
+    .msm-header-logo {
+        width: 240px;
+    }
+  }
+  

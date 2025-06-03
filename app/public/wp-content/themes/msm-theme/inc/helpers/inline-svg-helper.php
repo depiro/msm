@@ -14,5 +14,5 @@ if (!function_exists('inline_svg')) {
     } else {
       echo '<!-- SVG not found: ' . esc_html($slug) . ' -->';
     }
-  }
+  } 
 }

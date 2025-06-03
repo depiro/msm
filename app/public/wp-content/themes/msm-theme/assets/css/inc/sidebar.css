@@ -2,9 +2,11 @@
   .sidebar-card {
     background-color: var(--msm-black, #575756);
     box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
+    color: white;
 }
 
-aside.sidebar-card ul li{
+aside.sidebar-card ul li,
+aside.sidebar-card p {
     color: white;
 }
 

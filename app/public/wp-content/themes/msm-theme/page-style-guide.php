@@ -591,9 +591,10 @@
                 </div>
             </div>
             <!-- NOTICIAS FIN -->
-
+            
         </div>
     </section>
 </div>
 
+<?php get_template_part('templates/parts/encuesta_utilidad');  ?>
 <?php get_template_part(THEME_FOOTER); ?>

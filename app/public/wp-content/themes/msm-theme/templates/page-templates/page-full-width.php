@@ -50,4 +50,5 @@ else : ?>
     </div>
 <?php endif; ?>
 <!-- template page full -->
+<?php get_template_part('templates/parts/encuesta_utilidad');  ?>
 <?php get_template_part(THEME_FOOTER); ?>

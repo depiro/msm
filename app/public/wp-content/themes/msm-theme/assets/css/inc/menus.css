@@ -14,6 +14,11 @@
     border: none !important;
 }
 
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+  
+
 .menu-container-toggle:focus {
     box-shadow: none !important;
 }
@@ -206,6 +211,47 @@
     background-color: var(--blue-msm-400);
     border-color: var(--blue-msm-400);
 } 
+
+/* .msm-menu-link.active,
+.msm-menu-link.current-menu-item,
+.msm-menu-link.current_page_item {
+    background-color: var(--blue-msm-400);
+    border-color: var(--blue-msm-400);
+    color: var(--blue-msm-600)!important;
+    transform: translateY(0); 
+}
+.msm-menu-link.active svg,
+.msm-menu-link.current-menu-item svg,
+.msm-menu-link.current_page_item svg {
+    fill: var(--blue-msm-600);
+}
+a.msm-menu-link:active,
+a.msm-menu-link.current-menu-item,
+a.msm-menu-link.current_page_item,
+.nav-link.msm-menu-link.active {
+    background-color: var(--blue-msm-400) !important;
+    border-color: var(--blue-msm-400) !important;
+    color: white !important;
+    font-weight: 600;
+    transform: translateY(0);
+} */
+
+/* .nav-link.msm-menu-link:active svg,
+a.msm-menu-link.active svg {
+    fill: white !important;
+} */
+
+
+.btn.msm-menu-link:active {
+    color: #00B6ED!important; /* un poco más oscuro que el hover */
+}
+
+.btn.msm-menu-link:active svg {
+    fill: #00B6ED!important;
+    background-color: #ffffff;
+}
+
+
 
 .msm-menu-content {
     max-height: 500px;

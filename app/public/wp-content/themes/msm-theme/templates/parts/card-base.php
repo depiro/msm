@@ -31,7 +31,7 @@ if (isset($term) && $term instanceof WP_Term) {
 }
 ?>
 
-<div class="col-12 col-md-4">
+<div class="col-12 col-md-12 col-lg-6 col-xl-4">
   <a href="<?php echo esc_url($link); ?>" class="text-decoration-none  card-v<?= esc_attr($variant); ?>">
 
     <div class="card d-flex overflow-hidden flex-row align-items-stretch <?php echo in_array($variant, [3, 4]) ? 'flex-row' : ''; ?>"

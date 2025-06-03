@@ -48,6 +48,6 @@ else : ?>
         <div class="empty-info"><?php _e('No se encontró la publicación.', 'mi-tema'); ?></div>
     </div>
 <?php endif; ?>
-
+<?php get_template_part('templates/parts/encuesta_utilidad');  ?>
 <!-- template page centered -->
 <?php get_template_part(THEME_FOOTER); ?>

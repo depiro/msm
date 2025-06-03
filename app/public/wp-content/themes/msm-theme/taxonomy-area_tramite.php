@@ -48,8 +48,8 @@ $current_term = get_queried_object();
         $title = get_the_title();
         $desc = wp_trim_words(get_the_excerpt(), 20, '...');
         $link = get_permalink();
-        $variant = 2;
-        $height = '160px';
+        $variant = 1;
+        $height = '110px';
 
         include get_template_directory() . '/templates/parts/card-base.php';
       ?>
@@ -64,4 +64,5 @@ $current_term = get_queried_object();
 		</div>
 	</div>
 </div>
+
 <?php get_template_part(THEME_FOOTER); ?>

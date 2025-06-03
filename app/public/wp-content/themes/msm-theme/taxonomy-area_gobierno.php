@@ -33,7 +33,7 @@ $image_url = get_term_meta($term_id, 'banner_image', true);
 							$height = '180px';
 							$variant = 2;
 							$title = get_the_title();
-							$desc = wp_trim_words(get_the_excerpt(), 20, '...');
+							$desc = strtok(strip_tags(get_the_content()), '.') . '.';
 							$link = get_permalink();
 
 							include get_template_directory() . '/templates/parts/card-base.php';
@@ -58,30 +58,10 @@ $image_url = get_term_meta($term_id, 'banner_image', true);
 		</div>
 		</div>
 
-		<div class="row d-flex justify-content-center py-3">
-			<div class="col-12 py-5">
-				<?php
-					set_query_var('banner_consultas', [
-					'title' => 'Iniciá tus pedidos o consultas',
-					'button_text' => 'Iniciar consultas',
-					'button_url' => '/consultas',
-					'image' => get_template_directory_uri() . '/assets/images/banner_2_blanca.png'
-					]);
-					get_template_part('templates/parts/banner-grande');
-				?>
-			</div>
-		</div>
 
-            <!-- NOTICIAS INICIO -->
-            <div class="row d-flex justify-content-center">
-                <h3 class="text-center mt-3">Últimas novedades</h3>
-                <div class="page-content row">
-                    <?php get_template_part(THEME_NEWS); ?>
-                </div>
-            </div>
-            <!-- NOTICIAS FIN -->
 	</div>
 </div>
 
+<?php get_template_part('templates/parts/encuesta_utilidad');  ?>
 <?php get_template_part(THEME_FOOTER); ?>
 <!-- taxonomy area gobierno -->

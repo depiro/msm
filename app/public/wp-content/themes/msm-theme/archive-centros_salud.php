@@ -157,5 +157,6 @@ function procesar_meta_value($meta_value)
 
 	</div>
 </div>
+<?php get_template_part('templates/parts/encuesta_utilidad');  ?>
 <?php get_template_part(THEME_FOOTER); ?>
 <!-- archive centros salud -->
