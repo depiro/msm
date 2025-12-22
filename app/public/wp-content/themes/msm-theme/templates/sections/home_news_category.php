@@ -14,7 +14,7 @@ $query = new WP_Query($args);
 	<?php if ($query->have_posts()) :
 		while ($query->have_posts()) : $query->the_post();
 
-			// 🔍 Lógica combinada para obtener imagen
+			// Lógica combinada para obtener imagen
 			if (has_post_thumbnail()) {
 				$image_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
 			} else {
@@ -29,13 +29,19 @@ $query = new WP_Query($args);
 						<img src="<?php echo esc_url($image_url); ?>" alt="<?php the_title_attribute(); ?>">
 					</div>
 					<div class="card-body p-4">
-						<h5 class="card-title mb-2"><?php the_title(); ?></h5>
+						<h6 class="card-title mb-2"><?php the_title(); ?></h6>
 						<div class="text-container">
 							<p><?php echo wp_trim_words(short_description(), 20, '...'); ?></p>
+						</div>
+						<div class="d-flex justify-content-end p-2 w-100">
+							<a href="<?php the_permalink(); ?>" class="w-100 d-flex justify-content-end pt-2">
+								<img src="<?php echo THEME_URI; ?>/assets/images/right-arrow.svg" alt="..." class="arrow-post">
+							</a>
 						</div>
 					</div>
 				</div>
 			</div>
+
 	<?php
 		endwhile;
 		wp_reset_postdata();

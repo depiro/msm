@@ -61,7 +61,6 @@
   box-shadow: 18px 16px 28px rgba(0, 0, 0, 0.45);
 }
 
-
 /* MOBILE: hasta 767.98px → rectangular */
 @media (max-width: 767.98px) {
   .wrap-botonera .home-link {
@@ -83,7 +82,6 @@
   }
 }
 
-
 /* TABLET: cuadrados y centrados */
 @media (min-width: 768px) and (max-width: 991.98px) {
   .wrap-botonera .home-link {
@@ -96,7 +94,6 @@
     align-items: center;
   }
 }
-
 
 /* DESKTOP: transición suave de margin y font-size */
 @media (min-width: 990px) {

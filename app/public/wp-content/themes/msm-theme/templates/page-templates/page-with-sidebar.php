@@ -76,8 +76,9 @@
                 <!-- BANNER FIN -->
                 
                 <div class="row d-flex justify-content-center">
-                    <div class="col-12 pt-5 pb-4">  
-                        <?php get_template_part('templates/sections/home_news_category'); ?>
+                    <div class="col-12 pt-5 pb-4">
+                        <h4 class="text-center">Más noticias</h4>
+                        <?php get_template_part('templates/sections/home_news'); ?>
                     </div>
                 </div>
 

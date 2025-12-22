@@ -34,7 +34,7 @@
                 $query->the_post();
         ?>
                 <div class="col-12 col-md-10 col-lg-8 p-2 mb-2">
-                    <div class="card">
+                    <div class="card p-3 pb-1">
                         <?php
                         $type = '';
                         $color = '#fff';
@@ -68,7 +68,7 @@
                                     <?php if ($type) : ?>
                                         <span style="background-color:<?php echo $color; ?>;height: fit-content !important;" class=" fz-12 text-white px-2 py-1 rounded-1"><?php echo $type ?></span>
                                     <?php endif ?>
-                                                                    
+
                                 </div>
                                 <div class="card-text"> <?php the_excerpt(); ?></div>
                                 <div class="d-flex justify-content-end w-100">

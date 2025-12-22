@@ -3,24 +3,25 @@
  * Template Name: Style Guide
  */
 
- get_template_part(THEME_HEADER);  ?>
+get_template_part(THEME_HEADER); ?>
 
 <div class="container style-guide">
     <div class="msm-breadcrumb d-block d-sm-row pt-1 small">
-        <a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a><span class="msm-breadcrumb-item-last"> Guía de Estilos</span>
+        <a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a><span
+            class="msm-breadcrumb-item-last"> Guía de Estilos</span>
     </div>
 
     <!-- <h1>Guía de Estilos</h1> -->
     <div class="col-12 py-5">
-			<h2 class="msm-font-xl mb-1">Guía de Estilos</h2>
-			<p class="fz-18">Guía UI y de componentes para tema de Wordpress 'Msmtheme' </p>
-		</div>    
+        <h2 class="msm-font-xl mb-1">Guía de Estilos</h2>
+        <p class="fz-18">Guía UI y de componentes para tema de Wordpress 'Msmtheme' </p>
+    </div>
 
     <!-- Tipografía -->
     <section>
         <h2 class="section-title">Tipografía</h2>
         <p>Escala tipográfica usada 'Minor third'con la fuente 'Roboto' de Google.</p>
-        
+
         <div class="mb-4">
             <h1>Encabezado H1</h1>
             <h2>Encabezado H2</h2>
@@ -37,7 +38,7 @@
                 <li>Lista item 2</li>
                 <li>Lista item 3</li>
             </ul>
-            
+
             <ol>
                 <li>Lista item 1</li>
                 <li>Lista item 2</li>
@@ -47,7 +48,7 @@
             <section class="container py-5">
                 <h2 class="fw-bold mb-4">Trámites gestionados</h2>
                 <div class="row text-start">
-                    
+
                     <!-- Columna 1 -->
                     <div class="col-md-4 mb-4">
                         <h6 class="mb-2">Permisos de obra</h6>
@@ -105,10 +106,14 @@
                 </p>
 
                 <p>
-                En el corazón del barrio, donde las veredas conocen cada paso y el aroma del pan recién horneado cruza de casa en casa, la convivencia no es solo un ideal: es una práctica diaria. Lorem ipsum portón abierto sit amet, mate compartido adipiscing elit. Tocar timbre y esperar, saludar con una sonrisa, ceder el paso en la esquina: pequeñas acciones que construyen comunidad.
+                    En el corazón del barrio, donde las veredas conocen cada paso y el aroma del pan recién horneado
+                    cruza de casa en casa, la convivencia no es solo un ideal: es una práctica diaria. Lorem ipsum
+                    portón abierto sit amet, mate compartido adipiscing elit. Tocar timbre y esperar, saludar con una
+                    sonrisa, ceder el paso en la esquina: pequeñas acciones que construyen comunidad.
                 </p>
 
-                <p class="text-muted" style="font-size: var(--msm-text-xxs); font-weight: 400; line-height: 1.55;"> Párrafo p - muted: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
+                <p class="text-muted" style="font-size: var(--msm-text-xxs); font-weight: 400; line-height: 1.55;">
+                    Párrafo p - muted: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
 
                 <caption style="display: block; font-size: 0.75rem; font-weight: 400; line-height: 1.5;">
                     Texto de caption
@@ -140,105 +145,119 @@
     </section>
     <!-- Enlaces fin -->
 
-<section>
-<section class="styleguide-section my-5">
-  <h2 class="mb-4">Vista previa de íconos SVG</h2>
+    <section>
+        <section class="styleguide-section my-5">
+            <h2 class="mb-4">Vista previa de íconos SVG</h2>
 
-  <div class="icon-grid d-grid gap-3" style="grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));">
-    <?php
-    $icon_dir = get_theme_file_path('/assets/images/icons/');
-    $icon_files = glob($icon_dir . '*.svg');
+            <div class="icon-grid d-grid gap-3" style="grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));">
+                <?php
+                $icon_dir = get_theme_file_path('/assets/images/icons/');
+                $icon_files = glob($icon_dir . '*.svg');
 
-    foreach ($icon_files as $path):
-      $name = basename($path, '.svg');
-      $content = file_get_contents($path);
-    ?>
-      <div class="icon-box border rounded p-3 text-center bg-white shadow-sm">
-        <div class="icon-preview mb-2" style="color: var(--msm-blue); width: 48px; height: 48px; margin: 0 auto;">
-          <?php echo $content; ?>
-        </div>
-        <div class="icon-name small text-muted"><?php echo esc_html($name); ?></div>
-      </div>
-    <?php endforeach; ?>
-  </div>
-</section>
+                foreach ($icon_files as $path):
+                    $name = basename($path, '.svg');
+                    $content = file_get_contents($path);
+                    ?>
+                    <div class="icon-box border rounded p-3 text-center bg-white shadow-sm">
+                        <div class="icon-preview mb-2"
+                            style="color: var(--msm-blue); width: 48px; height: 48px; margin: 0 auto;">
+                            <?php echo $content; ?>
+                        </div>
+                        <div class="icon-name small text-muted"><?php echo esc_html($name); ?></div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </section>
 
-</section>
+    </section>
 
     <section>
         <h2 class="section-title">Breadcrumb</h2>
         <div class="msm-breadcrumb d-block d-sm-row pt-1 small">
-            <a class="msm-breadcrumb-item-first" href="http://msm-dev.local">Home /</a><a class="msm-breadcrumb-item" href="http://msm-dev.local/prensa"> Prensa /</a><span class="msm-breadcrumb msm-breadcrumb-item-last">Ojos en Alerta llegó a un nuevo municipio de Córdoba</span>
+            <a class="msm-breadcrumb-item-first" href="http://msm-dev.local">Home /</a><a class="msm-breadcrumb-item"
+                href="http://msm-dev.local/prensa"> Prensa /</a><span
+                class="msm-breadcrumb msm-breadcrumb-item-last">Ojos en Alerta llegó a un nuevo municipio de
+                Córdoba</span>
         </div>
     </section>
 
     <section>
-    <h2 class="section-title">Encabezados de contenidos 'Noticias'</h2>
+        <h2 class="section-title">Encabezados de contenidos 'Noticias'</h2>
         <h1 class="post-title">Ojos en Alerta llegó a un nuevo municipio de Córdoba</h1>
 
         <h5 class="post-resume">
-            <p>Ya hay 44 distritos en 9 provincias del país adheridos a esta herramienta de seguridad originada en San Miguel. El intendente de San Miguel, Jaime Méndez, firmó ayer un convenio con el jefe comunal de Sampacho (Córdoba), Franco Suárez, para implementar Ojos en Alerta en su distrito. Se trata de un programa originado en San […]</p>
+            <p>Ya hay 44 distritos en 9 provincias del país adheridos a esta herramienta de seguridad originada en San
+                Miguel. El intendente de San Miguel, Jaime Méndez, firmó ayer un convenio con el jefe comunal de
+                Sampacho (Córdoba), Franco Suárez, para implementar Ojos en Alerta en su distrito. Se trata de un
+                programa originado en San […]</p>
         </h5>
         <div class="post-content">
-            <p>Una mujer de 52 años con un tumor benigno en el estómago se realizó una importante cirugía con intervenciones mínimas en el Hospital Larcade de San Miguel. A través de esta operación, realizada por un abordaje mixto laparoscópico-endoscópico, se resecó por completo el tumor, evitando una gastrectomía total (resección completa del estómago). Gracias a este procedimiento, se logró evitar complicaciones luego de la cirugía, disminuir el dolor post-operatorio y tener una recuperación mucho más rápida. La paciente tuvo una internación de 24 horas.</p>
-            <p>Es la primera intervención de este tipo realizada en el Hospital Larcade. La misma estuvo a cargo del cirujano especialista en cirugía esofogástrica Ignacio Fuente, asistido por los médicos Florencia Ramos, Pilar García Carrillo y Camilo Gómez.</p>
+            <p>Una mujer de 52 años con un tumor benigno en el estómago se realizó una importante cirugía con
+                intervenciones mínimas en el Hospital Larcade de San Miguel. A través de esta operación, realizada por
+                un abordaje mixto laparoscópico-endoscópico, se resecó por completo el tumor, evitando una gastrectomía
+                total (resección completa del estómago). Gracias a este procedimiento, se logró evitar complicaciones
+                luego de la cirugía, disminuir el dolor post-operatorio y tener una recuperación mucho más rápida. La
+                paciente tuvo una internación de 24 horas.</p>
+            <p>Es la primera intervención de este tipo realizada en el Hospital Larcade. La misma estuvo a cargo del
+                cirujano especialista en cirugía esofogástrica Ignacio Fuente, asistido por los médicos Florencia Ramos,
+                Pilar García Carrillo y Camilo Gómez.</p>
         </div>
-    </section> 
+    </section>
 
     <h2 class="section-title">Encabezados de Páginas</h2>
-        <div class="col-12 py-5">
-			<h2 class="msm-font-xl mb-1">Áreas de gobierno</h2>
-			<p class="fz-18">Conocé cada una de las áreas que conforman la Municipalidad de San Miguel</p>
-		</div>
+    <div class="col-12 py-5">
+        <h2 class="msm-font-xl mb-1">Áreas de gobierno</h2>
+        <p class="fz-18">Conocé cada una de las áreas que conforman la Municipalidad de San Miguel</p>
+    </div>
 
     <!-- Banners -->
     <section>
         <h2 class="section-title">Banners</h2>
 
         <?php
-            set_query_var('banner_consultas', [
+        set_query_var('banner_consultas', [
             'title' => 'Iniciá tus pedidos o consultas',
             'button_text' => 'Iniciar consultas',
             'button_url' => '/consultas',
             'image' => get_template_directory_uri() . '/assets/images/banner_2_blanca.png'
-            ]);
-            get_template_part('templates/parts/banner-grande');
-        ?>
-
-
-<div class="row d-flex justify-content-center px-3  mb-4">
-    <h3 class="text-center mb-0">¡Sumate!</h3>
-    
-    <div class="row gy-3">
-        <?php
-        set_query_var('banners_home', [
-            [
-            'url' => '/debito-automatico',
-            'icon' => 'facturas.svg',
-            'title' => '¡Adherite al débito automático!',
-            'text' => 'y ganá tranquilidad todos los meses',
-            'style' => 'bg-white'
-            ],
-            [
-            'url' => '/vacunacion',
-            'icon' => 'vacunas.svg',
-            'title' => 'Poné las <strong>VACUNAS AL DÍA</strong>',
-            'text' => 'completá el calendario de vacunación',
-            'style' => 'bg-white',
-            'icon_right' => true
-            ],
         ]);
-  
-            get_template_part('templates/parts/banners-home');
+        get_template_part('templates/parts/banner-grande');
         ?>
-    </div>
-</div>
-</section>
+
+
+        <div class="row d-flex justify-content-center px-3  mb-4">
+            <h3 class="text-center mb-0">¡Sumate!</h3>
+
+            <div class="row gy-3">
+                <?php
+                set_query_var('banners_home', [
+                    [
+                        'url' => '/debito-automatico',
+                        'icon' => 'facturas.svg',
+                        'title' => '¡Adherite al débito automático!',
+                        'text' => 'y ganá tranquilidad todos los meses',
+                        'style' => 'bg-white'
+                    ],
+                    [
+                        'url' => '/vacunacion',
+                        'icon' => 'vacunas.svg',
+                        'title' => 'Poné las <strong>VACUNAS AL DÍA</strong>',
+                        'text' => 'completá el calendario de vacunación',
+                        'style' => 'bg-white',
+                        'icon_right' => true
+                    ],
+                ]);
+
+                get_template_part('templates/parts/banners-home');
+                ?>
+            </div>
+        </div>
+    </section>
 
     <!-- Botones -->
     <section>
         <h2 class="section-title">Botones</h2>
-        
+
         <div class="button-group">
             <h3>Bootstrap buttons</h3>
             <button type="button" class="btn btn-primary">Primary</button>
@@ -264,93 +283,233 @@
         <div class="row d-flex justify-content-center">
             <h2 class="section-title">Cards</h2>
             <h3 class="text-center mt-1 mb-4">Cards - Variante 1</h3>
-            
+
             <div class="row">
                 <?php
                 $terms = get_terms(array(
-                    'taxonomy'   => 'area_gobierno',
+                    'taxonomy' => 'area_gobierno',
                     'hide_empty' => false,
                 ));
 
-                if (!empty($terms) && !is_wp_error($terms)) :
-                    foreach ($terms as $term) :
+                if (!empty($terms) && !is_wp_error($terms)):
+                    foreach ($terms as $term):
                         $variant = 1;
-                        $title   = $term->name;
-                        $link    = get_term_link($term);
-                        $height  = '90px';
+                        $title = $term->name;
+                        $link = get_term_link($term);
+                        $height = '90px';
 
                         include get_template_directory() . '/templates/parts/card-base.php';
-                endforeach; endif; ?>
-		    </div>
+                    endforeach;
+                endif; ?>
+            </div> <!-- Close row -->
+        </div> <!-- Close nested row -->
     </section>
     <!-- AREAS DE GOBIERNO FIN -->
 
     <section>
         <h3 class="text-center mt-3">Cards - Variante 4</h3>
         <?php
-            $terms = get_terms(array(
+        $terms = get_terms(array(
             'taxonomy' => 'area_programa',
             'hide_empty' => false,
-            ));
+        ));
 
-            if (!empty($terms) && !is_wp_error($terms)) :
+        if (!empty($terms) && !is_wp_error($terms)):
             echo '<div class="row g-3">';
 
-            foreach ($terms as $term) :
+            foreach ($terms as $term):
                 $title = esc_html($term->name);
                 $link = esc_url(get_term_link($term));
                 $icono = get_term_meta($term->term_id, 'icono_svg', true);
                 $color = get_term_meta($term->term_id, 'color_hex', true);
                 $variant = 4;
                 $height = '80px'; // podés ajustar este valor
-
+        
                 include get_template_directory() . '/templates/parts/card-base.php';
 
             endforeach;
 
             echo '</div>';
-            else :
+        else:
             echo '<p class="text-muted">Actualmente no hay programas disponibles.</p>';
-            endif;
+        endif;
         ?>
     </section>
 
-<section>
-<h3 class="text-center mt-3">Cards - Variante 2</h3>
-<div class="col-12">
-		
+
+</div>
+
+
+
+<section class="container my-5">
+    <h2 class="section-title mb-4">Nuevos Componentes</h2>
+
+    <!-- Accordion / Desplegables -->
+    <div class="mb-5">
+        <h3>Grupo con Título y Desplegables (Acordeón)</h3>
+        <p class="text-muted">Estructura: Grupo > Párrafo (Título) + Details (Items)</p>
+
+        <div class="wp-block-group" style="max-width: 800px;">
+            <p>Niños y Adolescentes</p>
+
+            <details class="wp-block-details">
+                <summary>Equipo Federado Municipal de Handball</summary>
+
+                <p>Entrenamiento para competición de alto rendimiento.</p>
+
+            </details>
+
+            <details class="wp-block-details">
+                <summary>Tenis (6 a 16 años)</summary>
+                <div class="wp-block-group">
+                    <p>Clases de iniciación y perfeccionamiento.</p>
+                </div>
+            </details>
+
+            <details class="wp-block-details">
+                <summary>Atletismo</summary>
+
+                <p>Pista y campo para todas las edades.</p>
+
+            </details>
+
+            <details class="wp-block-details" open>
+                <summary>Yoga (18 años en adelante)</summary>
+
+                <p><strong>Jueves a las 10:30 hs</strong><br>
+                    Casa de la Mujer (Río Cuarto 2526, Barrio Obligado)</p>
+
+                <p><strong>Martes a las 09:30 hs</strong><br>
+                    Centro Jubilados San Martín (Pampa 1372, Bella Vista)</p>
+
+                <p><strong>Lunes de 16:00 a 17:00 hs</strong><br>
+                    Centro Jubilados Un Sueño (Marchena 1637, San Miguel)</p>
+
+            </details>
+        </div>
+    </div>
+
+    <!-- CTA Buttons -->
+    <div class="mb-5">
+        <h3>CTA Buttons</h3>
+        <?php
+        msm_cta_button('Ver mas novedades', '#', 'solid');
+        msm_cta_button('Ver mas novedades', '#', 'gradient');
+        ?>
+    </div>
+
+    <!-- CTA Links -->
+    <div class="mb-5">
+        <h3>CTA Links (Text + Arrow)</h3>
+        <?php
+        msm_cta_link('Ver otros eventos', '#', 'cyan');
+        msm_cta_link('Ver otros eventos', '#', 'dark');
+        ?>
+    </div>
+
+    <!-- Sub-area Cards -->
+    <div class="mb-5">
+        <h3>Sub-Area Cards (Flag Style)</h3>
+        <div class="row">
+            <?php
+            $title = "Subsecretaría Demo";
+            $link = "#";
+            include get_template_directory() . '/templates/parts/card-subarea.php';
+
+            $title = "Dirección de Ejemplo con texto más largo";
+            include get_template_directory() . '/templates/parts/card-subarea.php';
+            ?>
+        </div>
+    </div>
+
+    <!-- Event Cards -->
+    <div class="mb-5">
+        <h3>Event Cards</h3>
+        <div class="row">
+            <?php
+            // Mocking data for event card
+            $title = "Evento de Prueba";
+            $link = "#";
+            $thumb_url = get_template_directory_uri() . '/assets/images/banner_2_blanca.png'; // Fallback image
+            // Mock tags object structure
+            $t1 = new stdClass();
+            $t1->name = 'Cultura';
+            $t2 = new stdClass();
+            $t2->name = 'Teatro';
+            $tags = [$t1, $t2];
+
+            include get_template_directory() . '/templates/parts/card-event.php';
+            ?>
+        </div>
+    </div>
+
+    <!-- Overlay Cards -->
+    <div class="mb-5">
+        <h3>Overlay Cards (Hero)</h3>
+
+        <h4 class="mt-3">Full Width - Left</h4>
+        <div class="row">
+            <?php
+            $title = "Título del Overlay Card";
+            $desc = "Esta es una tarjeta con imagen de fondo y caja flotante. Ideal para secciones destacadas con gran impacto visual.";
+            $image_url = get_template_directory_uri() . '/assets/images/fiesta-del-arbol.png';
+            $tags = ['Destacado', 'Novedad'];
+            $width = 'full';
+            $align = 'left';
+            include get_template_directory() . '/templates/parts/card-overlay.php';
+            ?>
+        </div>
+
+        <h4 class="mt-3">Full Width - Right</h4>
+        <div class="row">
+            <?php
+            $align = 'right';
+            include get_template_directory() . '/templates/parts/card-overlay.php';
+            ?>
+        </div>
+
+        <h4 class="mt-3">Half Width</h4>
+        <div class="row">
+            <?php
+            $width = 'half';
+            $align = 'left';
+            include get_template_directory() . '/templates/parts/card-overlay.php';
+
+            $align = 'right';
+            include get_template_directory() . '/templates/parts/card-overlay.php';
+            ?>
+        </div>
+    </div>
 
 
 
 
-  </div>
-</section>
 
 
 
- <!--    <section class="container my-5">
+    <!--    <section class="container my-5">
         <h2 class="mb-4">🧱 Variantes de Cards</h2>
         
         <div class="row">
             <?php
             $cards = [
-            ['variant' => 1, 'title' => 'Card V1: Solo título'],
-            
-            ['variant' => 2, 'title' => 'Card V2: Título + Descripción + Link', 'desc' => 'Este es un ejemplo de descripción con algunas palabras clave.'],
-            
-            ['variant' => 3, 'title' => 'Card V3: Título + Descripción + Icono', 'desc' => 'Talleres, eventos y actividades culturales.', 'icon' => file_get_contents(get_template_directory() . '/assets/images/icons/ojos-alerta.svg')],
-            
-            ['variant' => 4, 'title' => 'Card V4: Título + Icono + Color', 'color' => '#25669B', 'icon' => file_get_contents(get_template_directory() . '/assets/images/icons/ojos-alerta.svg')],
+                ['variant' => 1, 'title' => 'Card V1: Solo título'],
+
+                ['variant' => 2, 'title' => 'Card V2: Título + Descripción + Link', 'desc' => 'Este es un ejemplo de descripción con algunas palabras clave.'],
+
+                ['variant' => 3, 'title' => 'Card V3: Título + Descripción + Icono', 'desc' => 'Talleres, eventos y actividades culturales.', 'icon' => file_get_contents(get_template_directory() . '/assets/images/icons/ojos-alerta.svg')],
+
+                ['variant' => 4, 'title' => 'Card V4: Título + Icono + Color', 'color' => '#25669B', 'icon' => file_get_contents(get_template_directory() . '/assets/images/icons/ojos-alerta.svg')],
             ];
 
             foreach ($cards as $card) {
-            $title = $card['title'] ?? '';
-            $desc = $card['desc'] ?? '';
-            $icon = $card['icon'] ?? '';
-            $color = $card['color'] ?? '';
-            $variant = $card['variant'];
+                $title = $card['title'] ?? '';
+                $desc = $card['desc'] ?? '';
+                $icon = $card['icon'] ?? '';
+                $color = $card['color'] ?? '';
+                $variant = $card['variant'];
 
-            include get_template_directory() . '/templates/parts/card-base.php';
+                include get_template_directory() . '/templates/parts/card-base.php';
             }
             ?>
         </div>
@@ -365,236 +524,229 @@
 
 
     <!-- Colores -->
-    <section>
-        <h2 class="section-title">Colores Bootstrap</h2>
-        <div class="row">
-            <div class="col-md-4 col-sm-6">
-                <div class="color-card" style="background-color: var(--bs-primary);">
-                    <h5 class="color-text">Primary</h5>
-                    <p class="color-hex">#3dbfee</p>
-                    <p class="color-var">--bs-primary</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="color-card" style="background-color: var(--bs-secondary);">
-                    <h5 class="color-text">Secondary</h5>
-                    <p class="color-hex">#1a85ac</p>
-                    <p class="color-var">--bs-secondary</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="color-card" style="background-color: var(--bs-success);">
-                    <h5 class="color-text">Success</h5>
-                    <p class="color-hex">#198754</p>
-                    <p class="color-var">--bs-success</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="color-card" style="background-color: var(--bs-info);">
-                    <h5 class="color-text">Info</h5>
-                    <p class="color-hex">#0dcaf0</p>
-                    <p class="color-var">--bs-info</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="color-card" style="background-color: var(--bs-warning);">
-                    <h5 class="color-text light-text">Warning</h5>
-                    <p class="color-hex light-text">#ffc107</p>
-                    <p class="color-var light-text">--bs-warning</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="color-card" style="background-color: var(--bs-danger);">
-                    <h5 class="color-text">Danger</h5>
-                    <p class="color-hex">#dc3545</p>
-                    <p class="color-var">--bs-danger</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="color-card light-text" style="background-color: var(--bs-light);">
-                    <h5 class="color-text">Light</h5>
-                    <p class="color-hex">#f8f9fa</p>
-                    <p class="color-var">--bs-light</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="color-card" style="background-color: var(--bs-dark);">
-                    <h5 class="color-text">Dark</h5>
-                    <p class="color-hex">#212529</p>
-                    <p class="color-var">--bs-dark</p>
-                </div>
+
+    <h2 class="section-title">Colores Bootstrap</h2>
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="color-card" style="background-color: var(--bs-primary);">
+                <h5 class="color-text">Primary</h5>
+                <p class="color-hex">#3dbfee</p>
+                <p class="color-var">--bs-primary</p>
             </div>
         </div>
-
-        <h2 class="section-title">MSM Colores</h2>
-        <div class="row">
-            <div class="col-md-4 col-sm-6">
-                <div class="color-card" style="background-color: var(--msm-blue);">
-                    <h5 class="color-text">MSM Blue</h5>
-                    <p class="color-hex">#3dbfee</p>
-                    <p class="color-var">--msm-blue</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="color-card" style="background-color: var(--msm-blue-v2);">
-                    <h5 class="color-text">MSM Blue v2</h5>
-                    <p class="color-hex">#1a85ac</p>
-                    <p class="color-var">--msm-blue-v2</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="color-card" style="background-color: var(--msm-blue-v3);">
-                    <h5 class="color-text">MSM Blue v3</h5>
-                    <p class="color-hex">#5d6988</p>
-                    <p class="color-var">--msm-blue-v3</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="color-card" style="background-color: var(--msm-blue-v4);">
-                    <h5 class="color-text">MSM Blue v4</h5>
-                    <p class="color-hex">#364262</p>
-                    <p class="color-var">--msm-blue-v4</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="color-card" style="background-color: var(--msm-blue-light);">
-                    <h5 class="color-text">MSM Blue Light</h5>
-                    <p class="color-hex">#6fcbed</p>
-                    <p class="color-var">--msm-blue-light</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="color-card" style="background-color: var(--msm-gray);">
-                    <h5 class="color-text">MSM Gray</h5>
-                    <p class="color-hex">#717075</p>
-                    <p class="color-var">--msm-gray</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="color-card" style="background-color: var(--msm-black);">
-                    <h5 class="color-text">MSM Black</h5>
-                    <p class="color-hex">#575756</p>
-                    <p class="color-var">--msm-black</p>
-                </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="color-card" style="background-color: var(--bs-secondary);">
+                <h5 class="color-text">Secondary</h5>
+                <p class="color-hex">#1a85ac</p>
+                <p class="color-var">--bs-secondary</p>
             </div>
         </div>
-
-        <h2 class="section-title">MSM Blue Scale</h2>
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <div class="color-card light-text" style="background-color: var(--blue-msm-50);">
-                    <h5 class="color-text">Blue MSM 50</h5>
-                    <p class="color-hex">#e2f3fc</p>
-                    <p class="color-var">--blue-msm-50</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="color-card light-text" style="background-color: var(--blue-msm-100);">
-                    <h5 class="color-text">Blue MSM 100</h5>
-                    <p class="color-hex">#bfe6f8</p>
-                    <p class="color-var">--blue-msm-100</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="color-card light-text" style="background-color: var(--blue-msm-200);">
-                    <h5 class="color-text">Blue MSM 200</h5>
-                    <p class="color-hex">#86d4f3</p>
-                    <p class="color-var">--blue-msm-200</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="color-card" style="background-color: var(--blue-msm-300);">
-                    <h5 class="color-text">Blue MSM 300</h5>
-                    <p class="color-hex">#35b7e8</p>
-                    <p class="color-var">--blue-msm-300</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="color-card" style="background-color: var(--blue-msm-400);">
-                    <h5 class="color-text">Blue MSM 400</h5>
-                    <p class="color-hex">#1ea5d9</p>
-                    <p class="color-var">--blue-msm-400</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="color-card" style="background-color: var(--blue-msm-500);">
-                    <h5 class="color-text">Blue MSM 500</h5>
-                    <p class="color-hex">#1085b9</p>
-                    <p class="color-var">--blue-msm-500</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="color-card" style="background-color: var(--blue-msm-600);">
-                    <h5 class="color-text">Blue MSM 600</h5>
-                    <p class="color-hex">#0f6a95</p>
-                    <p class="color-var">--blue-msm-600</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="color-card" style="background-color: var(--blue-msm-700);">
-                    <h5 class="color-text">Blue MSM 700</h5>
-                    <p class="color-hex">#105a7c</p>
-                    <p class="color-var">--blue-msm-700</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="color-card" style="background-color: var(--blue-msm-800);">
-                    <h5 class="color-text">Blue MSM 800</h5>
-                    <p class="color-hex">#134b67</p>
-                    <p class="color-var">--blue-msm-800</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="color-card" style="background-color: var(--blue-msm-900);">
-                    <h5 class="color-text">Blue MSM 900</h5>
-                    <p class="color-hex">#0d3044</p>
-                    <p class="color-var">--blue-msm-900</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="color-card" style="background-color: var(--blue-msm-950);">
-                    <h5 class="color-text">Blue MSM 950</h5>
-                    <p class="color-hex">#0a1d2c</p>
-                    <p class="color-var">--blue-msm-950</p>
-                </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="color-card" style="background-color: var(--bs-success);">
+                <h5 class="color-text">Success</h5>
+                <p class="color-hex">#198754</p>
+                <p class="color-var">--bs-success</p>
             </div>
         </div>
-    </section>
+        <div class="col-md-4 col-sm-6">
+            <div class="color-card" style="background-color: var(--bs-info);">
+                <h5 class="color-text">Info</h5>
+                <p class="color-hex">#0dcaf0</p>
+                <p class="color-var">--bs-info</p>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="color-card" style="background-color: var(--bs-warning);">
+                <h5 class="color-text light-text">Warning</h5>
+                <p class="color-hex light-text">#ffc107</p>
+                <p class="color-var light-text">--bs-warning</p>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="color-card" style="background-color: var(--bs-danger);">
+                <h5 class="color-text">Danger</h5>
+                <p class="color-hex">#dc3545</p>
+                <p class="color-var">--bs-danger</p>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="color-card light-text" style="background-color: var(--bs-light);">
+                <h5 class="color-text">Light</h5>
+                <p class="color-hex">#f8f9fa</p>
+                <p class="color-var">--bs-light</p>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="color-card" style="background-color: var(--bs-dark);">
+                <h5 class="color-text">Dark</h5>
+                <p class="color-hex">#212529</p>
+                <p class="color-var">--bs-dark</p>
+            </div>
+        </div>
+    </div>
 
-    <section>
-        <h2 class="section-title">Info institucional - pre footer</h2>
-                <?php
-            set_query_var('info_institucional', [
-            'titulo' => 'Información institucional',
-            'nombre' => 'Joaquín Miguel Estrada',
-            'cargo' => 'Secretario de Educación y Trabajo',
-            'telefono' => '03525 - 443776 / 7',
-            'email' => 'sme@sanmiguel.gob.ar',
-            'foto' => get_template_directory_uri() . '/assets/images/profile-pic.png',
-            'mapa_embed' => '<iframe src="https://www.google.com/maps/embed?..."
+    <h2 class="section-title">MSM Colores</h2>
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="color-card" style="background-color: var(--msm-blue);">
+                <h5 class="color-text">MSM Blue</h5>
+                <p class="color-hex">#3dbfee</p>
+                <p class="color-var">--msm-blue</p>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="color-card" style="background-color: var(--msm-blue-v2);">
+                <h5 class="color-text">MSM Blue v2</h5>
+                <p class="color-hex">#1a85ac</p>
+                <p class="color-var">--msm-blue-v2</p>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="color-card" style="background-color: var(--msm-blue-v3);">
+                <h5 class="color-text">MSM Blue v3</h5>
+                <p class="color-hex">#5d6988</p>
+                <p class="color-var">--msm-blue-v3</p>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="color-card" style="background-color: var(--msm-blue-v4);">
+                <h5 class="color-text">MSM Blue v4</h5>
+                <p class="color-hex">#364262</p>
+                <p class="color-var">--msm-blue-v4</p>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="color-card" style="background-color: var(--msm-blue-light);">
+                <h5 class="color-text">MSM Blue Light</h5>
+                <p class="color-hex">#6fcbed</p>
+                <p class="color-var">--msm-blue-light</p>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="color-card" style="background-color: var(--msm-gray);">
+                <h5 class="color-text">MSM Gray</h5>
+                <p class="color-hex">#717075</p>
+                <p class="color-var">--msm-gray</p>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="color-card" style="background-color: var(--msm-black);">
+                <h5 class="color-text">MSM Black</h5>
+                <p class="color-hex">#575756</p>
+                <p class="color-var">--msm-black</p>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title">MSM Blue Scale</h2>
+    <div class="row">
+        <div class="col-md-3 col-sm-6">
+            <div class="color-card light-text" style="background-color: var(--blue-msm-50);">
+                <h5 class="color-text">Blue MSM 50</h5>
+                <p class="color-hex">#e2f3fc</p>
+                <p class="color-var">--blue-msm-50</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="color-card light-text" style="background-color: var(--blue-msm-100);">
+                <h5 class="color-text">Blue MSM 100</h5>
+                <p class="color-hex">#bfe6f8</p>
+                <p class="color-var">--blue-msm-100</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="color-card light-text" style="background-color: var(--blue-msm-200);">
+                <h5 class="color-text">Blue MSM 200</h5>
+                <p class="color-hex">#86d4f3</p>
+                <p class="color-var">--blue-msm-200</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="color-card" style="background-color: var(--blue-msm-300);">
+                <h5 class="color-text">Blue MSM 300</h5>
+                <p class="color-hex">#35b7e8</p>
+                <p class="color-var">--blue-msm-300</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="color-card" style="background-color: var(--blue-msm-400);">
+                <h5 class="color-text">Blue MSM 400</h5>
+                <p class="color-hex">#1ea5d9</p>
+                <p class="color-var">--blue-msm-400</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="color-card" style="background-color: var(--blue-msm-500);">
+                <h5 class="color-text">Blue MSM 500</h5>
+                <p class="color-hex">#1085b9</p>
+                <p class="color-var">--blue-msm-500</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="color-card" style="background-color: var(--blue-msm-600);">
+                <h5 class="color-text">Blue MSM 600</h5>
+                <p class="color-hex">#0f6a95</p>
+                <p class="color-var">--blue-msm-600</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="color-card" style="background-color: var(--blue-msm-700);">
+                <h5 class="color-text">Blue MSM 700</h5>
+                <p class="color-hex">#105a7c</p>
+                <p class="color-var">--blue-msm-700</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="color-card" style="background-color: var(--blue-msm-800);">
+                <h5 class="color-text">Blue MSM 800</h5>
+                <p class="color-hex">#134b67</p>
+                <p class="color-var">--blue-msm-800</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="color-card" style="background-color: var(--blue-msm-900);">
+                <h5 class="color-text">Blue MSM 900</h5>
+                <p class="color-hex">#0d3044</p>
+                <p class="color-var">--blue-msm-900</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="color-card" style="background-color: var(--blue-msm-950);">
+                <h5 class="color-text">Blue MSM 950</h5>
+                <p class="color-hex">#0a1d2c</p>
+                <p class="color-var">--blue-msm-950</p>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title">Info institucional - pre footer</h2>
+    <?php
+    set_query_var('info_institucional', [
+        'titulo' => 'Información institucional',
+        'nombre' => 'Joaquín Miguel Estrada',
+        'cargo' => 'Secretario de Educación y Trabajo',
+        'telefono' => '03525 - 443776 / 7',
+        'email' => 'sme@sanmiguel.gob.ar',
+        'foto' => get_template_directory_uri() . '/assets/images/profile-pic.png',
+        'mapa_embed' => '<iframe src="https://www.google.com/maps/embed?..."
                             width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
-            ]);
-            get_template_part('templates/parts/info-institucional');
-            ?>
-    </section>
+    ]);
+    get_template_part('templates/parts/info-institucional');
+    ?>
 
-
+    <h2 class="section-title">Sección de Noticias</h2>
     <?php get_template_part('templates/sections/home_news_category'); ?>
-
-    <section>
-        <h2 class="section-title">Sección de Noticias</h2>
-            <!-- NOTICIAS INICIO -->
-            <div class="row d-flex justify-content-center">
-                <h3 class="text-center mt-3">Últimas novedades</h3>
-                <div class="page-content row">
-                    <?php get_template_part(THEME_NEWS); ?>
-                </div>
-            </div>
-            <!-- NOTICIAS FIN -->
-            
+    <!-- NOTICIAS INICIO -->
+    <div class="row d-flex justify-content-center">
+        <h3 class="text-center mt-3">Últimas novedades</h3>
+        <div class="page-content row">
+            <?php get_template_part(THEME_NEWS); ?>
         </div>
-    </section>
-</div>
+    </div>
+    <!-- NOTICIAS FIN -->
 
-<?php get_template_part('templates/parts/encuesta_utilidad');  ?>
+
+</section>
+
+<?php get_template_part('templates/parts/encuesta_utilidad'); ?>
 <?php get_template_part(THEME_FOOTER); ?>

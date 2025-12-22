@@ -14,9 +14,17 @@
 a.phone-item-number {
     font-size: 30px;
     color: var(--msm-gray);
-    /* letter-spacing: 0.05rem; */
     line-height: 32px;
 }
+
+.icon-footer-redes {
+  opacity: 0.8;
+}
+
+.icon-footer-redes:hover {
+  opacity: 1;
+}
+
 .phone-item-name {
     font-size: .8rem;
     text-transform: uppercase;
@@ -46,8 +54,6 @@ a.phone-item-number {
       display: none !important;
     }
   }
-  
-
 
 .separator {
   display: inline-block;
@@ -56,7 +62,6 @@ a.phone-item-number {
   background-color: #999;
   align-self: center;
 }
-
 
 @media (min-width: 768px) {
   .phone-footer-group {

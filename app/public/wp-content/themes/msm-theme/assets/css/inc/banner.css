@@ -14,7 +14,6 @@
     display: inline-block;
     width: 100%;
     height: 250px;
-    float: left;
     background-size: cover !important;
 }
 
@@ -64,8 +63,6 @@
     text-shadow: 0 2px 0px #000;
 }
 
-
-
 .msm-banner {
     background: #07b2f1;
     display: inline-block;
@@ -96,12 +93,6 @@
     font-size: 20px;
 }
 
-
-
-
-
-
-
 /* Banners home */
 .banner-card {
     background-color: var(--bs-body-bg);
@@ -110,18 +101,17 @@
     transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
                 background-color 0.3s ease,
                 box-shadow 0.3s ease;
-  }
-  
+}
+
 .banner-card:hover {
     transform: translateY(-4px);
     background-color: var(--msm-banners);
     box-shadow: 18px 16px 28px rgba(0, 0, 0, 0.3);
 }
-  
 
 .banner-card p {
     margin-bottom: 0;
-  }
+}
 
 .banner-card svg {
     fill: currentColor;
@@ -129,10 +119,8 @@
 }
 
 .banner-card h4 {
-    /* color: var(--color-text-main); */
     color:  var(--color-text-subtitle);
 }
 .banner-card:hover h4 {
     color: var(--blue-msm-500);
 }
-

@@ -1,50 +1,36 @@
-/* ---------- LINK STATES ---------- */
-
-/* Enlace normal (no visitado) */
 a:link {
-    /* color: #0066cc; */          /* azul institucional */
-    color: var(--msm-blue);
-    text-decoration: none;   /* sin subrayado por defecto */
-    transition: color 0.15s ease-in-out, text-decoration-color 0.15s; /* suavidad */
-  }
+  color: var(--msm-blue);
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, text-decoration-color 0.15s;
+}
   
-  /* Enlace visitado */
-  a:visited {
-    /* color: #4b0082; */          /* púrpura para distinguir, cámbialo si no lo quieres */
-    color: var(--msm-blue-);
-  }
+a:visited {
+  color: var(--msm-blue-);
+}
   
-  /* Hover (ratón encima) */
-  a:hover {
-    /* color: #003d80; */          /* un azul más oscuro */
-    color: var(--msm-blue-600);
-    text-decoration: underline;
-    text-decoration-color: currentColor; /* subrayado del mismo color */
-  }
+a:hover {
+  color: var(--msm-blue-600);
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+}
   
-  /* Enfocado (teclado / accesibilidad) */
-  a:focus {
-    /* outline: 3px solid #ffbf00; */ /* anillo de foco accesible amarillo */
-    outline: 3px solid var( --blue-msm-200);
-    outline-offset: 2px;
-    text-decoration: underline;
-  }
-  
-  /* Activo (mientras haces clic) */
-  a:active {
-    /* color: #e60023; */          /* rojo para feedback inmediato */
-    color: var(--blue-msm-600);
-    text-decoration: underline;
-  }
-  
-  /* Deshabilitado (si usas enlaces con aria-disabled=true, por ejemplo) */
-  a[aria-disabled="true"],
-  a.disabled {
-    /* color: #888; */
-    color: var(--msm-gray);
-    pointer-events: none;
-    text-decoration: line-through;
-  }
+a:focus {
+  outline: 3px solid var( --blue-msm-200);
+  outline-offset: 2px;
+  text-decoration: underline;
+}
+ 
+a:active {
+  color: var(--blue-msm-600);
+  text-decoration: underline;
+}
+
+a[aria-disabled="true"],
+a.disabled {
+  color: var(--msm-gray);
+  pointer-events: none;
+  text-decoration: line-through;
+}
 
 /* links navbar header  */
 .btn, 

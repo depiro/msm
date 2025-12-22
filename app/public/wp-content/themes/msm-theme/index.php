@@ -10,10 +10,10 @@
 <!-- HOME SLIDE INICIO -->
 <?php
 $args = array(
-    'post_type'         => 'slide',
-    'orderby'           => 'date',
-    'order'             => 'DESC',
-    'posts_per_page'    => 4
+    'post_type'      => 'slide',
+    'orderby'        => 'date',
+    'order'          => 'DESC',
+    'posts_per_page' => 4
 );
 
 $query = new WP_Query($args);
@@ -21,26 +21,25 @@ $query = new WP_Query($args);
 <div id="home-slide" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <?php
-        $query = new WP_Query($args);
         if ($query->have_posts()) :
             $index = 0;
             while ($query->have_posts()) :
                 $query->the_post();
                 $texto_breve = get_post_meta(get_the_ID(), '_texto_breve', true);
-
                 $enlace = get_post_meta(get_the_ID(), '_enlace', true);
-                $imagen_id = get_post_meta($post->ID, '_imagen_id', true);
+                $imagen_id = get_post_meta(get_the_ID(), '_imagen_id', true);
                 $imagen_url = wp_get_attachment_url($imagen_id);
-        ?>
-                <?php if ($imagen_url) : ?>
-                    <a href="<?php echo esc_url($enlace); ?>" class="carousel-item <?php echo $index == 0 ? 'active' : ''; ?>">
-
-                        <img class="d-block w-100" src="<?php echo esc_url($imagen_url) ?>" alt="<?php echo esc_attr(get_the_title()) ?>" style="max-width: 100%;" />
+                
+                if ($imagen_url) : ?>
+                    <a href="<?php echo esc_url($enlace); ?>" class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
+                        <img class="d-block w-100" src="<?php echo esc_url($imagen_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" style="max-width: 100%;" />
                     </a>
-                <?php endif ?>
-            <?php $index++;
-            endwhile; ?>
-        <?php endif; ?>
+                <?php endif;
+                $index++;
+            endwhile;
+        endif;
+        wp_reset_postdata();
+        ?>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#home-slide" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -112,9 +111,9 @@ if (!empty($terms) && !is_wp_error($terms)) {
         <?php
         set_query_var('banners_home', [
             [
-            'url' => 'https://autogestion.msm.gov.ar',
+            'url' => 'https://autogestion.msm.gov.ar/debito-automatico',
             'icon' => 'facturas.svg',
-            'title' => '¡Adherite al débito automático!',
+            'title' => '¡Adherite al Débito Automático!',
             'text' => 'Y ganá tranquilidad todos los meses',
             'style' => 'bg-white'
             ],
@@ -141,31 +140,31 @@ if (!empty($terms) && !is_wp_error($terms)) {
         <h3 class="text-center">Áreas de Gobierno</h3>
         
         <div class="row">
-        <?php
-$terms = get_terms(array(
-    'taxonomy'   => 'area_gobierno',
-    'hide_empty' => false,
-));
+            <?php
+                $terms = get_terms(array(
+                    'taxonomy'   => 'area_gobierno',
+                    'hide_empty' => false,
+                    'exclude'    => array(57),
+                ));
+                
 
-if (!empty($terms) && !is_wp_error($terms)) :
-    // Ordenar por campo 'order'
-    usort($terms, function ($a, $b) {
-        $order_a = (int) get_term_meta($a->term_id, 'order', true);
-        $order_b = (int) get_term_meta($b->term_id, 'order', true);
-        return $order_a <=> $order_b;
-    });
+                if (!empty($terms) && !is_wp_error($terms)) :
+                    // Ordenar por campo 'order'
+                    usort($terms, function ($a, $b) {
+                        $order_a = (int) get_term_meta($a->term_id, 'order', true);
+                        $order_b = (int) get_term_meta($b->term_id, 'order', true);
+                        return $order_a <=> $order_b;
+                    });
 
-    foreach ($terms as $term) :
-        $variant = 1;
-        $title   = $term->name;
-        $link    = get_term_link($term);
-        $height  = '90px';
+                    foreach ($terms as $term) :
+                        $variant = 1;
+                        $title   = $term->name;
+                        $link    = get_term_link($term);
+                        $height  = '90px';
 
-        include get_template_directory() . '/templates/parts/card-base.php';
-    endforeach;
-endif;
-?>
-
+                        include get_template_directory() . '/templates/parts/card-base.php';
+                    endforeach;
+                endif;?>
 		</div>
     </section>
     <!-- AREAS DE GOBIERNO FIN -->
@@ -186,22 +185,24 @@ endif;
 <!-- index -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Encuentra el elemento del carousel
-        var carouselElement = document.querySelector('#home-slide')
+        const carouselElement = document.querySelector('#home-slide');
+        if (!carouselElement) return;
 
-        // Inicializa el carousel usando el método Carousel de Bootstrap
-        var carousel = new bootstrap.Carousel(carouselElement, {
+        const carousel = new bootstrap.Carousel(carouselElement, {
             interval: 5000,
             wrap: true,
             pause: false
         });
 
-        carouselElement.querySelector('.carousel-control-prev').addEventListener('click', function() {
-            carousel.prev();
-        });
+        const prevButton = carouselElement.querySelector('.carousel-control-prev');
+        const nextButton = carouselElement.querySelector('.carousel-control-next');
 
-        carouselElement.querySelector('.carousel-control-next').addEventListener('click', function() {
-            carousel.next();
-        });
+        if (prevButton) {
+            prevButton.addEventListener('click', () => carousel.prev());
+        }
+
+        if (nextButton) {
+            nextButton.addEventListener('click', () => carousel.next());
+        }
     });
 </script>

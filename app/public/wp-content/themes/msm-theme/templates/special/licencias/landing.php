@@ -56,8 +56,8 @@ get_template_part(THEME_HEADER); ?>
 											style="color: #46595f">Guía de Trámites</b>.
 									</span>
 									<div class="w-100 d-flex justify-content-end mt-4">
-										<img src="<?php echo THEME_URI; ?>/assets/images/rightarrow.svg"
-											style="height: 40px;" alt="...">
+										<img src="<?php echo THEME_URI; ?>/assets/images/right-arrow.svg"
+											style="height: 30px;" alt="...">
 									</div>
 								</div>
 							</div>
@@ -84,8 +84,8 @@ get_template_part(THEME_HEADER); ?>
 										<b style="color: #46595f">tu exámen</b>.
 									</span>
 									<div class="w-100 d-flex justify-content-end mt-4">
-										<img src="<?php echo THEME_URI; ?>/assets/images/rightarrow.svg"
-											style="height: 40px;" alt="...">
+										<img src="<?php echo THEME_URI; ?>/assets/images/right-arrow.svg"
+											style="height: 30px;" alt="...">
 									</div>
 								</div>
 							</div>
@@ -111,8 +111,8 @@ get_template_part(THEME_HEADER); ?>
 										conocimientos.
 									</span>
 									<div class="w-100 d-flex justify-content-end mt-4">
-										<img src="<?php echo THEME_URI; ?>/assets/images/rightarrow.svg"
-											style="height: 40px;" alt="...">
+										<img src="<?php echo THEME_URI; ?>/assets/images/right-arrow.svg"
+											style="height: 30px;" alt="...">
 									</div>
 								</div>
 							</div>
@@ -136,8 +136,8 @@ get_template_part(THEME_HEADER); ?>
 										Reservá tu turno para tramitar tu <b style="color: #46595f"> licencia </b>.
 									</span>
 									<div class="w-100 d-flex justify-content-end mt-4">
-										<img src="<?php echo THEME_URI; ?>/assets/images/rightarrow.svg"
-											style="height: 40px;" alt="...">
+										<img src="<?php echo THEME_URI; ?>/assets/images/right-arrow.svg"
+											style="height: 30px;" alt="...">
 									</div>
 								</div>
 							</div>

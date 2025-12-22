@@ -46,22 +46,22 @@ $event_query = new WP_Query($args);
 			</div>
 
 
-			<div class="row rounded mb-5 mt-4">
+			<div class="row rounded mb-5 mt-4" style="background-color:#93D33E;">
 				<div class="col-12 d-flex align-items-center py-2 gap-2 bg-primary-subtle">
-					<h3 class="mb-0">ZONA Estacionamiento Medido</h3>
+					<!-- <h3 class="mb-0">ZONA Estacionamiento Medido</h3> -->
 				</div>
 
 				<div class="col-12 col-md-9 pb-2 d-flex justify-content-center">
 					<div id="map-container" class="mb-4">
-						<img id="map" class="rounded" src="<?php echo THEME_URI; ?>/assets/images/mapa_veredas_sem2.jpeg" alt="Mapa">
+						<img id="map" class="rounded w-100" src="<?php echo THEME_URI; ?>/assets/images/mapa_veredas_sem2.jpeg" alt="Mapa">
 					</div>
 				</div>
 
-				<div class="col-12 col-md-3 d-flex justify-content-start flex-column">
-					<h3>Horario</h3>
-					<h4 class="mb-2">Estacionamiento Medido</h4>
-					<p class="mb-2">Lunes a Viernes <br>8:00 a 20:00</p>
-					<p class="mb-0">Sábados <br>8:00 a 13:00</p>
+				<div class="col-12 col-md-3 d-flex justify-content-start flex-column text-white p-0">
+					<h3 class="mb-0" >HORARIO</h3>
+					<h4 class="mb-1 lh-sm text-white">Estacionamiento Medido</h4>
+					<p class="mb-2 lh-sm text-white">Lunes a Viernes <br>8:00 a 20:00</p>
+					<p class="mb-0 lh-sm text-white">Sábados <br>8:00 a 13:00</p>
 				</div>
 			</div>
 
