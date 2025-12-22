@@ -259,8 +259,6 @@ body {
 
 /* ================================
    CONTENIDO INTERNO DEL DETALLES
-   Fondo blanco + padding interno,
-   respetando captura.
 ================================ */
 .wp-block-details[open]>*:not(summary) {
     padding: 14px 18px 14px 106px;
