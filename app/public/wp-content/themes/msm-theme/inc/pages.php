@@ -2,60 +2,60 @@
 
 function crear_taxonomia_area_gobierno()
 {
-	register_taxonomy(
-		'area_gobierno',
-		'page',
-		array(
-			'labels' => array(
-				'name' => __('Áreas de Gobierno'),
-				'singular_name' => __('Área de Gobierno'),
-			),
-			'hierarchical' => true,
-			'public' => true,
-			'show_ui' => true,
-			'show_admin_column' => true,
-			'query_var' => true,
-			'rewrite' => array('slug' => 'areas-gobierno', 'with_front' => false), // Asegúrate de que 'with_front' esté en false
-			'show_in_rest'          => true, // Asegúrate de que la taxonomía esté disponible en la REST API.
-			'rest_base'             => 'areas', // Esto definirá el nombre del endpoint en la REST API.
-			'public' => true,
-		)
-	);
+    register_taxonomy(
+        'area_gobierno',
+        'page',
+        array(
+            'labels' => array(
+                'name' => __('Áreas de Gobierno'),
+                'singular_name' => __('Área de Gobierno'),
+            ),
+            'hierarchical' => true,
+            'public' => true,
+            'show_ui' => true,
+            'show_admin_column' => true,
+            'query_var' => true,
+            'rewrite' => array('slug' => 'areas-gobierno', 'with_front' => false), // Asegúrate de que 'with_front' esté en false
+            'show_in_rest' => true, // Asegúrate de que la taxonomía esté disponible en la REST API.
+            'rest_base' => 'areas', // Esto definirá el nombre del endpoint en la REST API.
+            'public' => true,
+        )
+    );
 }
 add_action('init', 'crear_taxonomia_area_gobierno');
 
 // API Endpoint para el cms GET 'custom/v1/areas'
 function register_area_routes()
 {
-	register_rest_route('custom/v1', '/areas', [
-		'methods' => 'GET',
-		'callback' => 'get_areas',
-		'permission_callback' => '__return_true'
-	]);
+    register_rest_route('custom/v1', '/areas', [
+        'methods' => 'GET',
+        'callback' => 'get_areas',
+        'permission_callback' => '__return_true'
+    ]);
 }
 add_action('rest_api_init', 'register_area_routes');
 
 function get_areas()
 {
-	$terms = get_terms([
-		'taxonomy' => 'area_gobierno',
-		'hide_empty' => false
-	]);
+    $terms = get_terms([
+        'taxonomy' => 'area_gobierno',
+        'hide_empty' => false
+    ]);
 
-	if (is_wp_error($terms)) {
-		return new WP_Error('no_areas', 'No se encontraron areas', ['status' => 404]);
-	}
-	return $terms;
+    if (is_wp_error($terms)) {
+        return new WP_Error('no_areas', 'No se encontraron areas', ['status' => 404]);
+    }
+    return $terms;
 }
 
 // API Endpoint para el cms POST 'custom/v1/areas'
 function register_area_creation_route()
 {
-	register_rest_route('custom/v1', '/areas', [
-		'methods' => 'POST',
-		'callback' => 'create_area',
-		'permission_callback' => '__return_true',
-	]);
+    register_rest_route('custom/v1', '/areas', [
+        'methods' => 'POST',
+        'callback' => 'create_area',
+        'permission_callback' => '__return_true',
+    ]);
 }
 add_action('rest_api_init', 'register_area_creation_route');
 
@@ -63,55 +63,55 @@ add_action('rest_api_init', 'register_area_creation_route');
 // AGREGADO DE METABOX para pages
 function add_page_template_meta_box()
 {
-	add_meta_box(
-		'page_template_meta_box',
-		__('Seleccionar Plantilla', 'msmtheme'),
-		'render_page_template_meta_box',
-		'page',
-		'side',
-		'default'
-	);
+    add_meta_box(
+        'page_template_meta_box',
+        __('Seleccionar Plantilla', 'msmtheme'),
+        'render_page_template_meta_box',
+        'page',
+        'side',
+        'default'
+    );
 }
 add_action('add_meta_boxes', 'add_page_template_meta_box');
 
 function render_page_template_meta_box($post)
 {
-	wp_nonce_field('save_page_template_meta_box', 'page_template_meta_box_nonce');
-	$selected_template = get_post_meta($post->ID, 'page_template', true);
-	$template_dir = get_template_directory() . '/templates/page-templates/';
-	$files = glob($template_dir . '*.php');
-	$templates = [];
+    wp_nonce_field('save_page_template_meta_box', 'page_template_meta_box_nonce');
+    $selected_template = get_post_meta($post->ID, 'page_template', true);
+    $template_dir = get_template_directory() . '/templates/page-templates/';
+    $files = glob($template_dir . '*.php');
+    $templates = [];
 
-	foreach ($files as $file) {
-		$filename = basename($file);
-		$templates[$filename] = $filename;
-	}
-?>
-	<p>
-		<label for="page_template"><?php _e('Selecciona una plantilla', 'msmtheme'); ?></label>
-		<select name="page_template" id="page_template">
-			<option value=""><?php _e('Selecciona una plantilla', 'msmtheme'); ?></option>
-			<?php foreach ($templates as $template_name => $template_file): ?>
-				<option value="<?php echo esc_attr($template_file); ?>" <?php selected($selected_template, $template_file); ?>>
-					<?php echo esc_html($template_name); ?>
-				</option>
-			<?php endforeach; ?>
-		</select>
-	</p>
-<?php
+    foreach ($files as $file) {
+        $filename = basename($file);
+        $templates[$filename] = $filename;
+    }
+    ?>
+    <p>
+        <label for="page_template"><?php _e('Selecciona una plantilla', 'msmtheme'); ?></label>
+        <select name="page_template" id="page_template">
+            <option value=""><?php _e('Selecciona una plantilla', 'msmtheme'); ?></option>
+            <?php foreach ($templates as $template_name => $template_file): ?>
+                <option value="<?php echo esc_attr($template_file); ?>" <?php selected($selected_template, $template_file); ?>>
+                    <?php echo esc_html($template_name); ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+    </p>
+    <?php
 }
 
 function save_page_template_meta_box($post_id)
 {
-	if (!isset($_POST['page_template_meta_box_nonce']) || !wp_verify_nonce($_POST['page_template_meta_box_nonce'], 'save_page_template_meta_box')) {
-		return;
-	}
-	if (!current_user_can('edit_post', $post_id)) {
-		return;
-	}
-	if (isset($_POST['page_template'])) {
-		update_post_meta($post_id, 'page_template', sanitize_text_field($_POST['page_template']));
-	}
+    if (!isset($_POST['page_template_meta_box_nonce']) || !wp_verify_nonce($_POST['page_template_meta_box_nonce'], 'save_page_template_meta_box')) {
+        return;
+    }
+    if (!current_user_can('edit_post', $post_id)) {
+        return;
+    }
+    if (isset($_POST['page_template'])) {
+        update_post_meta($post_id, 'page_template', sanitize_text_field($_POST['page_template']));
+    }
 }
 add_action('save_post', 'save_page_template_meta_box');
 
@@ -119,13 +119,13 @@ add_action('save_post', 'save_page_template_meta_box');
 
 function apply_page_template($template)
 {
-	if (is_page()) {
-		$template_file = get_post_meta(get_the_ID(), 'page_template', true);
-		if ($template_file && file_exists(get_template_directory() . '/templates/page-templates/' . $template_file)) {
-			return get_template_directory() . '/templates/page-templates/' . $template_file;
-		}
-	}
-	return $template;
+    if (is_page()) {
+        $template_file = get_post_meta(get_the_ID(), 'page_template', true);
+        if ($template_file && file_exists(get_template_directory() . '/templates/page-templates/' . $template_file)) {
+            return get_template_directory() . '/templates/page-templates/' . $template_file;
+        }
+    }
+    return $template;
 }
 add_filter('template_include', 'apply_page_template');
 
@@ -133,13 +133,13 @@ add_filter('template_include', 'apply_page_template');
 
 function add_order_field_area_gobierno($term_id)
 {
-	$order = get_term_meta($term_id, 'order', true);
-?>
-	<div class="form-field">
-		<label for="order"><?php _e('Orden', 'msmtheme'); ?></label>
-		<input type="number" name="order" id="order" value="<?php echo esc_attr($order); ?>" />
-	</div>
-<?php
+    $order = get_term_meta($term_id, 'order', true);
+    ?>
+    <div class="form-field">
+        <label for="order"><?php _e('Orden', 'msmtheme'); ?></label>
+        <input type="number" name="order" id="order" value="<?php echo esc_attr($order); ?>" />
+    </div>
+    <?php
 }
 add_action('area_gobierno_add_form_fields', 'add_order_field_area_gobierno');
 
@@ -148,15 +148,15 @@ add_action('area_gobierno_add_form_fields', 'add_order_field_area_gobierno');
 
 function edit_order_field_area_gobierno($term)
 {
-	$order = get_term_meta($term->term_id, 'order', true);
-?>
-	<tr class="form-field">
-		<th scope="row" valign="top"><label for="order"><?php _e('Orden', 'msmtheme'); ?></label></th>
-		<td>
-			<input type="number" name="order" id="order" value="<?php echo esc_attr($order); ?>" />
-		</td>
-	</tr>
-<?php
+    $order = get_term_meta($term->term_id, 'order', true);
+    ?>
+    <tr class="form-field">
+        <th scope="row" valign="top"><label for="order"><?php _e('Orden', 'msmtheme'); ?></label></th>
+        <td>
+            <input type="number" name="order" id="order" value="<?php echo esc_attr($order); ?>" />
+        </td>
+    </tr>
+    <?php
 }
 add_action('area_gobierno_edit_form_fields', 'edit_order_field_area_gobierno');
 
@@ -164,9 +164,9 @@ add_action('area_gobierno_edit_form_fields', 'edit_order_field_area_gobierno');
 
 function save_field_order_area_gobierno($term_id)
 {
-	if (isset($_POST['order']) && $_POST['order'] !== '') {
-		update_term_meta($term_id, 'order', intval($_POST['order']));
-	}
+    if (isset($_POST['order']) && $_POST['order'] !== '') {
+        update_term_meta($term_id, 'order', intval($_POST['order']));
+    }
 }
 add_action('created_area_gobierno', 'save_field_order_area_gobierno');
 add_action('edited_area_gobierno', 'save_field_order_area_gobierno');
@@ -174,25 +174,25 @@ add_action('edited_area_gobierno', 'save_field_order_area_gobierno');
 
 function incluir_especiales()
 {
-	if (is_page('capacitate')) {
-		include(get_template_directory() . '/templates/special/licencias/capacitate.php');
-		exit;
-	}
+    if (is_page('capacitate')) {
+        include(get_template_directory() . '/templates/special/licencias/capacitate.php');
+        exit;
+    }
 
-	if (is_page('turnos')) {
-		include(get_template_directory() . '/templates/special/licencias/turnos.php');
-		exit;
-	}
+    if (is_page('turnos')) {
+        include(get_template_directory() . '/templates/special/licencias/turnos.php');
+        exit;
+    }
 
-	if (is_page('primer-licencia')) {
-		include(get_template_directory() . '/templates/special/licencias/primer-licencia.php');
-		exit;
-	}
+    if (is_page('primer-licencia')) {
+        include(get_template_directory() . '/templates/special/licencias/primer-licencia.php');
+        exit;
+    }
 
-	if (is_page('curso-online')) {
-		include(get_template_directory() . '/templates/special/licencias/curso-online.php');
-		exit;
-	}
+    if (is_page('curso-online')) {
+        include(get_template_directory() . '/templates/special/licencias/curso-online.php');
+        exit;
+    }
 }
 add_action('template_redirect', 'incluir_especiales');
 
@@ -204,10 +204,11 @@ function add_image_field_area_gobierno($term)
 {
     // Obtener la URL de la imagen si existe
     $image_url = get_term_meta($term->term_id, 'banner_image', true);
-?>
+    ?>
     <div class="form-field">
         <label for="banner_image"><?php _e('Imagen del Banner', 'msmtheme'); ?></label>
-        <input type="text" name="banner_image" id="banner_image" value="<?php echo esc_attr($image_url); ?>" style="width: 70%;" />
+        <input type="text" name="banner_image" id="banner_image" value="<?php echo esc_attr($image_url); ?>"
+            style="width: 70%;" />
         <input type="button" class="button" value="Seleccionar Imagen" id="upload_banner_image" />
         <br><br>
         <div id="image_preview">
@@ -221,39 +222,39 @@ function add_image_field_area_gobierno($term)
         </div>
     </div>
     <script>
-    jQuery(document).ready(function($) {
-        var media_frame;
-        $('#upload_banner_image').click(function(e) {
-            e.preventDefault();
-            if (media_frame) {
+        jQuery(document).ready(function ($) {
+            var media_frame;
+            $('#upload_banner_image').click(function (e) {
+                e.preventDefault();
+                if (media_frame) {
+                    media_frame.open();
+                    return;
+                }
+                media_frame = wp.media({
+                    title: 'Seleccionar o Subir Imagen',
+                    button: { text: 'Usar esta imagen' },
+                    multiple: false
+                });
+
+                media_frame.on('select', function () {
+                    var attachment = media_frame.state().get('selection').first().toJSON();
+                    var imageUrl = attachment.url;
+                    $('#banner_image').val(imageUrl);
+                    $('#image_preview').html('<img src="' + imageUrl + '" style="max-width: 200px; margin-top: 10px;">');
+                    $('#image_preview').append('<br><input type="button" class="button" value="Eliminar Imagen" id="delete_banner_image" />');
+                });
+
                 media_frame.open();
-                return;
-            }
-            media_frame = wp.media({
-                title: 'Seleccionar o Subir Imagen',
-                button: { text: 'Usar esta imagen' },
-                multiple: false
             });
 
-            media_frame.on('select', function() {
-                var attachment = media_frame.state().get('selection').first().toJSON();
-                var imageUrl = attachment.url;
-                $('#banner_image').val(imageUrl);
-                $('#image_preview').html('<img src="' + imageUrl + '" style="max-width: 200px; margin-top: 10px;">');
-                $('#image_preview').append('<br><input type="button" class="button" value="Eliminar Imagen" id="delete_banner_image" />');
+            // Eliminar la imagen seleccionada
+            $('#delete_banner_image').click(function () {
+                $('#banner_image').val('');
+                $('#image_preview').html('');
             });
-
-            media_frame.open();
         });
-
-        // Eliminar la imagen seleccionada
-        $('#delete_banner_image').click(function() {
-            $('#banner_image').val('');
-            $('#image_preview').html('');
-        });
-    });
     </script>
-<?php
+    <?php
 }
 // add_action('area_gobierno_add_form_fields', 'add_image_field_area_gobierno');
 
@@ -262,11 +263,12 @@ function edit_image_field_area_gobierno($term)
 {
     // Obtener la URL de la imagen si existe
     $image_url = get_term_meta($term->term_id, 'banner_image', true);
-?>
+    ?>
     <tr class="form-field">
         <th scope="row" valign="top"><label for="banner_image"><?php _e('Imagen del Banner', 'msmtheme'); ?></label></th>
         <td>
-            <input type="text" name="banner_image" id="banner_image" value="<?php echo esc_attr($image_url); ?>" style="width: 70%;" />
+            <input type="text" name="banner_image" id="banner_image" value="<?php echo esc_attr($image_url); ?>"
+                style="width: 70%;" />
             <input type="button" class="button" value="Seleccionar Imagen" id="upload_banner_image" />
             <br><br>
             <div id="image_preview">
@@ -281,39 +283,39 @@ function edit_image_field_area_gobierno($term)
         </td>
     </tr>
     <script>
-    jQuery(document).ready(function($) {
-        var media_frame;
-        $('#upload_banner_image').click(function(e) {
-            e.preventDefault();
-            if (media_frame) {
+        jQuery(document).ready(function ($) {
+            var media_frame;
+            $('#upload_banner_image').click(function (e) {
+                e.preventDefault();
+                if (media_frame) {
+                    media_frame.open();
+                    return;
+                }
+                media_frame = wp.media({
+                    title: 'Seleccionar o Subir Imagen',
+                    button: { text: 'Usar esta imagen' },
+                    multiple: false
+                });
+
+                media_frame.on('select', function () {
+                    var attachment = media_frame.state().get('selection').first().toJSON();
+                    var imageUrl = attachment.url;
+                    $('#banner_image').val(imageUrl);
+                    $('#image_preview').html('<img src="' + imageUrl + '" style="max-width: 200px; margin-top: 10px;">');
+                    $('#image_preview').append('<br><input type="button" class="button" value="Eliminar Imagen" id="delete_banner_image" />');
+                });
+
                 media_frame.open();
-                return;
-            }
-            media_frame = wp.media({
-                title: 'Seleccionar o Subir Imagen',
-                button: { text: 'Usar esta imagen' },
-                multiple: false
             });
 
-            media_frame.on('select', function() {
-                var attachment = media_frame.state().get('selection').first().toJSON();
-                var imageUrl = attachment.url;
-                $('#banner_image').val(imageUrl);
-                $('#image_preview').html('<img src="' + imageUrl + '" style="max-width: 200px; margin-top: 10px;">');
-                $('#image_preview').append('<br><input type="button" class="button" value="Eliminar Imagen" id="delete_banner_image" />');
+            // Eliminar la imagen seleccionada
+            $('#delete_banner_image').click(function () {
+                $('#banner_image').val('');
+                $('#image_preview').html('');
             });
-
-            media_frame.open();
         });
-
-        // Eliminar la imagen seleccionada
-        $('#delete_banner_image').click(function() {
-            $('#banner_image').val('');
-            $('#image_preview').html('');
-        });
-    });
     </script>
-<?php
+    <?php
 }
 add_action('area_gobierno_edit_form_fields', 'edit_image_field_area_gobierno');
 
@@ -333,6 +335,84 @@ add_action('created_area_gobierno', 'save_image_field_area_gobierno');
 add_action('edited_area_gobierno', 'save_image_field_area_gobierno');
 
 
+// --- BANNER NEWS SELECTOR FOR AREA GOBIERNO ---
+
+/**
+ * Helper to get Noticias Banner options
+ */
+function msm_get_noticias_banner_options()
+{
+    $args = array(
+        'post_type' => 'noticias-banner',
+        'post_status' => 'publish',
+        'posts_per_page' => -1,
+        'orderby' => 'title',
+        'order' => 'ASC',
+    );
+    $posts = get_posts($args);
+    $options = array();
+    foreach ($posts as $post) {
+        $options[$post->ID] = $post->post_title . ' (ID: ' . $post->ID . ')';
+    }
+    return $options;
+}
+
+function add_banner_news_field_area_gobierno($term)
+{
+    $options = msm_get_noticias_banner_options();
+    ?>
+    <div class="form-field">
+        <label for="banner_news_id"><?php _e('Noticia para Banner', 'msmtheme'); ?></label>
+        <select name="banner_news_id" id="banner_news_id" style="width: 70%;">
+            <option value=""><?php _e('Seleccione una noticia...', 'msmtheme'); ?></option>
+            <?php foreach ($options as $id => $title): ?>
+                <option value="<?php echo esc_attr($id); ?>"><?php echo esc_html($title); ?></option>
+            <?php endforeach; ?>
+        </select>
+        <p class="description">
+            <?php _e('Selecciona la noticia que se mostrará como banner principal en la página del área.', 'msmtheme'); ?>
+        </p>
+    </div>
+    <?php
+}
+add_action('area_gobierno_add_form_fields', 'add_banner_news_field_area_gobierno');
+
+function edit_banner_news_field_area_gobierno($term)
+{
+    $current_id = get_term_meta($term->term_id, 'banner_news_id', true);
+    $options = msm_get_noticias_banner_options();
+    ?>
+    <tr class="form-field">
+        <th scope="row" valign="top"><label for="banner_news_id"><?php _e('Noticia para Banner', 'msmtheme'); ?></label>
+        </th>
+        <td>
+            <select name="banner_news_id" id="banner_news_id" style="width: 70%;">
+                <option value=""><?php _e('Seleccione una noticia...', 'msmtheme'); ?></option>
+                <?php foreach ($options as $id => $title): ?>
+                    <option value="<?php echo esc_attr($id); ?>" <?php selected($current_id, $id); ?>>
+                        <?php echo esc_html($title); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+            <p class="description">
+                <?php _e('Selecciona la noticia que se mostrará como banner principal en la página del área.', 'msmtheme'); ?>
+            </p>
+        </td>
+    </tr>
+    <?php
+}
+add_action('area_gobierno_edit_form_fields', 'edit_banner_news_field_area_gobierno');
+
+function save_banner_news_field_area_gobierno($term_id)
+{
+    if (isset($_POST['banner_news_id'])) {
+        update_term_meta($term_id, 'banner_news_id', intval($_POST['banner_news_id']));
+    }
+}
+add_action('created_area_gobierno', 'save_banner_news_field_area_gobierno');
+add_action('edited_area_gobierno', 'save_banner_news_field_area_gobierno');
+
+
 
 
 
@@ -343,7 +423,8 @@ add_action('edited_area_gobierno', 'save_image_field_area_gobierno');
 
 
 
-function agregar_banner_page_metabox() {
+function agregar_banner_page_metabox()
+{
     add_meta_box(
         'banner_image', // ID del metabox
         'Banner Imagen', // Título del metabox
@@ -354,7 +435,8 @@ function agregar_banner_page_metabox() {
     );
 }
 
-function mostrar_banner_image_field($post) {
+function mostrar_banner_image_field($post)
+{
     wp_nonce_field(basename(__FILE__), 'banner_nonce'); // Seguridad
 
     // Obtener el ID del archivo adjunto
@@ -375,7 +457,8 @@ function mostrar_banner_image_field($post) {
 
     ?>
     <label for="banner_image">Selecciona o sube una imagen para el banner:</label>
-    <input type="text" id="banner_image" name="banner_image" value="<?php echo esc_attr($banner_image_url); ?>" style="width: 70%;" readonly />
+    <input type="text" id="banner_image" name="banner_image" value="<?php echo esc_attr($banner_image_url); ?>"
+        style="width: 70%;" readonly />
     <input type="button" class="button" value="Seleccionar imagen" id="upload_banner_image" />
     <br><br>
     <div id="image_preview">
@@ -387,36 +470,36 @@ function mostrar_banner_image_field($post) {
         ?>
     </div>
     <script>
-    jQuery(document).ready(function($) {
-        var media_frame;
-        $('#upload_banner_image').click(function(e) {
-            e.preventDefault();
-            if (media_frame) {
+        jQuery(document).ready(function ($) {
+            var media_frame;
+            $('#upload_banner_image').click(function (e) {
+                e.preventDefault();
+                if (media_frame) {
+                    media_frame.open();
+                    return;
+                }
+                media_frame = wp.media({
+                    title: 'Seleccionar o Subir Imagen',
+                    button: { text: 'Usar esta imagen' },
+                    multiple: false
+                });
+
+                media_frame.on('select', function () {
+                    var attachment = media_frame.state().get('selection').first().toJSON();
+                    var imageUrl = attachment.url;
+                    var imageId = attachment.id; // Obtén el ID del adjunto
+
+                    // Guarda la URL de la imagen en el campo de texto y el ID en un campo oculto
+                    $('#banner_image').val(imageUrl);
+                    $('#image_preview').html('<img src="' + imageUrl + '" style="max-width: 200px; margin-top: 10px;">');
+
+                    // Guardar el ID del adjunto
+                    $('#banner_image_id').val(imageId);
+                });
+
                 media_frame.open();
-                return;
-            }
-            media_frame = wp.media({
-                title: 'Seleccionar o Subir Imagen',
-                button: { text: 'Usar esta imagen' },
-                multiple: false
             });
-
-            media_frame.on('select', function() {
-                var attachment = media_frame.state().get('selection').first().toJSON();
-                var imageUrl = attachment.url;
-                var imageId = attachment.id; // Obtén el ID del adjunto
-
-                // Guarda la URL de la imagen en el campo de texto y el ID en un campo oculto
-                $('#banner_image').val(imageUrl);
-                $('#image_preview').html('<img src="' + imageUrl + '" style="max-width: 200px; margin-top: 10px;">');
-
-                // Guardar el ID del adjunto
-                $('#banner_image_id').val(imageId);
-            });
-
-            media_frame.open();
         });
-    });
     </script>
     <input type="hidden" id="banner_image_id" name="banner_image_id" value="<?php echo esc_attr($banner_image_id); ?>" />
     <?php
@@ -424,7 +507,8 @@ function mostrar_banner_image_field($post) {
 
 // add_action('add_meta_boxes', 'agregar_banner_page_metabox');
 
-function guardar_banner_image($post_id) {
+function guardar_banner_image($post_id)
+{
     // Verificar nonce para seguridad
     if (!isset($_POST['banner_nonce']) || !wp_verify_nonce($_POST['banner_nonce'], basename(__FILE__))) {
         return $post_id;

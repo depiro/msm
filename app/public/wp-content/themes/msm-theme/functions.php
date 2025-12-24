@@ -15,6 +15,7 @@ require get_template_directory() . '/inc/template-tags.php';
 require_once get_template_directory() . '/inc/cpt-eventos-municipales.php';
 require_once get_template_directory() . '/inc/tax-eventos-municipales.php';
 require_once get_template_directory() . '/inc/metabox-eventos-municipales.php';
+require_once get_template_directory() . '/inc/cpt-noticias-banner.php';
 
 
 require get_template_directory() . '/inc/funciones.php';
@@ -602,6 +603,19 @@ add_action('after_setup_theme', function () {
     add_editor_style('assets/css/utilities/utilities.css');
     add_editor_style('style.css');
 });
+
+/**
+ * Register Banner de Noticia Block
+ */
+function msm_register_blocks()
+{
+    register_block_type(get_template_directory() . '/assets/blocks/banner-noticia');
+    register_block_type(get_template_directory() . '/assets/blocks/grilla-noticias');
+    register_block_type(get_template_directory() . '/assets/blocks/desplegable');
+    register_block_type(get_template_directory() . '/assets/blocks/boton-msm');
+    register_block_type(get_template_directory() . '/assets/blocks/link-msm');
+}
+add_action('init', 'msm_register_blocks');
 
 
 

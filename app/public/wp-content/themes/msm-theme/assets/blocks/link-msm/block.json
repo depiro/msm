@@ -1,0 +1,39 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "msm-theme/link-msm",
+    "version": "1.0.0",
+    "title": "Link MSM (Texto + Flecha)",
+    "category": "theme",
+    "icon": "admin-links",
+    "description": "Enlace de texto con flecha indicativa.",
+    "supports": {
+        "html": false,
+        "align": [
+            "center",
+            "wide",
+            "full"
+        ]
+    },
+    "textdomain": "msm-theme-2",
+    "attributes": {
+        "text": {
+            "type": "string",
+            "source": "text",
+            "selector": "a"
+        },
+        "url": {
+            "type": "string",
+            "default": "#"
+        },
+        "variant": {
+            "type": "string",
+            "default": "cyan"
+        },
+        "linkTarget": {
+            "type": "string",
+            "default": "_self"
+        }
+    },
+    "editorScript": "file:./build/index.js"
+}

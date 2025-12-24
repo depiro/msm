@@ -1,0 +1,21 @@
+{
+    "name": "boton-msm",
+    "version": "1.0.0",
+    "description": "Botón CTA institucional.",
+    "scripts": {
+        "build": "wp-scripts build",
+        "start": "wp-scripts start",
+        "packages-update": "wp-scripts packages-update"
+    },
+    "dependencies": {
+        "@wordpress/block-editor": "^12.0.0",
+        "@wordpress/blocks": "^12.0.0",
+        "@wordpress/components": "^25.0.0",
+        "@wordpress/data": "^9.0.0",
+        "@wordpress/element": "^5.0.0",
+        "@wordpress/i18n": "^4.0.0",
+        "@wordpress/primitives": "^3.0.0",
+        "@wordpress/scripts": "^26.0.0",
+        "classnames": "^2.3.2"
+    }
+}

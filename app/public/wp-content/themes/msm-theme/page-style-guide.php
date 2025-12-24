@@ -363,6 +363,13 @@ get_template_part(THEME_HEADER); ?>
                 <summary>Tenis (6 a 16 años)</summary>
                 <div class="wp-block-group">
                     <p>Clases de iniciación y perfeccionamiento.</p>
+                    <details class="wp-block-details">
+                        <summary>Atletismo</summary>
+
+                        <p>Pista y campo para todas las edades.</p>
+
+                    </details>
+
                 </div>
             </details>
 
@@ -422,6 +429,91 @@ get_template_part(THEME_HEADER); ?>
         </div>
     </div>
 
+    <!-- Desplegable Block Preview (Refactored) -->
+    <div class="mb-5">
+        <h3>Desplegable (Acordeón Azul)</h3>
+        <!-- ... existing desplegable content ... -->
+        <div class="wp-block-group">
+            <p>Sección Principal (Título Azul)</p>
+            <div class="msm-desplegable-content">
+                <details class="wp-block-details">
+                    <summary>Sub-item 1</summary>
+                    <p>Content...</p>
+                </details>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Buttons & Links Block Preview -->
+    <div class="mb-5">
+        <h3>Bloques CTA (Boton y Link)</h3>
+        <p class="text-muted">Comparación visual: Bloques vs PHP Helper.</p>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h4>PHP Helpers (Referencia)</h4>
+                <?php msm_cta_button('Botón Solido (PHP)', '#', 'solid'); ?>
+                <?php msm_cta_button('Botón Gradiente (PHP)', '#', 'gradient'); ?>
+                <br>
+                <?php msm_cta_link('Link Cyan (PHP)', '#', 'cyan'); ?>
+                <?php msm_cta_link('Link Dark (PHP)', '#', 'dark'); ?>
+            </div>
+            <div class="col-md-6">
+                <h4>Bloques Gutenberg (Simulación)</h4>
+                <!-- Boton MSM (Solid) -->
+                <div class="mb-3">
+                    <a href="#" class="btn-msm-cta btn-msm-solid" role="button">
+                        Botón Bloque (Solid)
+                        <span class="icon-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="msm-icon-arrow">
+                                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z" />
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Boton MSM (Gradient) -->
+                <div class="mb-3">
+                    <a href="#" class="btn-msm-cta btn-msm-gradient" role="button">
+                        Botón Bloque (Gradient)
+                        <span class="icon-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="msm-icon-arrow">
+                                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z" />
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+
+                <br>
+
+                <!-- Link MSM (Cyan) -->
+                <div class="mb-3">
+                    <a href="#" class="btn-msm-link btn-msm-link-cyan">
+                        Link Bloque (Cyan)
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="msm-icon-arrow">
+                            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Link MSM (Dark) -->
+                <div class="mb-3">
+                    <a href="#" class="btn-msm-link btn-msm-link-dark">
+                        Link Bloque (Dark)
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="msm-icon-arrow">
+                            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z" />
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <!-- Event Cards -->
     <div class="mb-5">
         <h3>Event Cards</h3>
@@ -440,6 +532,85 @@ get_template_part(THEME_HEADER); ?>
 
             include get_template_directory() . '/templates/parts/card-event.php';
             ?>
+        </div>
+    </div>
+
+    <!-- Grilla de Noticias (Block Preview) -->
+    <div class="mb-5">
+        <h3>Grilla de Noticias (Bloque Gutenberg)</h3>
+        <p class="text-muted">Simulación visual del bloque con datos estáticos.</p>
+
+        <div class="msm-grilla-noticias py-4 border rounded bg-white">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <h2 class="fw-bold">Noticias Seleccionadas</h2>
+                    </div>
+                </div>
+
+                <div class="row g-4 g-lg-5">
+                    <!-- Item 1 -->
+                    <div class="col-12 col-md-6">
+                        <a href="#" class="text-decoration-none text-dark d-block h-100 msm-grilla-item">
+                            <article>
+                                <h3 class="fw-bold mb-2 h5">Jineteada</h3>
+                                <div class="text-secondary opacity-75 fw-light"
+                                    style="font-size: 0.95rem; line-height: 1.6;">
+                                    Desde fines del siglo XIX, las tradiciones criollas fueron para el pueblo de San
+                                    Miguel la mayor atracción. Para sus pobladores que habían llegado de zonas rurales
+                                    les fue muy natural trasportar a este medio aquello que felizmente habían vivenciado
+                                    en el interior del país.
+                                </div>
+                            </article>
+                        </a>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="col-12 col-md-6">
+                        <a href="#" class="text-decoration-none text-dark d-block h-100 msm-grilla-item">
+                            <article>
+                                <h3 class="fw-bold mb-2 h5">Carnaval Criollo</h3>
+                                <div class="text-secondary opacity-75 fw-light"
+                                    style="font-size: 0.95rem; line-height: 1.6;">
+                                    Es una expresión genuina del pueblo de San Miguel por el amor al folklore. Gran
+                                    cantidad de vecinos han venido del interior del país y trasmiten como legado a las
+                                    generaciones más recientes el amor por la música folklórica.
+                                </div>
+                            </article>
+                        </a>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="col-12 col-md-6">
+                        <a href="#" class="text-decoration-none text-dark d-block h-100 msm-grilla-item">
+                            <article>
+                                <h3 class="fw-bold mb-2 h5">20 de junio – Promesa a la Bandera</h3>
+                                <div class="text-secondary opacity-75 fw-light"
+                                    style="font-size: 0.95rem; line-height: 1.6;">
+                                    Los estudiantes de 4to año de Educación Primaria prometen lealtad a la bandera
+                                    nacional en un emotivo acto en las instalaciones de Regimiento de Artillería 1
+                                    “Brigadier General Tomás de Iriarte” en el predio de Campo de Mayo.
+                                </div>
+                            </article>
+                        </a>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="col-12 col-md-6">
+                        <a href="#" class="text-decoration-none text-dark d-block h-100 msm-grilla-item">
+                            <article>
+                                <h3 class="fw-bold mb-2 h5">9 de Julio</h3>
+                                <div class="text-secondary opacity-75 fw-light"
+                                    style="font-size: 0.95rem; line-height: 1.6;">
+                                    Celebramos las Fiestas patrias con el espíritu de la tradición. La música folklórica
+                                    y las instituciones de nuestra ciudad nos reciben en la plaza más tradicional de San
+                                    Miguel, la Plaza de las Carretas.
+                                </div>
+                            </article>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

@@ -1,0 +1,33 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "msm-theme/grilla-noticias",
+    "version": "1.0.0",
+    "title": "Grilla de Noticias (Selección Manual)",
+    "category": "theme",
+    "icon": "grid-view",
+    "description": "Grilla editorial de noticias seleccionadas manualmente. Título y texto sin imágenes.",
+    "supports": {
+        "html": false,
+        "align": [
+            "wide",
+            "full"
+        ]
+    },
+    "textdomain": "msm-theme-2",
+    "attributes": {
+        "blockTitle": {
+            "type": "string",
+            "default": ""
+        },
+        "selectedPosts": {
+            "type": "array",
+            "default": [],
+            "items": {
+                "type": "object"
+            }
+        }
+    },
+    "editorScript": "file:./build/index.js",
+    "render": "file:./render.php"
+}

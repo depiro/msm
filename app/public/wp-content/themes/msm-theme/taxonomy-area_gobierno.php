@@ -37,19 +37,34 @@ $image_url = get_term_meta($term_id, 'banner_image', true);
 
 	<!-- Sub-areas Section (Pages in Area) -->
 	<?php
-	$sub_pages_query = new WP_Query(array(
-		'post_type' => 'page',
-		'posts_per_page' => -1,
-		'tax_query' => array(
-			array(
-				'taxonomy' => 'area_gobierno',
-				'field' => 'term_id',
-				'terms' => $term_id,
+	/*
+	 * Logic Update:
+	 * Only show pages that belong to CHILD terms (sub-areas) of the current area.
+	 * Exclude pages that are directly assigned to the parent area but not to a sub-area.
+	 */
+	$child_terms = get_term_children($term_id, 'area_gobierno');
+	$exclude_ids = array(); // Initialize array to track displayed posts
+	
+	// Only proceed if there are child terms
+	if (!empty($child_terms) && !is_wp_error($child_terms)) {
+		$sub_pages_query = new WP_Query(array(
+			'post_type' => 'page',
+			'posts_per_page' => -1,
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'area_gobierno',
+					'field' => 'term_id',
+					'terms' => $child_terms, // Filter by child IDs
+					'operator' => 'IN',
+				),
 			),
-		),
-		'orderby' => 'name',
-		'order' => 'ASC',
-	));
+			'orderby' => 'name',
+			'order' => 'ASC',
+		));
+	} else {
+		// If no children, create an empty query to skip the loop
+		$sub_pages_query = new WP_Query();
+	}
 
 	if ($sub_pages_query->have_posts()): ?>
 		<div class="w-100 py-4" style="background-color: #f9f9f9; border-bottom: 1px solid #eee;">
@@ -57,6 +72,7 @@ $image_url = get_term_meta($term_id, 'banner_image', true);
 				<div class="row gy-3">
 					<?php while ($sub_pages_query->have_posts()):
 						$sub_pages_query->the_post();
+						$exclude_ids[] = get_the_ID(); // Add to exclusion list
 						$title = get_the_title();
 						$link = get_permalink();
 						include get_template_directory() . '/templates/parts/card-subarea.php';
@@ -71,12 +87,49 @@ $image_url = get_term_meta($term_id, 'banner_image', true);
 	<div class="container mt-5">
 		<div class="row">
 			<div class="col-12">
+				<!-- Banner Comunicación y Deportes (Dynamic) -->
+				<?php
+				// Retrieve Selected Banner News ID
+				$banner_news_id = get_term_meta($term_id, 'banner_news_id', true);
+
+				if ($banner_news_id):
+					$banner_post = get_post($banner_news_id);
+					if ($banner_post && $banner_post->post_status === 'publish'):
+						?>
+						<div class="row mt-0">
+							<?php
+							$title = get_the_title($banner_post);
+							$desc = get_the_excerpt($banner_post);
+							if (empty($desc)) {
+								$desc = wp_trim_words($banner_post->post_content, 20);
+							}
+							$image_url = get_the_post_thumbnail_url($banner_post, 'full');
+							$link = get_permalink($banner_post);
+
+							// Optional: Pass attributes if needed, though card-overlay defaults are good
+							$width = 'full';
+							$align = 'right'; // Default preference or could be another field
+					
+							include get_template_directory() . '/templates/parts/card-overlay.php';
+							?>
+						</div>
+						<?php
+					endif;
+				endif;
+				?>
+
 
 				<?php if (have_posts()): ?>
 
 					<div class="row">
 						<?php while (have_posts()):
-							the_post(); ?>
+							the_post();
+
+							// Skip if post was already shown in sub-areas
+							if (in_array(get_the_ID(), $exclude_ids)) {
+								continue;
+							}
+							?>
 							<?php
 							$height = '180px';
 							$variant = 2;
@@ -105,23 +158,12 @@ $image_url = get_term_meta($term_id, 'banner_image', true);
 			</div>
 		</div>
 
-		<!-- Sección Eventos Municipales -->
-		<?php get_template_part('templates/parts/section-eventos-municipales'); ?>
-
-		<!-- Banner Comunicación y Deportes (Conditional) -->
+		<!-- Sección Eventos Municipales (Conditional) -->
 		<?php if ($current_term->slug === 'secretaria-de-comunicacion-y-deportes'): ?>
-			<div class="row mt-5">
-				<?php
-				$title = "Secretaría de Comunicación y Deportes";
-				$desc = "Impulsamos el deporte y la comunicación pública como herramientas de transformación social.";
-				$image_url = get_template_directory_uri() . '/assets/images/fiesta-del-arbol.png'; // Placeholder image
-				$width = 'full';
-				$align = 'right';
-
-				include get_template_directory() . '/templates/parts/card-overlay.php';
-				?>
-			</div>
+			<?php get_template_part('templates/parts/section-eventos-municipales'); ?>
 		<?php endif; ?>
+
+
 
 	</div>
 
