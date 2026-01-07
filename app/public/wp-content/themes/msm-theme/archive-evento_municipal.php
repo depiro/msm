@@ -8,9 +8,24 @@ get_template_part(THEME_HEADER); ?>
     </div>
     <div class="row justify-content-center pt-2">
 
+        <?php
+        // Fetch the term 'subsecretaria-de-eventos-municipales'
+        $term_slug = 'subsecretaria-de-eventos-municipales';
+        $term = get_term_by('slug', $term_slug, 'area_gobierno');
+
+        // Defaults
+        $title = 'Eventos Municipales';
+        $description = 'Enterate de todas las actividades y eventos programados.';
+
+        if ($term && !is_wp_error($term)) {
+            $title = $term->name;
+            $description = $term->description;
+        }
+        ?>
+
         <div class="col-12 py-5">
-            <h2 class="msm-font-xl mb-1">Eventos Municipales</h2>
-            <p class="fz-18">Enterate de todas las actividades y eventos programados.</p>
+            <h2 class="msm-font-xl mb-1"><?php echo esc_html($title); ?></h2>
+            <p class="fz-18"><?php echo wp_kses_post($description); ?></p>
         </div>
 
         <div class="page-content row ">

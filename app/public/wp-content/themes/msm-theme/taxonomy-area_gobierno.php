@@ -3,6 +3,13 @@
 // Obtener el término actual
 $current_term = get_queried_object();
 $term_id = get_queried_object()->term_id;
+
+// Redirect logic for 'subsecretaria-de-eventos-municipales'
+if ($current_term && $current_term->slug === 'subsecretaria-de-eventos-municipales') {
+	wp_redirect(get_post_type_archive_link('evento_municipal'));
+	exit;
+}
+
 $image_url = get_term_meta($term_id, 'banner_image', true);
 ?>
 
@@ -66,7 +73,10 @@ $image_url = get_term_meta($term_id, 'banner_image', true);
 		$sub_pages_query = new WP_Query();
 	}
 
-	if ($sub_pages_query->have_posts()): ?>
+	// Check if we need to inject the "Subsecretaría de Eventos Municipales" item
+	$show_eventos_sub = ($current_term->slug === 'secretaria-de-comunicacion-y-deportes');
+
+	if ($sub_pages_query->have_posts() || $show_eventos_sub): ?>
 		<div class="w-100 py-4" style="background-color: #f9f9f9; border-bottom: 1px solid #eee;">
 			<div class="container">
 				<div class="row gy-3">
@@ -77,7 +87,18 @@ $image_url = get_term_meta($term_id, 'banner_image', true);
 						$link = get_permalink();
 						include get_template_directory() . '/templates/parts/card-subarea.php';
 					endwhile;
-					wp_reset_postdata(); ?>
+					wp_reset_postdata();
+
+					// Manual injection for Subsecretaría de Eventos Municipales
+					if ($show_eventos_sub):
+						$eventos_term = get_term_by('slug', 'subsecretaria-de-eventos-municipales', 'area_gobierno');
+						if ($eventos_term) {
+							$title = $eventos_term->name;
+							$link = get_post_type_archive_link('evento_municipal');
+							include get_template_directory() . '/templates/parts/card-subarea.php';
+						}
+					endif;
+					?>
 				</div>
 			</div>
 		</div>
@@ -104,6 +125,13 @@ $image_url = get_term_meta($term_id, 'banner_image', true);
 								$desc = wp_trim_words($banner_post->post_content, 20);
 							}
 							$image_url = get_the_post_thumbnail_url($banner_post, 'full');
+
+							// Fallback image logic
+							if (empty($image_url)) {
+								// Ensure we point to the assets folder in the theme
+								$image_url = get_stylesheet_directory_uri() . '/assets/images/fallback-banner.jpg';
+							}
+
 							$link = get_permalink($banner_post);
 
 							// Optional: Pass attributes if needed, though card-overlay defaults are good
@@ -117,6 +145,7 @@ $image_url = get_term_meta($term_id, 'banner_image', true);
 					endif;
 				endif;
 				?>
+
 
 
 				<?php if (have_posts()): ?>
