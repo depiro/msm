@@ -27,6 +27,11 @@ if (empty($desc)) {
 }
 
 $image_url = get_the_post_thumbnail_url($post_id, 'full');
+
+if (empty($image_url)) {
+    $image_url = get_stylesheet_directory_uri() . '/assets/images/fallback-banner.jpg';
+}
+
 $link = get_permalink($post_id);
 
 // Tags

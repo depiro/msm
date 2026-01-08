@@ -108,43 +108,8 @@ $image_url = get_term_meta($term_id, 'banner_image', true);
 	<div class="container mt-5">
 		<div class="row">
 			<div class="col-12">
-				<!-- Banner Comunicación y Deportes (Dynamic) -->
-				<?php
-				// Retrieve Selected Banner News ID
-				$banner_news_id = get_term_meta($term_id, 'banner_news_id', true);
+				<!-- (Banner Removed) -->
 
-				if ($banner_news_id):
-					$banner_post = get_post($banner_news_id);
-					if ($banner_post && $banner_post->post_status === 'publish'):
-						?>
-						<div class="row mt-0">
-							<?php
-							$title = get_the_title($banner_post);
-							$desc = get_the_excerpt($banner_post);
-							if (empty($desc)) {
-								$desc = wp_trim_words($banner_post->post_content, 20);
-							}
-							$image_url = get_the_post_thumbnail_url($banner_post, 'full');
-
-							// Fallback image logic
-							if (empty($image_url)) {
-								// Ensure we point to the assets folder in the theme
-								$image_url = get_stylesheet_directory_uri() . '/assets/images/fallback-banner.jpg';
-							}
-
-							$link = get_permalink($banner_post);
-
-							// Optional: Pass attributes if needed, though card-overlay defaults are good
-							$width = 'full';
-							$align = 'right'; // Default preference or could be another field
-					
-							include get_template_directory() . '/templates/parts/card-overlay.php';
-							?>
-						</div>
-						<?php
-					endif;
-				endif;
-				?>
 
 
 
