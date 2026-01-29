@@ -10,6 +10,7 @@ if ($current_term && $current_term->slug === 'subsecretaria-de-eventos-municipal
 	exit;
 }
 
+
 $image_url = get_term_meta($term_id, 'banner_image', true);
 ?>
 

@@ -48,6 +48,20 @@ get_template_part(THEME_HEADER); ?>
                     No hay eventos programados en este momento.
                 </span>
             <?php endif; ?>
+
+            <div class="col-12 mt-5">
+                <?php
+                // Display the "Eventos Municipales" section as requested
+                // Title: "Otros Eventos Municipales"
+                // CTA: Hidden
+                $section_title = 'Otros Eventos Municipales';
+                $hide_cta = true;
+
+                // We likely want to EXCLUDE the current posts if possible, but the section template
+                // makes a new query. For now, we just insert it.
+                include get_template_directory() . '/templates/parts/section-eventos-municipales.php';
+                ?>
+            </div>
         </div>
     </div>
 </div>

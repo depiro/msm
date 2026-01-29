@@ -33,7 +33,7 @@ define('THEME_BOTONERA', '/templates/sections/home_botonera');
 define('THEME_NEWS', '/templates/sections/home_news');
 define('THEME_SPECIAL', '/templates/special/');
 
-add_filter('show_admin_bar', '__return_false');
+//add_filter('show_admin_bar', '__return_false');
 
 // Basic Setup
 function msm_theme_setup()

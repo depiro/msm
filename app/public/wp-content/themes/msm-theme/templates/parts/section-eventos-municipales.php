@@ -19,7 +19,7 @@ $args = isset($args) ? array_merge($default_args, $args) : $default_args;
 $events_query = new WP_Query($args);
 
 // Allow overriding title
-$section_title = $section_title ?? 'Eventos Municipales';
+$section_title = $section_title ?? 'Agenda';
 
 if ($events_query->have_posts()): ?>
     <div class="row mt-5">
@@ -41,7 +41,12 @@ if ($events_query->have_posts()): ?>
         </div>
 
         <div class="col-12 d-flex justify-content-center">
-            <?php msm_cta_button('Ver todos los eventos', get_post_type_archive_link('evento_municipal'), 'gradient'); ?>
+            <?php
+            $hide_cta = $hide_cta ?? false;
+            if (!$hide_cta):
+                msm_cta_button('Ver todos los eventos', get_post_type_archive_link('evento_municipal'), 'gradient');
+            endif;
+            ?>
         </div>
     </div>
     <?php wp_reset_postdata(); ?>

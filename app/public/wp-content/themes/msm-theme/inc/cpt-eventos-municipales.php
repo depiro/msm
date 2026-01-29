@@ -6,20 +6,20 @@ function msm_register_cpt_eventos_municipales()
 {
 
     $labels = array(
-        'name' => 'Eventos Municipales',
-        'singular_name' => 'Evento Municipal',
-        'menu_name' => 'Eventos Municipales',
-        'name_admin_bar' => 'Evento Municipal',
+        'name' => 'Agenda',
+        'singular_name' => 'Evento',
+        'menu_name' => 'Agenda',
+        'name_admin_bar' => 'Evento',
         'add_new' => 'Agregar nuevo',
-        'add_new_item' => 'Agregar nuevo Evento Municipal',
-        'new_item' => 'Nuevo Evento Municipal',
-        'edit_item' => 'Editar Evento Municipal',
-        'view_item' => 'Ver Evento Municipal',
-        'all_items' => 'Todos los Eventos Municipales',
-        'search_items' => 'Buscar Eventos Municipales',
+        'add_new_item' => 'Agregar nuevo Evento',
+        'new_item' => 'Nuevo Evento',
+        'edit_item' => 'Editar Evento',
+        'view_item' => 'Ver Evento',
+        'all_items' => 'Todos los Eventos',
+        'search_items' => 'Buscar Eventos',
         'not_found' => 'No se encontraron eventos.',
         'not_found_in_trash' => 'No se encontraron eventos en la papelera.',
-        'archives' => 'Archivo de Eventos Municipales',
+        'archives' => 'Archivo de Agenda',
     );
 
     $args = array(
