@@ -4,7 +4,7 @@ get_template_part(THEME_HEADER); ?>
 <div id="main-content" class="container mb-5">
     <div class="msm-breadcrumb d-block d-sm-row pt-1 small">
         <a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a><span
-            class="msm-breadcrumb-item-last"> Eventos Municipales</span>
+            class="msm-breadcrumb-item-last"> Agenda</span>
     </div>
     <div class="row justify-content-center pt-2">
 
@@ -14,7 +14,7 @@ get_template_part(THEME_HEADER); ?>
         $term = get_term_by('slug', $term_slug, 'area_gobierno');
 
         // Defaults
-        $title = 'Eventos Municipales';
+        $title = 'Agenda';
         $description = 'Enterate de todas las actividades y eventos programados.';
 
         if ($term && !is_wp_error($term)) {
@@ -54,7 +54,7 @@ get_template_part(THEME_HEADER); ?>
                 // Display the "Eventos Municipales" section as requested
                 // Title: "Otros Eventos Municipales"
                 // CTA: Hidden
-                $section_title = 'Otros Eventos Municipales';
+                $section_title = 'Otros eventos';
                 $hide_cta = true;
 
                 // We likely want to EXCLUDE the current posts if possible, but the section template

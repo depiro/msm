@@ -44,7 +44,11 @@ function render_tramite_meta_box($post)
 	$observaciones = get_post_meta($post->ID, '_observaciones', true);
 	$lugar = get_post_meta($post->ID, '_lugar_de_atencion', true);
 	$horarios = get_post_meta($post->ID, '_horarios_de_atencion', true);
-?>
+	$documento_obtenido = get_post_meta($post->ID, '_documento_obtenido', true);
+	$quien_puede_realizar = get_post_meta($post->ID, '_quien_puede_realizar_el_tramite', true);
+	$como_recibe = get_post_meta($post->ID, '_como_recibe_el_vecino_el_tramite', true);
+	$costo = get_post_meta($post->ID, '_costo_del_tramite', true);
+	?>
 
 	<p class="col-tramites">
 		<label for="presentacion"><?php _e('Presentacion:', 'textdomain'); ?></label>
@@ -148,13 +152,65 @@ function render_tramite_meta_box($post)
 		?>
 	</p>
 
+	<p class="col-tramites">
+		<label for="documento_obtenido"><?php _e('Documento que se obtiene:', 'textdomain'); ?></label>
+		<?php
+		$documento_obtenido = get_post_meta($post->ID, '_documento_obtenido', true);
+		wp_editor($documento_obtenido, 'documento_obtenido_editor', array(
+			'textarea_name' => 'documento_obtenido',
+			'editor_class' => 'documento_obtenido-editor',
+			'media_buttons' => true,
+			'teeny' => false,
+		));
+		?>
+	</p>
+
+	<p class="col-tramites">
+		<label for="quien_puede_realizar"><?php _e('Quién puede realizar el trámite:', 'textdomain'); ?></label>
+		<?php
+		$quien_puede_realizar = get_post_meta($post->ID, '_quien_puede_realizar_el_tramite', true);
+		wp_editor($quien_puede_realizar, 'quien_puede_realizar_editor', array(
+			'textarea_name' => 'quien_puede_realizar',
+			'editor_class' => 'quien_puede_realizar-editor',
+			'media_buttons' => true,
+			'teeny' => false,
+		));
+		?>
+	</p>
+
+	<p class="col-tramites">
+		<label for="como_recibe"><?php _e('Cómo recibe el vecino el trámite:', 'textdomain'); ?></label>
+		<?php
+		$como_recibe = get_post_meta($post->ID, '_como_recibe_el_vecino_el_tramite', true);
+		wp_editor($como_recibe, 'como_recibe_editor', array(
+			'textarea_name' => 'como_recibe',
+			'editor_class' => 'como_recibe-editor',
+			'media_buttons' => true,
+			'teeny' => false,
+		));
+		?>
+	</p>
+
+	<p class="col-tramites">
+		<label for="costo"><?php _e('Costo del trámite:', 'textdomain'); ?></label>
+		<?php
+		$costo = get_post_meta($post->ID, '_costo_del_tramite', true);
+		wp_editor($costo, 'costo_editor', array(
+			'textarea_name' => 'costo',
+			'editor_class' => 'costo-editor',
+			'media_buttons' => true,
+			'teeny' => false,
+		));
+		?>
+	</p>
+
 	<style>
 		.col-tramites {
 			display: flex;
 			flex-flow: column;
 		}
 	</style>
-<?php
+	<?php
 }
 
 function save_tramite_meta_box_data($post_id)
@@ -197,6 +253,18 @@ function save_tramite_meta_box_data($post_id)
 	}
 	if (isset($_POST['horarios'])) {
 		update_post_meta($post_id, '_horarios_de_atencion', wp_kses_post($_POST['horarios']));
+	}
+	if (isset($_POST['documento_obtenido'])) {
+		update_post_meta($post_id, '_documento_obtenido', wp_kses_post($_POST['documento_obtenido']));
+	}
+	if (isset($_POST['quien_puede_realizar'])) {
+		update_post_meta($post_id, '_quien_puede_realizar_el_tramite', wp_kses_post($_POST['quien_puede_realizar']));
+	}
+	if (isset($_POST['como_recibe'])) {
+		update_post_meta($post_id, '_como_recibe_el_vecino_el_tramite', wp_kses_post($_POST['como_recibe']));
+	}
+	if (isset($_POST['costo'])) {
+		update_post_meta($post_id, '_costo_del_tramite', wp_kses_post($_POST['costo']));
 	}
 }
 add_action('save_post', 'save_tramite_meta_box_data');
@@ -269,7 +337,7 @@ function agregar_campo_imagen($taxonomy)
 		$imagen_id = '';
 		$imagen_url = '';
 	}
-?>
+	?>
 	<tr class="form-field term-imagen-wrap">
 		<th scope="row">
 			<label for="imagen_upload"><?php _e('Imagen'); ?></label>
@@ -278,14 +346,14 @@ function agregar_campo_imagen($taxonomy)
 			<input type="hidden" id="imagen_id" name="imagen_id" value="<?php echo esc_attr($imagen_id); ?>" />
 			<input type="button" id="upload_image_button" class="button" value="<?php _e('Seleccionar Imagen'); ?>" />
 			<div id="preview_image" style="margin-top: 10px;">
-				<?php if ($imagen_url) : ?>
+				<?php if ($imagen_url): ?>
 					<img src="<?php echo esc_url($imagen_url); ?>" style="max-width: 150px; height: auto;" />
 				<?php endif; ?>
 			</div>
 			<p class="description"><?php _e('Sube una imagen para este término.'); ?></p>
 		</td>
 	</tr>
-<?php
+	<?php
 }
 add_action('area_tramite_edit_form_fields', 'agregar_campo_imagen', 10, 1);
 add_action('area_tramite_add_form_fields', 'agregar_campo_imagen', 10, 1);
@@ -306,12 +374,12 @@ add_action('edited_area_tramite', 'guardar_campo_imagen', 10, 1);
 
 function agregar_script_imagen()
 {
-?>
+	?>
 	<script type="text/javascript">
-		jQuery(document).ready(function($) {
+		jQuery(document).ready(function ($) {
 			var mediaUploader;
 
-			$('#upload_image_button').click(function(e) {
+			$('#upload_image_button').click(function (e) {
 				e.preventDefault();
 
 				if (mediaUploader) {
@@ -327,7 +395,7 @@ function agregar_script_imagen()
 					multiple: false
 				});
 
-				mediaUploader.on('select', function() {
+				mediaUploader.on('select', function () {
 					var attachment = mediaUploader.state().get('selection').first().toJSON();
 					$('#imagen_id').val(attachment.id);
 					$('#preview_image').html('<img src="' + attachment.url + '" style="max-width: 150px; height: auto;" />');
@@ -337,7 +405,7 @@ function agregar_script_imagen()
 			});
 		});
 	</script>
-<?php
+	<?php
 }
 add_action('admin_footer', 'agregar_script_imagen');
 

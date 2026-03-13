@@ -33,9 +33,9 @@ function msm_register_cpt_eventos_municipales()
         'menu_icon' => 'dashicons-calendar-alt',
         'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
         'taxonomies' => array('post_tag'),
-        'has_archive' => 'eventos-municipales',
+        'has_archive' => 'agenda',
         'rewrite' => array(
-            'slug' => 'eventos-municipales',
+            'slug' => 'agenda',
             'with_front' => false,
         ),
         'query_var' => true,

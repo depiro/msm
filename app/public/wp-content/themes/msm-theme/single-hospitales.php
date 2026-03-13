@@ -6,7 +6,7 @@
 		<div id="main-content" class="container mb-5">
 			<div class="msm-breadcrumb d-block d-sm-row px-0 pt-1 small">
 				<a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home</a>/
-				<a class="msm-breadcrumb-item" href="<?php echo HOME_URI; ?>/centros-salud">Centros Salud</a>/
+				<a class="msm-breadcrumb-item" href="<?php echo HOME_URI; ?>/hospitales">Hospitales</a>/
 				<span class="msm-breadcrumb msm-breadcrumb-item-last"><?php the_title(); ?></span>
 			</div>
 			<div class="row my-3 my-md-5 px-3 justify-content-center px-0">
@@ -16,7 +16,7 @@
 							<span class="fw-600 msm-text-600 fz-24"><?php the_title(); ?></span>
 						</div>
 						<div class="page-content fz-16 fw-400 msm-text-gray row px-0 pe-md-4">
-							<div class="row centro-salud-details">
+							<div class="row hospital-details">
 								<?php
 								$ubicacion = get_post_meta(get_the_ID(), 'ubicacion', true);
 								$direccion = get_post_meta(get_the_ID(), 'direccion', true);
@@ -24,14 +24,13 @@
 								$telefono = get_post_meta(get_the_ID(), 'telefono', true);
 								$horario_apertura = get_post_meta(get_the_ID(), 'horario_apertura', true);
 								$horario_cierre = get_post_meta(get_the_ID(), 'horario_cierre', true);
-								$especialidades = get_post_meta(get_the_ID(), 'especialidades', false); // Cambiado a false para obtener un array
+								$especialidades = get_post_meta(get_the_ID(), 'especialidades', false);
 								$atiende_24hs = get_post_meta(get_the_ID(), 'atiende_24hs', true);
 								?>
 
-								<div class="d-flex gap-3">
+								<div class="d-flex gap-3 mt-3 mb-4">
 									<?php
-
-									if (is_array($especialidades[0]) && !empty($especialidades)) {
+									if (!empty($especialidades) && isset($especialidades[0]) && is_array($especialidades[0])) {
 										foreach ($especialidades[0] as $especialidad) { ?>
 											<span
 												class="fz-14 msm-bg-300 text-white rounded px-2 py-1"><?php echo esc_html($especialidad) ?></span>
@@ -40,8 +39,8 @@
 									?>
 								</div>
 
-								<div class="content mt-4">
-									<span class="fz-16 py-0 fw-600">Descripción</span>
+								<div class="content mt-2">
+									<h3 class="fz-20 py-0 fw-600">Descripción</h3>
 									<?php
 									if (get_the_content()) {
 										the_content();
@@ -51,7 +50,7 @@
 									?>
 								</div>
 
-								<div class="col-12 col-md-6 mt-2">
+								<div class="col-12 col-md-6 mt-4">
 									<img src="<?php echo THEME_URI; ?>/assets/images/location.svg" height="35">
 									<span class="fz-14 msm-text-black"><?php echo esc_html($direccion); ?></span>
 								</div>

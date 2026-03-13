@@ -19,23 +19,21 @@ function procesar_meta_value($meta_value)
 			Gobierno</a>/
 		<a class="msm-breadcrumb-item" href="<?php echo HOME_URI; ?>/areas-gobierno/secretaria-de-salud">Secretaría de
 			Salud</a>/
-		<span class="msm-breadcrumb msm-breadcrumb-item-last">Centros de Salud</span>
+		<span class="msm-breadcrumb msm-breadcrumb-item-last">Hospitales</span>
 	</div>
 
 	<div class="row my-3 my-md-5 px-3 justify-content-center">
 		<div class="col-12 py-5">
-			<h2 class="msm-font-xl mb-1">Centros de Salud</h2>
-			<p class="fz-18">El Centro de Salud es el primer contacto que toman las personas con el sistema de salud
-				público y
-				donde se efectúan las primeras acciones de asistencia sanitaria. Sus servicios están adaptados a las
-				necesidades de la comunidad de cada barrio en particular.</p>
+			<h2 class="msm-font-xl mb-1">Hospitales</h2>
+			<p class="fz-18">Conocé nuestra red de hospitales que brindan atención médica, guardias y
+				especialidades a los vecinos.</p>
 		</div>
-		<div class="col-12">
+		<div class="col-12"> <!-- Se quitó el col-md-8 para ocupar todo el ancho ya que no hay sidebar -->
 
 			<div class="page-content fz-16 fw-400 msm-text-gray text-left row">
-				<iframe height="600px" title="Web MSM - Mapa de Centros de Salud"
+				<iframe height="600px" title="Web MSM - Mapa de Hospitales Municipales"
 					src="https://mapas.msm.gov.ar/portal/apps/Embed/index.html?webmap=602f0882447f4a43b0f6c58976d3ec87&amp;extent=-58.7244,-34.5526,-58.6927,-34.5373&amp;home=true&amp;zoom=true&amp;scale=false&amp;search=true&amp;searchextent=false&amp;disable_scroll=false&amp;theme=dark&amp;"
-					height="300" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+					width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
 
 				<?php
 				// Obtener el valor de búsqueda si existe
@@ -45,7 +43,7 @@ function procesar_meta_value($meta_value)
 				<!-- Formulario de búsqueda -->
 				<form method="GET" action="" class="mb-4 w-100 d-flex flex-row mt-5 gap-2">
 					<input type="text" name="buscar" value="<?php echo esc_attr($search_query); ?>"
-						placeholder="Buscar centro de salud..." class="form-control w-100 d-inline">
+						placeholder="Buscar hospital..." class="form-control w-100 d-inline">
 					<button type="submit" class="btn" style="background-color: #1ab3ea; color:white;">Buscar</button>
 					<?php if (!empty($search_query)): ?>
 						<a href="<?php echo esc_url(remove_query_arg('buscar')); ?>" class="btn "
@@ -56,7 +54,7 @@ function procesar_meta_value($meta_value)
 				<?php
 				// Definir argumentos de la consulta
 				$args = array(
-					'post_type' => 'centros_salud',
+					'post_type' => 'hospitales',
 					'post_status' => 'publish',
 					'posts_per_page' => -1,
 				);
@@ -66,13 +64,13 @@ function procesar_meta_value($meta_value)
 					$args['s'] = $search_query;
 				}
 
-				$centros_salud = new WP_Query($args);
+				$hospitales = new WP_Query($args);
 
-				if ($centros_salud->have_posts()):
-					echo '<div class="centros-salud-list">';
+				if ($hospitales->have_posts()):
+					echo '<div class="hospitales-list">';
 
-					while ($centros_salud->have_posts()):
-						$centros_salud->the_post();
+					while ($hospitales->have_posts()):
+						$hospitales->the_post();
 						// Obtener los campos personalizados
 						$ubicacion = get_post_meta(get_the_ID(), 'ubicacion', true);
 						$direccion = get_post_meta(get_the_ID(), 'direccion', true);
@@ -130,9 +128,8 @@ function procesar_meta_value($meta_value)
 					wp_reset_postdata();
 				else:
 					?>
-					<span>No hay centros de salud disponibles.</span>
+					<span>No hay hospitales cargados en el sistema por el momento.</span>
 				<?php endif; ?>
-
 
 			</div>
 		</div>
@@ -141,4 +138,4 @@ function procesar_meta_value($meta_value)
 </div>
 <?php get_template_part('templates/parts/encuesta_utilidad'); ?>
 <?php get_template_part(THEME_FOOTER); ?>
-<!-- archive centros salud -->
+<!-- archive hospitales -->

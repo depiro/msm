@@ -1,16 +1,19 @@
 <?php get_template_part(THEME_HEADER); ?>
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<?php if (have_posts()):
+    while (have_posts()):
+        the_post(); ?>
 
         <div id="main-content" class="container mb-5">
             <div class="msm-breadcrumb d-block d-sm-row pt-1 small">
                 <a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home</a><span>/</span>
-                <a class="msm-breadcrumb-item" href="<?php echo HOME_URI; ?>/areas-gobierno"> Áreas de gobierno</a><span>/</span>
+                <a class="msm-breadcrumb-item" href="<?php echo HOME_URI; ?>/areas-gobierno"> Áreas de
+                    gobierno</a><span>/</span>
                 <?php
                 // Obtener el área del trámite
                 $terms = get_the_terms(get_the_ID(), 'area_gobierno');
-                if ($terms && !is_wp_error($terms)) :
+                if ($terms && !is_wp_error($terms)):
                     $term = array_shift($terms); // Tomar el primer término si hay varios
-                ?>
+                    ?>
                     <a class="msm-breadcrumb-item" href="<?php echo get_term_link($term); ?>">
                         <?php echo esc_html($term->name); ?>
                         / </a>
@@ -44,11 +47,11 @@
             </div>
         </div>
     <?php endwhile;
-else : ?>
+else: ?>
     <div id="main-content" class="container mb-5">
         <div class="empty-info"><?php _e('No se encontró la publicación.', 'mi-tema'); ?></div>
     </div>
 <?php endif; ?>
 <!-- template page full -->
-<?php get_template_part('templates/parts/encuesta_utilidad');  ?>
+<?php get_template_part('templates/parts/encuesta_utilidad'); ?>
 <?php get_template_part(THEME_FOOTER); ?>

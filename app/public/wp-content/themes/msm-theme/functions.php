@@ -8,6 +8,7 @@ require get_template_directory() . '/inc/events.php';
 require get_template_directory() . '/inc/pages.php';
 require get_template_directory() . '/inc/prensa.php';
 require get_template_directory() . '/inc/centros-salud.php';
+require get_template_directory() . '/inc/hospitales.php';
 require get_template_directory() . '/inc/cronogramas.php';
 require get_template_directory() . '/inc/programas-servicios.php';
 require get_template_directory() . '/inc/template-tags.php';
@@ -737,6 +738,8 @@ function msm_card_shortcode($atts)
     return ob_get_clean();
 }
 add_shortcode('msm_card', 'msm_card_shortcode');
+
+
 
 
 

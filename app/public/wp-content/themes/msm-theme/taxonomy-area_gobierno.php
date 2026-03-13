@@ -45,65 +45,10 @@ $image_url = get_term_meta($term_id, 'banner_image', true);
 
 	<!-- Sub-areas Section (Pages in Area) -->
 	<?php
-	/*
-	 * Logic Update:
-	 * Only show pages that belong to CHILD terms (sub-areas) of the current area.
-	 * Exclude pages that are directly assigned to the parent area but not to a sub-area.
-	 */
-	$child_terms = get_term_children($term_id, 'area_gobierno');
-	$exclude_ids = array(); // Initialize array to track displayed posts
-	
-	// Only proceed if there are child terms
-	if (!empty($child_terms) && !is_wp_error($child_terms)) {
-		$sub_pages_query = new WP_Query(array(
-			'post_type' => 'page',
-			'posts_per_page' => -1,
-			'tax_query' => array(
-				array(
-					'taxonomy' => 'area_gobierno',
-					'field' => 'term_id',
-					'terms' => $child_terms, // Filter by child IDs
-					'operator' => 'IN',
-				),
-			),
-			'orderby' => 'name',
-			'order' => 'ASC',
-		));
-	} else {
-		// If no children, create an empty query to skip the loop
-		$sub_pages_query = new WP_Query();
-	}
+	// We use include here instead of get_template_part so $exclude_ids can populate into this scope
+	include(locate_template('templates/parts/section-subareas.php'));
+	?>
 
-	// Check if we need to inject the "Subsecretaría de Eventos Municipales" item
-	$show_eventos_sub = ($current_term->slug === 'secretaria-de-comunicacion-y-deportes');
-
-	if ($sub_pages_query->have_posts() || $show_eventos_sub): ?>
-		<div class="w-100 py-4" style="background-color: #f9f9f9; border-bottom: 1px solid #eee;">
-			<div class="container">
-				<div class="row gy-3">
-					<?php while ($sub_pages_query->have_posts()):
-						$sub_pages_query->the_post();
-						$exclude_ids[] = get_the_ID(); // Add to exclusion list
-						$title = get_the_title();
-						$link = get_permalink();
-						include get_template_directory() . '/templates/parts/card-subarea.php';
-					endwhile;
-					wp_reset_postdata();
-
-					// Manual injection for Subsecretaría de Eventos Municipales
-					if ($show_eventos_sub):
-						$eventos_term = get_term_by('slug', 'subsecretaria-de-eventos-municipales', 'area_gobierno');
-						if ($eventos_term) {
-							$title = $eventos_term->name;
-							$link = get_post_type_archive_link('evento_municipal');
-							include get_template_directory() . '/templates/parts/card-subarea.php';
-						}
-					endif;
-					?>
-				</div>
-			</div>
-		</div>
-	<?php endif; ?>
 
 	<!-- Main Content (Posts) -->
 	<div class="container mt-5">
@@ -114,7 +59,10 @@ $image_url = get_term_meta($term_id, 'banner_image', true);
 
 
 
-				<?php if (have_posts()): ?>
+				<?php
+				$exclude_ids = isset($exclude_ids) ? $exclude_ids : array();
+
+				if (have_posts()): ?>
 
 					<div class="row">
 						<?php while (have_posts()):
