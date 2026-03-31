@@ -56,13 +56,25 @@ if (!empty($child_terms) && !is_wp_error($child_terms)) {
             array(
                 'taxonomy' => 'area_gobierno',
                 'field' => 'term_id',
-                'terms' => $child_terms, // Filtrar por IDs de los hijos
+                'terms' => $child_terms,
                 'operator' => 'IN',
             ),
         ),
-        'orderby' => 'name',
-        'order' => 'ASC',
+        // Ordenamos en PHP para controlar mejor los ceros
     ));
+
+    // Ordenar los posts con PHP para que los que tienen "menu_order" 0 vayan al final
+    usort($sub_pages_query->posts, function($a, $b) {
+        $order_a = (int) $a->menu_order;
+        $order_b = (int) $b->menu_order;
+
+        if ($order_a == 0 && $order_b > 0) return 1;
+        if ($order_b == 0 && $order_a > 0) return -1;
+        if ($order_a != $order_b) return $order_a - $order_b;
+        
+        // Empate (ambos 0 o el mismo numero), ordenamos alfabeticamente
+        return strcmp($a->post_title, $b->post_title);
+    });
 } else {
     $sub_pages_query = new WP_Query();
 }

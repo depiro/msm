@@ -62,16 +62,24 @@ $image_url = get_term_meta($term_id, 'banner_image', true);
 				<?php
 				$exclude_ids = isset($exclude_ids) ? $exclude_ids : array();
 
+				// Re-ejecutamos la consulta principal excluyendo los IDs ya mostrados en subáreas
+				// para que la paginación (max_num_pages) se calcule correctamente.
+				if (!empty($exclude_ids)) {
+					global $wp_query;
+					$args = $wp_query->query_vars;
+					if (isset($args['post__not_in']) && is_array($args['post__not_in'])) {
+						$args['post__not_in'] = array_merge($args['post__not_in'], $exclude_ids);
+					} else {
+						$args['post__not_in'] = $exclude_ids;
+					}
+					$wp_query = new WP_Query($args);
+				}
+
 				if (have_posts()): ?>
 
 					<div class="row">
 						<?php while (have_posts()):
 							the_post();
-
-							// Skip if post was already shown in sub-areas
-							if (in_array(get_the_ID(), $exclude_ids)) {
-								continue;
-							}
 							?>
 							<?php
 							$height = '180px';

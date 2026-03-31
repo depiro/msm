@@ -43,7 +43,7 @@
                     'post__not_in' => [get_the_ID()], // Exclude current event
                     'posts_per_page' => 4
                 ];
-                $section_title = 'Ver otros eventos';
+                $section_title = 'Agenda';
 
                 // Reuse the Events Section component
                 include(get_template_directory() . '/templates/parts/section-eventos-municipales.php');

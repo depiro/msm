@@ -6,9 +6,9 @@ function msm_register_cpt_eventos_municipales()
 {
 
     $labels = array(
-        'name' => 'Agenda',
+        'name' => 'Eventos',
         'singular_name' => 'Evento',
-        'menu_name' => 'Agenda',
+        'menu_name' => 'Eventos',
         'name_admin_bar' => 'Evento',
         'add_new' => 'Agregar nuevo',
         'add_new_item' => 'Agregar nuevo Evento',
@@ -19,7 +19,7 @@ function msm_register_cpt_eventos_municipales()
         'search_items' => 'Buscar Eventos',
         'not_found' => 'No se encontraron eventos.',
         'not_found_in_trash' => 'No se encontraron eventos en la papelera.',
-        'archives' => 'Archivo de Agenda',
+        'archives' => 'Archivo de Eventos',
     );
 
     $args = array(

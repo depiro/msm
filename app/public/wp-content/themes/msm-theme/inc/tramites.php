@@ -8,6 +8,7 @@ function register_custom_post_types()
 			'singular_name' => __('Trámite'),
 		),
 		'public' => true,
+		'show_in_rest' => true,
 		'has_archive' => true,
 		'rewrite' => array('slug' => 'guia-tramites/%area_tramite%'),
 		'supports' => array('title', 'editor', 'excerpt', 'thumbnail'),

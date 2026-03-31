@@ -54,7 +54,7 @@ get_template_part(THEME_HEADER); ?>
                 // Display the "Eventos Municipales" section as requested
                 // Title: "Otros Eventos Municipales"
                 // CTA: Hidden
-                $section_title = 'Otros eventos';
+                $section_title = 'Agenda';
                 $hide_cta = true;
 
                 // We likely want to EXCLUDE the current posts if possible, but the section template
