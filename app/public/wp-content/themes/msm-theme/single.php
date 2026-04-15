@@ -18,14 +18,22 @@
                         $type = 'single';
                         break;
 
+                    case 'noticias-banner':
+                        $type = 'single';
+                        $template = 'single-centered.php';
+                        break;
+
                     default:
                         $type = 'single';
                         break;
                 }
 
                 // Definir la ruta de la plantilla
-                if ($template && file_exists(get_template_directory() . '/templates/' . $type . '-templates/' . $template)) {
-                    include(get_template_directory() . '/templates/' . $type . '-templates/' . $template);
+                // Extraer el nombre base por si la BD guardó la ruta completa (ej. 'templates/single-templates/single-centered.php')
+                $template_basename = basename($template); 
+
+                if ($template && file_exists(get_template_directory() . '/templates/' . $type . '-templates/' . $template_basename)) {
+                    include(get_template_directory() . '/templates/' . $type . '-templates/' . $template_basename);
                 } else {
                     // Cargar la plantilla predeterminada si no hay una plantilla personalizada
                     include(get_template_directory() . '/templates/defaults/' . $type . '-default.php');

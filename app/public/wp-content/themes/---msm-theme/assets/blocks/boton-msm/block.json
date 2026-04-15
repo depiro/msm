@@ -1,0 +1,39 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "msm-theme/boton-msm",
+    "version": "1.0.0",
+    "title": "Botón MSM",
+    "category": "theme",
+    "icon": "button",
+    "description": "Botón CTA con estilo institucional.",
+    "supports": {
+        "html": false,
+        "align": [
+            "center",
+            "wide",
+            "full"
+        ]
+    },
+    "textdomain": "msm-theme-2",
+    "attributes": {
+        "text": {
+            "type": "string",
+            "source": "text",
+            "selector": "a"
+        },
+        "url": {
+            "type": "string",
+            "default": "#"
+        },
+        "variant": {
+            "type": "string",
+            "default": "solid"
+        },
+        "linkTarget": {
+            "type": "string",
+            "default": "_self"
+        }
+    },
+    "editorScript": "file:./build/index.js"
+}

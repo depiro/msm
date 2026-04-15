@@ -1,0 +1,20 @@
+
+/* breadcrumb */
+.msm-breadcrumb {
+    color: var(--msm-black);
+}
+
+.msm-breadcrumb .msm-breadcrumb-item, 
+.msm-breadcrumb .msm-breadcrumb-item-first {
+    padding-right: 5px !important;
+    color: var(--msm-black);
+}
+
+.msm-breadcrumb .msm-breadcrumb-item-last {
+    color: var(--bs-primary);
+    padding-right: 5px !important;
+}
+
+.msm-breadcrumb a {
+    text-decoration: none;
+}

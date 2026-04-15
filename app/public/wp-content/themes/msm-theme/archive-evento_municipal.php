@@ -3,8 +3,15 @@ get_template_part(THEME_HEADER); ?>
 
 <div id="main-content" class="container mb-5">
     <div class="msm-breadcrumb d-block d-sm-row pt-1 small">
-        <a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a><span
-            class="msm-breadcrumb-item-last"> Agenda</span>
+        <a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a>
+        <a class="msm-breadcrumb-item" href="<?php echo HOME_URI; ?>/areas-gobierno">Áreas de Gobierno /</a>
+        <?php
+        $term_comunicacion = get_term_by('slug', 'secretaria-de-comunicacion-y-deportes', 'area_gobierno');
+        if ($term_comunicacion && !is_wp_error($term_comunicacion)) {
+            echo '<a class="msm-breadcrumb-item" href="' . esc_url(get_term_link($term_comunicacion)) . '"> ' . esc_html($term_comunicacion->name) . ' /</a>';
+        }
+        ?>
+        <span class="msm-breadcrumb-item-last"> Eventos</span>
     </div>
     <div class="row justify-content-center pt-2">
 
@@ -14,7 +21,7 @@ get_template_part(THEME_HEADER); ?>
         $term = get_term_by('slug', $term_slug, 'area_gobierno');
 
         // Defaults
-        $title = 'Agenda';
+        $title = 'Eventos';
         $description = 'Enterate de todas las actividades y eventos programados.';
 
         if ($term && !is_wp_error($term)) {
@@ -54,7 +61,7 @@ get_template_part(THEME_HEADER); ?>
                 // Display the "Eventos Municipales" section as requested
                 // Title: "Otros Eventos Municipales"
                 // CTA: Hidden
-                $section_title = 'Agenda';
+                $section_title = 'Eventos';
                 $hide_cta = true;
 
                 // We likely want to EXCLUDE the current posts if possible, but the section template

@@ -1,0 +1,23 @@
+  /* Sidebar */
+.sidebar-card {
+    background-color: var(--msm-black, #575756);
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+aside.sidebar-card ul li,
+aside.sidebar-card p,
+aside.sidebar-card h4,
+aside.sidebar-card h5 {
+    color: white;
+}
+
+aside.sidebar-card ul{
+    color: white;
+    padding: inherit;
+    padding-top: 0;
+}
+
+.sidebar-card a:link {
+    color: var(--color-primary-80);
+}

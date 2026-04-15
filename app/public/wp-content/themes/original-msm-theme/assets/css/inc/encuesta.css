@@ -1,0 +1,17 @@
+.encuesta-utilidad {
+    background-color: #d9d9d9;
+    padding: 1rem;
+  }
+  
+  .encuesta-utilidad .container {
+    margin: 0 auto;
+  }
+  
+  .encuesta-texto {
+    margin: 0 1rem 0 0;
+  }
+  
+  .encuesta-botones {
+    gap: 2rem;
+  }
+  

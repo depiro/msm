@@ -1,0 +1,70 @@
+<?php
+get_template_part(THEME_HEADER); ?>
+
+<div id="main-content" class="container mb-5">
+    <div class="msm-breadcrumb d-block d-sm-row pt-1 small">
+        <a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a><span
+            class="msm-breadcrumb-item-last"> Agenda</span>
+    </div>
+    <div class="row justify-content-center pt-2">
+
+        <?php
+        // Fetch the term 'subsecretaria-de-eventos-municipales'
+        $term_slug = 'subsecretaria-de-eventos-municipales';
+        $term = get_term_by('slug', $term_slug, 'area_gobierno');
+
+        // Defaults
+        $title = 'Agenda';
+        $description = 'Enterate de todas las actividades y eventos programados.';
+
+        if ($term && !is_wp_error($term)) {
+            $title = $term->name;
+            $description = $term->description;
+        }
+        ?>
+
+        <div class="col-12 py-5">
+            <h2 class="msm-font-xl mb-1"><?php echo esc_html($title); ?></h2>
+            <p class="fz-18"><?php echo wp_kses_post($description); ?></p>
+        </div>
+
+        <div class="page-content row ">
+            <?php if (have_posts()): ?>
+                <?php
+                // Clean up variables to prevent scope pollution
+                unset($title, $link, $thumb_url, $tags);
+
+                while (have_posts()):
+                    the_post();
+                    include get_template_directory() . '/templates/parts/card-event.php';
+                endwhile; ?>
+
+                <div class="col-12 mt-4">
+                    <?php the_posts_pagination(); ?>
+                </div>
+
+            <?php else: ?>
+                <span class="fz-24 empty-info mt-3">
+                    No hay eventos programados en este momento.
+                </span>
+            <?php endif; ?>
+
+            <div class="col-12 mt-5">
+                <?php
+                // Display the "Eventos Municipales" section as requested
+                // Title: "Otros Eventos Municipales"
+                // CTA: Hidden
+                $section_title = 'Agenda';
+                $hide_cta = true;
+
+                // We likely want to EXCLUDE the current posts if possible, but the section template
+                // makes a new query. For now, we just insert it.
+                include get_template_directory() . '/templates/parts/section-eventos-municipales.php';
+                ?>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php get_template_part(THEME_FOOTER); ?>
+<!-- archive evento_municipal -->

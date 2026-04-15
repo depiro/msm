@@ -1,0 +1,53 @@
+a:link {
+  color: var(--msm-blue);
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, text-decoration-color 0.15s;
+}
+  
+a:visited {
+  color: var(--msm-blue-);
+}
+  
+a:hover {
+  color: var(--msm-blue-600);
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+}
+  
+a:focus {
+  outline: 3px solid var( --blue-msm-200);
+  outline-offset: 2px;
+  text-decoration: underline;
+}
+ 
+a:active {
+  color: var(--blue-msm-600);
+  text-decoration: underline;
+}
+
+a[aria-disabled="true"],
+a.disabled {
+  color: var(--msm-gray);
+  pointer-events: none;
+  text-decoration: line-through;
+}
+
+/* links navbar header  */
+.btn, 
+.msm-menu-link {
+  cursor: pointer;
+  transition: all 0.25s ease;
+  transform: translateY(0);
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.btn:hover,
+.msm-menu-link:hover {
+    transform: translateY(-2px);
+    color: white;
+}
+
+.msm-menu-link:hover,
+.msm-menu-link:hover svg {
+    background-color: var(--blue-msm-400);
+    border-color: var(--blue-msm-400);
+}

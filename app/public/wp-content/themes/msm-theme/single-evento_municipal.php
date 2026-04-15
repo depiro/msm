@@ -8,8 +8,14 @@
             <!-- Breadcrumbs -->
             <div class="msm-breadcrumb d-block d-sm-row pt-1 small mb-4">
                 <a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a>
-                <a class="msm-breadcrumb-item" href="<?php echo get_post_type_archive_link('evento_municipal'); ?>"> Eventos
-                    Municipales /</a>
+                <a class="msm-breadcrumb-item" href="<?php echo HOME_URI; ?>/areas-gobierno">Áreas de Gobierno /</a>
+                <?php
+                $term_comunicacion = get_term_by('slug', 'secretaria-de-comunicacion-y-deportes', 'area_gobierno');
+                if ($term_comunicacion && !is_wp_error($term_comunicacion)) {
+                    echo '<a class="msm-breadcrumb-item" href="' . esc_url(get_term_link($term_comunicacion)) . '"> ' . esc_html($term_comunicacion->name) . ' /</a>';
+                }
+                ?>
+                <a class="msm-breadcrumb-item" href="<?php echo get_post_type_archive_link('evento_municipal'); ?>"> Eventos /</a>
                 <span class="msm-breadcrumb-item-last"> <?php the_title(); ?></span>
             </div>
 

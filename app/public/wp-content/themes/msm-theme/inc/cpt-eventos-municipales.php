@@ -6,20 +6,20 @@ function msm_register_cpt_eventos_municipales()
 {
 
     $labels = array(
-        'name' => 'Eventos',
-        'singular_name' => 'Evento',
-        'menu_name' => 'Eventos',
-        'name_admin_bar' => 'Evento',
+        'name' => 'Eventos municipales',
+        'singular_name' => 'Evento municipal',
+        'menu_name' => 'Eventos municipales',
+        'name_admin_bar' => 'Evento municipal',
         'add_new' => 'Agregar nuevo',
-        'add_new_item' => 'Agregar nuevo Evento',
-        'new_item' => 'Nuevo Evento',
-        'edit_item' => 'Editar Evento',
-        'view_item' => 'Ver Evento',
-        'all_items' => 'Todos los Eventos',
-        'search_items' => 'Buscar Eventos',
-        'not_found' => 'No se encontraron eventos.',
-        'not_found_in_trash' => 'No se encontraron eventos en la papelera.',
-        'archives' => 'Archivo de Eventos',
+        'add_new_item' => 'Agregar nuevo Evento municipal',
+        'new_item' => 'Nuevo Evento municipal',
+        'edit_item' => 'Editar Evento municipal',
+        'view_item' => 'Ver Evento municipal',
+        'all_items' => 'Todos los Eventos municipales',
+        'search_items' => 'Buscar Eventos municipales',
+        'not_found' => 'No se encontraron eventos municipales.',
+        'not_found_in_trash' => 'No se encontraron eventos municipales en la papelera.',
+        'archives' => 'Archivo de Eventos municipales',
     );
 
     $args = array(
@@ -33,9 +33,9 @@ function msm_register_cpt_eventos_municipales()
         'menu_icon' => 'dashicons-calendar-alt',
         'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
         'taxonomies' => array('post_tag'),
-        'has_archive' => 'agenda',
+        'has_archive' => 'eventos',
         'rewrite' => array(
-            'slug' => 'agenda',
+            'slug' => 'eventos',
             'with_front' => false,
         ),
         'query_var' => true,

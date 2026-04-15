@@ -10,8 +10,14 @@ Description: Esta plantilla muestra una entrada individual sin barra lateral y c
         <a class="msm-breadcrumb-item-first" href="<?php echo HOME_URI; ?>">Home /</a>
 
         <?php if (get_post_type() === 'evento_municipal'): ?>
-            <a class="msm-breadcrumb-item" href="<?php echo get_post_type_archive_link('evento_municipal'); ?>"> Eventos
-                Municipales /</a>
+            <a class="msm-breadcrumb-item" href="<?php echo HOME_URI; ?>/areas-gobierno">Áreas de Gobierno /</a>
+            <?php
+            $term_comunicacion = get_term_by('slug', 'secretaria-de-comunicacion-y-deportes', 'area_gobierno');
+            if ($term_comunicacion && !is_wp_error($term_comunicacion)) {
+                echo '<a class="msm-breadcrumb-item" href="' . esc_url(get_term_link($term_comunicacion)) . '"> ' . esc_html($term_comunicacion->name) . ' /</a>';
+            }
+            ?>
+            <a class="msm-breadcrumb-item" href="<?php echo get_post_type_archive_link('evento_municipal'); ?>"> Eventos /</a>
         <?php else: ?>
             <a class="msm-breadcrumb-item" href="<?php echo HOME_URI; ?>/prensa"> Prensa /</a>
         <?php endif; ?>
@@ -36,18 +42,8 @@ Description: Esta plantilla muestra una entrada individual sin barra lateral y c
         <div class="col-10">
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                 <h1 class="post-title"><?php the_title(); ?></h1>
-                <!-- <h5 class="post-resume"><?php the_excerpt(); ?></h5> -->
-        </div>
 
-
-        <div class="col-10">
-            <!-- <div class="post-meta d-flex justify-content-end my-3">
-                    <span class="post-date me-2 msm-text-gray"><?php the_time('F j, Y'); ?></span>
-                    <span class="post-author msm-text-gray"> por <?php the_author(); ?></span>
-                </div> -->
-
-
-            <div class="my-3">
+                <div class="my-3">
 
                 <?php
                 // Inyectar info de evento si corresponde

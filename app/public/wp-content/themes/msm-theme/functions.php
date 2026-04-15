@@ -4,7 +4,7 @@ require_once get_theme_file_path('/inc/helpers/inline-svg-helper.php');
 require get_template_directory() . '/inc/tramites.php';
 require get_template_directory() . '/inc/botonera.php';
 require get_template_directory() . '/inc/slide.php';
-require get_template_directory() . '/inc/events.php';
+// require get_template_directory() . '/inc/events.php';
 require get_template_directory() . '/inc/pages.php';
 require get_template_directory() . '/inc/prensa.php';
 require get_template_directory() . '/inc/centros-salud.php';
@@ -333,7 +333,7 @@ function custom_page_template_mapping($template)
         'economia_finanzas' => THEME_SPECIAL . '/economia_finanzas/landing.php',
         'habilitaciones' => THEME_SPECIAL . '/habilitaciones/landing.php',
         'licencias-2' => THEME_SPECIAL . '/licencias/landing.php',
-        'sem-2' => THEME_SPECIAL . '/sem/landing.php',
+        // 'sem-2' => THEME_SPECIAL . '/sem/landing.php', // Comentado para permitir test manual
         'tercera_edad' => THEME_SPECIAL . '/tercera_edad/landing.php',
         'zoonosis' => THEME_SPECIAL . '/zoonosis/landing.php',
         'reclamos-2' => THEME_SPECIAL . '/reclamos/landing.php',

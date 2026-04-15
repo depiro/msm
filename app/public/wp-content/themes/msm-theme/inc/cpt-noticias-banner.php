@@ -67,3 +67,4 @@ function msm_register_taxonomies_noticias_banner()
     register_taxonomy_for_object_type('post_tag', 'noticias-banner');
 }
 add_action('init', 'msm_register_taxonomies_noticias_banner');
+

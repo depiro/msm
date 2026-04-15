@@ -1,0 +1,34 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "msm/banner-noticia",
+    "version": "1.0.0",
+    "title": "Banner de Noticia",
+    "category": "widgets",
+    "icon": "megaphone",
+    "description": "Muestra una noticia del CPT noticias-banner.",
+    "attributes": {
+        "postId": {
+            "type": "number",
+            "default": 0
+        },
+        "width": {
+            "type": "string",
+            "default": "full"
+        },
+        "align": {
+            "type": "string",
+            "default": "left"
+        }
+    },
+    "supports": {
+        "html": false,
+        "align": [
+            "full",
+            "wide"
+        ]
+    },
+    "textdomain": "msm-theme",
+    "editorScript": "file:./build/index.js",
+    "render": "file:./render.php"
+}

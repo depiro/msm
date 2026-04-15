@@ -1,0 +1,275 @@
+/*
+Theme Name:     msm-theme
+Theme URI:      https://msm.gov.ar
+Author:         Municipalidad de San Miguel
+Author URI:     https://msm.gov.ar
+Description:    Tema personalizado con diseño responsivo y escalable para Municipalidad de San Miguel.
+Version:        1.0
+License:        GPLv2 or later
+License URI:    https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:    msm-theme-2
+Tags:           responsive, block-based, accesible, moderno
+*/
+
+body {
+    background-color: #FFFFFF;
+}
+
+/* =========================================
+   Component: CTA Buttons (inc/template-tags.php)
+   ========================================= */
+.btn-msm-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    color: #FFFFFF !important;
+    /* Force white text */
+    font-weight: 500;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    text-decoration: none !important;
+    /* No underline */
+    transition: opacity 0.3s ease;
+    border: none;
+    min-width: 210px;
+    cursor: pointer;
+    line-height: 1.2;
+}
+
+.btn-msm-cta:hover,
+.btn-msm-cta:focus,
+.btn-msm-cta:active,
+.btn-msm-cta:visited {
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+    opacity: 0.9;
+    outline: none;
+}
+
+.btn-msm-cta .icon-circle {
+    background-color: #FFFFFF;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+    flex-shrink: 0;
+}
+
+.btn-msm-cta .icon-circle .msm-icon-arrow {
+    width: 22px;
+    height: 22px;
+    display: block;
+    color: inherit !important;
+}
+
+/* Variant: Solid Blue */
+.btn-msm-solid {
+    background-color: #00b0eb;
+}
+
+.btn-msm-solid .icon-circle .msm-icon-arrow {
+    color: #00b0eb !important;
+}
+
+/* Variant: Gradient */
+.btn-msm-gradient {
+    background: linear-gradient(90deg, #1E6782 0%, #36B7E8 100%);
+}
+
+.btn-msm-gradient .icon-circle .msm-icon-arrow {
+    color: #00b0eb !important;
+}
+
+/* =========================================
+   Component: CTA Links (inc/template-tags.php)
+   ========================================= */
+.btn-msm-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none !important;
+    font-weight: 500;
+    /* Changed from 700 to 500 */
+    font-size: 1.1rem;
+    transition: opacity 0.3s ease;
+    line-height: 1;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.btn-msm-link:hover {
+    opacity: 0.8;
+    text-decoration: none !important;
+}
+
+.btn-msm-link .msm-icon-arrow {
+    width: 28px;
+    height: 28px;
+    margin-left: 8px;
+    stroke-width: 2;
+}
+
+/* Variant: Cyan */
+.btn-msm-link-cyan {
+    color: #36B7E8 !important;
+}
+
+.btn-msm-link-cyan:hover {
+    color: #36B7E8 !important;
+}
+
+/* Variant: Dark */
+.btn-msm-link-dark {
+    color: #1E6782 !important;
+}
+
+.btn-msm-link-dark:hover {
+    color: #1E6782 !important;
+}
+
+/* =========================================
+   Utilities
+   ========================================= */
+.text-gradient-msm {
+    background: linear-gradient(90deg, #1E6782 0%, #36B7E8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+
+
+
+
+
+
+/* ================================
+   SECCIÓN (TÍTULO AZUL)
+   Aplica a un párrafo colocado 
+   en la parte superior del Group.
+================================ */
+.wp-block-group>p:first-child {
+    background: linear-gradient(90deg, #0077b6 0%, #0096c7 100%);
+    color: #fff;
+    padding: 14px 35px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 6px 6px 0 0;
+    margin: 0;
+    /* Flex para alinear ícono */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Ícono (Círculo + Flecha) para el título azul */
+.wp-block-group>p:first-child::before {
+    content: '';
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: block;
+    flex-shrink: 0;
+
+    /* Mismo SVG que accordion */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300b0eb'%3E%3Cpath d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px 24px;
+
+    /* Rotado 90deg para indicar 'Abajo' (Sección abierta) */
+    transform: rotate(90deg);
+}
+
+/* ================================
+   ÍTEMS DESPLEGABLES (DETALLES)
+   Fondo gris general, sin márgenes
+   ni bordes redondeados, como en captura.
+================================ */
+.wp-block-details {
+    background: #e6e6e6;
+    border-bottom: 1px solid #d0d0d0;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+}
+
+/* ================================
+   SUMMARY (TÍTULO GRIS CLARO)
+   Flecha + círculo blanco a la izquierda,
+   texto a la derecha, alineado verticalmente.
+================================ */
+.wp-block-details>summary {
+    background: #f2f2f2;
+    /* gris más claro */
+    padding: 14px 0 14px 70px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    list-style: none;
+    /* Oculta marcador nativo standard */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    outline: none;
+}
+
+/* Quita el marcador nativo de Webkit */
+.wp-block-details>summary::-webkit-details-marker {
+    display: none;
+}
+
+/* ================================
+   ÍCONO (CÍRCULO BLANCO + FLECHA)
+   Generado via ::before porque WP
+   no permite editar el HTML interno.
+================================ */
+.wp-block-details>summary::before {
+    content: '';
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: block;
+    flex-shrink: 0;
+
+
+    /* Icono de flecha SVG (Data URI) */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300b0eb'%3E%3Cpath d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px 24px;
+    /* Ajuste visual ícono */
+
+    transition: transform 0.2s ease;
+}
+
+/* Rotación al abrir */
+.wp-block-details[open]>summary::before {
+    transform: rotate(90deg);
+}
+
+/* ================================
+   CONTENIDO INTERNO DEL DETALLES
+================================ */
+.wp-block-details[open]>*:not(summary) {
+    padding: 14px 18px 14px 106px;
+    background: #ffffff;
+    font-size: 16px;
+}
+
+/* ================================
+   HOVER
+   Oscurece ligeramente el gris claro del summary.
+================================ */
+.wp-block-details>summary:hover {
+    background: #e8e8e8;
+}
